@@ -26,4 +26,18 @@ class DefaultController extends Controller
     {
         return $this->render('/contact/index.html.twig');
     }
+
+
+    /**
+     * @Route("/test", name="test")
+     */
+
+     public function testAction(Request $request)
+     {
+         // replace this example code with whatever you need
+         return $this->render('coach/menu.html.twig', [
+             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+         ]);
+     }
+
 }
