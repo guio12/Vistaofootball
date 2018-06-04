@@ -1,0 +1,241 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<body>
+<div class="container">
+
+
+    <div class="m-wrap tx">
+        <div class="o-watch-wrap">
+            <div class="watch-ui">
+                <div class="o-ring">
+                    <div class="o-timer-wrap">
+                        <div class="ring-wrap">
+                            <svg class="c-t" width="200" height="200">
+                                <circle class="c-c" cx="90" cy="100" r="97.5" transform="rotate(-90, 95, 95)"/>
+                            </svg>
+                        </div>
+                        <div class="o-timer">
+                            <span class="t-time"></span>
+
+                        </div>
+                    </div>
+                    <div class="t-options">
+                    <span class="t-options-time">
+					<span class="btn b-dec o-opt-btn b-revc glyphicon glyphicon-play"></span>
+                    <span class="o-opt-btn display"></span>
+                    <span class="btn b-inc o-opt-btn glyphicon glyphicon-play"></span>
+                    </span>
+                    </div>
+                </div>
+                <div class="o-controllers">
+                    <button class="btn button sp-btn repeat-btn ">
+                        <span class="glyphicon glyphicon-repeat"></span>
+                    </button>
+                    <button class="btn button sp-btn pause-btn ">
+                        <span class="in-btn glyphicon glyphicon-pause"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="keyboard">
+        <div class="row horizontalcenter">
+            <div id="pads" data-color="red" class="adverse_pad counter-click">
+                <p>ADVERSAIRE<br></p>
+                <div class="counter-count">0</div>
+            </div>
+            <a href="#" class="faute">
+                <div id="pads" data-color="red" class="reset yellowmiddle_pad verticalcenter">
+                    <p>FAUTE<br></p>
+                </div>
+            </a>
+            <div id="popup">
+                <div class="row">
+                    <a href="#" class="faute">
+                        <div id="pads" data-color="red" class="reset yellow_pad verticalcenter">
+                            <p>FAUTE</p>
+                        </div>
+                    </a>
+                    <a href="#" class="faute">
+                        <div id="pads" data-color="red" class="reset yellow_pad verticalcenter">
+                            <p>JAUNE</p>
+                        </div>
+                    </a>
+                    <a href="#" class="faute">
+                        <div id="pads" data-color="red" class="reset yellow_pad verticalcenter">
+                            <p>ROUGE</p>
+                        </div>
+                    </a>
+                    <a href="#" class="faute">
+                        <div id="pads" data-color="red" class="reset yellow_pad verticalcenter">
+                            <p>PENALTY</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div id="pads" data-color="red" class="reset yellow_pad verticalcenter">
+                <p>TOUCHE</p>
+            </div>
+            <div id="pads" data-color="red" class="reset yellow_pad verticalcenter ">
+                <p>CORNER</p>
+            </div>
+            <div id="pads" data-color="red" class="reset yellow_pad verticalcenter">
+                <p>5M50</p>
+            </div>
+            <div id="pads" data-color="red" class="reset yellow_pad verticalcenter">
+                <p>H.J</p>
+            </div>
+        </div>
+        <div class="row horizontalcenter">
+            <div id="pads" data-color="#00c253" class="reset green_pad verticalcenter">
+                <p>1</p>
+            </div>
+            <div id="pads" data-color="#00c253" class="reset green_pad verticalcenter">
+                <p>2</p>
+            </div>
+            <div id="pads" data-color="#00c353" class="reset green_pad verticalcenter">
+                <p>3</p>
+            </div>
+            <div id="pads" data-color="#00c253" class="reset green_pad verticalcenter">
+                <p>4</p>
+            </div>
+            <div id="pads" data-color="purple" class="reset purplemiddle_pad verticalcenter">
+                <p>CENTRE</p>
+            </div>
+            <div id="pads" data-color="purple" class="reset purplemiddle_pad verticalcenter">
+                <p>TIR CADRÉ</p>
+            </div>
+            <div id="pads" data-color="red" class="reset redmiddle_pad verticalcenter">
+                <p>TIR NON CADRÉ</p>
+            </div>
+        </div>
+        <div class="row horizontalcenter">
+            <div id="pads" data-color="#00c353" class="reset green_pad verticalcenter">
+                <p>5</p>
+            </div>
+            <div id="pads" data-color="#00c353" class="reset green_pad verticalcenter">
+                <p>6</p>
+            </div>
+            <div id="pads" data-color="#00c353" class="reset green_pad verticalcenter">
+                <p>7</p>
+            </div>
+            <div id="pads" data-color="#00c253" class="reset green_pad verticalcenter">
+                <p>8</p>
+            </div>
+            <div id="pads" data-color="purple" class="reset purplemiddle_pad verticalcenter">
+                <p>PASSE LONGUE</p>
+            </div>
+            <div id="pads" data-color="purple" class="reset purplemiddle_pad verticalcenter">
+                <p>DRIBBLE REUSSI</p>
+            </div>
+            <div id="pads" data-color="red" class="reset redmiddle_pad verticalcenter">
+                <p>DRIBBLE ECHOUÉ</p>
+            </div>
+        </div>
+        <div class="row horizontalcenter">
+            <div id="pads" data-color="#00c253" class="reset green_pad verticalcenter">
+                <p>9</p>
+            </div>
+            <div id="pads" data-color="#00c253" class="reset green_pad verticalcenter">
+                <p>10</p>
+            </div>
+            <div id="pads" data-color="#00c253" class="reset green_pad verticalcenter">
+                <p>11</p>
+            </div>
+            <div id="pads" data-color="#00c253" class="reset green_pad verticalcenter">
+                <p>12</p>
+            </div>
+            <a href="#" class="but">
+                <div id="pads" data-color="purple" class="reset purplebig_pad verticalcenter">
+                    <p>BUT</p>
+                </div>
+            </a>
+            <div id="popup2">
+                <div class="row">
+                    <a href="#" class="but">
+                        <div id="pads" data-color="#ff0011" class="reset purple_pad verticalcenter">
+                            <p>TETE</p>
+                        </div>
+                    </a>
+                    <a href="#" class="but">
+                        <div id="pads" data-color="#ff0011" class="reset purple_pad verticalcenter">
+                            <p>REPRISE</p>
+                        </div>
+                    </a>
+                    <a href="#" class="but">
+                        <div id="pads" data-color="#ff0011" class="reset purple_pad verticalcenter">
+                            <p>POTEAU</p>
+                        </div>
+                    </a>
+                    <a href="#" class="but">
+                        <div id="pads" data-color="#ff0011" class="reset purple_pad ">
+                            <p>TIR CADRÉ</p>
+                        </div>
+                    </a>
+                    <div class="form-check">
+                        <input class="form-check-input" type="reset checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">CONFIRMER LE BUT</label>
+                    </div>
+                </div>
+            </div>
+            <div id="pads" data-color="red" class="reset redmiddle_pad verticalcenter">
+                <p>TIR BLOQUÉ</p>
+            </div>
+        </div>
+        <div class="row horizontalcenter">
+            <div id="pads" data-color="#00c253" class="reset green_pad verticalcenter">
+                <p>13</p>
+            </div>
+            <div id="pads" data-color="#00c253" class="reset green_pad verticalcenter">
+                <p>14</p>
+            </div>
+            <div id="pads" data-color="#00c253" class="reset green_pad verticalcenter">
+                <p>15</p>
+            </div>
+            <div id="pads" data-color="#00c253" class="reset green_pad verticalcenter">
+                <p>16</p>
+            </div>
+            <a href="#" class="mi-temps">
+                <div id="pads" data-color="#ff0011" class="reset middle_pad pause-btn verticalcenter">
+                    <p>MI-TEMPS</p>
+                </div>
+            </a>
+            <div id="popup3">
+                <div class="row">
+                    <a href="#" class="mi-temps">
+                        <div id="pads" data-color="#ff0011" class="yellow_pad">
+                            <p>FIN MT1</p>
+                        </div>
+                    </a>
+                    <a href="#" class="mi-temps">
+                        <div id="pads" data-color="#ff0011" class="yellow_pad">
+                            <p>FIN MT2</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <a href="#" class="fin-match">
+                <div id="pads" data-color="#ff0011" class="reset middle_pad pause-btn verticalcenter">
+                    <p>FIN DE MATCH</p>
+                </div>
+            </a>
+            <div id="popup4">
+                <div class="row">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">CONFIRMER ?</label>
+                    </div>
+                </div>
+                <a href="#" class="fin-match">X</a>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</body>
+{% endblock %}
+
