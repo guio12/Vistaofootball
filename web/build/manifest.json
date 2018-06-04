@@ -1,10 +1,13 @@
 {
   "web/app.js": "/web/app.js",
+  "web/clavier.js": "/web/clavier.js",
   "web/logo_connexion.js": "/web/logo_connexion.js",
   "web/style.js": "/web/style.js",
   "web/style.css": "/web/style.css",
   "web/connexion.js": "/web/connexion.js",
   "web/connexion.css": "/web/connexion.css",
+  "web/style_clavier.js": "/web/style_clavier.js",
+  "web/style_clavier.css": "/web/style_clavier.css",
   "web/contact.js": "/web/contact.js",
   "web/fonts/glyphicons-halflings-regular.eot": "/web/fonts/glyphicons-halflings-regular.f4769f9b.eot",
   "web/fonts/glyphicons-halflings-regular.ttf": "/web/fonts/glyphicons-halflings-regular.e18bbf61.ttf",

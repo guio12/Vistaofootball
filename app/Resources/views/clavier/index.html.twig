@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/style_clavier.css') }}">
+{% endblock %}
+
 {% block body %}
 <body>
 <div class="container">
@@ -239,3 +243,6 @@
 </body>
 {% endblock %}
 
+    {% block javascripts %}
+        <script src="{{ asset('build/clavier.js') }}"></script>
+    {% endblock %}
