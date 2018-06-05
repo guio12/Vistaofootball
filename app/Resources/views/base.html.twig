@@ -9,6 +9,12 @@
 </head>
 <body>
 {% block body %}{% endblock %}
+
+
+<!-- these two files now must be included in every page -->
+<script src="{{ asset('build/manifest.js') }}"></script>
+<script src="{{ asset('build/jquery_jqueryUi.js') }}"></script>
+
 <script src="{{ asset('build/app.js') }}"></script>
 {% block javascripts %}{% endblock %}
 </body>

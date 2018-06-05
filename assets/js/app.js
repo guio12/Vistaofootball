@@ -1,14 +1,19 @@
-var $ = require('jquery');
-// JS is equivalent to the normal "bootstrap" package
-// no need to set this to a variable, just require it
-require('bootstrap-sass');
+// require jQuery normally
+const $ = require('jquery');
+require('jquery-ui');
+require('webpack-jquery-ui');
+
+// create global $ and jQuery variables
+global.$ = global.jQuery = $;
+
+import 'webpack-jquery-ui';
 
 $(document).ready(function () {
     console.log("ok, JQuery fonctionne !");
 });
 
-console.log('Bienvenue sur WebPack!')
+console.log('Bienvenue sur WebPack!');
 
-$(document).ready(function() {
+$(document).ready(function () {
     $('[data-toggle="popover"]').popover();
 });
