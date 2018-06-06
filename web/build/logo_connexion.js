@@ -8,7 +8,7 @@ webpackJsonp([4],{
 /*! all exports used */
 /***/ (function(module, exports) {
 
-module.exports = "/web/images/Vistao football bk.02bd3d43.png";
+module.exports = "./images/Vistao football bk.02bd3d43.png";
 
 /***/ })
 
