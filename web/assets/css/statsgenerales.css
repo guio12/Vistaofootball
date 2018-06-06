@@ -20,7 +20,7 @@ body {
     border-radius: 5px 5px 30px 30px;
     color: white;
     background: black;
-    margin-top: 120px;
+    margin-top: 10px;
     box-shadow: -5px 15px 15px #888888;
 }
 
@@ -59,7 +59,7 @@ body {
 .statsshow {
     position: inline-block;
     z-index: 1;
-    height: 700px;
+    height: 500px;
     background: none;
     max-width: 600px;
     margin: 0 auto 100px;
@@ -70,14 +70,15 @@ body {
 
 h1{
     color: whitesmoke;
+    font-family: "Days One", sans-serif;
 }
 
 .progress{
-    height: 40px;
+    height: 30px;
 }
 
 .progress p{
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
-    margin-top: 8px;
+    margin-top: 4px;
 }
