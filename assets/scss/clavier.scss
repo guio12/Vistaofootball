@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css?family=Baumans');
+
+.horizontalcenter {
+  display: inline-block;
+  float: none;
+}
+
+.verticalcenter {
+  line-height: 70px;
+  vertical-align: middle;
+}
+
+body {
+  background: black;
+  text-align: center;
+}
+
+p {
+  font-family: 'Baumans', cursive;
+  font-weight: bold;
+  font-size: 17px;
+  color: white;
+}
+
+@mixin littlepad {
+  cursor: pointer;
+  float: left;
+  width: 70px;
+  height: 70px;
+  margin: .3125em;
+}
+
+@mixin middlepad {
+  cursor: pointer;
+  float: left;
+  width: 149px;
+  height: 70px;
+  margin: .3125em;
+}
+
+@mixin bigpad {
+  cursor: pointer;
+  float: left;
+  width: 306px;
+  height: 70px;
+  margin: .3125em;
+}
+
+.yellow_pad {
+  background: linear-gradient(to bottom right, gold, goldenrod);
+  @include littlepad
+}
+
+.green_pad {
+  background: linear-gradient(to bottom right, green, black);
+  @include littlepad
+}
+
+.purple_pad {
+  background: linear-gradient(to bottom right, purple, black);
+  @include littlepad
+}
+
+.adverse_pad {
+  background: linear-gradient(to bottom right, gray, black);
+  @include bigpad
+}
+
+.yellowmiddle_pad {
+  background: linear-gradient(to bottom right, gold, goldenrod);
+  @include middlepad
+}
+
+.purplemiddle_pad {
+  background: linear-gradient(to bottom right, purple, black);
+  @include middlepad
+}
+
+.purplebig_pad {
+  background: linear-gradient(to bottom right, purple, black);
+  @include bigpad
+}
+
+.redmiddle_pad {
+  background: linear-gradient(to bottom right, red, black);
+  @include middlepad
+}
+
+.middle_pad {
+  background: linear-gradient(to bottom right, gray, black);
+  cursor: pointer;
+  float: left;
+  width: 227px;
+  height: 70px;
+  margin: .3125em;
+}
+
+/* --------------------------------
+ *
+ * Adverse pad counter
+ *
+ *-------------------------------- */
+
+.counter-count {
+  font-family: 'Baumans', cursive;
+  font-weight: bold;
+  color: white;
+  font-size: 17px;
+}
+
+/* --------------------------------
+ *
+ * Timer
+ *
+ *-------------------------------- */
+
+// MY MIXINS
+@mixin flex-center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin box( $dimx, $dimy: 0) {
+  @if $dimy==0 {
+    $dimy: $dimx;
+  }
+  width: $dimx;
+  height: $dimy;
+}
+
+// THE CSS
+html {
+  @include box(100%);
+  .tx {
+    @include flex-center;
+  }
+  .t-center {
+    text-align: center;
+  }
+  .m-wrap {
+    @extend body;
+    color: white;
+    .o-watch-wrap {
+      @extend .tx;
+      @include box(350px, 350px);
+      .menu-open .t-options {
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      .menu-open .o-timer-wrap {
+        top: -15px !important;
+        opacity: 0;
+      }
+      .watch-ui {
+        user-select: none;
+        .o-ring {
+          position: relative;
+          @include box(200px);
+          margin: auto;
+          .o-timer-wrap {
+            position: relative;
+            top: 0;
+            transition: opacity .5s linear, top .5s linear;
+          }
+          .ring-wrap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            @extend .tx;
+            .c-t {
+              position: absolute;
+              top: 0;
+              left: 0;
+              .c-c {
+                fill: transparent;
+                stroke: white;
+                stroke-width: 5;
+                stroke-dasharray: 612;
+                stroke-dashoffset: 612;
+                -webkit-transition: stroke-dashoffset 1s linear, opacity 1s linear;
+                transition: stroke-dashoffset 1s linear, opacity 1s linear;
+              }
+            }
+          }
+          .o-timer {
+            @extend .t-center;
+            font-size: 60px;
+            @extend .tx;
+            width: 200px;
+            height: 200px;
+            border: 5px solid gray;
+            border-radius: 50%;
+          }
+          .t-options {
+            position: absolute;
+            top: 0px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .3s linear, visibility .3s linear;
+            .b-revc {
+              transform: rotate(180deg);
+            }
+            .o-opt-btn {
+              box-shadow: none;
+              &:hover,
+              &:focus {
+                color: inherit;
+              }
+              &:active {
+                color: lightgrey;
+              }
+              &.display {
+                min-width: 70px;
+                cursor: default;
+                color: white;
+              }
+            }
+            .t-options-time {
+              @extend .o-timer;
+              border: none;
+            }
+          }
+        }
+      }
+      .o-controllers {
+        text-align: center;
+        .sp-btn {
+          position: relative;
+          background: none;
+          font-size: 16px;
+          outline: none;
+          box-shadow: none;
+          &:hover,
+          &:focus {
+            color: inherit;
+          }
+          &:active {
+            color: darken(white, 10%);
+          }
+        }
+        .pause-btn {
+          font-size: 30px;
+          @include box(60px);
+          margin: auto;
+          background: red;
+          border-radius: 50%;
+          margin-top: -20px;
+
+          &:active {
+            background: darken(red, 10%);
+
+          }
+        }
+        .in-btn {
+          position: absolute;
+          top: -1px;
+          left: 2px;
+          bottom: 0px;
+          right: 0;
+          @extend .tx;
+        }
+      }
+    }
+  }
+}
+
+/* --------------------------------
+ *
+ * Modal Window
+ *
+ *-------------------------------- */
+
+@mixin popup {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -150px;
+  background: black;
+  width: 346px;
+  height: 180px;
+  padding: 30px;
+  -webkit-box-shadow: 0 0 125px 0 rgba(0, 0, 0, 1),
+  0 0 10000px 500px rgba(0, 0, 0, .75);
+  box-shadow: 0 0 125px 0 rgba(0, 0, 0, 1),
+  0 0 10000px 500px rgba(0, 0, 0, .75);
+  a {
+    color: white;
+  }
+  label {
+    color: white;
+  }
+}
+
+#popup {
+  @include popup
+}
+
+#popup2 {
+  @include popup
+}
+
+#popup3 {
+  @include popup
+}
+
+#popup4 {
+  @include popup
+}
