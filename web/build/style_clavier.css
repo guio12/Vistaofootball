@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Baumans);.horizontalcenter {
+.horizontalcenter {
   display: inline-block;
   float: none;
 }
@@ -146,8 +146,8 @@ html .m-wrap {
 }
 
 html .m-wrap .o-watch-wrap {
-  width: 350px;
-  height: 350px;
+  width: 250px;
+  height: 300px;
 }
 
 html .m-wrap .o-watch-wrap .menu-open .t-options {
@@ -285,7 +285,7 @@ html .m-wrap .o-watch-wrap .o-controllers .in-btn {
   position: absolute;
   top: -1px;
   left: 2px;
-  bottom: 0px;
+  bottom: 0;
   right: 0;
 }
 

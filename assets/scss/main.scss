@@ -4,6 +4,11 @@ $brand-primary: darken(#428bca, 20%);
 // the ~ allows you to reference things in node_modules
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+@import url('https://fonts.googleapis.com/css?family=Baumans');
+
 body {
   background-image: radial-gradient(circle, #000000, #111111, #1b1b1b, #252525, #303030);
+  font-family: 'Baumans', cursive;
+  font-weight: bold;
+  color: white;
 }
