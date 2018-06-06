@@ -51,4 +51,15 @@ class DefaultController extends Controller
         ]);
     }
 
+    /**
+     * @Route("/statsmatch", name="statsmatch")
+     */
+    public function statsAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render('stats/general.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+        ]);
+    }
+
 }
