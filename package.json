@@ -1,7 +1,7 @@
 {
   "name": "vistao",
   "version": "1.0.0",
-  "description": "Vistao ======",
+  "description": "Vistao, site intéractif de capture de donnée footbalistique en direct",
   "main": "webpack.config.js",
   "directories": {
     "test": "tests"
