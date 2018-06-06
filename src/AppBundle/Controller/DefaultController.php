@@ -29,7 +29,7 @@ class DefaultController extends Controller
 
 
     /**
-     * @Route("/test", name="test")
+     * @Route("/coach", name="coachMenu")
      */
 
      public function testAction(Request $request)
@@ -39,5 +39,27 @@ class DefaultController extends Controller
              'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
          ]);
      }
+
+    /**
+     * @Route("/clavier", name="clavier")
+     */
+    public function clavierAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render('clavier/index.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+        ]);
+    }
+
+    /**
+     * @Route("/statsmatch", name="statsmatch")
+     */
+    public function statsAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render('stats/general.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+        ]);
+    }
 
 }
