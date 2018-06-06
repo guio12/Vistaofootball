@@ -1,58 +1,30 @@
+{% extends 'base.html.twig' %}
 
-
-{% block stylesheet %}
-
-
-
-<link rel="stylesheet" href="./assets/css/menu.css">
-
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/menu.css') }}">
 {% endblock %}
 
 
 {% block body %}
-<section>
-<div class="container-fluid">
-
-
-
-  <h1 class="text-center">Menu</h1>
-  <div class="row">
-    <div class="col-xs-6 text-center">    <!-- METTRE LES PHOTOS + BACKGROUND DANS LE CSS -->
-      <a href="#"><img src="http://via.placeholder.com/4000x3000" alt="Gestion d'équipe"></a>
-    </div>
-    <div class="col-xs-6 text-center">
-      <a href="#"><img src="http://via.placeholder.com/4000x3000" alt="menu partie"></a>
-    </div>
-    <div class="col-xs-6 text-center">    <!-- METTRE LES PHOTOS + BACKGROUND DANS LE CSS -->
-      <a href="#"><img src="http://via.placeholder.com/4000x3000" alt="Gestion d'équipe"></a>
-    </div>
-    <div class="col-xs-6 text-center">
-      <a href="#"><img src="http://via.placeholder.com/4000x3000" alt="menu partie"></a>
-    </div>
-  </div>
-  </div>
-</section>
-
-
-
-
-
-
-{% endblock %}
-
-
-{% block javascript %}
-<script src="../assets/js/menu.js"></script>
-
-
-
-
+    <section>
+        <div class="container-fluid">
+            <h1 class="text-center">Menu</h1>
+            <div class="row">
+                <div class="col-xs-6 text-center">    <!-- METTRE LES PHOTOS + BACKGROUND DANS LE CSS -->
+                    <a href="#"><img src="http://via.placeholder.com/4000x3000" alt="Gestion d'équipe"></a>
+                </div>
+                <div class="col-xs-6 text-center">
+                    <a href="#"><img src="http://via.placeholder.com/4000x3000" alt="menu partie"></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 text-center">    <!-- METTRE LES PHOTOS + BACKGROUND DANS LE CSS -->
+                    <a href="#"><img src="http://via.placeholder.com/4000x3000" alt="Gestion d'équipe"></a>
+                </div>
+                <div class="col-xs-6 text-center">
+                    <a href="#"><img src="http://via.placeholder.com/4000x3000" alt="menu partie"></a>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

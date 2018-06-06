@@ -11,7 +11,6 @@
 }
 
 body {
-  background: black;
   text-align: center;
 }
 
@@ -23,27 +22,27 @@ p {
 }
 
 @mixin littlepad {
-  cursor: pointer;
-  float: left;
+  cursor:pointer;
+  float:left;
   width: 70px;
   height: 70px;
-  margin: .3125em;
+  margin:.3125em;
 }
 
 @mixin middlepad {
-  cursor: pointer;
-  float: left;
+  cursor:pointer;
+  float:left;
   width: 149px;
   height: 70px;
-  margin: .3125em;
+  margin:.3125em;
 }
 
 @mixin bigpad {
-  cursor: pointer;
-  float: left;
+  cursor:pointer;
+  float:left;
   width: 306px;
   height: 70px;
-  margin: .3125em;
+  margin:.3125em;
 }
 
 .yellow_pad {
@@ -82,17 +81,17 @@ p {
 }
 
 .redmiddle_pad {
-  background: linear-gradient(to bottom right, red, black);
+  background: linear-gradient(to bottom right, #eb1d12, black);
   @include middlepad
 }
 
 .middle_pad {
   background: linear-gradient(to bottom right, gray, black);
-  cursor: pointer;
-  float: left;
+  cursor:pointer;
+  float:left;
   width: 227px;
   height: 70px;
-  margin: .3125em;
+  margin:.3125em;
 }
 
 /* --------------------------------
@@ -107,6 +106,7 @@ p {
   color: white;
   font-size: 17px;
 }
+
 
 /* --------------------------------
  *
@@ -139,17 +139,16 @@ html {
     text-align: center;
   }
   .m-wrap {
-    @extend body;
     color: white;
     .o-watch-wrap {
       @extend .tx;
       @include box(350px, 350px);
       .menu-open .t-options {
-        opacity: 1 !important;
-        visibility: visible !important;
+        opacity: 1!important;
+        visibility: visible!important;
       }
       .menu-open .o-timer-wrap {
-        top: -15px !important;
+        top: -15px!important;
         opacity: 0;
       }
       .watch-ui {
@@ -246,7 +245,7 @@ html {
           font-size: 30px;
           @include box(60px);
           margin: auto;
-          background: red;
+          background: #eb1d12;
           border-radius: 50%;
           margin-top: -20px;
 
@@ -268,6 +267,8 @@ html {
   }
 }
 
+
+
 /* --------------------------------
  *
  * Modal Window
@@ -279,17 +280,19 @@ html {
   position: absolute;
   z-index: 1000;
   text-align: center;
-  top: 50%;
-  left: 50%;
-  margin: -100px 0 0 -150px;
+  top:50%;
+  left:50%;
+  margin: 150px 0 0 -150px;
   background: black;
-  width: 346px;
-  height: 180px;
-  padding: 30px;
-  -webkit-box-shadow: 0 0 125px 0 rgba(0, 0, 0, 1),
-  0 0 10000px 500px rgba(0, 0, 0, .75);
-  box-shadow: 0 0 125px 0 rgba(0, 0, 0, 1),
-  0 0 10000px 500px rgba(0, 0, 0, .75);
+  width:346px;
+  height:180px;
+  padding:30px;
+  -webkit-box-shadow:
+          0 0 125px 0 rgba(0,0,0,1),
+          0 0 10000px 500px rgba(0,0,0,.75);
+  box-shadow:
+          0 0 125px 0 rgba(0,0,0,1),
+          0 0 10000px 500px rgba(0,0,0,.75);
   a {
     color: white;
   }

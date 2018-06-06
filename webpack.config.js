@@ -30,6 +30,9 @@
             // will output as web/build/style_clavier.css
         .addEntry('style_clavier', './assets/scss/clavier.scss')
 
+        // will output as web/build/style_clavier.css
+        .addEntry('menu', './assets/scss/menu.css')
+
             // empty the outputPath dir before each build
         .cleanupOutputBeforeBuild()
 

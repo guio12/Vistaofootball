@@ -12,6 +12,8 @@
   "build/connexion.css": "./connexion.css",
   "build/style_clavier.js": "./style_clavier.js",
   "build/style_clavier.css": "./style_clavier.css",
+  "build/menu.js": "./menu.js",
+  "build/menu.css": "./menu.css",
   "build/manifest.js": "./manifest.js",
   "build/fonts/glyphicons-halflings-regular.eot": "./fonts/glyphicons-halflings-regular.f4769f9b.eot",
   "build/fonts/glyphicons-halflings-regular.ttf": "./fonts/glyphicons-halflings-regular.e18bbf61.ttf",
