@@ -17,6 +17,7 @@
     "webpack-notifier": "^1.6.0"
   },
   "devDependencies": {
+    "css-loader": "^0.28.11",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1"
   },
