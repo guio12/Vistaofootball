@@ -16,8 +16,9 @@ class RegistrationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstName')
-            ->add('lastName');
+            ->add('nom')
+            ->add('prenom')
+            ->add('nom_club');
     }/**
  * {@inheritdoc}
  */
@@ -34,6 +35,5 @@ class RegistrationType extends AbstractType
     {
         return 'appbundle_user_registration';
     }
-
 
 }

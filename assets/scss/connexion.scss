@@ -9,8 +9,8 @@ body {
 }
 body{
   font-family: 'Hind';
-  background-color: #000;
-  color: #fff;
+
+  color: blue;
 }
 
 .alerte_erreur {
@@ -19,15 +19,18 @@ body{
   margin-right: auto;
   margin-top: 5vh;
   margin-bottom: 0;
-
-
 }
 
-.brand-logo{
-  width: 120px;
+.img {
+  align-content: center;
 }
+
+.checkbox {
+  color: white;
+}
+
 .global{
-  //background-image: url('../img/img-login/bg.jpg');
+
   background-size: cover;
   background-position: center center;
   min-height: 100%;
@@ -38,6 +41,7 @@ body{
   position: absolute;
 }
 .global:after{
+  background-image: radial-gradient(circle, #2e2e2e, #343434, #3b3b3b, #414141, #484848);
   position: absolute;
   z-index: 1;
   width: 100%;
@@ -46,14 +50,14 @@ body{
   left: 0;
   top: 0;
   content: "";
-  background-color: rgba(0, 0, 0, 0.4);
+
 }
 .global .container{
   z-index: 3;
   position: relative;
 }
 .global .card{
-  background: rgba(0,0,0,0.7);
+  background: transparent;
 }
 a, a:hover{
   color: #fff;
@@ -74,7 +78,7 @@ a, a:hover{
   }
 }
 .bg-alt {
-  background-color: #fff;
+  background-color: white;
 }
 .btn{
   -webkit-transition: 350ms ease all;
@@ -98,16 +102,17 @@ a, a:hover{
   margin-bottom: 1.5rem;
 }
 .form-control{
-  height: 45px;
-  font-size: 16px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.5);
+  height: 30px;
+  font-size: 16vh;
+  background-color: white;
+  border-color: white;
   color: #FFFFFF;
+  padding-bottom: 3rem;
 }
 .form-control:focus {
   border-color: #FFFFFF;
-  background-color: transparent;
-  color: #FFFFFF;
+  background-color: lightgrey;
+  color: black;
 }
 .border-none{
   border: none !important;
@@ -156,10 +161,14 @@ a, a:hover{
   margin-top:5vh;
 }
 
-button{
-  margin-top:3vh;
-  margin-bottom:5vh;
+.connexion {
+  opacity: 0.8;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  background-color: #2b95d1;
 }
+
 
 
 
