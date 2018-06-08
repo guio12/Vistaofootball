@@ -12,6 +12,8 @@
   "build/connexion.css": "./connexion.css",
   "build/style_clavier.js": "./style_clavier.js",
   "build/style_clavier.css": "./style_clavier.css",
+  "build/stats.js": "./stats.js",
+  "build/stats.css": "./stats.css",
   "build/menu.js": "./menu.js",
   "build/menu.css": "./menu.css",
   "build/manifest.js": "./manifest.js",

@@ -1,12 +1,8 @@
-{% block stylesheet %}
+{% extends 'base.html.twig' %}
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/statsgenerales.css">
-
-
-
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/stats.css') }}">
 {% endblock %}
-
 
 {% block body %}
 
@@ -17,14 +13,15 @@
             <li class="team-visitor">FCB</li>
             <li class="info">06/06/06</li>
         </ul>
-    </div
+    </div>
 
     <br>
 
 
     <div class="stats">
         <div class="statsshow">
-            <h1><a href="https://media1.tenor.com/images/1d32658488e3814fd3a96b3f95024fa3/tenor.gif?itemid=8170185">POSSESSION</h1>
+            <h1><a href="https://media1.tenor.com/images/1d32658488e3814fd3a96b3f95024fa3/tenor.gif?itemid=8170185">POSSESSION
+            </h1>
             <div class="progress">
                 <div class="progress-bar progress-bar-info" style="width: 40%">
                     <p>40%</p>
@@ -83,10 +80,5 @@
 
 
 {% block javascript %}
-<script src="../assets/js/menu.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
 
 {% endblock %}
