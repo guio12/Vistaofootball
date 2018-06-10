@@ -1,49 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="67d87c6e-4cea-4bae-8a39-86cc7e737637" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-gyp/.npmignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-gyp/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-gyp/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-gyp/gyp/.npmignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-gyp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-gyp/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-sass/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-sass/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-sass/vendor/linux-x64-64/binding.node" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/bin/sshpk-verify" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/bin/sshpk-verify" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/algs.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/algs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/certificate.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/certificate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/dhe.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/dhe.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/ed-compat.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/ed-compat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/fingerprint.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/fingerprint.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/auto.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/auto.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/dnssec.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/dnssec.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/openssh-cert.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/openssh-cert.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/pem.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/pem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/pkcs1.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/pkcs1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/pkcs8.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/pkcs8.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/rfc4253.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/rfc4253.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/ssh-private.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/ssh-private.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/ssh.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/ssh.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/x509-pem.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/x509-pem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/x509.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/formats/x509.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/identity.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/identity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/private-key.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/private-key.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/signature.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/signature.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/ssh-buffer.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/ssh-buffer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/lib/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/lib/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sshpk/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sshpk/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/wide-align/node_modules/is-fullwidth-code-point/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/wide-align/node_modules/is-fullwidth-code-point/license" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/wide-align/node_modules/is-fullwidth-code-point/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/wide-align/node_modules/is-fullwidth-code-point/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/wide-align/node_modules/string-width/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/wide-align/node_modules/string-width/license" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/wide-align/node_modules/string-width/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/wide-align/node_modules/string-width/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/build/stats.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/build/stats.css" afterDir="false" />
-    </list>
+    <list default="true" id="67d87c6e-4cea-4bae-8a39-86cc7e737637" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +44,7 @@
       <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webpack.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
+            <state relative-caret-position="21">
               <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
             </state>
           </provider>
@@ -95,7 +53,7 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
+            <state relative-caret-position="378">
               <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="29" />
             </state>
           </provider>
@@ -104,7 +62,7 @@
       <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
+            <state relative-caret-position="1302">
               <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
             </state>
           </provider>
@@ -415,21 +373,22 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44514000" />
+    <option name="totallyTimeSpent" value="44574000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1920" height="1053" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18943436" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32938644" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50053364" side_tool="true" weight="0.25188375" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.07950907" side_tool="true" visible="true" weight="0.32938644" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32938644" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32938644" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.9204909" visible="true" weight="0.32938644" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3543223" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.4994664" visible="true" weight="0.3606028" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -458,21 +417,21 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27214715" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32982224" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3754337" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32982224" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="3" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -495,20 +454,22 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/.htaccess">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/build/jquery_jqueryUi.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/build/manifest.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="399">
+          <caret line="19" selection-start-line="19" selection-end-line="19" selection-end-column="29" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/build/manifest.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/web/build/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -526,9 +487,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#12#37#0#Twig" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -548,7 +506,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
+        <state relative-caret-position="1302">
           <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
         </state>
       </provider>
@@ -788,7 +746,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
+        <state relative-caret-position="21">
           <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
         </state>
       </provider>
@@ -802,7 +760,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
+        <state relative-caret-position="378">
           <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="29" />
         </state>
       </provider>
