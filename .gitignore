@@ -14,5 +14,5 @@
 !var/sessions/.gitkeep
 !var/SymfonyRequirements.php
 /.idea
-vendor/
-node_modules/
+/vendor/
+/node_modules/
