@@ -1,48 +1,50 @@
-{% extends 'base.html.twig' %}
+{% extends 'equipes/layout.html.twig' %}
 
 {% block body %}
-    <h1>Equipe</h1>
+    <div class="container">
+        <h1>ÉQUIPES</h1>
+        <div class="panel panel-default">
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ equipe.id }}</td>
+                </tr>
+                <tr>
+                    <th>Entraineurid</th>
+                    <td>{{ equipe.entraineurId }}</td>
+                </tr>
+                <tr>
+                    <th>Entraineurnomclub</th>
+                    <td>{{ equipe.entraineurNomClub }}</td>
+                </tr>
+                <tr>
+                    <th>Championnat</th>
+                    <td>{{ equipe.championnat }}</td>
+                </tr>
+                <tr>
+                    <th>Categorie</th>
+                    <td>{{ equipe.categorie }}</td>
+                </tr>
+                <tr>
+                    <th>Numequipe</th>
+                    <td>{{ equipe.numEquipe }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ equipe.id }}</td>
-            </tr>
-            <tr>
-                <th>Entraineurid</th>
-                <td>{{ equipe.entraineurId }}</td>
-            </tr>
-            <tr>
-                <th>Entraineurnomclub</th>
-                <td>{{ equipe.entraineurNomClub }}</td>
-            </tr>
-            <tr>
-                <th>Championnat</th>
-                <td>{{ equipe.championnat }}</td>
-            </tr>
-            <tr>
-                <th>Categorie</th>
-                <td>{{ equipe.categorie }}</td>
-            </tr>
-            <tr>
-                <th>Numequipe</th>
-                <td>{{ equipe.numEquipe }}</td>
-            </tr>
-        </tbody>
-    </table>
+        <a href="{{ path('equipes_index') }}">
+            <button class="btn_equipe btn">RETOUR À LA LISTE</button>
+        </a>
+        <br>
+        <a href="{{ path('equipes_edit', { 'id': equipe.id }) }}">
+            <button class="btn_equipe btn">ÉDITER</button>
+        </a>
 
-    <ul>
-        <li>
-            <a href="{{ path('equipes_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('equipes_edit', { 'id': equipe.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        {{ form_start(delete_form) }}
+        <button type="submit" value="Delete" class="btn_equipe btn">SUPPRIMER</button>
+        {{ form_end(delete_form) }}
+
+    </div>
 {% endblock %}

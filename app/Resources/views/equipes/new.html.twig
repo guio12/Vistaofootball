@@ -1,16 +1,17 @@
-{% extends 'base.html.twig' %}
+{% extends 'equipes/layout.html.twig' %}
 
 {% block body %}
-    <h1>Equipe creation</h1>
+    <div class="container">
+        <h1>CRÉATION ÉQUIPE :</h1>
+        <div class="jumbotron" style="color:black;">
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="btn_equipe btn" type="submit" value="Create">CRÉER</button>
+            {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('equipes_index') }}">Back to the list</a>
-        </li>
-    </ul>
+            <a href="{{ path('equipes_index') }}"><button class="btn_equipe btn">RETOUR À LA LISTE</button></a>
+
+        </div>
+    </div>
 {% endblock %}
