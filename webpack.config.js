@@ -21,6 +21,9 @@
             // will output as web/build/connexion.css
         .addEntry('connexion', './assets/scss/connexion.scss')
 
+        // will output as web/build/connexion.css
+        .addEntry('inscription', './assets/scss/inscription.scss')
+
             // will output as web/build/images/...png
         .addEntry('logo_connexion', './assets/images/Vistao football bk.png')
 
