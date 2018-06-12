@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="67d87c6e-4cea-4bae-8a39-86cc7e737637" name="Default" comment="">
 <<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/app/Resources/views/accueil/index.html.twig" afterDir="false" />
@@ -19,6 +20,25 @@
       <change beforePath="$PROJECT_DIR$/assets/scss/connexion.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/connexion.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/build/connexion.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/build/connexion.css" afterDir="false" />
+=======
+    <list default="true" id="9eeda033-6bb8-4dca-8770-99d89a124aba" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Resources/views/stats/cpa.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/cpa.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.web-server-pid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/statsgenerales.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/statsgenerales.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/build/connexion.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/build/connexion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/build/manifest.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/build/manifest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/build/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/build/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/build/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/build/menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/build/stats.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/build/stats.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/build/stats.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/build/stats.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/build/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/build/style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/build/style_clavier.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/build/style_clavier.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+>>>>>>> Dev
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,6 +55,7 @@
     <leaf />
 =======
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
@@ -49,19 +70,27 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="63">
               <caret line="3" column="61" selection-start-line="3" selection-start-column="61" selection-end-line="3" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register_content.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig">
+=======
+      <file leaf-file-name="general.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/stats/general.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="40">
+              <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+>>>>>>> Dev
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/clavier/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5000">
+              <caret line="250" column="14" selection-start-line="250" selection-start-column="14" selection-end-line="250" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
       <file leaf-file-name="login_content.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig">
           <provider selected="true" editor-type-id="text-editor">
@@ -76,10 +105,37 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
               <caret line="12" column="79" selection-start-line="12" selection-start-column="79" selection-end-line="12" selection-end-column="79" />
+=======
+      <file leaf-file-name="cpa.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/stats/cpa.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-689">
+              <caret line="82" column="26" selection-start-line="82" selection-start-column="26" selection-end-line="82" selection-end-column="26" />
+              <folding>
+                <element signature="e#12#26#0#Twig" expanded="true" />
+                <element signature="e#703#721#0#HTML" expanded="true" />
+                <element signature="e#832#850#0#HTML" expanded="true" />
+                <element signature="e#1093#1111#0#HTML" expanded="true" />
+                <element signature="e#1222#1239#0#HTML" expanded="true" />
+                <element signature="e#1441#1459#0#HTML" expanded="true" />
+                <element signature="e#1570#1588#0#HTML" expanded="true" />
+                <element signature="e#1792#1810#0#HTML" expanded="true" />
+                <element signature="e#1921#1939#0#HTML" expanded="true" />
+                <element signature="e#2238#2256#0#HTML" expanded="true" />
+                <element signature="e#2367#2385#0#HTML" expanded="true" />
+                <element signature="e#2630#2648#0#HTML" expanded="true" />
+                <element signature="e#2759#2776#0#HTML" expanded="true" />
+                <element signature="e#2985#3003#0#HTML" expanded="true" />
+                <element signature="e#3114#3132#0#HTML" expanded="true" />
+                <element signature="e#3341#3359#0#HTML" expanded="true" />
+                <element signature="e#3470#3488#0#HTML" expanded="true" />
+              </folding>
+>>>>>>> Dev
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/config/config.yml">
           <provider selected="true" editor-type-id="text-editor">
@@ -103,15 +159,33 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="273">
               <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+=======
+      <file leaf-file-name="cpa.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/scss/cpa.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="381">
+              <caret line="76" column="14" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
+>>>>>>> Dev
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="security.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/config/security.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="588">
               <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+=======
+      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="68" column="5" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
+              <folding>
+                <element signature="e#2017#2038#0#PHP" expanded="true" />
+              </folding>
+>>>>>>> Dev
             </state>
           </provider>
         </entry>
@@ -145,10 +219,10 @@
         <option value="$PROJECT_DIR$/assets/scss/clavier.scss" />
         <option value="$PROJECT_DIR$/app/Resources/views/clavier/index.html.twig" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/assets/scss/statsgenerales.css" />
         <option value="$PROJECT_DIR$/app/Resources/views/stats/general.html.twig" />
         <option value="$PROJECT_DIR$/.gitignore" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/assets/scss/connexion.scss" />
@@ -160,6 +234,13 @@
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
+=======
+        <option value="$PROJECT_DIR$/assets/scss/statsgenerales.scss" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/webpack.config.js" />
+        <option value="$PROJECT_DIR$/assets/scss/cpa.scss" />
+        <option value="$PROJECT_DIR$/app/Resources/views/stats/cpa.html.twig" />
+>>>>>>> Dev
       </list>
     </option>
   </component>
@@ -182,6 +263,7 @@
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/doctrine/orm" />
+<<<<<<< HEAD
       <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
       <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
       <path value="$PROJECT_DIR$/vendor/sensio/distribution-bundle" />
@@ -221,13 +303,54 @@
       <path value="$PROJECT_DIR$/vendor/symfony/symfony" />
       <path value="$PROJECT_DIR$/vendor/psr/container" />
       <path value="$PROJECT_DIR$/vendor/psr/cache" />
+=======
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-util" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php56" />
+      <path value="$PROJECT_DIR$/vendor/symfony/swiftmailer-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-icu" />
+      <path value="$PROJECT_DIR$/vendor/fig/link-util" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-apcu" />
+      <path value="$PROJECT_DIR$/vendor/sensio/generator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/sensio/distribution-bundle" />
+      <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
+      <path value="$PROJECT_DIR$/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/vendor/jdorn/sql-formatter" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-cache-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/vendor/incenteev/composer-parameter-handler" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/sensiolabs/security-checker" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
+      <path value="$PROJECT_DIR$/vendor/psr/link" />
+      <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/symfony/symfony" />
+>>>>>>> Dev
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="195" />
-    <option name="y" value="129" />
-    <option name="width" value="1877" />
-    <option name="height" value="1367" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="85" />
+    <option name="y" value="56" />
+    <option name="width" value="1523" />
+    <option name="height" value="836" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -235,74 +358,34 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Vistao" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Vistao" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Vistaofootball" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vistaofootball" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="Vistao" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Vistao" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Vistaofootball" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vistaofootball" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="Vistao" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Vistao" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Vistao" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Vistao" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Vistaofootball" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vistaofootball" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="Vistao" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Vistao" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="FOSUserBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Vistao" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Vistao" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="FOSUserBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Vistao" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Vistao" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="FOSUserBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Registration" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Vistao" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Vistao" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="FOSUserBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Security" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Vistao" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Vistao" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Vistaofootball" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vistaofootball" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="Vistao" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Vistao" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Vistaofootball" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vistaofootball" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
@@ -317,11 +400,12 @@
               <item name="clavier" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="Vistao" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Vistao" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Vistaofootball" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vistaofootball" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+<<<<<<< HEAD
               <item name="coach" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -331,16 +415,17 @@
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="contact" type="2a2b976b:PhpTreeStructureProvider$1" />
+=======
+              <item name="stats" type="2a2b976b:PhpTreeStructureProvider$1" />
+>>>>>>> Dev
             </path>
             <path>
-              <item name="Vistao" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Vistao" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="default" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Vistaofootball" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vistaofootball" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
+<<<<<<< HEAD
               <item name="Vistao" type="b2602c69:ProjectViewProjectNode" />
               <item name="Vistao" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
@@ -359,27 +444,33 @@
             <path>
               <item name="Vistao" type="b2602c69:ProjectViewProjectNode" />
               <item name="Vistao" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Vistao" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Vistao" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="images" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Vistao" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Vistao" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Vistao" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Vistao" type="2a2b976b:PhpTreeStructureProvider$1" />
+=======
+              <item name="Vistaofootball" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vistaofootball" type="2a2b976b:PhpTreeStructureProvider$1" />
+>>>>>>> Dev
               <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="scss" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
+              <item name="Vistaofootball" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vistaofootball" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Vistaofootball" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vistaofootball" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Vistaofootball" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vistaofootball" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+<<<<<<< HEAD
               <item name="Vistao" type="b2602c69:ProjectViewProjectNode" />
               <item name="Vistao" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
@@ -424,24 +515,31 @@
             <path>
               <item name="Vistao" type="b2602c69:ProjectViewProjectNode" />
               <item name="Vistao" type="2a2b976b:PhpTreeStructureProvider$1" />
+=======
+              <item name="Vistaofootball" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vistaofootball" type="2a2b976b:PhpTreeStructureProvider$1" />
+>>>>>>> Dev
               <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="Vistao" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Vistao" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="build" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Vistaofootball" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../flyaround" />
+=======
+    <property name="last_opened_file_path" value="$USER_HOME$/flyaround" />
+>>>>>>> Dev
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -467,7 +565,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="67d87c6e-4cea-4bae-8a39-86cc7e737637" name="Default" comment="" />
+      <changelist id="9eeda033-6bb8-4dca-8770-99d89a124aba" name="Default" comment="" />
       <created>1528126051123</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -501,6 +599,7 @@
       <workItem from="1528460737211" duration="425000" />
       <workItem from="1528461599414" duration="6309000" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <workItem from="1528706595310" duration="2330000" />
       <workItem from="1528710506849" duration="6570000" />
       <workItem from="1528723503818" duration="4512000" />
@@ -515,10 +614,15 @@
       <workItem from="1528706595310" duration="1015000" />
 >>>>>>> c5b467d00137ee66e7c22423a76812c8c3bd4c73
 >>>>>>> Dev
+=======
+      <workItem from="1528717494655" duration="2154000" />
+      <workItem from="1528787495717" duration="2150000" />
+>>>>>>> Dev
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
 <<<<<<< HEAD
     <option name="totallyTimeSpent" value="68359000" />
   </component>
@@ -548,11 +652,22 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.078975454" side_tool="true" visible="true" weight="0.2540366" />
 >>>>>>> c5b467d00137ee66e7c22423a76812c8c3bd4c73
 >>>>>>> Dev
+=======
+    <option name="totallyTimeSpent" value="51415000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="85" y="56" width="1523" height="836" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.35044977" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.108327694" side_tool="true" visible="true" weight="0.3293944" />
+>>>>>>> Dev
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
-<<<<<<< HEAD
       <window_info id="npm" order="2" side_tool="true" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.9183565" visible="true" weight="0.2540366" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20277481" />
 =======
@@ -561,6 +676,10 @@
 =======
       <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.92102456" visible="true" weight="0.2540366" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19210246" />
+>>>>>>> Dev
+=======
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.8916723" visible="true" weight="0.3293944" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22748815" />
 >>>>>>> Dev
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
@@ -651,6 +770,7 @@
   </component>
   <component name="editorHistoryManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
@@ -680,6 +800,8 @@
       </provider>
     </entry>
 >>>>>>> c5b467d00137ee66e7c22423a76812c8c3bd4c73
+=======
+>>>>>>> Dev
     <entry file="file://$PROJECT_DIR$/web/build/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -692,13 +814,7 @@
         <state relative-caret-position="-211" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Registration/register.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Registration/register.html.twig" />
     <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/email.txt.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -710,6 +826,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="35" column="2" selection-start-line="35" selection-start-column="2" selection-end-line="52" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1302">
+          <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -802,13 +925,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/clavier/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="769">
-          <caret line="250" column="14" lean-forward="true" selection-start-line="250" selection-start-column="14" selection-end-line="250" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/css-loader/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -869,6 +985,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/web/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="704">
@@ -957,6 +1074,13 @@
         <state relative-caret-position="231">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
+=======
+    <entry file="file://$PROJECT_DIR$/web/assets/js/bootstrap.min.js" />
+    <entry file="file://$PROJECT_DIR$/var/cache/dev/twig/cd/cd13b6548a6f5c1a53c9382bf55dac09f51431d758ad804919715a68f74927e5.php" />
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-288" />
+>>>>>>> Dev
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig">
@@ -995,16 +1119,21 @@
       </provider>
     </entry>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig">
 =======
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/webpack.config.js">
+=======
+    <entry file="file://$PROJECT_DIR$/package.json">
+>>>>>>> Dev
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="23" column="47" lean-forward="true" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+        <state relative-caret-position="378">
+          <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="29" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 =======
 >>>>>>> c5b467d00137ee66e7c22423a76812c8c3bd4c73
     <entry file="file://$PROJECT_DIR$/assets/scss/statsgenerales.css">
@@ -1026,43 +1155,61 @@
     <entry file="file://$PROJECT_DIR$/assets/scss/connexion.scss">
 =======
     <entry file="file://$PROJECT_DIR$/.gitignore">
+=======
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/coach/menu.html.twig">
+>>>>>>> Dev
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="958">
-          <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
+        <state relative-caret-position="-60">
+          <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/assets/scss/statsgenerales.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="29" />
+        <state relative-caret-position="241">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/EquipesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2009" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="68" column="5" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
+          <folding>
+            <element signature="e#2017#2038#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/scss/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="12" selection-start-column="12" selection-end-column="12" />
 =======
@@ -1097,6 +1244,57 @@
         <state relative-caret-position="315">
           <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
 >>>>>>> c5b467d00137ee66e7c22423a76812c8c3bd4c73
+>>>>>>> Dev
+=======
+        <state relative-caret-position="260">
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/stats/general.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/clavier/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5000">
+          <caret line="250" column="14" selection-start-line="250" selection-start-column="14" selection-end-line="250" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/scss/cpa.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="76" column="14" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/stats/cpa.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-689">
+          <caret line="82" column="26" selection-start-line="82" selection-start-column="26" selection-end-line="82" selection-end-column="26" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+            <element signature="e#703#721#0#HTML" expanded="true" />
+            <element signature="e#832#850#0#HTML" expanded="true" />
+            <element signature="e#1093#1111#0#HTML" expanded="true" />
+            <element signature="e#1222#1239#0#HTML" expanded="true" />
+            <element signature="e#1441#1459#0#HTML" expanded="true" />
+            <element signature="e#1570#1588#0#HTML" expanded="true" />
+            <element signature="e#1792#1810#0#HTML" expanded="true" />
+            <element signature="e#1921#1939#0#HTML" expanded="true" />
+            <element signature="e#2238#2256#0#HTML" expanded="true" />
+            <element signature="e#2367#2385#0#HTML" expanded="true" />
+            <element signature="e#2630#2648#0#HTML" expanded="true" />
+            <element signature="e#2759#2776#0#HTML" expanded="true" />
+            <element signature="e#2985#3003#0#HTML" expanded="true" />
+            <element signature="e#3114#3132#0#HTML" expanded="true" />
+            <element signature="e#3341#3359#0#HTML" expanded="true" />
+            <element signature="e#3470#3488#0#HTML" expanded="true" />
+          </folding>
 >>>>>>> Dev
         </state>
       </provider>

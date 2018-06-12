@@ -70,4 +70,15 @@ class DefaultController extends Controller
         ]);
     }
 
+    /**
+     * @Route("/cpa", name="cpa")
+     */
+    public function cpaAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render('stats/cpa.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+        ]);
+    }
+
 }
