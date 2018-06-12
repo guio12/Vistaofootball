@@ -1,47 +1,56 @@
-{% extends 'base.html.twig' %}
+{% extends 'equipes/layout.html.twig' %}
 
 {% block body %}
-    <h1>Equipes list</h1>
+    <div class="container">
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Entraineurid</th>
-                <th>Entraineurnomclub</th>
-                <th>Championnat</th>
-                <th>Categorie</th>
-                <th>Numequipe</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for equipe in equipes %}
-            <tr>
-                <td><a href="{{ path('equipes_show', { 'id': equipe.id }) }}">{{ equipe.id }}</a></td>
-                <td>{{ equipe.entraineurId }}</td>
-                <td>{{ equipe.entraineurNomClub }}</td>
-                <td>{{ equipe.championnat }}</td>
-                <td>{{ equipe.categorie }}</td>
-                <td>{{ equipe.numEquipe }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('equipes_show', { 'id': equipe.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('equipes_edit', { 'id': equipe.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <h1>LISTE DES ÉQUIPES</h1>
 
-    <ul>
-        <li>
-            <a href="{{ path('equipes_new') }}">Create a new equipe</a>
-        </li>
-    </ul>
+        <div class="panel panel-default">
+            <!-- Table -->
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom de l'entraîneur</th>
+                    <th>Nom du club</th>
+                    <th>Championnat</th>
+                    <th>Catégorie</th>
+                    <th>Numéro d'équipe</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for equipe in equipes %}
+                    <tr>
+                        <td><a href="{{ path('equipes_show', { 'id': equipe.id }) }}">{{ equipe.id }}</a></td>
+                        <td>{{ equipe.entraineurId }}</td>
+                        <td>{{ equipe.entraineurNomClub }}</td>
+                        <td>{{ equipe.championnat }}</td>
+                        <td>{{ equipe.categorie }}</td>
+                        <td>{{ equipe.numEquipe }}</td>
+                        <td>
+
+                            <a href="{{ path('equipes_show', { 'id': equipe.id }) }}">
+                                <button class="btn_equipe btn">DÉTAILS</button>
+                            </a>
+
+                            <a href="{{ path('equipes_edit', { 'id': equipe.id }) }}">
+                                <button class="btn_equipe btn">ÉDITER</button>
+                            </a>
+
+
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+
+
+            </table>
+        </div>
+
+        <a href="{{ path('equipes_new') }}">
+            <button class="btn_equipe btn" >CRÉER UNE NOUVELLE ÉQUIPE</button>
+        </a>
+
+    </div>
 {% endblock %}

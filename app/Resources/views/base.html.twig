@@ -8,7 +8,31 @@
     {% block stylesheets %}{% endblock %}
 </head>
 <body>
+{%  block content %}
+<div>
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        Bienvenue {{ app.user.username }}
+        <a href="{{ path('fos_user_security_logout') }}">
+            {{ 'Se déconnecter'|trans({}, 'FOSUserBundle') }}
+        </a>
+    {% else %}
+        <a href="{{ path('fos_user_security_login') }}">{{ 'Se connecter'|trans({}, 'FOSUserBundle') }}</a>
+    {% endif %}
+</div>
+
+{% if app.request.hasPreviousSession %}
+    {% for type, messages in app.session.flashbag.all() %}
+        {% for message in messages %}
+            <div class="flash-{{ type }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+{% endif %}
+{% endblock %}
+
 {% block body %}{% endblock %}
+{% block fos_user_content %}{% endblock %}
 
 
 <!-- these two files now must be included in every page -->
