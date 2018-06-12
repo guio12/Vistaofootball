@@ -3,8 +3,8 @@ parameters:
     database_host: 127.0.0.1
     database_port: null
     database_name: vistao
-    database_user: wilder
-    database_password: '08041990'
+    database_user: root
+    database_password: Ahb1daM!
     mailer_transport: smtp
     mailer_host: 127.0.0.1
     mailer_user: tiffany.maurath@orange.fr

@@ -20,6 +20,14 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/accueil", name="accueil")
+     */
+    public function accueilAction()
+    {
+        return $this->render('/accueil/index.html.twig');
+    }
+
+    /**
      * @Route("/contact", name="contact")
      */
     public function contactAction()
