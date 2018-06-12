@@ -34,7 +34,10 @@
         .addEntry('menu', './assets/scss/menu.css')
 
         // will output as web/build/stats.css
-        .addEntry('stats', './assets/scss/statsgenerales.css')
+        .addEntry('stats', './assets/scss/statsgenerales.scss')
+
+        // will output as web/build/cpa.scss
+        .addEntry('cpa', './assets/scss/cpa.scss')
 
         // will output as web/build/admin_equipes.css
         .addEntry('admin_equipes', './assets/scss/admin_equipes.scss')
