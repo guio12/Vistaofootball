@@ -1,21 +1,26 @@
-{% extends 'base.html.twig' %}
+{% extends 'equipes/layout.html.twig' %}
 
 {% block body %}
-    <h1>Equipe edit</h1>
+    <div class="container">
+        <h1>ÉDITION ÉQUIPE :</h1>
+        <div class="jumbotron" style="color:black;">
 
-    {{ form_start(edit_form) }}
+        {{ form_start(edit_form) }}
+
+                {{ form_widget(edit_form) }}
+
         {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('equipes_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+
+            <button class="btn_equipe btn" type="submit" value="Edit">ÉDITER</button>
+        {{ form_end(edit_form) }}
+
+            <a href="{{ path('equipes_index') }}"><button class="btn_equipe btn">RETOUR À LA LISTE</button></a>
+
+                {{ form_start(delete_form) }}
+            <button class="btn_equipe btn" type="submit" value="Delete">SUPPRIMER</button>
+                {{ form_end(delete_form) }}
+
+    </div>
+    </div>
 {% endblock %}

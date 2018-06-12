@@ -36,6 +36,12 @@
         // will output as web/build/stats.css
         .addEntry('stats', './assets/scss/statsgenerales.css')
 
+        // will output as web/build/admin_equipes.css
+        .addEntry('admin_equipes', './assets/scss/admin_equipes.scss')
+
+        // will output as web/build/images/logo_vistao.png
+        .addEntry('logo_vistao', './assets/images/logo_vistao.png')
+
             // empty the outputPath dir before each build
         .cleanupOutputBeforeBuild()
 

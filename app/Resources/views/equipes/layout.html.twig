@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome admin!{% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="stylesheet" href="{{ asset('build/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/admin_equipes.css') }}">
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+
+{% block header %}
+    <!-- navigation -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img class="logo" alt="vistao football logo brand" src="{{ asset('build/images/logo_vistao.5263432c.png') }}">
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- end navigation -->
+{% endblock %}
+
+
+{% block body %}{% endblock %}
+
+
+<!-- these two files now must be included in every page -->
+<script src="{{ asset('build/manifest.js') }}"></script>
+<script src="{{ asset('build/jquery_jqueryUi.js') }}"></script>
+
+<script src="{{ asset('build/app.js') }}"></script>
+{% block javascripts %}{% endblock %}
+</body>
+</html>
