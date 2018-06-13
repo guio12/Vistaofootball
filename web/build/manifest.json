@@ -5,7 +5,11 @@
   "build/app.css": "./app.css",
   "build/jquery_jqueryUi.js": "./jquery_jqueryUi.js",
   "build/contact.js": "./contact.js",
+  "build/stats_image.js": "./stats_image.js",
+  "build/param_image.js": "./param_image.js",
+  "build/match_image.js": "./match_image.js",
   "build/logo_vistao.js": "./logo_vistao.js",
+  "build/equipe_image.js": "./equipe_image.js",
   "build/logo_connexion.js": "./logo_connexion.js",
   "build/style.js": "./style.js",
   "build/style.css": "./style.css",
@@ -25,6 +29,10 @@
   "build/fonts/glyphicons-halflings-regular.woff": "./fonts/glyphicons-halflings-regular.fa277232.woff",
   "build/fonts/glyphicons-halflings-regular.woff2": "./fonts/glyphicons-halflings-regular.448c34a5.woff2",
   "build/images/Vistao football bk.png": "./images/Vistao football bk.02bd3d43.png",
+  "build/images/equipe_image.jpeg": "./images/equipe_image.5430d66b.jpeg",
   "build/images/logo_vistao.png": "./images/logo_vistao.5263432c.png",
+  "build/images/match_image.jpeg": "./images/match_image.fa3c11f7.jpeg",
+  "build/images/param_image.jpeg": "./images/param_image.f7e289dd.jpeg",
+  "build/images/stats_image.jpeg": "./images/stats_image.05b74e1e.jpeg",
   "build/images/glyphicons-halflings-regular.svg": "./images/glyphicons-halflings-regular.89889688.svg"
 }

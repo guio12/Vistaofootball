@@ -42,6 +42,18 @@
         // will output as web/build/images/logo_vistao.png
         .addEntry('logo_vistao', './assets/images/logo_vistao.png')
 
+        // will output as web/build/images/equipe_image.jpeg
+        .addEntry('equipe_image', './assets/images/equipe_image.jpeg')
+
+        // will output as web/build/images/match_image.jpeg
+        .addEntry('match_image', './assets/images/match_image.jpeg')
+
+        // will output as web/build/images/param_image.jpeg
+        .addEntry('param_image', './assets/images/param_image.jpeg')
+
+        // will output as web/build/images/stats_image.jpeg
+        .addEntry('stats_image', './assets/images/stats_image.jpeg')
+
             // empty the outputPath dir before each build
         .cleanupOutputBeforeBuild()
 
