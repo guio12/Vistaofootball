@@ -28,6 +28,7 @@ var actionneur = "";
 var action = "";
 var actionX = "";
 var actionDR = "";
+var actionTC = "";
 
 $(".joueur*").click(function(){
   if (etat === 0) {
@@ -35,7 +36,7 @@ $(".joueur*").click(function(){
      actionneur = $(this).attr('value');
      etat = 1;
 
-  }else if (etat === 1 &&  ($(this).attr('value') !== actionneur) ) {
+  }else if (etat === 1 &&  ($(this).attr('value') !== actionneur) || actionneur == "Adversaire" ) {
 
       receveur = $(this).attr('value');
 
@@ -43,8 +44,9 @@ $(".joueur*").click(function(){
 
     actionneur = receveur;
     receveur="";
+
     etat = 1;
-  }else if (etat === 2 &&  ($(this).attr('value') !== actionneur) ) {
+  }else if (etat === 2 &&  ($(this).attr('value') !== actionneur || actionneur == "Adversaire" ) ) {
 
       receveur = $(this).attr('value');
 
@@ -69,6 +71,16 @@ $(".action*").click(function(){
     }
 });
 
+$(".actionSPE*").click(function(){
+if (etat === 4) {
+
+actionSPE = $(this).attr('value');
+console.log(actionneur + actionTC + actionSPE);
+actionTC = "";
+etat = 0;
+
+}
+});
 
 $(".actionX*").click(function(){
   if (etat === 1) {
@@ -79,6 +91,7 @@ $(".actionX*").click(function(){
       actionneur = "";
       action = "";
       actionX = "";
+      actionTC = "";
 
   }
 });
@@ -89,7 +102,15 @@ $(".actionDR").click(function(){
 
       actionDR = $(this).attr('value');
       console.log( actionneur + actionDR);
-        etat = 1;
+        etat = 0;
+        }
+});
+$(".actionTC").click(function(){
+  console.log(etat);
+  if (etat === 1 && actionTC.length == 0 ) {
+
+      actionTC = $(this).attr('value');
+        etat = 4;
         }
 });
 
