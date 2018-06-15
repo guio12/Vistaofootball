@@ -1,9 +1,9 @@
-webpackJsonp([14],{
+webpackJsonp([6],{
 
-/***/ "./assets/scss/statsgenerales.css":
-/*!****************************************!*\
-  !*** ./assets/scss/statsgenerales.css ***!
-  \****************************************/
+/***/ "./assets/scss/statsgenerales.scss":
+/*!*****************************************!*\
+  !*** ./assets/scss/statsgenerales.scss ***!
+  \*****************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports) {
@@ -12,4 +12,4 @@ webpackJsonp([14],{
 
 /***/ })
 
-},["./assets/scss/statsgenerales.css"]);
+},["./assets/scss/statsgenerales.scss"]);

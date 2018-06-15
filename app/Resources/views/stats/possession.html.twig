@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/stats.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <ul class="score-board">
+            <li class="team-home">RCSA</li>
+            <li class="score">20 - 0</li>
+            <li class="team-visitor">FCB</li>
+            <li class="info">06/06/06</li>
+        </ul>
+    </div>
+
+    <br>
+
+    <div class="stats">
+        <div class="statsshow">
+            <h1><a href="">POSSESSION</a></h1>
+            <div class="progress">
+                <div class="progress-bar-info" style="width: 40%">
+                    <p>40%</p>
+                </div>
+            </div>
+
+            <br>
+
+            <h1><a href="">TIRS</a></h1>
+            <div class="progress">
+                <div class="progress-bar-info" style="width: 80%">
+                    <p>80%</p>
+                </div>
+            </div>
+
+            <br>
+
+
+            <h1>RECUPERATIONS</h1>
+            <div class="progress">
+                <div class="progress-bar-info" style="width: 52%">
+                    <p>52%</p>
+                </div>
+            </div>
+
+            <br>
+
+            <h1>CPA</h1>
+            <div class="progress">
+                <div class="progress-bar-info" style="width: 10%">
+                    <p>10%</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascript %}
+
+{% endblock %}

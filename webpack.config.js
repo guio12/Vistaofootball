@@ -21,6 +21,9 @@
             // will output as web/build/connexion.css
         .addEntry('connexion', './assets/scss/connexion.scss')
 
+        // will output as web/build/connexion.css
+        .addEntry('inscription', './assets/scss/inscription.scss')
+
             // will output as web/build/images/...png
         .addEntry('logo_connexion', './assets/images/Vistao football bk.png')
 
@@ -34,25 +37,16 @@
         .addEntry('menu', './assets/scss/menu.css')
 
         // will output as web/build/stats.css
-        .addEntry('stats', './assets/scss/statsgenerales.css')
+        .addEntry('stats', './assets/scss/statsgenerales.scss')
+
+        // will output as web/build/cpa.scss
+        .addEntry('cpa', './assets/scss/cpa.scss')
 
         // will output as web/build/admin_equipes.css
         .addEntry('admin_equipes', './assets/scss/admin_equipes.scss')
 
         // will output as web/build/images/logo_vistao.png
         .addEntry('logo_vistao', './assets/images/logo_vistao.png')
-
-        // will output as web/build/images/equipe_image.jpeg
-        .addEntry('equipe_image', './assets/images/equipe_image.jpeg')
-
-        // will output as web/build/images/match_image.jpeg
-        .addEntry('match_image', './assets/images/match_image.jpeg')
-
-        // will output as web/build/images/param_image.jpeg
-        .addEntry('param_image', './assets/images/param_image.jpeg')
-
-        // will output as web/build/images/stats_image.jpeg
-        .addEntry('stats_image', './assets/images/stats_image.jpeg')
 
             // empty the outputPath dir before each build
         .cleanupOutputBeforeBuild()
