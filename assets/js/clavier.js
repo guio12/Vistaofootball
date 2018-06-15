@@ -13,8 +13,113 @@ require('bootstrap-sass');
 
 
 $(document).ready(function () {
-    console.log('Clavier Vistao');
+console.log('Clavier Vistao');
 });
+
+
+
+etat = 0;
+
+
+console.log(etat);
+
+var receveur = "";
+var actionneur = "";
+var action = "";
+var actionX = "";
+var actionDR = "";
+var actionTC = "";
+
+$(".joueur*").click(function(){
+  if (etat === 0) {
+
+     actionneur = $(this).attr('value');
+     etat = 1;
+
+  }else if (etat === 1 &&  ($(this).attr('value') !== actionneur) || actionneur == "Adversaire" ) {
+
+      receveur = $(this).attr('value');
+
+    if ( receveur.length ) {if (action.length == false ) { action = "passe";  } console.log(actionneur +" "+ action + " " + receveur);  }
+
+    actionneur = receveur;
+    receveur="";
+
+    etat = 1;
+  }else if (etat === 2 &&  ($(this).attr('value') !== actionneur || actionneur == "Adversaire" ) ) {
+
+      receveur = $(this).attr('value');
+
+    if ( receveur.length ) {if (action.length == false ) { action = "passe";  } console.log(actionneur +" "+ action + " " + receveur);  }
+
+    actionneur = receveur;
+    receveur = "";
+    action ="";
+    etat = 1;
+  }
+
+});
+
+
+$(".action*").click(function(){
+
+    if (etat === 1) {
+
+        action = $(this).attr('value');
+        etat = 2;
+
+    }
+});
+
+$(".actionSPE*").click(function(){
+if (etat === 4) {
+
+actionSPE = $(this).attr('value');
+console.log(actionneur + actionTC + actionSPE);
+actionTC = "";
+etat = 0;
+
+}
+});
+
+$(".actionX*").click(function(){
+  if (etat === 1) {
+
+      actionX = $(this).attr('value');
+      console.log(actionneur + actionX);
+      etat = 0;
+      actionneur = "";
+      action = "";
+      actionX = "";
+      actionTC = "";
+
+  }
+});
+
+
+$(".actionDR").click(function(){
+  if (etat === 1) {
+
+      actionDR = $(this).attr('value');
+      console.log( actionneur + actionDR);
+        etat = 0;
+        }
+});
+$(".actionTC").click(function(){
+  console.log(etat);
+  if (etat === 1 && actionTC.length == 0 ) {
+
+      actionTC = $(this).attr('value');
+        etat = 4;
+        }
+});
+
+
+
+
+
+
+
 
 /* --------------------------------
  *
@@ -22,7 +127,7 @@ $(document).ready(function () {
  *
  *-------------------------------- */
 
-$("#pads*").click(function () {
+$(".pads*").click(function () {
     var button_color = $(this).data('color');
     $(this).effect("highlight", {color: button_color}, 160);
 });
