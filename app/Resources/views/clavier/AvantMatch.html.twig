@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/style_clavier.css') }}">
+{% endblock %}
+
+
+
+{% block body %}
+
+<select class="" name="" style="color:black;">
+
+
+{% for equipe in equipes %}
+<option value=""></option>
+<option value="{{ equipe.id }}">{{ equipe.championnat }}, {{ equipe.categorie }}, {{ equipe.numEquipe }} </option>
+
+{% endfor %}
+</select>
+
+
+<div class="joueurs">
+
+</div>
+
+{% endblock %}
+
+
+    {% block javascripts %}
+			<script type="text/javascript">
+			var id = "";
+			$("select").change(function () {
+
+				id =   $("select option:selected").val();
+				console.log(id);
+
+
+						$.ajax({
+						url: "joueurByEquipe/" + id,
+						context: document.body
+						}).done(function() {
+						$( ".joueurs" ).text( "done" );
+						});
+
+
+
+
+  })
+  .change();
+
+			</script>
+    {% endblock %}
