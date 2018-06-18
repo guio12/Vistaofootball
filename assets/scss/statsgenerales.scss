@@ -1,10 +1,6 @@
 /*Score*/
 
-@import url(https://fonts.googleapis.com/css?family=Days+One);
-
-
 .score-board {
-    font-family: "Days One", sans-serif;
     list-style: none;
     padding: 0;
     margin: 0 auto;
@@ -47,11 +43,6 @@
 
 /*BOX*/
 
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
-
-
-
-
 .statsshow {
     position: inline-block;
     z-index: 1;
@@ -66,7 +57,6 @@
 
 h1{
     color: whitesmoke;
-    font-family: "Days One", sans-serif;
 }
 
 .progress{
