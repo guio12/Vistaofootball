@@ -13,13 +13,30 @@ require('bootstrap-sass');
 
 
 $(document).ready(function () {
-console.log('Clavier Vistao');
+    console.log('Clavier Vistao');
 });
 
 
 
-etat = 0;
+function envoiAjax() {
 
+    $.ajax({
+        url: 'envoiAjax/'+ actionneur +'/'+ action + '/' + receveur,
+        type: 'POST',
+        data: { joueur_action: actionneur, action_id: action, joueur_receveur: receveur },
+        success: function success(statut) { console.log("affiche messsage si tout ok")
+        },
+
+        error: function error(resultat, statut, erreur) {console.log('message si tout cassé')
+
+        }
+
+    });
+};
+
+
+
+etat = 0;
 
 console.log(etat);
 
@@ -30,38 +47,50 @@ var actionX = "";
 var actionDR = "";
 var actionTC = "";
 
-$(".joueur*").click(function(){
-  if (etat === 0) {
+$(".joueur*").click(function () {
+    if (etat === 0) {
 
-     actionneur = $(this).attr('value');
-     etat = 1;
+        actionneur = $(this).attr('value');
+        etat = 1;
 
-  }else if (etat === 1 &&  ($(this).attr('value') !== actionneur) || actionneur == "Adversaire" ) {
+    } else if (etat === 1 && ($(this).attr('value') !== actionneur) || actionneur == "Adversaire") {
 
-      receveur = $(this).attr('value');
+        receveur = $(this).attr('value');
 
-    if ( receveur.length ) {if (action.length == false ) { action = "passe";  } console.log(actionneur +" "+ action + " " + receveur);  }
+        if (receveur.length) {
+            if (action.length == false) {
+                action = "000";
+            }
+            console.log(actionneur + " " + action + " " + receveur);
+            envoiAjax();
+        }
 
-    actionneur = receveur;
-    receveur="";
+        actionneur = receveur;
+        receveur = "";
 
-    etat = 1;
-  }else if (etat === 2 &&  ($(this).attr('value') !== actionneur || actionneur == "Adversaire" ) ) {
+        etat = 1;
+    } else if (etat === 2 && ($(this).attr('value') !== actionneur || actionneur == "Adversaire")) {
 
-      receveur = $(this).attr('value');
+        receveur = $(this).attr('value');
 
-    if ( receveur.length ) {if (action.length == false ) { action = "passe";  } console.log(actionneur +" "+ action + " " + receveur);  }
+        if (receveur.length) {
+            if (action.length == false) {
+                action = "000";
+            }
+            console.log(actionneur + " " + action + " " + receveur);
+            envoiAjax();
+        }
 
-    actionneur = receveur;
-    receveur = "";
-    action ="";
-    etat = 1;
-  }
+        actionneur = receveur;
+        receveur = "";
+        action = "";
+        etat = 1;
+    }
 
 });
 
 
-$(".action*").click(function(){
+$(".action*").click(function () {
 
     if (etat === 1) {
 
@@ -71,54 +100,51 @@ $(".action*").click(function(){
     }
 });
 
-$(".actionSPE*").click(function(){
-if (etat === 4) {
+$(".actionSPE*").click(function () {
+    if (etat === 4) {
 
-actionSPE = $(this).attr('value');
-console.log(actionneur + actionTC + actionSPE);
-actionTC = "";
-etat = 0;
-
-}
-});
-
-$(".actionX*").click(function(){
-  if (etat === 1) {
-
-      actionX = $(this).attr('value');
-      console.log(actionneur + actionX);
-      etat = 0;
-      actionneur = "";
-      action = "";
-      actionX = "";
-      actionTC = "";
-
-  }
-});
-
-
-$(".actionDR").click(function(){
-  if (etat === 1) {
-
-      actionDR = $(this).attr('value');
-      console.log( actionneur + actionDR);
+        actionSPE = $(this).attr('value');
+        console.log(actionneur + " " + actionTC + " " + actionSPE);
+        envoiAjax();
+        actionTC = "";
         etat = 0;
-        }
-});
-$(".actionTC").click(function(){
-  console.log(etat);
-  if (etat === 1 && actionTC.length == 0 ) {
 
-      actionTC = $(this).attr('value');
+    }
+});
+
+$(".actionX*").click(function () {
+    if (etat === 1) {
+
+        actionX = $(this).attr('value');
+        console.log(actionneur + " " + actionX);
+        envoiAjax();
+        etat = 0;
+        actionneur = "";
+        action = "";
+        actionX = "";
+        actionTC = "";
+
+    }
+});
+
+
+$(".actionDR").click(function () {
+    if (etat === 1) {
+
+        actionDR = $(this).attr('value');
+        console.log(actionneur + " " + actionDR);
+        envoiAjax();
+        etat = 0;
+    }
+});
+$(".actionTC").click(function () {
+    console.log(etat);
+    if (etat === 1 && actionTC.length == 0) {
+
+        actionTC = $(this).attr('value');
         etat = 4;
-        }
+    }
 });
-
-
-
-
-
-
 
 
 /* --------------------------------
@@ -141,10 +167,10 @@ $(".pads*").click(function () {
 // Créer des tableaux de 3 éléments à envoyer avec ajax en BDD pr remplir row par row la table match_actions
 //var action1 = "1, PL, 4",
 
-$(document).ready(function(){
+$(document).ready(function () {
     alert("jQuery est prêt !");
 });
-$('#pads*').on("click", function(){
+$('#pads*').on("click", function () {
     var x = $(this).attr('value');
     console.log(x);
 });
