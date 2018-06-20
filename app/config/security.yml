@@ -2,6 +2,8 @@
 # https://symfony.com/doc/current/security.html
 security:
 
+    access_denied_url: /accueil
+
     encoders:
         FOS\UserBundle\Model\UserInterface: bcrypt
 
@@ -24,7 +26,9 @@ security:
                 provider: fos_userbundle
                 default_target_path:            /coach
                 always_use_default_target_path: true
-            logout:       true
+            logout:
+                path:   /logout
+                target: /accueil #This is home url
             anonymous:    true
 
             remember_me:
@@ -48,10 +52,12 @@ security:
             security: false
 
     access_control:
-        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/login, allow_if: "not has_role('ROLE_USER')" }
+        - { path: ^/register, allow_if: "not has_role('ROLE_USER')"}
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/coach, role: IS_AUTHENTICATED_REMEMBERED }
-        - { path: ^/admin/, role: ROLE_ADMIN }
+        - { path: ^/equipes, role: IS_AUTHENTICATED_REMEMBERED }
+        - { path: ^/clavier, role: IS_AUTHENTICATED_REMEMBERED }
+        - { path: ^/statsmatch, role: IS_AUTHENTICATED_REMEMBERED }
 
 

@@ -24,6 +24,12 @@
         // will output as web/build/connexion.css
         .addEntry('inscription', './assets/scss/inscription.scss')
 
+        // will output as web/build/accueil.css
+        .addEntry('style_accueil', './assets/scss/accueil.scss')
+
+        // will output as web/build/clavier.js
+        .addEntry('accueil', './assets/js/accueil.js')
+
             // will output as web/build/images/...png
         .addEntry('logo_connexion', './assets/images/Vistao football bk.png')
 

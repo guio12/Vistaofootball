@@ -1,0 +1,40 @@
+body {
+  background-image: radial-gradient(circle, #2e2e2e, #343434, #3b3b3b, #414141, #484848);
+}
+
+.container_boutons {
+  margin-top: 10vh;
+}
+
+.creer_compte p, .use_appli p, .acces_appli p {
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s; /* Safari */;
+  transition-timing-function: linear;
+}
+
+.creer_compte:hover  p, .use_appli:hover p, .acces_appli:hover p {
+  font-size: 4.7rem;
+  color: black;
+}
+
+.boutons_choix {
+  opacity: 0.8;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  background-image: linear-gradient(to right bottom, #005182, #2b719b, #4f91b2, #74b2ca, #9cd4e2);
+  font-size: 4.3rem;
+  width: 100%;
+  height: 50vh;
+  padding-top: 15vh;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: black;
+  border:none;
+}
+
+
+
+.btn_padding {
+  padding: 10vh;
+}

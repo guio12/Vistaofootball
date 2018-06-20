@@ -12,3 +12,25 @@ body {
   font-weight: bold;
   color: white;
 }
+
+.navbar-brand > img {
+  height: 80px;
+}
+
+.navbar {
+  min-height: 112px;
+  border-radius: 0;
+}
+
+.accueil_connexion {
+  font-size: 3rem;
+}
+
+.deco {
+  opacity: 0.8;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  background-color: #2b95d1;
+  font-size: 3rem;
+}

@@ -1,5 +1,27 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/accueil.css') }}">
+{% endblock stylesheets %}
+
 {%  block body %}
-<li><a href="{{ path('coachMenu') }}">Accéder à l'application</a></li>
-{%  endblock %}
+    <div class="container_boutons">
+        <div class="row.row-eq-height">
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            <div class="col-lg-4 col-lg-offset-2 col-md-6 col-sm-6 col-xs-12">
+                <a href="{{ path('coachMenu') }}" class="btn btn-block boutons_choix acces_appli"><p>Accéder à</p><p>l'application</p></a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <a href="#" class="btn btn-block boutons_choix use_appli"><p>Comment utiliser</p><p>l'application ?</p></a>
+            </div>
+            {% else %}
+            <div class="col-lg-4 col-lg-offset-2">
+                <a href="{{ path('fos_user_registration_register') }}" class="btn btn-block boutons_choix creer_compte"><p>Créer un compte</p><p>entraîneur</p></a>
+            </div>
+            <div class="col-lg-4">
+                <a href="#" class="btn btn-block boutons_choix use_appli"><p>Comment utiliser</p><p>l'application ?</p></a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+{%  endblock body %}
