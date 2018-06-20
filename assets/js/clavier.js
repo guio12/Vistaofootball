@@ -167,17 +167,16 @@ $(".pads*").click(function () {
 // Créer des tableaux de 3 éléments à envoyer avec ajax en BDD pr remplir row par row la table match_actions
 //var action1 = "1, PL, 4",
 
-<<<<<<< HEAD
+
 $(document).ready(function(){
     alert("jQuery est prêt !");
 });
-$('#pads*').on("click", function(){
-=======
+
 $(document).ready(function () {
     alert("jQuery est prêt !");
 });
 $('#pads*').on("click", function () {
->>>>>>> c9ac6cb6f4c1e8e460517188f8e122d659f422b4
+
     var x = $(this).attr('value');
     console.log(x);
 });
