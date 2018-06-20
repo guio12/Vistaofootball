@@ -19,7 +19,7 @@ class Joueurs
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    public $id;
 
     /**
      * @var int
@@ -28,35 +28,35 @@ class Joueurs
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Equipes", inversedBy="id")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $equipeId;
+    public $equipeId;
 
     /**
      * @var string
      *
      * @ORM\Column(name="prenom", type="string", length=32)
      */
-    private $prenom;
+    public $prenom;
 
     /**
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=32)
      */
-    private $nom;
+    public $nom;
 
     /**
      * @var int
      *
      * @ORM\Column(name="num_maillot", type="integer")
      */
-    private $numMaillot;
+    public $numMaillot;
 
     /**
      * @var string
      *
      * @ORM\Column(name="poste", type="string", length=8)
      */
-    private $poste;
+    public $poste;
 
 
     /**

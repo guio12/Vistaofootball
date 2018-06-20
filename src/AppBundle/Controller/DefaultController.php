@@ -76,12 +76,10 @@ class DefaultController extends Controller
            $em = $this->getDoctrine()->getManager();
            $id = $x;
            $Joueur = $em->getRepository('AppBundle:Joueurs')->findBy(["equipeId" => $id]);
-        
 
-           function __ToString($Joueur){
-             return $this->Joueur;
-           };
-          return new Response($Joueur);
+           $Joueur = json_encode($Joueur);
+
+          return  new Response($Joueur);
         /*   return $this->render('equipes/index.html.twig', array(
                'equipes' => $equipes, 'equipesId' => $equipeId
            )); */

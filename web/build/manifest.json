@@ -19,6 +19,8 @@
   "build/connexion.css": "./connexion.css",
   "build/style_clavier.js": "./style_clavier.js",
   "build/style_clavier.css": "./style_clavier.css",
+  "build/avantMatch.js": "./avantMatch.js",
+  "build/avantMatch.css": "./avantMatch.css",
   "build/admin_equipes.js": "./admin_equipes.js",
   "build/admin_equipes.css": "./admin_equipes.css",
   "build/menu.js": "./menu.js",

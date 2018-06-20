@@ -29,6 +29,8 @@
 
             // will output as web/build/clavier.js
         .addEntry('clavier', './assets/js/clavier.js')
+            // will output as web/build/clavier.js
+        .addEntry('avantMatch', './assets/scss/avantMatch.scss')
 
             // will output as web/build/style_clavier.css
         .addEntry('style_clavier', './assets/scss/clavier.scss')
