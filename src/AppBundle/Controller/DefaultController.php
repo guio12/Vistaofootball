@@ -5,8 +5,12 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+<<<<<<< HEAD
 use Symfony\Component\HttpFoundation\Response;
 
+=======
+use AppBundle\Entity\ActionsMatch;
+>>>>>>> c9ac6cb6f4c1e8e460517188f8e122d659f422b4
 
 class DefaultController extends Controller
 {
@@ -17,7 +21,7 @@ class DefaultController extends Controller
     {
         // replace this example code with whatever you need
         return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')) . DIRECTORY_SEPARATOR,
         ]);
     }
 
@@ -42,6 +46,7 @@ class DefaultController extends Controller
      * @Route("/coach", name="coachMenu")
      */
 
+<<<<<<< HEAD
      public function coachAction(Request $request)
      {
          // replace this example code with whatever you need
@@ -49,6 +54,15 @@ class DefaultController extends Controller
              'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
          ]);
      }
+=======
+    public function testAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render('coach/menu.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')) . DIRECTORY_SEPARATOR,
+        ]);
+    }
+>>>>>>> c9ac6cb6f4c1e8e460517188f8e122d659f422b4
 
     /**
      * @Route("/avantMatch", name="AvantMatch")
@@ -93,7 +107,7 @@ class DefaultController extends Controller
     {
         // replace this example code with whatever you need
         return $this->render('clavier/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')) . DIRECTORY_SEPARATOR,
         ]);
     }
 
@@ -104,7 +118,7 @@ class DefaultController extends Controller
     {
         // replace this example code with whatever you need
         return $this->render('stats/general.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')) . DIRECTORY_SEPARATOR,
         ]);
     }
 
@@ -115,8 +129,34 @@ class DefaultController extends Controller
     {
         // replace this example code with whatever you need
         return $this->render('stats/cpa.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')) . DIRECTORY_SEPARATOR,
         ]);
     }
+
+
+    /**
+     * @Route("/envoiAjax/{actionneur}/{action}/{receveur}", name="envoiAjax")
+     * @param $actionneur
+     * @param $action
+     * @param $receveur
+     */
+    public function ajaxEnvoi($actionneur, $action, $receveur)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $actions_match = new ActionsMatch();
+
+        // $actions_match = $em->getRepository("AppBundle:ActionsMatch")->findAll();
+
+        $actions_match->setMatchId(2);
+        $actions_match->setJoueurAction($actionneur);
+        $actions_match->setActionId($action);
+        $actions_match->setJoueurReceveur($receveur);
+
+        $em->persist($actions_match);
+        $em->flush();
+
+    }
+
 
 }
