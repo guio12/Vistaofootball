@@ -2,250 +2,324 @@
 
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('build/style_clavier.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/admin_equipes.css') }}">
 {% endblock %}
+
+{% block content %}{% endblock %}
+
+{% block header %}<br>{% endblock header %}
 
 {% block body %}
     <body>
     <div class="container">
-
-
-        <div class="m-wrap tx">
-            <div class="o-watch-wrap">
-                <div class="watch-ui">
-                    <div class="o-ring">
-                        <div class="o-timer-wrap">
-                            <div class="ring-wrap">
-                                <svg class="c-t" width="200" height="200">
-                                    <circle class="c-c" cx="90" cy="100" r="97.5" transform="rotate(-90, 95, 95)"/>
-                                </svg>
-                            </div>
-                            <div class="o-timer">
-                                <span class="t-time"></span>
-
-                            </div>
-                        </div>
-                        <div class="t-options">
-                    <span class="t-options-time">
-					<span class="btn b-dec o-opt-btn b-revc glyphicon glyphicon-play" aria-hidden="true"></span>
-                    <span class="o-opt-btn display"></span>
-                    <span class="btn b-inc o-opt-btn glyphicon glyphicon-play" aria-hidden="true"></span>
-                    </span>
-                        </div>
-                    </div>
-                    <div class="o-controllers">
-                        <button class="btn button sp-btn repeat-btn ">
-                            <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
-                        </button>
-                        <button class="btn button sp-btn pause-btn ">
-                            <span class="in-btn glyphicon glyphicon-pause" aria-hidden="true"></span>
-                        </button>
-                    </div>
-                </div>
+        <div class="row">
+            <div class="col-xs-1">
+            <a class="logo-brand" href="{{ path('coachMenu') }}">
+                <img class="logo" alt="vistao football logo brand"
+                     src="{{ asset('build/images/logo_vistao.5263432c.png') }}">
+            </a>
             </div>
+            <div class="col-xs-11"><p id="resume"></p></div>
         </div>
 
 
-        <div class="keyboard">
-            <div class="row horizontalcenter">
-                <div value="Adversaire" data-color="red" class="joueur adverse_pad counter-click">
+
+
+
+    <div class="keyboard">
+
+        <div class="row">
+            <div class="col-xs-4 adverse_pad highlight_pads counter-click" data-color="red">
+                <div value="Adversaire" class="joueur">
                     <p>0<br></p>
                     <div class="counter-count">0</div>
                 </div>
-                <a href="#" class="faute">
-                    <div value="" data-color="red" class="reset yellowmiddle_pad verticalcenter pads">
-                        <p>FAUTE<br></p>
-                    </div>
-                </a>
-                <div id="popup">
-                    <div class="row">
-                        <a href="#" class="faute">
-                            <div value="101" data-color="red" class="reset yellow_pad actionX verticalcenter pads">
-                                <p>FAUTE</p>
-                            </div>
-                        </a>
-                        <a href="#" class="faute">
-                            <div value="102" data-color="red" class="reset yellow_pad actionX verticalcenter pads">
-                                <p>JAUNE</p>
-                            </div>
-                        </a>
-                        <a href="#" class="103">
-                            <div value="Rouge" data-color="red" class="reset yellow_pad actionX verticalcenter pads">
-                                <p>ROUGE</p>
-                            </div>
-                        </a>
-                        <a href="#" class="104">
-                            <div value="Penalty" data-color="red" class="reset yellow_pad actionX verticalcenter pads">
-                                <p>PENALTY</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div value="105" data-color="red" class=" reset yellow_pad actionX verticalcenter pads">
-                    <p>TOUCHE</p>
-                </div>
-                <div value="106" data-color="red" class="reset yellow_pad actionX verticalcenter pads ">
-                    <p>CORNER</p>
-                </div>
-                <div value="107" data-color="red" class="reset yellow_pad actionX verticalcenter pads">
-                    <p>5M50</p>
-                </div>
-                <div value="108" data-color="red" class="reset yellow_pad actionX verticalcenter pads">
-                    <p>H.J</p>
-                </div>
             </div>
-            <div class="row horizontalcenter">
-                <div value="1" data-color="#00c253" class=" reset green_pad joueur verticalcenter pads">
-                    <p>1</p>
-                </div>
-                <div value="2" data-color="#00c253" class=" reset green_pad joueur verticalcenter pads">
-                    <p>2</p>
-                </div>
-                <div value="3" data-color="#00c353" class=" reset green_pad joueur verticalcenter pads">
-                    <p>3</p>
-                </div>
-                <div value="4" data-color="#00c253" class=" reset green_pad joueur verticalcenter pads">
-                    <p>4</p>
-                </div>
-                <div value="109" data-color="purple" class="action reset action purplemiddle_pad verticalcenter pads">
-                    <p>CENTRE</p>
-                </div>
-                <div value="110" data-color="purple" class="reset purplemiddle_pad actionTC verticalcenter pads">
-                    <p>TIR CADRÉ</p>
-                </div>
-                <div value="111" data-color="red" class="actionX actionX reset redmiddle_pad verticalcenter pads">
-                    <p>TIR NON CADRÉ</p>
-                </div>
-            </div>
-            <div class="row horizontalcenter">
-                <div value="5" data-color="#00c353" class="reset green_pad joueur verticalcenter pads">
-                    <p>5</p>
-                </div>
-                <div value="6" data-color="#00c353" class="reset green_pad joueur verticalcenter pads">
-                    <p>6</p>
-                </div>
-                <div value="7" data-color="#00c353" class="reset green_pad joueur verticalcenter pads">
-                    <p>7</p>
-                </div>
-                <div value="8" data-color="#00c253" class="reset green_pad joueur verticalcenter pads">
-                    <p>8</p>
-                </div>
-                <div value="112" data-color="purple" class="reset action purplemiddle_pad verticalcenter pads">
-                    <p>PASSE LONGUE</p>
-                </div>
-                <div value="113" data-color="purple" class=" actionDR reset purplemiddle_pad verticalcenter pads">
-                    <p>DRIBBLE REUSSI</p>
-                </div>
-                <div value="114" data-color="red" class="actionX reset redmiddle_pad verticalcenter pads">
-                    <p>DRIBBLE ECHOUÉ</p>
-                </div>
-            </div>
-            <div class="row horizontalcenter">
-                <div value="9" data-color="#00c253" class="reset green_pad joueur verticalcenter pads">
-                    <p>9</p>
-                </div>
-                <div value="10" data-color="#00c253" class="reset green_pad joueur verticalcenter pads">
-                    <p>10</p>
-                </div>
-                <div value="11" data-color="#00c253" class="reset green_pad joueur verticalcenter pads">
-                    <p>11</p>
-                </div>
-                <div value="12" data-color="#00c253" class="reset green_pad joueur verticalcenter pads">
-                    <p>12</p>
-                </div>
-                <a href="#" class="but">
-                    <div value="" data-color="purple" class=" reset purplebig_pad verticalcenter pads">
-                        <p>BUT</p>
-                    </div>
-                </a>
-                <div id="popup2">
-                    <div class="row">
-                        <a href="#" class="but">
-                            <div value="115" data-color="#ff0011" class=" actionSPE actionX reset purple_pad verticalcenter pads">
-                                <p>TETE</p>
-                            </div>
-                        </a>
-                        <a href="#" class="but">
-                            <div value="116" data-color="#ff0011" class=" actionSPE actionX reset purple_pad verticalcenter pads">
-                                <p>REPRISE</p>
-                            </div>
-                        </a>
-                        <a href="#" class="but">
-                            <div value="117" data-color="#ff0011" class="actionSPE actionX reset purple_pad verticalcenter pads">
-                                <p>POTEAU</p>
-                            </div>
-                        </a>
-                        <a href="#" class="but">
-                        </a>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                            <label class="form-check-label" for="defaultCheck1">CONFIRMER LE BUT</label>
-                        </div>
-                    </div>
-                </div>
-                <div value="118" data-color="red" class="reset actionSPE actionX redmiddle_pad verticalcenter pads">
-                    <p>TIR BLOQUÉ</p>
-                </div>
-            </div>
-            <div class="row horizontalcenter">
-                <div value="13" data-color="#00c253" class="reset green_pad joueur verticalcenter pads">
-                    <p>13</p>
-                </div>
-                <div value="14" data-color="#00c253" class="reset green_pad joueur verticalcenter pads">
-                    <p>14</p>
-                </div>
-                <div value="15" data-color="#00c253" class="reset green_pad joueur verticalcenter pads">
-                    <p>15</p>
-                </div>
-                <div value="16" data-color="#00c253" class="reset green_pad joueur verticalcenter pads">
-                    <p>16</p>
-                </div>
+            <div class="col-xs-3 middle_pad highlight_pads" data-color="#ff0011">
                 <a href="#" class="mi-temps">
-                    <div value="Mi-temps" data-color="#ff0011" class="reset middle_pad pause-btn verticalcenter pads">
+                    <div class="btn button sp-btn pause-btn" style="color: white;">
+                        <span class="in-btn glyphicon glyphicon-pause" aria-hidden="true"></span>
+                    </div>
+                    <div value="Mi-temps" class="reset pause-btn ">
                         <p>MI-TEMPS </p>
                     </div>
                 </a>
-                <div id="popup3">
-                    <div class="row">
-                        <a href="#" class="mi-temps">
-                            <div value="" data-color="#ff0011" class="yellow_pad actionX">
-                                <p>FIN MT1</p>
-                            </div>
-                        </a>
-                        <a href="#" class="mi-temps">
-                            <div value="" data-color="#ff0011" class="yellow_pad actionX">
-                                <p>FIN MT2</p>
-                            </div>
-                        </a>
-                        <a href="#" class="mi-temps">
-                            <div value="" data-color="#ff0011" class="yellow_pad actionX">
-                                <p>PROLONGATION</p>
-                            </div>
-                        </a>
-                    </div>
+            </div>
+            <div id="popup3">
+                <div class="row">
+                    <a href="#" class="mi-temps verticalcenter">
+                        <div value="" data-color="#ff0011" class="yellow_pad actionX">
+                            <p>FIN MT1</p>
+                        </div>
+                    </a>
+                    <a href="#" class="mi-temps verticalcenter">
+                        <div value="" data-color="#ff0011" class="yellow_pad actionX">
+                            <p>FIN MT2</p>
+                        </div>
+                    </a>
+                    <a href="#" class="mi-temps verticalcenter">
+                        <div value="" data-color="#ff0011" class="yellow_pad actionX">
+                            <p>PROLONGATION</p>
+                        </div>
+                    </a>
                 </div>
+            </div>
+
+            <div class="col-xs-3 middle_pad highlight_pads" data-color="#ff0011">
                 <a href="#" class="fin-match">
-                    <div value="" data-color="#ff0011" class="reset middle_pad pause-btn verticalcenter pads">
+                    <div value="" class="reset pause-btn verticalcenter">
                         <p>FIN DE MATCH</p>
                     </div>
                 </a>
-                <div id="popup4">
-                    <div class="row">
-                        <p>CONFIRMER ?</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <a href="#" class="fin-match"><span class="glyphicon glyphicon-remove"
-                                                                aria-hidden="true"></span></a>
-                        </div>
-
-                        <div class="col-xs-6">
-                            <a href="#" class="fin-match"><span class="glyphicon glyphicon-ok"
-                                                                aria-hidden="true"></span></a>
+            </div>
+            <div class="col-xs-2 middle_pad">
+                <div class="m-wrap verticalcenter">
+                    <div class="o-watch-wrap">
+                        <div class="o-timer">
+                            <span class="t-time"></span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c253">
+                <div value="1" class=" reset joueur verticalcenter">
+                    <p>1</p>
+                </div>
+            </div>
+            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c253">
+                <div value="2" class=" reset joueur verticalcenter">
+                    <p>2</p>
+                </div>
+            </div>
+            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c353">
+                <div value="3" class=" reset joueur verticalcenter">
+                    <p>3</p>
+                </div>
+            </div>
+            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c253">
+                <div value="4" class=" reset joueur verticalcenter">
+                    <p>4</p>
+                </div>
+            </div>
+            <div class="col-xs-3 purplemiddle_pad highlight_pads" data-color="purple">
+                <div value="109" class="action reset action verticalcenter">
+                    <p>CENTRE</p>
+                </div>
+            </div>
+            <div class="col-xs-3 purplemiddle_pad highlight_pads" data-color="purple">
+                <div value="110" class="reset actionTC verticalcenter">
+                    <p>TIR CADRÉ</p>
+                </div>
+            </div>
+            <div class="col-xs-2 redmiddle_pad highlight_pads" data-color="red">
+                <div value="111" class="actionX actionX reset verticalcenter">
+                    <p>TIR NON CADRÉ</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c353">
+                <div value="5" class="reset joueur verticalcenter">
+                    <p>5</p>
+                </div>
+            </div>
+            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c353">
+                <div value="6" class="reset joueur verticalcenter">
+                    <p>6</p>
+                </div>
+            </div>
+            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c353">
+                <div value="7" class="reset joueur verticalcenter">
+                    <p>7</p>
+                </div>
+            </div>
+            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c353">
+                <div value="8" class="reset joueur verticalcenter">
+                    <p>8</p>
+                </div>
+            </div>
+            <div class="col-xs-3 purplemiddle_pad highlight_pads" data-color="purple">
+                <div value="112" class="reset action verticalcenter">
+                    <p>PASSE LONGUE</p>
+                </div>
+            </div>
+            <div class="col-xs-3 purplemiddle_pad highlight_pads" data-color="purple">
+                <div value="113" class=" actionDR reset verticalcenter">
+                    <p>DRIBBLE REUSSI</p>
+                </div>
+            </div>
+            <div class="col-xs-2 redmiddle_pad highlight_pads" data-color="red">
+                <div value="114" class="actionX reset verticalcenter">
+                    <p>DRIBBLE ECHOUÉ</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c253">
+                <div value="9" class="reset joueur verticalcenter">
+                    <p>9</p>
+                </div>
+            </div>
+            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c253">
+                <div value="10" class="reset joueur verticalcenter">
+                    <p>10</p>
+                </div>
+            </div>
+            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c253">
+                <div value="11" class="reset joueur verticalcenter">
+                    <p>11</p>
+                </div>
+            </div>
+            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c253">
+                <div value="12" class="reset joueur verticalcenter">
+                    <p>12</p>
+                </div>
+            </div>
+            <div class="col-xs-6 purplebig_pad highlight_pads" data-color="purple">
+                <a href="#" class="but">
+                    <div value="" class="reset verticalcenter">
+                        <p>BUT</p>
+                    </div>
+                </a>
+            </div>
+            <div id="popup2">
+                <div class="row">
+                    <a href="#" class="but">
+                        <div value="115" data-color="#ff0011"
+                             class=" actionSPE actionX reset purple_pad verticalcenter">
+                            <p>TETE</p>
+                        </div>
+                    </a>
+                    <a href="#" class="but">
+                        <div value="116" data-color="#ff0011"
+                             class=" actionSPE actionX reset purple_pad verticalcenter">
+                            <p>REPRISE</p>
+                        </div>
+                    </a>
+                    <a href="#" class="but">
+                        <div value="117" data-color="#ff0011"
+                             class="actionSPE actionX reset purple_pad verticalcenter">
+                            <p>POTEAU</p>
+                        </div>
+                    </a>
+                    <a href="#" class="but">
+                    </a>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">CONFIRMER LE BUT</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-2 redmiddle_pad highlight_pads" data-color="red">
+                <div value="118" class="reset actionSPE actionX verticalcenter">
+                    <p>TIR BLOQUÉ</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c253">
+                <div value="13" class="reset joueur verticalcenter">
+                    <p>13</p>
+                </div>
+            </div>
+            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c253">
+                <div value="14" data-color="#00c253" class="reset joueur verticalcenter">
+                    <p>14</p>
+                </div>
+            </div>
+            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c253">
+                <div value="15" data-color="#00c253" class="reset joueur verticalcenter">
+                    <p>15</p>
+                </div>
+            </div>
+            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c253">
+                <div value="16" data-color="#00c253" class="reset joueur verticalcenter">
+                    <p>16</p>
+                </div>
+            </div>
+            <div class="col-xs-2 yellowmiddle_pad highlight_pads" data-color="red">
+                <a href="#" class="faute">
+                    <div value="" data-color="red" class="reset verticalcenter">
+                        <p>FAUTE<br></p>
+                    </div>
+                </a>
+            </div>
+
+            <div id="popup">
+                <div class="row">
+                    <a href="#" class="faute">
+                        <div value="101" data-color="red" class="reset yellow_pad actionX verticalcenter">
+                            <p>FAUTE</p>
+                        </div>
+                    </a>
+                    <a href="#" class="faute">
+                        <div value="102" data-color="red" class="reset yellow_pad actionX verticalcenter">
+                            <p>JAUNE</p>
+                        </div>
+                    </a>
+                    <a href="#" class="103">
+                        <div value="Rouge" data-color="red" class="reset yellow_pad actionX verticalcenter">
+                            <p>ROUGE</p>
+                        </div>
+                    </a>
+                    <a href="#" class="104">
+                        <div value="Penalty" data-color="red" class="reset yellow_pad actionX verticalcenter">
+                            <p>PENALTY</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-xs-2 yellow_pad highlight_pads">
+                <div value="105" data-color="red" class=" reset actionX verticalcenter">
+                    <p>TOUCHE</p>
+                </div>
+            </div>
+
+            <div class="col-xs-2 yellow_pad highlight_pads">
+                <div value="106" data-color="red" class="reset actionX verticalcenter">
+                    <p>CORNER</p>
+                </div>
+            </div>
+
+            <div class="col-xs-1 yellow_pad highlight_pads">
+                <div value="107" data-color="red" class="reset actionX verticalcenter">
+                    <p>5M50</p>
+                </div>
+            </div>
+
+            <div class="col-xs-1 yellow_pad highlight_pads">
+                <div value="108" data-color="red" class="reset actionX verticalcenter">
+                    <p>H.J</p>
+                </div>
+            </div>
+
+
+            <div id="popup4">
+                <div class="row">
+                    <p>CONFIRMER ?</p>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <a href="#" class="fin-match"><span class="glyphicon glyphicon-remove"
+                                                            aria-hidden="true"></span></a>
+                    </div>
+
+                    <div class="col-xs-6">
+                        <a href="#" class="fin-match"><span class="glyphicon glyphicon-ok"
+                                                            aria-hidden="true"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
     </div>
 
 

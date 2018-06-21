@@ -1,15 +1,17 @@
-.horizontalcenter {
-  display: inline-block;
-  float: none;
-}
+$brand-primary: #0092ca;
 
 .verticalcenter {
-  line-height: 70px;
+  line-height: 14vh;
   vertical-align: middle;
 }
 
 body {
   text-align: center;
+}
+
+a:link
+{
+  text-decoration:none;
 }
 
 p {
@@ -19,77 +21,59 @@ p {
   color: white;
 }
 
-@mixin littlepad {
-  cursor:pointer;
-  float:left;
-  width: 70px;
-  height: 70px;
-  margin:.3125em;
+.logo {
+  height: 80px;
+  float: left;
+  padding-bottom: 20px;
 }
 
-@mixin middlepad {
-  cursor:pointer;
-  float:left;
-  width: 149px;
-  height: 70px;
-  margin:.3125em;
-}
-
-@mixin bigpad {
-  cursor:pointer;
-  float:left;
-  width: 306px;
-  height: 70px;
-  margin:.3125em;
+#resume {
+  color : $brand-primary;
 }
 
 .yellow_pad {
   background: linear-gradient(to bottom right, gold, goldenrod);
-  @include littlepad
+  height: 14vh;
 }
 
 .green_pad {
   background: linear-gradient(to bottom right, green, black);
-  @include littlepad
+  height: 14vh;
 }
 
 .purple_pad {
   background: linear-gradient(to bottom right, purple, black);
-  @include littlepad
+  height: 14vh;
 }
 
 .adverse_pad {
   background: linear-gradient(to bottom right, gray, black);
-  @include bigpad
+  height: 14vh;
 }
 
 .yellowmiddle_pad {
   background: linear-gradient(to bottom right, gold, goldenrod);
-  @include middlepad
+  height: 14vh;
 }
 
 .purplemiddle_pad {
   background: linear-gradient(to bottom right, purple, black);
-  @include middlepad
+  height: 14vh;
 }
 
 .purplebig_pad {
   background: linear-gradient(to bottom right, purple, black);
-  @include bigpad
+  height: 14vh;
 }
 
 .redmiddle_pad {
   background: linear-gradient(to bottom right, #eb1d12, black);
-  @include middlepad
+  height: 14vh;
 }
 
 .middle_pad {
   background: linear-gradient(to bottom right, gray, black);
-  cursor:pointer;
-  float:left;
-  width: 227px;
-  height: 70px;
-  margin:.3125em;
+  height: 14vh;
 }
 
 /* --------------------------------
@@ -105,7 +89,6 @@ p {
   font-size: 17px;
 }
 
-
 /* --------------------------------
  *
  * Timer
@@ -119,153 +102,21 @@ p {
   justify-content: center;
 }
 
-@mixin box( $dimx, $dimy: 0) {
-  @if $dimy==0 {
-    $dimy: $dimx;
-  }
-  width: $dimx;
-  height: $dimy;
+// THE CSS
+
+.t-center {
+  text-align: center;
 }
 
-// THE CSS
-html {
-  @include box(100%);
-  .tx {
-    @include flex-center;
-  }
-  .t-center {
-    text-align: center;
-  }
-  .m-wrap {
-    color: white;
-    .o-watch-wrap {
-      @extend .tx;
-      @include box(250px, 300px);
-      .menu-open .t-options {
-        opacity: 1!important;
-        visibility: visible!important;
-      }
-      .menu-open .o-timer-wrap {
-        top: -15px!important;
-        opacity: 0;
-      }
-      .watch-ui {
-        user-select: none;
-        .o-ring {
-          position: relative;
-          @include box(200px);
-          margin: auto;
-          .o-timer-wrap {
-            position: relative;
-            top: 0;
-            transition: opacity .5s linear, top .5s linear;
-          }
-          .ring-wrap {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            margin: auto;
-            @extend .tx;
-            .c-t {
-              position: absolute;
-              top: 0;
-              left: 0;
-              .c-c {
-                fill: transparent;
-                stroke: white;
-                stroke-width: 5;
-                stroke-dasharray: 612;
-                stroke-dashoffset: 612;
-                -webkit-transition: stroke-dashoffset 1s linear, opacity 1s linear;
-                transition: stroke-dashoffset 1s linear, opacity 1s linear;
-              }
-            }
-          }
-          .o-timer {
-            @extend .t-center;
-            font-size: 60px;
-            @extend .tx;
-            width: 200px;
-            height: 200px;
-            border: 5px solid gray;
-            border-radius: 50%;
-          }
-          .t-options {
-            position: absolute;
-            top: 0px;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity .3s linear, visibility .3s linear;
-            .b-revc {
-              transform: rotate(180deg);
-            }
-            .o-opt-btn {
-              box-shadow: none;
-              &:hover,
-              &:focus {
-                color: inherit;
-              }
-              &:active {
-                color: lightgrey;
-              }
-              &.display {
-                min-width: 70px;
-                cursor: default;
-                color: white;
-              }
-            }
-            .t-options-time {
-              @extend .o-timer;
-              border: none;
-            }
-          }
-        }
-      }
-      .o-controllers {
-        text-align: center;
-        .sp-btn {
-          position: relative;
-          background: none;
-          font-size: 16px;
-          outline: none;
-          box-shadow: none;
-          &:hover,
-          &:focus {
-            color: inherit;
-          }
-          &:active {
-            color: darken(white, 10%);
-          }
-        }
-        .pause-btn {
-          font-size: 30px;
-          @include box(60px);
-          margin: auto;
-          background: #eb1d12;
-          border-radius: 50%;
-          margin-top: -20px;
-
-          &:active {
-            background: darken(red, 10%);
-
-          }
-        }
-        .in-btn {
-          position: absolute;
-          top: -1px;
-          left: 2px;
-          bottom: 0;
-          right: 0;
-          @extend .tx;
-        }
-      }
+.m-wrap {
+  color: white;
+  .o-watch-wrap {
+    .o-timer {
+      @extend .t-center;
+      font-size: 50px;
     }
   }
 }
-
-
 
 /* --------------------------------
  *
@@ -275,22 +126,19 @@ html {
 
 @mixin popup {
   display: none;
-  position: absolute;
   z-index: 1000;
   text-align: center;
-  top:50%;
-  left:50%;
-  margin: 150px 0 0 -150px;
   background: black;
-  width:346px;
-  height:180px;
-  padding:30px;
-  -webkit-box-shadow:
-          0 0 125px 0 rgba(0,0,0,1),
-          0 0 10000px 500px rgba(0,0,0,.75);
-  box-shadow:
-          0 0 125px 0 rgba(0,0,0,1),
-          0 0 10000px 500px rgba(0,0,0,.75);
+  padding: 30px;
+  width: 200px;
+  height: 180px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -150px;
+  box-shadow: 0 0 125px 0 rgba(0, 0, 0, 1),
+  0 0 10000px 500px rgba(0, 0, 0, .75);
   a {
     color: white;
   }

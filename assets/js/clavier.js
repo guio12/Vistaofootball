@@ -17,7 +17,6 @@ $(document).ready(function () {
 });
 
 
-
 function envoiAjax() {
 
     $.ajax({
@@ -34,8 +33,6 @@ function envoiAjax() {
     });
 };
 
-
-
 etat = 0;
 
 console.log(etat);
@@ -51,6 +48,7 @@ $(".joueur*").click(function () {
     if (etat === 0) {
 
         actionneur = $(this).attr('value');
+        $('#resume').html(actionneur)
         etat = 1;
 
     } else if (etat === 1 && ($(this).attr('value') !== actionneur) || actionneur == "Adversaire") {
@@ -62,6 +60,9 @@ $(".joueur*").click(function () {
                 action = "000";
             }
             console.log(actionneur + " " + action + " " + receveur);
+             $('#resume').html("JOUEUR " + actionneur + " PASSE à JOUEUR " + receveur);
+
+
             envoiAjax();
         }
 
@@ -72,6 +73,7 @@ $(".joueur*").click(function () {
     } else if (etat === 2 && ($(this).attr('value') !== actionneur || actionneur == "Adversaire")) {
 
         receveur = $(this).attr('value');
+        $('#resume').append("AU JOUEUR "+ receveur)
 
         if (receveur.length) {
             if (action.length == false) {
@@ -95,6 +97,7 @@ $(".action*").click(function () {
     if (etat === 1) {
 
         action = $(this).attr('value');
+        $('#resume').html("JOUEUR " + actionneur + $(this).html());
         etat = 2;
 
     }
@@ -108,7 +111,6 @@ $(".actionSPE*").click(function () {
         envoiAjax();
         actionTC = "";
         etat = 0;
-
     }
 });
 
@@ -119,7 +121,7 @@ $(".actionX*").click(function () {
         console.log(actionneur + " " + actionX);
         envoiAjax();
         etat = 0;
-        actionneur = "";
+        $('#resume').html("ATTENTE D'UN JOUEUR...")
         action = "";
         actionX = "";
         actionTC = "";
@@ -147,13 +149,29 @@ $(".actionTC").click(function () {
 });
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* --------------------------------
  *
  * Highlight pad
  *
  *-------------------------------- */
 
-$(".pads*").click(function () {
+$(".highlight_pads*").click(function () {
     var button_color = $(this).data('color');
     $(this).effect("highlight", {color: button_color}, 160);
 });
@@ -218,14 +236,6 @@ $(document).ready(function () {
 // Pause
     $('.pause-btn').on('click', function () {
         startTimer(timer);
-    });
-// Restart
-    $('.repeat-btn').on('click', function () {
-        min = 0;
-        sec = 0;
-        perc = 612;
-        $('.c-c').css('stroke-dashoffset', perc);
-        $('.t-time').text(min + ':0' + sec);
     });
 
     $('.o-opt-btn').on('click', function () {
