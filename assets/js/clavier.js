@@ -60,7 +60,7 @@ $(".joueur*").click(function () {
                 action = "000";
             }
             console.log(actionneur + " " + action + " " + receveur);
-             $('#resume').html("JOUEUR " + actionneur + " PASSE à JOUEUR " + receveur);
+             $('#resume').html("JOUEUR " + actionneur + " PASSE À JOUEUR " + receveur);
 
 
             envoiAjax();
@@ -73,7 +73,7 @@ $(".joueur*").click(function () {
     } else if (etat === 2 && ($(this).attr('value') !== actionneur || actionneur == "Adversaire")) {
 
         receveur = $(this).attr('value');
-        $('#resume').append("AU JOUEUR "+ receveur)
+        $('#resume').append(" AU JOUEUR "+ receveur)
 
         if (receveur.length) {
             if (action.length == false) {
@@ -97,7 +97,7 @@ $(".action*").click(function () {
     if (etat === 1) {
 
         action = $(this).attr('value');
-        $('#resume').html("JOUEUR " + actionneur + $(this).html());
+        $('#resume').html("JOUEUR " + actionneur + " " + $(this).children().html());
         etat = 2;
 
     }
@@ -108,6 +108,7 @@ $(".actionSPE*").click(function () {
 
         actionSPE = $(this).attr('value');
         console.log(actionneur + " " + actionTC + " " + actionSPE);
+        $('#resume').html("JOUEUR " + actionneur + " " + actionTC + " " + actionSPE);
         envoiAjax();
         actionTC = "";
         etat = 0;
@@ -119,9 +120,9 @@ $(".actionX*").click(function () {
 
         actionX = $(this).attr('value');
         console.log(actionneur + " " + actionX);
+        $('#resume').html("JOUEUR " + actionneur + " : " + $(this).children().html());
         envoiAjax();
         etat = 0;
-        $('#resume').html("ATTENTE D'UN JOUEUR...")
         action = "";
         actionX = "";
         actionTC = "";
