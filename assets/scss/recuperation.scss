@@ -1,0 +1,273 @@
+/**Box score**/
+
+body {
+  background-color: #30303A;
+  font-family: Roboto;
+}
+
+
+.score-board {
+  font-family: "Days One", sans-serif;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  position: relative;
+  width: 550px;
+  height: 50px;
+  text-align: center;
+  font-size: 36px;
+  border-radius: 5px 5px 30px 30px;
+  color: white;
+  background: black;
+  margin-top: 10px;
+  box-shadow: -5px 15px 15px #888888;
+}
+
+.score-board li {
+  display: inline-block;
+}
+
+.score-board .score {
+  color: white;
+  padding: 0px 30px;
+  border-radius: 10px 10px 100px 100px;
+  background: black;
+}
+
+.score-board .info {
+  color: white;
+  clear: both;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  margin-left: -135px;
+  width: 270px;
+  font-size: 60%;
+  border-radius: 5px 5px 50px 50px;
+  background: black;
+  box-shadow: -5px 5px 15px #888888;
+}
+
+
+/**histo equipe**/
+
+.col-md-5{
+  margin-bottom: 50px;
+}
+
+
+#chart {
+  width: 30vw;
+  height: 40vh;
+  margin: 30px auto 0;
+
+}
+
+#chart .numbers {
+  width: 50px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  float: left;
+  position: relative;
+}
+
+#chart .numbers .max {
+  bottom: 100%;
+}
+
+#chart .numbers .half {
+  bottom: 50%;
+}
+
+#chart .numbers .zero {
+  bottom: -1px;
+}
+
+#chart .numbers li {
+  text-align: right;
+  padding-right: 1em;
+  list-style: none;
+  height: 29px;
+  border-bottom: 1px solid #444;
+  bottom: 30px;
+  position: absolute;
+  right: 0;
+  width: 30px;
+}
+
+#chart .numbers li:last-child {
+  height: 30px;
+}
+
+#chart .numbers li span {
+  color: #eee;
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+}
+
+#chart .bars {
+  display: flex;
+  background: rgba(0, 0, 0, 0.2);
+  width: 190;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 0 0 1px #444;
+}
+
+#chart .bars li {
+  flex: auto;
+  height: 100%;
+  margin: 0;
+  text-align: center;
+  position: relative;
+}
+
+#chart .bars li .bar {
+  width: 80%;
+  background: #49E;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -40%;
+  height: 0;
+  transition: height 1s;
+}
+
+#chart .bars li .per {
+  color: white;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: -25px;
+}
+
+#chart .bars li span {
+  color: #eee;
+  width: 100%;
+  position: absolute;
+  bottom: -2em;
+  left: 0;
+  text-align: center;
+}
+
+/**histoadverse**/
+
+body {
+  background: #30303A;
+  font-family: Roboto;
+}
+
+#chart {
+  width: 30vw;
+  height: 40vh;
+  margin: 30px auto 0;
+
+}
+
+#chart .numbers {
+  width: 50px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  float: left;
+  position: relative;
+}
+
+#chart .numbers .max {
+  bottom: 100%;
+}
+
+#chart .numbers .half {
+  bottom: 50%;
+}
+
+#chart .numbers .zero {
+  bottom: -1px;
+}
+
+#chart .numbers li {
+  text-align: right;
+  padding-right: 1em;
+  list-style: none;
+  height: 29px;
+  border-bottom: 1px solid #444;
+  bottom: 30px;
+  position: absolute;
+  right: 0;
+  width: 30px;
+}
+
+#chart .numbers li:last-child {
+  height: 30px;
+}
+
+#chart .numbers li span {
+  color: #eee;
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+}
+
+#chart .barsi {
+  display: flex;
+  background: rgba(0, 0, 0, 0.2);
+  width: 190;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 0 0 1px #444;
+}
+
+#chart .barsi li {
+  flex: auto;
+  height: 100%;
+  margin: 0;
+  text-align: center;
+  position: relative;
+}
+
+#chart .barsi li .bari {
+  width: 20%;
+  background: #49E;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -40%;
+  height: 0;
+  transition: height 1s;
+}
+
+#chart .barsi li .peri {
+  color: white;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: -25px;
+}
+
+#chart .barsi li span {
+  color: #eee;
+  width: 100%;
+  position: absolute;
+  bottom: -2em;
+  left: 0;
+  text-align: center;
+}
+
+/**button**/
+
+.text-center{
+
+}
+
+/**button**/
+
+.glyphicon {
+  font-size: 30px;
+  color: #4499EE;
+}

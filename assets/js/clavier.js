@@ -186,10 +186,16 @@ $(".highlight_pads*").click(function () {
 // Créer des tableaux de 3 éléments à envoyer avec ajax en BDD pr remplir row par row la table match_actions
 //var action1 = "1, PL, 4",
 
+
+$(document).ready(function(){
+    alert("jQuery est prêt !");
+});
+
 $(document).ready(function () {
     alert("jQuery est prêt !");
 });
 $('#pads*').on("click", function () {
+
     var x = $(this).attr('value');
     console.log(x);
 });
