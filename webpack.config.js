@@ -41,6 +41,18 @@
         // will output as web/build/stats.css
         .addEntry('stats', './assets/scss/statsgenerales.scss')
 
+        // will output as web/build/tirs.css
+        .addEntry('tirs', './assets/scss/tirs.scss')
+
+        // will output as web/build/possession.css
+        .addEntry('possession', './assets/scss/possession.scss')
+
+        // will output as web/build/recuperation.css
+        .addEntry('style_recuperation', './assets/scss/recuperation.scss')
+
+        // will output as web/build/recuperation.js
+        .addEntry('recuperation', './assets/js/recuperation.js')
+
         // will output as web/build/cpa.scss
         .addEntry('cpa', './assets/scss/cpa.scss')
 

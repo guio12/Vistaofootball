@@ -122,6 +122,39 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/tirs", name="tirs")
+     */
+    public function tirsAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render('stats/tirs.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')) . DIRECTORY_SEPARATOR,
+        ]);
+    }
+
+    /**
+     * @Route("/possession", name="possession")
+     */
+    public function possessionAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render('stats/possession.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')) . DIRECTORY_SEPARATOR,
+        ]);
+    }
+
+    /**
+     * @Route("/recuperation", name="recuperation")
+     */
+    public function recuperationAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render('stats/recuperation.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')) . DIRECTORY_SEPARATOR,
+        ]);
+    }
+
+    /**
      * @Route("/cpa", name="cpa")
      */
     public function cpaAction(Request $request)
