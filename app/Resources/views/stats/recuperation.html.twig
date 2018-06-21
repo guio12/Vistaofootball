@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/style_recuperation.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <ul class="score-board">
+            <li class="team-home">RCSA</li>
+            <li class="score">20 - 0</li>
+            <li class="team-visitor">FCB</li>
+            <li class="info">06/06/06</li>
+        </ul>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5">
+                <div id="chart">
+
+
+                    <ul class="bars">
+                        <li>
+                            <div data-height="0" class="bar">
+                                <div class="per"></div>
+                            </div>
+                            <span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-md-2 text-center">
+                <span class="glyphicon glyphicon-backward"></span>
+            </div>
+
+
+            <div class="col-md-5">
+                <div id="chart">
+
+
+                    <ul class="barsi">
+                        <li>
+                            <div data-height="0" class="bari">
+                                <div class="peri"></div>
+                            </div>
+                            <span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+{% endblock %}
+
+
+{% block javascripts %}
+<script src="{{ asset('build/recuperation.js') }}"></script>
+
+{% endblock %}
