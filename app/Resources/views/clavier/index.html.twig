@@ -14,312 +14,294 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-1">
-            <a class="logo-brand" href="{{ path('coachMenu') }}">
-                <img class="logo" alt="vistao football logo brand"
-                     src="{{ asset('build/images/logo_vistao.5263432c.png') }}">
-            </a>
+                <a class="logo-brand" href="{{ path('coachMenu') }}">
+                    <img class="logo" alt="vistao football logo brand"
+                         src="{{ asset('build/images/logo_vistao.5263432c.png') }}">
+                </a>
             </div>
             <div class="col-xs-11"><p id="resume"></p></div>
         </div>
 
+        <div class="keyboard">
 
-
-
-
-    <div class="keyboard">
-
-        <div class="row">
-            <div class="col-xs-4 adverse_pad highlight_pads counter-click" data-color="red">
-                <div value="ADVERSAIRE" class="joueur">
+            <div class="row">
+                <div value="ADVERSAIRE" class="col-xs-4 adverse_pad highlight_pads counter-click joueur"
+                     data-color="red">
                     <p>ADVERSAIRE<br></p>
                     <div class="counter-count">0</div>
                 </div>
-            </div>
-            <div class="col-xs-3 middle_pad highlight_pads" data-color="#ff0011">
-                <a href="#" class="mi-temps">
+                <!-- Trigger modal MI-TEMPS -->
+                <div type="button" class="col-xs-3 middle_pad highlight_pads" data-toggle="modal"
+                     data-target=".bs-modal-mi-temps" data-color="#ff0011">
+
                     <div class="btn button sp-btn pause-btn" style="color: white;">
                         <span class="in-btn glyphicon glyphicon-pause" aria-hidden="true"></span>
                     </div>
-                    <div value="Mi-temps" class="reset pause-btn ">
+                    <div value="Mi-temps" class="reset-counter pause-btn ">
                         <p>MI-TEMPS </p>
                     </div>
-                </a>
-            </div>
-            <div id="popup3">
-                <div class="row">
-                    <a href="#" class="mi-temps verticalcenter">
-                        <div value="" data-color="#ff0011" class="yellow_pad actionX">
-                            <p>FIN MT1</p>
-                        </div>
-                    </a>
-                    <a href="#" class="mi-temps verticalcenter">
-                        <div value="" data-color="#ff0011" class="yellow_pad actionX">
-                            <p>FIN MT2</p>
-                        </div>
-                    </a>
-                    <a href="#" class="mi-temps verticalcenter">
-                        <div value="" data-color="#ff0011" class="yellow_pad actionX">
-                            <p>PROLONGATION</p>
-                        </div>
-                    </a>
                 </div>
-            </div>
-
-            <div class="col-xs-3 middle_pad highlight_pads" data-color="#ff0011">
-                <a href="#" class="fin-match">
-                    <div value="" class="reset pause-btn verticalcenter">
+                <!-- Trigger modal FIN DU MATCH -->
+                <div type="button" class="col-xs-3 middle_pad highlight_pads" data-toggle="modal"
+                     data-target=".bs-modal-fin" data-color="#ff0011">
+                    <div value="" class="reset-counter pause-btn verticalcenter">
                         <p>FIN DE MATCH</p>
                     </div>
-                </a>
-            </div>
-            <div class="col-xs-2 middle_pad">
-                <div class="m-wrap verticalcenter">
-                    <div class="o-watch-wrap">
-                        <div class="o-timer">
-                            <span class="t-time"></span>
+                </div>
+                <div class="col-xs-2 middle_pad">
+                    <div class="m-wrap verticalcenter">
+                        <div class="o-watch-wrap">
+                            <div class="o-timer">
+                                <span class="t-time"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c253">
-                <div value="1" class=" reset joueur verticalcenter">
+            <div class="row">
+                <div value="1" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
+                     data-color="#00c253">
                     <p>1</p>
                 </div>
-            </div>
-            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c253">
-                <div value="2" class=" reset joueur verticalcenter">
+                <div value="2" class="reset-counter-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
+                     data-color="#00c253">
                     <p>2</p>
                 </div>
-            </div>
-            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c353">
-                <div value="3" class=" reset joueur verticalcenter">
+                <div value="3" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
+                     data-color="#00c353">
                     <p>3</p>
                 </div>
-            </div>
-            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c253">
-                <div value="4" class=" reset joueur verticalcenter">
+                <div value="4" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
+                     data-color="#00c253">
                     <p>4</p>
                 </div>
-            </div>
-            <div class="col-xs-3 purplemiddle_pad highlight_pads" data-color="purple">
-                <div value="109" class="action reset action verticalcenter">
+                <div value="109" class="reset-counter action verticalcenter col-xs-3 purplemiddle_pad highlight_pads"
+                     data-color="purple">
                     <p>CENTRE</p>
                 </div>
-            </div>
-            <div class="col-xs-3 purplemiddle_pad highlight_pads" data-color="purple">
-                <div value="110" class="reset actionTC verticalcenter">
+                <div value="110" class="reset-counter actionTC verticalcenter col-xs-3 purplemiddle_pad highlight_pads"
+                     data-color="purple">
                     <p>TIR CADRÉ</p>
                 </div>
-            </div>
-            <div class="col-xs-2 redmiddle_pad highlight_pads" data-color="red">
-                <div value="111" class="actionX actionX reset verticalcenter">
+                <div value="111"
+                     class="reset-counter actionX verticalcenter col-xs-2 redmiddle_pad highlight_pads"
+                     data-color="red">
                     <p>TIR NON CADRÉ</p>
                 </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c353">
-                <div value="5" class="reset joueur verticalcenter">
+            <div class="row">
+                <div value="5" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
+                     data-color="#00c353">
                     <p>5</p>
                 </div>
-            </div>
-            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c353">
-                <div value="6" class="reset joueur verticalcenter">
-                    <p>6</p>
+                <div value="6" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
+                     data-color="#00c353">
+                    <p>6</p>>
                 </div>
-            </div>
-            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c353">
-                <div value="7" class="reset joueur verticalcenter">
+                <div value="7" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
+                     data-color="#00c353">
                     <p>7</p>
                 </div>
-            </div>
-            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c353">
-                <div value="8" class="reset joueur verticalcenter">
+                <div value="8" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
+                     data-color="#00c353">
                     <p>8</p>
                 </div>
-            </div>
-            <div class="col-xs-3 purplemiddle_pad highlight_pads" data-color="purple">
-                <div value="112" class="reset action verticalcenter">
+                <div value="112" class="reset-counter action verticalcenter col-xs-3 purplemiddle_pad highlight_pads"
+                     data-color="purple">
                     <p>PASSE LONGUE</p>
                 </div>
-            </div>
-            <div class="col-xs-3 purplemiddle_pad highlight_pads" data-color="purple">
-                <div value="113" class=" actionDR reset verticalcenter">
+                <div value="113" class="actionDR reset-counter verticalcenter col-xs-3 purplemiddle_pad highlight_pads"
+                     data-color="purple">
                     <p>DRIBBLE REUSSI</p>
                 </div>
-            </div>
-            <div class="col-xs-2 redmiddle_pad highlight_pads" data-color="red">
-                <div value="114" class="actionX reset verticalcenter">
+                <div value="114" class="actionX reset-counter verticalcenter col-xs-2 redmiddle_pad highlight_pads"
+                     data-color="red">
                     <p>DRIBBLE ECHOUÉ</p>
                 </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c253">
-                <div value="9" class="reset joueur verticalcenter">
+            <div class="row">
+                <div value="9" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
+                     data-color="#00c253">
                     <p>9</p>
                 </div>
-            </div>
-            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c253">
-                <div value="10" class="reset joueur verticalcenter">
+                <div value="10" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
+                     data-color="#00c253">
                     <p>10</p>
                 </div>
-            </div>
-            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c253">
-                <div value="11" class="reset joueur verticalcenter">
+                <div value="11" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
+                     data-color="#00c253">
                     <p>11</p>
                 </div>
-            </div>
-            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c253">
-                <div value="12" class="reset joueur verticalcenter">
+                <div value="12" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
+                     data-color="#00c253">
                     <p>12</p>
                 </div>
-            </div>
-            <div class="col-xs-6 purplebig_pad highlight_pads" data-color="purple">
-                <a href="#" class="but">
-                    <div value="" class="reset verticalcenter">
-                        <p>BUT</p>
-                    </div>
-                </a>
-            </div>
-            <div id="popup2">
-                <div class="row">
-                    <a href="#" class="but">
-                        <div value="115" data-color="#ff0011"
-                             class=" actionSPE actionX reset purple_pad verticalcenter">
-                            <p>TETE</p>
-                        </div>
-                    </a>
-                    <a href="#" class="but">
-                        <div value="116" data-color="#ff0011"
-                             class=" actionSPE actionX reset purple_pad verticalcenter">
-                            <p>REPRISE</p>
-                        </div>
-                    </a>
-                    <a href="#" class="but">
-                        <div value="117" data-color="#ff0011"
-                             class="actionSPE actionX reset purple_pad verticalcenter">
-                            <p>POTEAU</p>
-                        </div>
-                    </a>
-                    <a href="#" class="but">
-                    </a>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">CONFIRMER LE BUT</label>
-                    </div>
+                <!-- Trigger modal BUT -->
+                <div type="button" class="reset-counter verticalcenter col-xs-6 purplebig_pad highlight_pads"
+                     data-toggle="modal"
+                     data-target=".bs-modal-but" data-color="purple">
+                    <p>BUT</p>
                 </div>
-            </div>
-            <div class="col-xs-2 redmiddle_pad highlight_pads" data-color="red">
-                <div value="118" class="reset actionSPE actionX verticalcenter">
+                <div value="118"
+                     class="reset-counter actionSPE actionX verticalcenter col-xs-2 redmiddle_pad highlight_pads"
+                     data-color="red">
                     <p>TIR BLOQUÉ</p>
                 </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c253">
-                <div value="13" class="reset joueur verticalcenter">
+            <div class="row">
+                <div value="13" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
+                     data-color="#00c253">
                     <p>13</p>
                 </div>
-            </div>
-            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c253">
-                <div value="14" data-color="#00c253" class="reset joueur verticalcenter">
+                <div value="14" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
+                     data-color="#00c253">
                     <p>14</p>
                 </div>
-            </div>
-            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c253">
-                <div value="15" data-color="#00c253" class="reset joueur verticalcenter">
+                <div value="15" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
+                     data-color="#00c253">
                     <p>15</p>
                 </div>
-            </div>
-            <div class="col-xs-1 green_pad highlight_pads" data-color="#00c253">
-                <div value="16" data-color="#00c253" class="reset joueur verticalcenter">
+                <div value="16" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
+                     data-color="#00c253">
                     <p>16</p>
                 </div>
-            </div>
-            <div class="col-xs-2 yellowmiddle_pad highlight_pads" data-color="red">
-                <a href="#" class="faute">
-                    <div value="" data-color="red" class="reset verticalcenter">
-                        <p>FAUTE<br></p>
-                    </div>
-                </a>
-            </div>
-
-            <div id="popup">
-                <div class="row">
-                    <a href="#" class="faute">
-                        <div value="101" data-color="red" class="reset yellow_pad actionX verticalcenter">
-                            <p>FAUTE</p>
-                        </div>
-                    </a>
-                    <a href="#" class="faute">
-                        <div value="102" data-color="red" class="reset yellow_pad actionX verticalcenter">
-                            <p>JAUNE</p>
-                        </div>
-                    </a>
-                    <a href="#" class="103">
-                        <div value="Rouge" data-color="red" class="reset yellow_pad actionX verticalcenter">
-                            <p>ROUGE</p>
-                        </div>
-                    </a>
-                    <a href="#" class="104">
-                        <div value="Penalty" data-color="red" class="reset yellow_pad actionX verticalcenter">
-                            <p>PENALTY</p>
-                        </div>
-                    </a>
+                <!-- Trigger modal FAUTE -->
+                <div type="button" class="reset-counter verticalcenter col-xs-2 yellowmiddle_pad highlight_pads"
+                     data-toggle="modal"
+                     data-target=".bs-modal-faute" data-color="red">
+                    <p>FAUTE<br></p>
                 </div>
-            </div>
-
-            <div class="col-xs-2 yellow_pad highlight_pads">
-                <div value="105" data-color="red" class=" reset actionX verticalcenter">
+                <div value="105" class="reset-counter actionX verticalcenter col-xs-2 yellow_pad highlight_pads"
+                     data-color="red">
                     <p>TOUCHE</p>
                 </div>
-            </div>
 
-            <div class="col-xs-2 yellow_pad highlight_pads">
-                <div value="106" data-color="red" class="reset actionX verticalcenter">
+                <div value="106" class="reset-counter actionX verticalcenter col-xs-2 yellow_pad highlight_pads"
+                     data-color="red">
                     <p>CORNER</p>
                 </div>
-            </div>
 
-            <div class="col-xs-1 yellow_pad highlight_pads">
-                <div value="107" data-color="red" class="reset actionX verticalcenter">
+                <div value="107" class="reset-counter actionX verticalcenter col-xs-1 yellow_pad highlight_pads"
+                     data-color="red">
                     <p>5M50</p>
                 </div>
-            </div>
 
-            <div class="col-xs-1 yellow_pad highlight_pads">
-                <div value="108" data-color="red" class="reset actionX verticalcenter">
+                <div value="108" class="reset-counter actionX verticalcenter col-xs-1 yellow_pad highlight_pads"
+                     data-color="red">
                     <p>H.J</p>
                 </div>
             </div>
 
-
-            <div id="popup4">
-                <div class="row">
-                    <p>CONFIRMER ?</p>
-                </div>
-                <div class="row">
-                    <div class="col-xs-6">
-                        <a href="#" class="fin-match"><span class="glyphicon glyphicon-remove"
-                                                            aria-hidden="true"></span></a>
+            <!-- Modal BUT -->
+            <div class="modal fade bs-modal-but" tabindex="-1" role="dialog"
+                 aria-labelledby="mySmallModalLabel">
+                <div class="modal-dialog modal-sm" role="document">
+                    <!-- Modal content-->
+                    <div class="modal-content" style="background-color: black;">
+                        <div class="row">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">CONFIRMER LE BUT</label>
+                            </div>
+                            <div value="115" data-color="#ff0011"
+                                 class=" actionSPE actionX reset-counter purple_pad verticalcenter"
+                                 data-dismiss="modal">
+                                <p>TETE</p>
+                            </div>
+                            <div value="116" data-color="#ff0011"
+                                 class=" actionSPE actionX reset-counter purple_pad verticalcenter"
+                                 data-dismiss="modal">
+                                <p>REPRISE</p>
+                            </div>
+                            <div value="117" data-color="#ff0011"
+                                 class="actionSPE actionX reset-counter purple_pad verticalcenter" data-dismiss="modal">
+                                <p>POTEAU</p>
+                            </div>
+                        </div>
                     </div>
+                </div>
+            </div>
 
-                    <div class="col-xs-6">
-                        <a href="#" class="fin-match"><span class="glyphicon glyphicon-ok"
-                                                            aria-hidden="true"></span></a>
+            <!-- Modal FAUTE -->
+            <div class="modal fade bs-modal-faute" tabindex="-1" role="dialog"
+                 aria-labelledby="mySmallModalLabel">
+                <div class="modal-dialog modal-sm" role="document">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div value="101" data-color="red" class="reset-counter yellow_pad actionX verticalcenter"
+                             data-dismiss="modal">
+                            <p>FAUTE</p>
+                        </div>
+                        <div value="102" data-color="red" class="reset-counter yellow_pad actionX verticalcenter"
+                             data-dismiss="modal">
+                            <p>JAUNE</p>
+                        </div>
+                        <div value="103" data-color="red" class="reset-counter yellow_pad actionX verticalcenter"
+                             data-dismiss="modal">
+                            <p>ROUGE</p>
+                        </div>
+                        <div value="104" data-color="red"
+                             class="reset-counter yellow_pad actionX verticalcenter" data-dismiss="modal">
+                            <p>PENALTY</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal FIN DU MATCH -->
+            <div class="modal fade bs-modal-fin" tabindex="-1" role="dialog"
+                 aria-labelledby="mySmallModalLabel">
+                <div class="modal-dialog modal-sm" role="document">
+                    <!-- Modal content-->
+                    <div class="modal-content" style="background-color: black;">
+                        <p>CONFIRMER ?</p>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                    <span class="glyphicon glyphicon-remove"
+                                          aria-hidden="true" data-dismiss="modal"></span>
+                            </div>
+
+                            <div class="col-xs-6">
+                                    <span class="glyphicon glyphicon-ok"
+                                          aria-hidden="true" data-dismiss="modal"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal MI-TEMPS -->
+            <div class="modal fade bs-modal-mi-temps" tabindex="-1" role="dialog"
+                 aria-labelledby="mySmallModalLabel">
+                <div class="modal-dialog modal-sm" role="document">
+                    <!-- Modal content-->
+                    <div class="modal-content" style="background-color: black;">
+                        <p>CONFIRMER ?</p>
+                        <div class="row">
+                            <a href="#" class="mi-temps verticalcenter">
+                                <div value="" data-color="#ff0011" class="yellow_pad actionX" data-dismiss="modal">
+                                    <p>FIN MT1</p>
+                                </div>
+                            </a>
+                            <a href="#" class="mi-temps verticalcenter">
+                                <div value="" data-color="#ff0011" class="yellow_pad actionX" data-dismiss="modal">
+                                    <p>FIN MT2</p>
+                                </div>
+                            </a>
+                            <a href="#" class="mi-temps verticalcenter">
+                                <div value="" data-color="#ff0011" class="yellow_pad actionX" data-dismiss="modal">
+                                    <p>PROLONGATION</p>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-    </div>
     </div>
 
 
