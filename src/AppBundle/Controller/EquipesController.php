@@ -18,10 +18,10 @@ class EquipesController extends Controller
     /**
      * Lists all equipe entities.
      *
-     * @Route("/{id}", name="equipes_index")
+     * @Route("/", name="equipes_index")
      * @Method("GET")
      */
-    public function indexAction($id)
+    public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
         $entraineur = new Entraineurs();
