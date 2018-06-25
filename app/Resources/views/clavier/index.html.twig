@@ -7,24 +7,15 @@
 
 {% block content %}{% endblock %}
 
-{% block header %}<br>{% endblock header %}
-
 {% block body %}
     <body>
     <div class="container">
         <div class="row">
-            <div class="col-xs-1">
-                <a class="logo-brand" href="{{ path('coachMenu') }}">
-                    <img class="logo" alt="vistao football logo brand"
-                         src="{{ asset('build/images/logo_vistao.5263432c.png') }}">
-                </a>
-            </div>
-            <div class="col-xs-11"><p id="resume"></p></div>
+            <div class="col-xs-12"><p id="resume"></p></div>
         </div>
 
         <div class="keyboard">
-
-            <div class="row"> 
+            <div class="row">
                 <div value="ADVERSAIRE" class="col-xs-4 adverse_pad highlight_pads counter-click joueur"
                      data-color="red">
                     <p>ADVERSAIRE<br></p>
@@ -35,7 +26,7 @@
                      class="reset-counter pause-btn col-xs-3 middle_pad highlight_pads verticalcenter"
                      data-toggle="modal"
                      data-target=".bs-modal-mi-temps" data-color="#ff0011" style="color: white;">
-                        <p><span class="in-btn glyphicon glyphicon-pause" aria-hidden="true"></span> MI-TEMPS </p>
+                    <p><span class="in-btn glyphicon glyphicon-pause" aria-hidden="true"></span> MI-TEMPS </p>
 
                 </div>
                 <!-- Trigger modal FIN DU MATCH -->

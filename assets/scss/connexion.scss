@@ -1,17 +1,14 @@
 // customize some Bootstrap variables
 
-
 html,
 body {
   width: 100%;
   height: 100%;
 }
 
-
-
-.img {
-  align-content: center;
-  padding-left:2vw;
+.brand-logo {
+  width: 30vh;
+  text-align: center;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -25,7 +22,8 @@ body {
 }
 
 .global{
-
+  font-family: 'Baumans', cursive;
+  text-transform: uppercase;
   background-size: cover;
   background-position: center center;
   min-height: 100%;
@@ -93,9 +91,11 @@ a, a:hover{
 .btn-primary:hover, .btn-primary:focus{
   color: #fff !important;
 }
-.form-group {
-  margin-bottom: 1.5rem;
+
+.form-group input {
+  text-align: center;
 }
+
 .form-control{
   height: 30px;
   font-size: 16vh;
@@ -149,13 +149,7 @@ a, a:hover{
 }
 
 
-.connexion {
-  opacity: 0.8;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  background-color: #2b95d1;
-}
+
 
 .erreurs {
   color: white;
