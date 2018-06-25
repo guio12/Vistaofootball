@@ -16,13 +16,155 @@ $(document).ready(function () {
     console.log('Clavier Vistao');
 });
 
+
+
+
+/* --------------------------------
+ *
+ * Envoi données BDD
+ *
+ *-------------------------------- */
+
+function envoiAjax() {
+
+    $.ajax({
+        url: 'envoiAjax/'+ actionneur +'/'+ action + '/' + receveur,
+        type: 'POST',
+        data: { joueur_action: actionneur, action_id: action, joueur_receveur: receveur },
+        success: function success(statut) { console.log("affiche messsage si tout ok")
+        },
+
+        error: function error(resultat, statut, erreur) {console.log('message si tout cassé')
+
+        }
+
+    });
+};
+
+etat = 0;
+
+console.log(etat);
+
+var receveur = "";
+var actionneur = "";
+var action = "";
+var actionX = "";
+var actionDR = "";
+var actionTC = "";
+
+$(".joueur*").click(function () {
+    if (etat === 0) {
+
+        actionneur = $(this).attr('value');
+        $('#resume').html(actionneur)
+        etat = 1;
+
+    } else if (etat === 1 && ($(this).attr('value') !== actionneur) || actionneur == "Adversaire") {
+
+        receveur = $(this).attr('value');
+
+        if (receveur.length) {
+            if (action.length == false) {
+                action = "000";
+            }
+            console.log(actionneur + " " + action + " " + receveur);
+             $('#resume').html("JOUEUR " + "<span style=\"color:#F00\">" + actionneur + "</span>" + " PASSE À JOUEUR " + "<span style=\"color:#F00\">" + receveur +"</span>");
+
+
+            envoiAjax();
+        }
+
+        actionneur = receveur;
+        receveur = "";
+
+        etat = 1;
+    } else if (etat === 2 && ($(this).attr('value') !== actionneur || actionneur == "Adversaire")) {
+
+        receveur = $(this).attr('value');
+        $('#resume').append(" AU JOUEUR "+ "<span style=\"color:#F00\">" + receveur + "</span>");
+
+        if (receveur.length) {
+            if (action.length == false) {
+                action = "000";
+            }
+            console.log(actionneur + " " + action + " " + receveur);
+            envoiAjax();
+        }
+
+        actionneur = receveur;
+        receveur = "";
+        action = "";
+        etat = 1;
+    }
+
+});
+
+
+$(".action*").click(function () {
+
+    if (etat === 1) {
+
+        action = $(this).attr('value');
+        $('#resume').html("JOUEUR " + "<span style=\"color:#F00\">" + actionneur + "</span>" + " " + $(this).children().html());
+        etat = 2;
+
+    }
+});
+
+$(".actionSPE*").click(function () {
+    if (etat === 4) {
+
+        actionSPE = $(this).attr('value');
+        console.log(actionneur + " " + actionTC + " " + actionSPE);
+        $('#resume').html("JOUEUR " + "<span style=\"color:#F00\">" + actionneur + "</span>" + " " + actionTC + " " + actionSPE);
+        envoiAjax();
+        actionTC = "";
+        etat = 0;
+    }
+});
+
+$(".actionX*").click(function () {
+    if (etat === 1) {
+        actionX = $(this).attr('value');
+        console.log(actionneur + " " + actionX);
+        $('#resume').html("JOUEUR " + "<span style=\"color:#F00\">" + actionneur + "</span>" + " : " + $(this).children().html());
+        envoiAjax();
+        etat = 0;
+        action = "";
+        actionX = "";
+        actionTC = "";
+
+    }
+});
+
+
+$(".actionDR").click(function () {
+    if (etat === 1) {
+
+        actionDR = $(this).attr('value');
+        console.log(actionneur + " " + actionDR);
+        $('#resume').html("JOUEUR " + "<span style=\"color:#F00\">" + actionneur + "</span>" + " " + $(this).children().html());
+        envoiAjax();
+        etat = 0;
+    }
+});
+$(".actionTC").click(function () {
+    console.log(etat);
+    if (etat === 1 && actionTC.length == 0) {
+
+        actionTC = $(this).attr('value');
+        etat = 4;
+    }
+});
+
+
 /* --------------------------------
  *
  * Highlight pad
  *
  *-------------------------------- */
 
-$("#pads*").click(function () {
+$(".highlight_pads*").click(function () {
     var button_color = $(this).data('color');
     $(this).effect("highlight", {color: button_color}, 160);
 });
@@ -41,7 +183,7 @@ $('.counter-click').on('click', function () {
     }
 );
 
-$('.reset').on('click', function () {
+$('.reset-counter').on('click', function () {
         counter = 0;
         $('.counter-count').text(counter);
     }
@@ -70,14 +212,6 @@ $(document).ready(function () {
 // Pause
     $('.pause-btn').on('click', function () {
         startTimer(timer);
-    });
-// Restart
-    $('.repeat-btn').on('click', function () {
-        min = 0;
-        sec = 0;
-        perc = 612;
-        $('.c-c').css('stroke-dashoffset', perc);
-        $('.t-time').text(min + ':0' + sec);
     });
 
     $('.o-opt-btn').on('click', function () {
@@ -130,43 +264,5 @@ $(document).ready(function () {
 
         }
     }
-
-});
-
-/* --------------------------------
- *
- * Modal Window
- *
- *-------------------------------- */
-
-$(document).ready(function () {
-    $("a.faute").click(function () {
-        $("#popup").fadeToggle("slow");
-
-    });
-
-});
-
-$(document).ready(function () {
-    $("a.but").click(function () {
-        $("#popup2").fadeToggle("slow");
-
-    });
-
-});
-
-$(document).ready(function () {
-    $("a.mi-temps").click(function () {
-        $("#popup3").fadeToggle("slow");
-
-    });
-
-});
-
-$(document).ready(function () {
-    $("a.fin-match").click(function () {
-        $("#popup4").fadeToggle("slow");
-
-    });
 
 });

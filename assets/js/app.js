@@ -13,7 +13,3 @@ $(document).ready(function () {
 });
 
 console.log('Bienvenue sur WebPack!');
-
-$(document).ready(function () {
-    $('[data-toggle="popover"]').popover();
-});
