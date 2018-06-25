@@ -1,24 +1,13 @@
 // customize some Bootstrap variables
 
-@import url('https://fonts.googleapis.com/css?family=Hind:400,500,700');
 
 html,
 body {
   width: 100%;
   height: 100%;
 }
-body{
-  font-family: 'Hind';
-  color: blue;
-}
 
-.alerte_erreur {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5vh;
-  margin-bottom: 0;
-}
+
 
 .img {
   align-content: center;
@@ -159,13 +148,6 @@ a, a:hover{
   z-index: -1;
 }
 
-#choix li{
-  display: inline;
-  list-style-type: none;
-  /*margin-left: 12vw;*/
-  font-size: 12rem;
-  margin-top:5vh;
-}
 
 .connexion {
   opacity: 0.8;
@@ -173,6 +155,10 @@ a, a:hover{
   transition-duration: 0.4s;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   background-color: #2b95d1;
+}
+
+.erreurs {
+  color: white;
 }
 
 

@@ -1,3 +1,53 @@
+body {
+  background-image: radial-gradient(circle, #2e2e2e, #343434, #3b3b3b, #414141, #484848);
+}
+
+h2 {
+  color: #2b95d1;
+  font-size: 5vh;
+  margin-top: 2vh;
+}
+
 input {
   color: black;
+  border-radius: 10px;
+  width: 60%;
+}
+
+label {
+  color: lightgrey;
+  font-size: 4rem;
+}
+
+.form-group {
+  margin-top: 4rem;
+  margin-bottom: 5rem;
+  padding-bottom: 6rem;
+}
+
+.envoyer {
+  margin-top: 3vh;
+}
+
+.erreurs {
+
+}
+
+.btn{
+  -webkit-transition: 350ms ease all;
+  transition: 350ms ease all;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: .6rem 1.5rem;
+  cursor: pointer;
+}
+
+.btn:hover, .btn:focus {
+  box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.15);
+  color: #fff !important;
+}
+
+.btn{
+  background-color: #2b95d1 !important;
+  border-color: #2b95d1 !important;
 }

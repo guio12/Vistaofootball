@@ -24,8 +24,26 @@
         // will output as web/build/connexion.css
         .addEntry('inscription', './assets/scss/inscription.scss')
 
+        // will output as web/build/accueil.css
+        .addEntry('style_accueil', './assets/scss/accueil.scss')
+
+        // will output as web/build/clavier.js
+        .addEntry('accueil', './assets/js/accueil.js')
+
             // will output as web/build/images/...png
-        .addEntry('logo_connexion', './assets/images/Vistao football bk.png')
+        .addEntry('logo_connexion', './assets/images/logo_connexion.png')
+
+        // will output as web/build/images/...png
+        .addEntry('logo_header', './assets/images/logo_header.png')
+
+        // will output as web/build/images/...png
+        .addEntry('gestion_equipe', './assets/images/gestion_equipe')
+
+        // will output as web/build/images/...png
+        .addEntry('lancer_match', './assets/images/lancer_match')
+
+        // will output as web/build/images/...png
+        .addEntry('stats_globales', './assets/images/stats_globales')
 
             // will output as web/build/clavier.js
         .addEntry('clavier', './assets/js/clavier.js')

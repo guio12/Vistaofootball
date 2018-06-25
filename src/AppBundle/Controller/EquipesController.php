@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Entraineurs;
 use AppBundle\Entity\Equipes;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -17,14 +18,16 @@ class EquipesController extends Controller
     /**
      * Lists all equipe entities.
      *
-     * @Route("/", name="equipes_index")
+     * @Route("/{id}", name="equipes_index")
      * @Method("GET")
      */
-    public function indexAction()
+    public function indexAction($id)
     {
         $em = $this->getDoctrine()->getManager();
+        $entraineur = new Entraineurs();
+        $entraineur->getId();
 
-        $equipes = $em->getRepository('AppBundle:Equipes')->findAll();
+        $equipes = $em->getRepository('AppBundle:Equipes')->findBy(["equipeId" => $entraineur]);
 
         return $this->render('equipes/index.html.twig', array(
             'equipes' => $equipes,
