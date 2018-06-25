@@ -56,12 +56,13 @@ $(".joueur*").click(function () {
     if (etat === 0) {
 
         actionneur = $(this).attr('value');
-        $('#resume').html(actionneur)
+        $('#resume').html(actionneur);
         etat = 1;
 
     } else if (etat === 1 && ($(this).attr('value') !== actionneur) || actionneur == "Adversaire") {
 
         receveur = $(this).attr('value');
+
 
         if (receveur.length) {
             if (action.length == false) {
