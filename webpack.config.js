@@ -37,13 +37,13 @@
         .addEntry('logo_header', './assets/images/logo_header.png')
 
         // will output as web/build/images/...png
-        .addEntry('gestion_equipe', './assets/images/gestion_equipe')
+        .addEntry('gestion_equipe', './assets/images/gestion_equipe.jpg')
 
         // will output as web/build/images/...png
-        .addEntry('lancer_match', './assets/images/lancer_match')
+        .addEntry('lancer_match', './assets/images/lancer_match.jpg')
 
         // will output as web/build/images/...png
-        .addEntry('stats_globales', './assets/images/stats_globales')
+        .addEntry('stats_globales', './assets/images/stats_globales.jpg')
 
             // will output as web/build/clavier.js
         .addEntry('clavier', './assets/js/clavier.js')
