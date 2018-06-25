@@ -23,11 +23,9 @@ class EquipesController extends Controller
      */
     public function indexAction()
     {
+        $userId = $this->getUser()->getId();
         $em = $this->getDoctrine()->getManager();
-        $entraineur = new Entraineurs();
-        $entraineur->getId();
-
-        $equipes = $em->getRepository('AppBundle:Equipes')->findBy(["equipeId" => $entraineur]);
+        $equipes = $em->getRepository('AppBundle:Equipes')->findBy(["entraineurId" => $userId]);
 
         return $this->render('equipes/index.html.twig', array(
             'equipes' => $equipes,
@@ -42,6 +40,7 @@ class EquipesController extends Controller
      */
     public function newAction(Request $request)
     {
+
         $equipe = new Equipes();
         $form = $this->createForm('AppBundle\Form\EquipesType', $equipe);
         $form->handleRequest($request);
