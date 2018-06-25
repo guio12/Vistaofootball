@@ -41,15 +41,10 @@
   "build/menu.css": "./menu.css",
   "build/accueil.js": "./accueil.js",
   "build/manifest.js": "./manifest.js",
-  "build/fonts/glyphicons-halflings-regular.eot": "./fonts/glyphicons-halflings-regular.f4769f9b.eot",
-  "build/fonts/glyphicons-halflings-regular.ttf": "./fonts/glyphicons-halflings-regular.e18bbf61.ttf",
-  "build/fonts/glyphicons-halflings-regular.woff": "./fonts/glyphicons-halflings-regular.fa277232.woff",
-  "build/fonts/glyphicons-halflings-regular.woff2": "./fonts/glyphicons-halflings-regular.448c34a5.woff2",
   "build/images/gestion_equipe.jpg": "./images/gestion_equipe.3a50e2f3.jpg",
-  "build/images/lancer_match.jpg": "./images/lancer_match.54a74f93.jpg",
   "build/images/logo_connexion.png": "./images/logo_connexion.e64dc830.png",
   "build/images/logo_header.png": "./images/logo_header.85ab0a33.png",
   "build/images/logo_vistao.png": "./images/logo_vistao.5263432c.png",
   "build/images/stats_globales.jpg": "./images/stats_globales.ce3400b6.jpg",
-  "build/images/glyphicons-halflings-regular.svg": "./images/glyphicons-halflings-regular.89889688.svg"
+  "build/images/lancer_match.jpg": "./images/lancer_match.54a74f93.jpg"
 }
