@@ -1,5 +1,8 @@
-// customize some Bootstrap variables
-$brand-primary: #0092ca;
+// customize variables
+$cian: #53e2e2;
+$darkcian: #0ba2a3;
+$blue: #25aae1;
+
 
 // the ~ allows you to reference things in node_modules
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
@@ -11,26 +14,28 @@ body {
   font-family: 'Baumans', cursive;
   font-weight: bold;
   color: white;
+  margin: 0;
+  padding: 0;
 }
 
-.navbar-brand > img {
-  height: 80px;
+.logo {
+  height:10vh;
+  vertical-align: center;
 }
 
-.navbar {
-  min-height: 112px;
-  border-radius: 0;
+header {
+  line-height: 13vh;
+  vertical-align: center;
+  width:100%;
 }
 
-.accueil_connexion {
-  font-size: 3rem;
-}
-
-.deco {
-  opacity: 0.8;
+.btn-style {
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  background-color: #2b95d1;
-  font-size: 3rem;
+  background-color: $darkcian;
+  color: black;
+  font-size:20px;
+}
+.btn-style:hover {
+  color:white;
 }
