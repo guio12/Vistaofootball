@@ -49,18 +49,13 @@ class DefaultController extends Controller
      public function coachAction(Request $request)
      {
          // replace this example code with whatever you need
-         return $this->render('coach/menu.html.twig', [
-             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+
+
+         $user = $this->getUser();
+         return $this->render('coach/menu.html.twig',  [
+             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'user' => $user
          ]);
      }
-
-    public function testAction(Request $request)
-    {
-        // replace this example code with whatever you need
-        return $this->render('coach/menu.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')) . DIRECTORY_SEPARATOR,
-        ]);
-    }
 
 
     /**
@@ -70,9 +65,10 @@ class DefaultController extends Controller
      public function avantMatchAction(Request $request)
      {
 
-           $em = $this->getDoctrine()->getManager();
 
-           $equipes = $em->getRepository('AppBundle:Equipes')->findAll();
+       $userId = $this->getUser()->getId();
+       $em = $this->getDoctrine()->getManager();
+       $equipes = $em->getRepository('AppBundle:Equipes')->findBy(["entraineurId" => $userId]);
 
            return $this->render('clavier/AvantMatch.html.twig', array(
                'equipes' => $equipes,
@@ -81,6 +77,7 @@ class DefaultController extends Controller
      }
     /**
      * @Route("/joueurByEquipe/{x}", name="joueurByEquipe")
+     *
      */
 
      public function joueurByEquipeAction(Request $request, $x)
