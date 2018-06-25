@@ -21,11 +21,17 @@
   "build/style_clavier.css": "./style_clavier.css",
   "build/admin_equipes.js": "./admin_equipes.js",
   "build/admin_equipes.css": "./admin_equipes.css",
-  "build/accueil.js": "./accueil.js",
-  "build/accueil.css": "./accueil.css",
+  "build/style_accueil.js": "./style_accueil.js",
+  "build/style_accueil.css": "./style_accueil.css",
   "build/menu.js": "./menu.js",
   "build/menu.css": "./menu.css",
+  "build/accueil.js": "./accueil.js",
   "build/manifest.js": "./manifest.js",
+  "build/fonts/glyphicons-halflings-regular.eot": "./fonts/glyphicons-halflings-regular.f4769f9b.eot",
+  "build/fonts/glyphicons-halflings-regular.ttf": "./fonts/glyphicons-halflings-regular.e18bbf61.ttf",
+  "build/fonts/glyphicons-halflings-regular.woff": "./fonts/glyphicons-halflings-regular.fa277232.woff",
+  "build/fonts/glyphicons-halflings-regular.woff2": "./fonts/glyphicons-halflings-regular.448c34a5.woff2",
   "build/images/Vistao football bk.png": "./images/Vistao football bk.02bd3d43.png",
-  "build/images/logo_vistao.png": "./images/logo_vistao.5263432c.png"
+  "build/images/logo_vistao.png": "./images/logo_vistao.5263432c.png",
+  "build/images/glyphicons-halflings-regular.svg": "./images/glyphicons-halflings-regular.89889688.svg"
 }
