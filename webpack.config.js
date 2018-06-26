@@ -54,7 +54,7 @@
         .addEntry('style_clavier', './assets/scss/clavier.scss')
 
         // will output as web/build/menu.css
-        .addEntry('menu', './assets/scss/menu.css')
+        .addEntry('menu', './assets/scss/menu.scss')
 
         // will output as web/build/stats.css
         .addEntry('stats', './assets/scss/statsgenerales.scss')
