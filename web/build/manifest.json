@@ -21,8 +21,11 @@
   "build/style_recuperation.css": "./style_recuperation.css",
   "build/possession.js": "./possession.js",
   "build/possession.css": "./possession.css",
+<<<<<<< Updated upstream
   "build/menu.js": "./menu.js",
   "build/menu.css": "./menu.css",
+=======
+>>>>>>> Stashed changes
   "build/style.js": "./style.js",
   "build/style.css": "./style.css",
   "build/inscription.js": "./inscription.js",
