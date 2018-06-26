@@ -13,7 +13,7 @@ require('bootstrap-sass');
 
 
 $(document).ready(function () {
-    console.log('Clavier Vistao');
+    grey();
 });
 
 
@@ -27,23 +27,62 @@ $(document).ready(function () {
 
 function envoiAjax() {
 
+    if (receveur.length == 0) {
+      receveur = 0;
+    }
     $.ajax({
         url: 'envoiAjax/'+ actionneur +'/'+ action + '/' + receveur,
         type: 'POST',
         data: { joueur_action: actionneur, action_id: action, joueur_receveur: receveur },
-        success: function success(statut) { console.log("affiche messsage si tout ok")
-        },
-
-        error: function error(resultat, statut, erreur) {console.log('message si tout cassé')
-
+        success: function success(statut) { console.log("affiche messsage si tout ok");
         }
-
-    });
-};
+      }
+    );}
 
 etat = 0;
 
-console.log(etat);
+function grey() {
+if (etat == 0) {
+
+    $('.action').css("filter" , "grayscale(100%)");
+    $('.actionSPE').css("filter" , "grayscale(100%)");
+    $('.actionX').css("filter" , "grayscale(100%)");
+    $('.actionDR').css("filter" , "grayscale(100%)");
+    $('.actionTC').css("filter" , "grayscale(100%)");
+    $('.actionF').css("filter" , "grayscale(100%)");
+    $('.AfTC').css("filter" , "grayscale(100%)");
+      $('.joueur').css("filter" , "grayscale(0%)");
+
+}else if (etat == 1) {
+  $('.action').css("filter" , "grayscale(0%)");
+  $('.actionSPE').css("filter" , "grayscale(0%)");
+  $('.actionX').css("filter" , "grayscale(0%)");
+  $('.actionDR').css("filter" , "grayscale(0%)");
+  $('.actionTC').css("filter" , "grayscale(0%)");
+  $('.actionF').css("filter" , "grayscale(0%)");
+  $('.AfTC').css("filter" , "grayscale(0%)");
+
+}else if (etat == 2) {
+  $('.action').css("filter" , "grayscale(100%)");
+  $('.actionSPE').css("filter" , "grayscale(100%)");
+  $('.actionX').css("filter" , "grayscale(100%)");
+  $('.actionDR').css("filter" , "grayscale(100%)");
+  $('.actionTC').css("filter" , "grayscale(100%)");
+  $('.actionF').css("filter" , "grayscale(100%)");
+  $('.AfTC').css("filter" , "grayscale(100%)");
+
+}else if (etat == 4) {
+  $('.actionSPE').css("filter" , "grayscale(0%)");
+  $('.action').css("filter" , "grayscale(100%)");
+  $('.joueur').css("filter" , "grayscale(100%)");
+  $('.actionX').css("filter" , "grayscale(100%)");
+  $('.actionDR').css("filter" , "grayscale(100%)");
+  $('.actionTC').css("filter" , "grayscale(100%)");
+  $('.actionF').css("filter" , "grayscale(100%)");
+  $('.AfTC').css("filter" , "grayscale(0%)");
+
+  }
+}
 
 var receveur = "";
 var actionneur = "";
@@ -54,33 +93,24 @@ var actionTC = "";
 
 $(".joueur*").click(function () {
     if (etat === 0) {
-
         actionneur = $(this).attr('value');
         $('#resume').html(actionneur);
         etat = 1;
-
     } else if (etat === 1 && ($(this).attr('value') !== actionneur) || actionneur == "Adversaire") {
-
         receveur = $(this).attr('value');
 
 
         if (receveur.length) {
             if (action.length == false) {
-                action = "000";
+                action = "1";
             }
-            console.log(actionneur + " " + action + " " + receveur);
              $('#resume').html("JOUEUR " + "<span style=\"color:#F00\">" + actionneur + "</span>" + " PASSE À JOUEUR " + "<span style=\"color:#F00\">" + receveur +"</span>");
-
-
             envoiAjax();
         }
-
         actionneur = receveur;
         receveur = "";
-
         etat = 1;
     } else if (etat === 2 && ($(this).attr('value') !== actionneur || actionneur == "Adversaire")) {
-
         receveur = $(this).attr('value');
         $('#resume').append(" AU JOUEUR "+ "<span style=\"color:#F00\">" + receveur + "</span>");
 
@@ -88,38 +118,34 @@ $(".joueur*").click(function () {
             if (action.length == false) {
                 action = "000";
             }
-            console.log(actionneur + " " + action + " " + receveur);
             envoiAjax();
         }
-
         actionneur = receveur;
         receveur = "";
         action = "";
         etat = 1;
     }
-
+grey();
 });
-
 
 $(".action*").click(function () {
 
     if (etat === 1) {
-
         action = $(this).attr('value');
         $('#resume').html("JOUEUR " + "<span style=\"color:#F00\">" + actionneur + "</span>" + " " + $(this).children().html());
         etat = 2;
-
     }
+    grey();
 });
 
 $(".actionSPE*").click(function () {
     if (etat === 4) {
-
         actionSPE = $(this).attr('value');
         console.log(actionneur + " " + actionTC + " " + actionSPE);
         $('#resume').html("JOUEUR " + "<span style=\"color:#F00\">" + actionneur + "</span>" + " " + actionTC + " " + actionSPE);
         envoiAjax();
         actionTC = "";
+        grey();
         etat = 0;
     }
 });
@@ -127,35 +153,30 @@ $(".actionSPE*").click(function () {
 $(".actionX*").click(function () {
     if (etat === 1) {
         actionX = $(this).attr('value');
-        console.log(actionneur + " " + actionX);
         $('#resume').html("JOUEUR " + "<span style=\"color:#F00\">" + actionneur + "</span>" + " : " + $(this).children().html());
         envoiAjax();
         etat = 0;
         action = "";
         actionX = "";
         actionTC = "";
-
     }
+    grey();
 });
-
-
 $(".actionDR").click(function () {
     if (etat === 1) {
-
         actionDR = $(this).attr('value');
-        console.log(actionneur + " " + actionDR);
         $('#resume').html("JOUEUR " + "<span style=\"color:#F00\">" + actionneur + "</span>" + " " + $(this).children().html());
         envoiAjax();
-        etat = 0;
+        actionDR = "grey";
     }
+    grey();
 });
 $(".actionTC").click(function () {
-    console.log(etat);
     if (etat === 1 && actionTC.length == 0) {
-
         actionTC = $(this).attr('value');
         etat = 4;
     }
+    grey();
 });
 
 
@@ -168,6 +189,7 @@ $(".actionTC").click(function () {
 $(".highlight_pads*").click(function () {
     var button_color = $(this).data('color');
     $(this).effect("highlight", {color: button_color}, 160);
+
 });
 
 /* --------------------------------
@@ -189,6 +211,8 @@ $('.reset-counter').on('click', function () {
         $('.counter-count').text(counter);
     }
 );
+
+
 
 /* --------------------------------
  *
