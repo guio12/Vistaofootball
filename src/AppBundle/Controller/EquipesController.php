@@ -24,11 +24,15 @@ class EquipesController extends Controller
     public function indexAction()
     {
         $userId = $this->getUser()->getId();
+        $nom = $this->getUser()->getNom();
+        $prenom = $this->getUser()->getPrenom();
         $em = $this->getDoctrine()->getManager();
         $equipes = $em->getRepository('AppBundle:Equipes')->findBy(["entraineurId" => $userId]);
 
         return $this->render('equipes/index.html.twig', array(
             'equipes' => $equipes,
+            'nom' => $nom,
+            'prenom' => $prenom,
         ));
     }
 
@@ -41,10 +45,19 @@ class EquipesController extends Controller
     public function newAction(Request $request)
     {
 
+        $userId = $this->getUser()->getId();
+        $nom = $this->getUser()->getNom();
+        $prenom = $this->getUser()->getPrenom();
+        $club = $this->getUser()->getNomClub();
+
+        $em = $this->getDoctrine()->getManager();
+        $entraineur = $em->getRepository('AppBundle:Equipes')->findBy(["entraineurId" => $userId]);
+        var_dump($entraineur);
         $equipe = new Equipes();
+        $equipe->setEntraineurId($userId);
+        $equipe->setEntraineurNomClub($club);
         $form = $this->createForm('AppBundle\Form\EquipesType', $equipe);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($equipe);
@@ -54,7 +67,12 @@ class EquipesController extends Controller
         }
 
         return $this->render('equipes/new.html.twig', array(
+            'entraineur' => $entraineur,
             'equipe' => $equipe,
+            'userId' => $userId,
+            'nom' => $nom,
+            'prenom' => $prenom,
+            'club' => $club,
             'form' => $form->createView(),
         ));
     }
@@ -68,9 +86,13 @@ class EquipesController extends Controller
     public function showAction(Equipes $equipe)
     {
         $deleteForm = $this->createDeleteForm($equipe);
+        $nom = $this->getUser()->getNom();
+        $prenom = $this->getUser()->getPrenom();
 
         return $this->render('equipes/show.html.twig', array(
             'equipe' => $equipe,
+            'nom' => $nom,
+            'prenom' => $prenom,
             'delete_form' => $deleteForm->createView(),
         ));
     }
