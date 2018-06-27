@@ -171,11 +171,9 @@ class DefaultController extends Controller
      */
     public function ajaxEnvoi($actionneur, $action, $receveur)
     {
-
+        $userId = $this->getUser()->getId();
         $em = $this->getDoctrine()->getManager();
         $actions_match = new ActionsMatch();
-
-        // $actions_match = $em->getRepository("AppBundle:ActionsMatch")->findAll();
 
         $actions_match->setMatchId(2);
         $actions_match->setJoueurAction($actionneur);
@@ -184,6 +182,8 @@ class DefaultController extends Controller
 
         $em->persist($actions_match);
         $em->flush();
+
+        return "Ajax envoyé";
 
     }
 

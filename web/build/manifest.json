@@ -38,7 +38,6 @@
   "build/style_accueil.js": "./style_accueil.js",
   "build/style_accueil.css": "./style_accueil.css",
   "build/menu.js": "./menu.js",
-  "build/menu.css": "./menu.css",
   "build/accueil.js": "./accueil.js",
   "build/manifest.js": "./manifest.js",
   "build/fonts/glyphicons-halflings-regular.eot": "./fonts/glyphicons-halflings-regular.f4769f9b.eot",

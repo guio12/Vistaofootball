@@ -6,30 +6,36 @@
 {% endblock %}
 
 
-{%  block content %}{% endblock %}
+{% block content %}{% endblock %}
 
 {% block body %}
     <section>
         <div class="container-fluid">
-            <h1 class="text-center">MENU</h1>
-
-            <div class="row">
-                <div class="col-xs-6 text-center">    <!-- METTRE LES PHOTOS + BACKGROUND DANS LE CSS -->
+            <div class="row presentation">
+                <div class="col-xs-6 text-center">
                     <a href="{{ path('equipes_index') }}">
-                      <img class="img-responsive"
-                      src="{{ asset('build/images/gestion_equipe.52838ec0.jpg') }}"
-                      alt="Gestion d'équipe"></a>
+                        <img class="img-responsive illustration"
+                             src="{{ asset('build/images/gestion_equipe.3a50e2f3.jpg') }}"
+                             alt="Gestion d'équipe"><h2 class="texteIllustration">Gestion d'équipe</h2></a>
                 </div>
                 <div class="col-xs-6 text-center">
-                    <a href="{{ path('AvantMatch') }}"><img class="img-responsive" src="{{ asset('build/images/lancer_match.54a74f93.jpg') }}" alt="Avant match"></a>
+                    <a href="{{ path('AvantMatch') }}">
+                        <img class="img-responsive illustration"
+                             src="{{ asset('build/images/lancer_match.54a74f93.jpg') }}"
+                             alt="Avant match"><h2 class="texteIllustration text-center">Lancer le match</h2></a>
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-6 text-center">    <!-- METTRE LES PHOTOS + BACKGROUND DANS LE CSS -->
-                    <a href="{{ path('statsmatch') }}"><img src="{{ asset('build/images/stats_globales.7794df35.jpg') }}" alt="Statistiques"></a>
+                <div class="col-xs-6 text-center">
+                    <a href="{{ path('statsmatch') }}">
+                        <img class="img-responsive illustration"
+                             src="{{ asset('build/images/stats_globales.ce3400b6.jpg') }}"
+                             alt="Statistiques"><h2 class="texteIllustration text-center">Statistiques</h2></a>
                 </div>
                 <div class="col-xs-6 text-center">
-                    <a href="#"><img src="http://via.placeholder.com/4000x3000" alt="???"></a>
+                    <a href="#">
+                        <img class="img-responsive illustration" src="http://via.placeholder.com/4000x3000" alt="???">
+                        <h2 class="texteIllustration text-center">Mystère ?</h2></a>
                 </div>
             </div>
         </div>

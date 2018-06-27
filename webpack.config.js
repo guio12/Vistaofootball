@@ -36,7 +36,7 @@
         // will output as web/build/images/...png
         .addEntry('logo_header', './assets/images/logo_header.png')
 
-        // will output as web/build/images/...png
+        // will output as web/build/images/...jpg
         .addEntry('gestion_equipe', './assets/images/gestion_equipe.jpg')
 
         // will output as web/build/images/...png
@@ -54,7 +54,7 @@
         .addEntry('style_clavier', './assets/scss/clavier.scss')
 
         // will output as web/build/menu.css
-        .addEntry('menu', './assets/scss/menu.css')
+        .addEntry('menu', './assets/scss/menu.scss')
 
         // will output as web/build/stats.css
         .addEntry('stats', './assets/scss/statsgenerales.scss')
