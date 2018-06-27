@@ -19,6 +19,7 @@ section a img {
     z-index: 1;
     align-items: center;
     display: flex;
+    border-radius: 27px;
 }
 
 .texteIllustration {
@@ -32,8 +33,16 @@ section a img {
     text-transform: uppercase;
     text-decoration: none;
     color: white;
+    font-size: 4.3rem;
 }
 
 .texteIllustration:hover {
-    color: black;
+    font-size: 4.7rem;
+    color: white;
+}
+
+h2 {
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s; /* Safari */;
+    transition-timing-function: linear;
 }
