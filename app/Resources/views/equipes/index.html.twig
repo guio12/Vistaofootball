@@ -10,7 +10,6 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Nom de l'entraîneur</th>
                     <th>Nom du club</th>
                     <th>Championnat</th>
@@ -20,10 +19,10 @@
                 </tr>
                 </thead>
                 <tbody>
+
                 {% for equipe in equipes %}
                     <tr>
-                        <td><a href="{{ path('equipes_show', { 'id': equipe.id }) }}">{{ equipe.id }}</a></td>
-                        <td>{{ equipe.entraineurId }}</td>
+                        <td>{{ nom }} {{ prenom }}</td>
                         <td>{{ equipe.entraineurNomClub }}</td>
                         <td>{{ equipe.championnat }}</td>
                         <td>{{ equipe.categorie }}</td>

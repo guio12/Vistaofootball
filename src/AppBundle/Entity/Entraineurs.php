@@ -47,6 +47,7 @@ class Entraineurs extends BaseUser
     private $nomClub;
 
 
+
     public function __construct()
     {
         parent::__construct();
