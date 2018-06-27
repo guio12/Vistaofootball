@@ -52,7 +52,6 @@ class EquipesController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $entraineur = $em->getRepository('AppBundle:Equipes')->findBy(["entraineurId" => $userId]);
-        var_dump($entraineur);
         $equipe = new Equipes();
         $equipe->setEntraineurId($userId);
         $equipe->setEntraineurNomClub($club);
@@ -105,6 +104,10 @@ class EquipesController extends Controller
      */
     public function editAction(Request $request, Equipes $equipe)
     {
+        $userId = $this->getUser()->getId();
+        $em = $this->getDoctrine()->getManager();
+        $entraineur = $em->getRepository('AppBundle:Equipes')->findBy(["entraineurId" => $userId]);
+
         $deleteForm = $this->createDeleteForm($equipe);
         $editForm = $this->createForm('AppBundle\Form\EquipesType', $equipe);
         $editForm->handleRequest($request);
@@ -112,11 +115,12 @@ class EquipesController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('equipes_edit', array('id' => $equipe->getId()));
+            return $this->redirectToRoute('equipes_show', array('id' => $equipe->getId()));
         }
 
         return $this->render('equipes/edit.html.twig', array(
             'equipe' => $equipe,
+            'entraineur' => $entraineur,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
