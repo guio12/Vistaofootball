@@ -1,4 +1,4 @@
-{% extends 'equipes/layout.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block body %}
     <div class="container">
@@ -30,11 +30,11 @@
                         <td>
 
                             <a href="{{ path('equipes_show', { 'id': equipe.id }) }}">
-                                <button class="btn_equipe btn">DÉTAILS</button>
+                                <button class="btn-style btn">DÉTAILS</button>
                             </a>
 
                             <a href="{{ path('equipes_edit', { 'id': equipe.id }) }}">
-                                <button class="btn_equipe btn">ÉDITER</button>
+                                <button class="btn-style btn">ÉDITER</button>
                             </a>
 
 
@@ -48,7 +48,7 @@
         </div>
 
         <a href="{{ path('equipes_new') }}">
-            <button class="btn_equipe btn" >CRÉER UNE NOUVELLE ÉQUIPE</button>
+            <button class="btn-style btn" >CRÉER UNE NOUVELLE ÉQUIPE</button>
         </a>
 
     </div>

@@ -1,4 +1,4 @@
-{% extends 'equipes/layout.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block body %}
     <div class="container">
@@ -77,10 +77,10 @@
                     {{ form_widget(form.numEquipe) }}
                 </div>
             </div>
-            <button class="btn_equipe btn" type="submit" value="Create">CRÉER</button>
+            <button class="btn-style btn" type="submit" value="Create">CRÉER</button>
             {{ form_end(form) }}
 
-            <a href="{{ path('equipes_index') }}"><button class="btn_equipe btn">RETOUR À LA LISTE</button></a>
+            <a href="{{ path('equipes_index') }}"><button class="btn-style btn">RETOUR À LA LISTE</button></a>
 
         </div>
     </div>

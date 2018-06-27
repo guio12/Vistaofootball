@@ -1,4 +1,4 @@
-{% extends 'equipes/layout.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block body %}
     <div class="container">
@@ -31,15 +31,15 @@
         </div>
 
         <a href="{{ path('equipes_index') }}">
-            <button class="btn_equipe btn">RETOUR À LA LISTE</button>
+            <button class="btn-style btn">RETOUR À LA LISTE</button>
         </a>
         <br>
         <a href="{{ path('equipes_edit', { 'id': equipe.id }) }}">
-            <button class="btn_equipe btn">ÉDITER</button>
+            <button class="btn-style btn">ÉDITER</button>
         </a>
 
         {{ form_start(delete_form) }}
-        <button type="submit" value="Delete" class="btn_equipe btn">SUPPRIMER</button>
+        <button type="submit" value="Delete" class="btn-style btn">SUPPRIMER</button>
         {{ form_end(delete_form) }}
 
     </div>
