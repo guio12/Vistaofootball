@@ -14,7 +14,7 @@ use Doctrine\ORM\Entityrepository;
 
 class ActionsMatchRepository extends EntityRepository
 {
-  public function PassesStats()
+  /**public function PassesStats()
   {
       $dql = 'SELECT c.joueurReceveur FROM AppBundle:ActionsMatch c WHERE c.joueurReceveur = 0';
       $query = $this->getEntityManager()->createQuery($dql);
@@ -26,5 +26,5 @@ class ActionsMatchRepository extends EntityRepository
       $dql = 'SELECT c.joueurReceveur FROM AppBundle:ActionsMatch c WHERE c.joueurReceveur > 0';
       $query = $this->getEntityManager()->createQuery($dql);
       return $query->execute();
-  }
+  }**/
 }

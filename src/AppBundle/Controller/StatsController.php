@@ -73,11 +73,16 @@ class StatsController extends Controller
             'passesAmis' => $passesAmis,
         ));**/
 
-       $test = $em->getRepository(Eleve::class)
-            ->findBy (
-                ['joueur_action'=>'>0', 'nom'=>'Snow'],
+        $em = $this->getDoctrine()->getManager();
 
-            );
+       $test = $em->getRepository(Appbundle::ActionsMatch)->findAll ();
+
+
+       count($test);
+
+        return $this->render('stats/possession.html.twig', array(
+            'test' => $test,
+        ));
 
 
     }
