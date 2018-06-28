@@ -52,7 +52,7 @@
                         <h3><a href="">PASSES</h3>
                         <div class="progress">
                             <div class="progress-bar progress-bar-info" style="width: 40%">
-                                <p>40%</p>
+                                <p>{{ passesAmis }}</p>
                             </div>
                             <div class="progress-bar progress-bar" style="width: 60%">
                                 <p>60%</p>
@@ -99,7 +99,7 @@
                         <h3><a href="">PASSES</h3>
                         <div class="progress">
                             <div class="progress-bar progress-bar-info" style="width: 40%">
-                                <p>40%</p>
+                                <p>{{ passes }}</p>
                             </div>
                             <div class="progress-bar progress-bar" style="width: 60%">
                                 <p>60%</p>
@@ -135,9 +135,12 @@
             </div>
 
 
-
         </div>
     </div>
+
+    {{ dump(passes) }}
+
+    {{ dump(passesAmis) }}
 
 {% endblock %}
 
