@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/admin_equipes.css') }}">
+{% endblock %}
+
 {% block body %}
     <div class="container">
         <h1>ÉQUIPE</h1>
@@ -30,17 +34,19 @@
             </table>
         </div>
 
-        <a href="{{ path('equipes_index') }}">
-            <button class="btn-style btn">RETOUR À LA LISTE</button>
-        </a>
-        <br>
-        <a href="{{ path('equipes_edit', { 'id': equipe.id }) }}">
-            <button class="btn-style btn">ÉDITER</button>
-        </a>
+        <div class="text-right">
+            <a href="{{ path('equipes_index') }}">
+                <button class="btn-style btn-align btn">RETOUR À LA LISTE</button>
+            </a>
+            <br>
+            <a href="{{ path('equipes_edit', { 'id': equipe.id }) }}">
+                <button class="btn-style btn-align btn">ÉDITER</button>
+            </a>
 
-        {{ form_start(delete_form) }}
-        <button type="submit" value="Delete" class="btn-style btn">SUPPRIMER</button>
-        {{ form_end(delete_form) }}
+            {{ form_start(delete_form) }}
+            <button type="submit" value="Delete" class="btn-style btn-align btn">SUPPRIMER</button>
+            {{ form_end(delete_form) }}
+        </div>
 
     </div>
 {% endblock %}
