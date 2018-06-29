@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/admin_equipes.css') }}">
+{% endblock %}
+
 {% block body %}
     <div class="container">
         <h1>CRÉATION ÉQUIPE :</h1>
@@ -28,13 +32,13 @@
                 </div>
                 <div class="row">
                     <div class="form-control">
-                    {{ nom }} {{ prenom }}
+                        {{ nom }} {{ prenom }}
                     </div>
                 </div>
             </div>
             <div class="form-group input-lg col-lg-12">
                 <div class="row">
-                   {#{{ form_label(form.entraineurNomClub, null, {'label': 'Nom du club'}) }}#}
+                    {#{{ form_label(form.entraineurNomClub, null, {'label': 'Nom du club'}) }}#}
                     <label for="">Nom du club</label>
                 </div>
                 <div class="row">
@@ -77,11 +81,15 @@
                     {{ form_widget(form.numEquipe) }}
                 </div>
             </div>
-            <button class="btn-style btn" type="submit" value="Create">CRÉER</button>
-            {{ form_end(form) }}
-
-            <a href="{{ path('equipes_index') }}"><button class="btn-style btn">RETOUR À LA LISTE</button></a>
-
+            <br>
+            <div class="text-right">
+                <button class="btn-style btn-align btn" type="submit" value="Create">CRÉER</button>
+                {{ form_end(form) }}
+                <br>
+                <a href="{{ path('equipes_index') }}">
+                    <button class="btn-style btn-align btn">RETOUR À LA LISTE</button>
+                </a>
+            </div>
         </div>
     </div>
 {% endblock %}

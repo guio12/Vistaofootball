@@ -1,5 +1,10 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/admin_equipes.css') }}">
+{% endblock %}
+
+
 {% block body %}
     <div class="container">
 
@@ -10,31 +15,31 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th>Nom de l'entraîneur</th>
-                    <th>Nom du club</th>
-                    <th>Championnat</th>
-                    <th>Catégorie</th>
-                    <th>Numéro d'équipe</th>
-                    <th></th>
+                    <th width="20%" class="text-center">Nom de l'entraîneur</th>
+                    <th width="20%" class="text-center">Nom du club</th>
+                    <th width="20%" class="text-center">Championnat</th>
+                    <th width="20%" class="text-center">Catégorie</th>
+                    <th width="20%" class="text-center">Numéro d'équipe</th>
+                    <th width="20%" class="text-center"></th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody class="liste-equipes">
 
                 {% for equipe in equipes %}
-                    <tr>
-                        <td>{{ nom }} {{ prenom }}</td>
-                        <td>{{ equipe.entraineurNomClub }}</td>
-                        <td>{{ equipe.championnat }}</td>
-                        <td>{{ equipe.categorie }}</td>
-                        <td>{{ equipe.numEquipe }}</td>
-                        <td>
+                    <tr style="vertical-align:middle">
+                        <td width="20%" class="text-center">{{ nom }} {{ prenom }}</td>
+                        <td width="20%" class="text-center">{{ equipe.entraineurNomClub }}</td>
+                        <td width="20%" class="text-center">{{ equipe.championnat }}</td>
+                        <td width="20%" class="text-center">{{ equipe.categorie }}</td>
+                        <td width="20%" class="text-center">{{ equipe.numEquipe }}</td>
+                        <td width="20%" class="text-right">
 
                             <a href="{{ path('equipes_show', { 'id': equipe.id }) }}">
                                 <button class="btn-style btn">DÉTAILS</button>
                             </a>
 
                             <a href="{{ path('equipes_edit', { 'id': equipe.id }) }}">
-                                <button class="btn-style btn">ÉDITER</button>
+                                <button class="btn-style btn-align btn">ÉDITER</button>
                             </a>
 
 
@@ -47,9 +52,11 @@
             </table>
         </div>
 
-        <a href="{{ path('equipes_new') }}">
-            <button class="btn-style btn" >CRÉER UNE NOUVELLE ÉQUIPE</button>
-        </a>
+        <div class="text-right">
+            <a href="{{ path('equipes_new') }}">
+                <button class="btn-style btn-align btn">CRÉER UNE NOUVELLE ÉQUIPE</button>
+            </a>
+        </div>
 
     </div>
 {% endblock %}

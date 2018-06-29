@@ -12,16 +12,13 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12"><p id="resume"></p></div>
-            <div class="col-xs-12"><p>{% if equipe.adverse is defined and equipe.adverse is not same as ("")%}{{ equipe.adverse }}{% else %}adversaire{% endif %} : <span id="butadv">0</span> - <span id="butclub">0</span>  {{ entraineur.nomClub }} </p></div>
-
-
         </div>
 
         <div class="keyboard">
             <div class="row">
-                <div value="0123" class="col-xs-4 adverse_pad highlight_pads counter-click joueur" id="adversaire"
+                <div value="ADVERSAIRE" class="col-xs-4 adverse_pad highlight_pads counter-click joueur"
                      data-color="red" >
-                    <p>{% if equipe.adverse is defined and equipe.adverse is not same as ("")%}{{ equipe.adverse }}{% else %}Adverse{% endif %}<br></p>
+                    <p>ADVERSAIRE<br></p>
                     <div class="counter-count">0</div>
                 </div>
                 <!-- Trigger modal MI-TEMPS -->
@@ -33,9 +30,9 @@
 
                 </div>
                 <!-- Trigger modal FIN DU MATCH -->
-                <div type="button" class=" col-xs-3 middle_pad highlight_pads" data-toggle="modal"
+                <div type="button" class="col-xs-3 middle_pad highlight_pads" data-toggle="modal"
                      data-target=".bs-modal-fin" data-color="#ff0011">
-                    <div class="fin-match reset-counter verticalcenter">
+                    <div class="reset-counter pause-btn verticalcenter">
                         <p>FIN DE MATCH</p>
                     </div>
                 </div>
@@ -52,26 +49,26 @@
 
             <div class="row">
                 <div  value="1" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
-                     data-color="#00c253" id="joueur1">
-                    <p>{% if equipe.joueur1 is defined and equipe.joueur1 is not same as ("") %}{{ equipe.joueur1 }}{% else %}?{% endif %}</p>
+                     data-color="#00c253">
+                    <p>1</p>
                 </div>
                 <div value="2" class="reset-counter-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
-                     data-color="#00c253" id="joueur2">
-                    <p>{% if equipe.joueur2 is defined and equipe.joueur2 is not same as ("")%}{{ equipe.joueur2 }}{% else %}?{% endif %}</p>
+                     data-color="#00c253">
+                    <p>2</p>
                 </div>
                 <div value="3" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
-                     data-color="#00c353" id="joueur3">
-                    <p>{% if equipe.joueur3 is defined and equipe.joueur3 is not same as ("")%}{{ equipe.joueur3 }}{% else %}?{% endif %}</p>
+                     data-color="#00c353">
+                    <p>3</p>
                 </div>
                 <div value="4" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
-                     data-color="#00c253"id="joueur4">
-                    <p>{% if equipe.joueur4 is defined and equipe.joueur4 is not same as ("")%}{{ equipe.joueur4 }}{% else %}?{% endif %}</p>
+                     data-color="#00c253">
+                    <p>4</p>
                 </div>
                 <div value="109" class="reset-counter action verticalcenter col-xs-3 purplemiddle_pad highlight_pads"
                      data-color="purple">
                     <p>CENTRE</p>
                 </div>
-                <div value="110" class="reset-counter actionX verticalcenter col-xs-3 purplemiddle_pad highlight_pads"
+                <div value="110" class="reset-counter actionTC verticalcenter col-xs-3 purplemiddle_pad highlight_pads"
                      data-color="purple">
                     <p>TIR CADRÉ</p>
                 </div>
@@ -84,20 +81,20 @@
 
             <div class="row">
                 <div value="5" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
-                     data-color="#00c353"id="joueur5">
-                    <p>{% if equipe.joueur5 is defined and equipe.joueur5 is not same as ("") %}{{ equipe.joueur5 }}{% else %}?{% endif %}</p>
+                     data-color="#00c353">
+                    <p>5</p>
                 </div>
                 <div value="6" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
-                     data-color="#00c353"id="joueur6">
-                    <p>{% if equipe.joueur6 is defined and equipe.joueur6 is not same as ("") %}{{ equipe.joueur6 }}{% else %}?{% endif %}</p>>
+                     data-color="#00c353">
+                    <p>6</p>>
                 </div>
                 <div value="7" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
-                     data-color="#00c353"id="joueur7">
-                    <p>{% if equipe.joueur7 is defined and equipe.joueur7 is not same as ("") %}{{ equipe.joueur7 }}{% else %}?{% endif %}</p>
+                     data-color="#00c353">
+                    <p>7</p>
                 </div>
                 <div value="8" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
-                     data-color="#00c353"id="joueur8">
-                    <p>{% if equipe.joueur8 is defined and equipe.joueur8 is not same as ("") %}{{ equipe.joueur8 }}{% else %}?{% endif %}</p>
+                     data-color="#00c353">
+                    <p>8</p>
                 </div>
                 <div value="112" class="reset-counter action verticalcenter col-xs-3 purplemiddle_pad highlight_pads"
                      data-color="purple">
@@ -115,20 +112,20 @@
 
             <div class="row">
                 <div value="9" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
-                     data-color="#00c253" id="joueur9">
-                    <p>{% if equipe.joueur9.id is defined and equipe.joueur9 is not same as ("") %}{{ equipe.joueur9 }}{% else %}?{% endif %}</p>
+                     data-color="#00c253">
+                    <p>9</p>
                 </div>
                 <div value="10" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
-                     data-color="#00c253" id="joueur10">
-                    <p>{% if equipe.joueur10 is defined and equipe.joueur10 is not same as ("") %}{{ equipe.joueur10 }}{% else %}?{% endif %}</p>
+                     data-color="#00c253">
+                    <p>10</p>
                 </div>
                 <div value="11" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
-                     data-color="#00c253" id="joueur11">
-                    <p>{% if equipe.joueur11 is defined and equipe.joueur11 is not same as ("") %}{{ equipe.joueur11 }}{% else %}?{% endif %}</p>
+                     data-color="#00c253">
+                    <p>11</p>
                 </div>
                 <div value="12" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
-                     data-color="#00c253" id="joueur12">
-                    <p>{% if equipe.joueur12 is defined and equipe.joueur12 is not same as ("") %}{{ equipe.joueur12 }}{% else %}?{% endif %}</p>
+                     data-color="#00c253">
+                    <p>12</p>
                 </div>
                 <!-- Trigger modal BUT -->
                 <div type="button" class="  AfTC reset-counter verticalcenter col-xs-6 purplebig_pad highlight_pads"
@@ -139,27 +136,26 @@
                 <div value="118"
                      class="reset-counter actionSPE AfTC actionX verticalcenter col-xs-2 redmiddle_pad highlight_pads"
                      data-color="red">
-                    <p>TIR CONTRE</p>
+                    <p>TIR BLOQUÉ</p>
                 </div>
             </div>
 
             <div class="row">
                 <div value="13" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
-                     data-color="#00c253" id="joueur13">
-                    <p>{% if equipe.joueur13 is defined and equipe.joueur13 is not same as ("") %}{{ equipe.joueur13 }}{% else %}?{% endif %}</p>
+                     data-color="#00c253">
+                    <p>13</p>
                 </div>
                 <div value="14" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
-                     data-color="#00c253" id="joueur14">
-                    <p>{% if equipe.joueur14 is defined and equipe.joueur14 is not same as ("") %}{{ equipe.joueur14 }}{% else %}?{% endif %}</p>
+                     data-color="#00c253">
+                    <p>14</p>
                 </div>
                 <div value="15" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
-                     data-color="#00c253" id="joueur15">
-                    <p>{% if equipe.joueur15 is defined and equipe.joueur15 is not same as ("") %}{{ equipe.joueur15 }}{% else %}?{% endif %}</p>
+                     data-color="#00c253">
+                    <p>15</p>
                 </div>
                 <div value="16" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
-                     data-color="#00c253" id="joueur16">
-                    <p>{% if equipe.joueur16 is defined and equipe.joueur16 is not same as ("")%}{{ equipe.joueur16 }}{% else %}?{% endif %}
-                    </p>
+                     data-color="#00c253">
+                    <p>16</p>
                 </div>
                 <!-- Trigger modal FAUTE -->
                 <div type="button" class="actionF reset-counter verticalcenter col-xs-2 yellowmiddle_pad highlight_pads"
@@ -200,22 +196,18 @@
                                 <label class="form-check-label" for="defaultCheck1">CONFIRMER LE BUT</label>
                             </div>
                             <div value="115" data-color="#ff0011"
-                                 class=" actionSPE AfTC BUT actionX reset-counter purple_pad verticalcenter"
+                                 class=" actionSPE AfTC actionX reset-counter purple_pad verticalcenter"
                                  data-dismiss="modal">
                                 <p>TETE</p>
                             </div>
                             <div value="116" data-color="#ff0011"
-                                 class=" actionSPE AfTC BUT actionX reset-counter purple_pad verticalcenter"
+                                 class=" actionSPE AfTC actionX reset-counter purple_pad verticalcenter"
                                  data-dismiss="modal">
                                 <p>REPRISE</p>
                             </div>
                             <div value="117" data-color="#ff0011"
-                                 class="actionSPE AfTC BUT actionX reset-counter purple_pad verticalcenter" data-dismiss="modal">
+                                 class="actionSPE AfTC actionX reset-counter purple_pad verticalcenter" data-dismiss="modal">
                                 <p>POTEAU</p>
-                            </div>
-                            <div value="666" data-color="#ff0011"
-                                 class="actionSPE AfTC BUT actionX reset-counter purple_pad verticalcenter" data-dismiss="modal">
-                                <p>But contre son camp</p>
                             </div>
                         </div>
                     </div>
