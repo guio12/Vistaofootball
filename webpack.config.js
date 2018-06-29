@@ -12,8 +12,6 @@
             // will output as web/build/app.js
         .addEntry('app', './assets/js/app.js')
 
-        .addEntry('selectjoueur', './assets/js/avantMatch.js')
-
             // will output as web/build/app.js
         .addEntry('contact', './assets/js/contact.js')
 
