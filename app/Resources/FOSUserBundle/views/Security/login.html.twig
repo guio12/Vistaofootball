@@ -2,12 +2,14 @@
 
  {% trans_default_domain 'FOSUserBundle' %}
 
-    {% block header %}{% endblock header %}
-    {% block content %}{% endblock content %}
-
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('build/connexion.css') }}">
 {% endblock stylesheets %}
+
+    {% block header %}{% endblock header %}
+    {% block content %}{% endblock content %}
+
+
     {% block body %}
 
         <form action="{{ path("fos_user_security_check") }}" method="post">
