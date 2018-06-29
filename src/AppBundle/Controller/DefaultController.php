@@ -101,10 +101,10 @@ class DefaultController extends Controller
      */
     public function clavierAction(Request $request)
     {
+         $user = $this->getUser();
         // replace this example code with whatever you need
-        return $this->render('clavier/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')) . DIRECTORY_SEPARATOR,
-        ]);
+        return $this->render('clavier/index.html.twig',array( "equipe" => $_POST, "entraineur" => $user
+        ));
     }
 
     /**
