@@ -39,13 +39,16 @@
         .addEntry('logo_header', './assets/images/logo_header.png')
 
         // will output as web/build/images/...jpg
-        .addEntry('gestion_equipe', './assets/images/gestion_equipe.jpg')
+        .addEntry('gestion_equipe', './assets/images/gestion_equipe.jpeg')
 
         // will output as web/build/images/...png
-        .addEntry('lancer_match', './assets/images/lancer_match.jpg')
+        .addEntry('lancer_match', './assets/images/lancer_match.jpeg')
 
         // will output as web/build/images/...png
-        .addEntry('stats_globales', './assets/images/stats_globales.jpg')
+        .addEntry('stats_globales', './assets/images/stats_globales.jpeg')
+
+        // will output as web/build/images/...png
+        .addEntry('didacticiel', './assets/images/didacticiel.jpeg')
 
             // will output as web/build/clavier.js
         .addEntry('clavier', './assets/js/clavier.js')
@@ -79,8 +82,6 @@
         // will output as web/build/admin_equipes.css
         .addEntry('admin_equipes', './assets/scss/admin_equipes.scss')
 
-        // will output as web/build/images/logo_vistao.png
-        .addEntry('logo_vistao', './assets/images/logo_vistao.png')
 
             // empty the outputPath dir before each build
         .cleanupOutputBeforeBuild()
