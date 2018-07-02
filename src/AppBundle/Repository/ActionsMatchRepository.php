@@ -28,6 +28,8 @@ class ActionsMatchRepository extends EntityRepository
      * return $query->execute();
      * }**/
 
+    /**PASSES**/
+
     /**Perte passes equipe 1**/
     public function PassesAmisPerdues()
     {
@@ -58,5 +60,75 @@ class ActionsMatchRepository extends EntityRepository
         $query = $this->getEntityManager()->createQuery($dql);
         return $query->execute();
     }
+
+    /**CENTRES**/
+
+    /**Perte centre equipe 1**/
+    public function CentresAmisPerdues()
+    {
+        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction > 0 AND c.actionId = 109 AND c.joueurReceveur = 0';
+        $query = $this->getEntityManager()->createQuery($dql);
+        return $query->execute();
+    }
+
+    /** centres reussies equipe 1**/
+    public function CentresAmisReussies()
+    {
+        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction > 0 AND c.actionId = 109 AND c.joueurReceveur > 0';
+        $query = $this->getEntityManager()->createQuery($dql);
+        return $query->execute();
+    }
+
+    /**centres passes equipe 2**/
+    public function CentresEnnemiesPerdues()
+    {
+        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction = 0 AND c.actionId = 109 AND c.joueurReceveur > 0';
+        $query = $this->getEntityManager()->createQuery($dql);
+        return $query->execute();
+    }
+
+    public function CentresEnnemiesReussies()
+    {
+        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction = 0 AND c.actionId = 109 AND c.joueurReceveur = 0';
+        $query = $this->getEntityManager()->createQuery($dql);
+        return $query->execute();
+    }
+
+    /**PASSES LONGUES**/
+
+    /**PL equipe 1**/
+    public function PLAmisPerdues()
+    {
+        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction > 0 AND c.actionId = 112 AND c.joueurReceveur = 0';
+        $query = $this->getEntityManager()->createQuery($dql);
+        return $query->execute();
+    }
+
+    /** PL reussies equipe 1**/
+    public function PLAmisReussies()
+    {
+        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction > 0 AND c.actionId = 112 AND c.joueurReceveur > 0';
+        $query = $this->getEntityManager()->createQuery($dql);
+        return $query->execute();
+    }
+
+    /**PL passes equipe 2**/
+    public function PLEnnemiesPerdues()
+    {
+        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction = 0 AND c.actionId = 112 AND c.joueurReceveur > 0';
+        $query = $this->getEntityManager()->createQuery($dql);
+        return $query->execute();
+    }
+
+    /**PL ennemies perdues**/
+    public function PLEnnemiesReussies()
+    {
+        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction = 0 AND c.actionId = 112 AND c.joueurReceveur = 0';
+        $query = $this->getEntityManager()->createQuery($dql);
+        return $query->execute();
+    }
+
+
+
 
 }
