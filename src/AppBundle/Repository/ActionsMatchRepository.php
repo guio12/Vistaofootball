@@ -31,7 +31,7 @@ class ActionsMatchRepository extends EntityRepository
     /**Perte passes equipe 1**/
     public function PassesAmisPerdues()
     {
-        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction > 0 AND c.actionId = 0 AND c.joueurReceveur = 0';
+        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction > 0 AND c.actionId = 1 AND c.joueurReceveur = 0';
         $query = $this->getEntityManager()->createQuery($dql);
         return $query->execute();
     }
@@ -39,7 +39,7 @@ class ActionsMatchRepository extends EntityRepository
     /** passes reussies equipe 1**/
     public function PassesAmisReussies()
     {
-        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction > 0 AND c.actionId = 0 AND c.joueurReceveur > 0';
+        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction > 0 AND c.actionId = 1 AND c.joueurReceveur > 0';
         $query = $this->getEntityManager()->createQuery($dql);
         return $query->execute();
     }
@@ -47,14 +47,14 @@ class ActionsMatchRepository extends EntityRepository
     /**Perte passes equipe 2**/
     public function PassesEnnemiesPerdues()
     {
-        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction = 0 AND c.actionId = 0 AND c.joueurReceveur > 0';
+        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction = 0 AND c.actionId = 1 AND c.joueurReceveur > 0';
         $query = $this->getEntityManager()->createQuery($dql);
         return $query->execute();
     }
 
     public function PassesEnnemiesReussies()
     {
-        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction = 0 AND c.actionId = 0 AND c.joueurReceveur = 0';
+        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction = 0 AND c.actionId = 1 AND c.joueurReceveur = 0';
         $query = $this->getEntityManager()->createQuery($dql);
         return $query->execute();
     }
