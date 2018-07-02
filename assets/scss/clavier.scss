@@ -10,14 +10,13 @@ body {
   text-align: center;
 }
 
-a:link
-{
-  text-decoration:none;
+a:link {
+  text-decoration: none;
 }
 
 p {
   font-weight: bold;
-  font-size: 17px;
+  font-size: 1.7vw;
   color: white;
 }
 
@@ -28,7 +27,7 @@ p {
 }
 
 #resume {
-  color : $darkcian;
+  color: white;
 
 }
 
@@ -50,6 +49,9 @@ p {
 .adverse_pad {
   background: linear-gradient(to bottom right, gray, black);
   height: 14vh;
+  line-height: 14vh;
+  vertical-align: middle;
+
 }
 
 .yellowmiddle_pad {
@@ -86,7 +88,7 @@ p {
 .counter-count {
   font-weight: bold;
   color: white;
-  font-size: 17px;
+  font-size: 1.7vw;
 }
 
 /* --------------------------------
@@ -113,7 +115,7 @@ p {
   .o-watch-wrap {
     .o-timer {
       @extend .t-center;
-      font-size: 50px;
+      font-size: 4vw;
     }
   }
 }
@@ -161,4 +163,23 @@ p {
 
 #popup4 {
   @include popup
+}
+
+/* --------------------------------
+ *
+ * Responsive
+ *
+ *-------------------------------- */
+
+@media screen and (max-width: 1200px) {
+  .textWrap {
+    overflow-wrap: break-word;
+    line-height: 5vh;
+    padding-top: 2vh;
+  }
+}
+
+.col-xs-1 {
+  padding-left: 1px;
+  padding-right: 1px;
 }
