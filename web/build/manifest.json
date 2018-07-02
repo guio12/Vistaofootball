@@ -39,6 +39,7 @@
   "build/admin_equipes.css": "./admin_equipes.css",
   "build/style_accueil.js": "./style_accueil.js",
   "build/style_accueil.css": "./style_accueil.css",
+  "build/selectjoueur.js": "./selectjoueur.js",
   "build/accueil.js": "./accueil.js",
   "build/manifest.js": "./manifest.js",
   "build/images/gestion_equipe.jpg": "./images/gestion_equipe.3a50e2f3.jpg",

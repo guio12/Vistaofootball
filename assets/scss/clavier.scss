@@ -16,7 +16,7 @@ a:link {
 
 p {
   font-weight: bold;
-  font-size: 1.7vw;
+  font-size: 1.6vw;
   color: white;
 }
 
@@ -171,13 +171,12 @@ p {
  *
  *-------------------------------- */
 
-@media screen and (max-width: 1200px) {
+
   .textWrap {
     overflow-wrap: break-word;
     line-height: 5vh;
-    padding-top: 2vh;
   }
-}
+
 
 .col-xs-1 {
   padding-left: 1px;
