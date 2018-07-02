@@ -12,7 +12,9 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12"><p id="resume"></p></div>
-            <div class="col-xs-12"><p>{% if equipe.adverse is defined and equipe.adverse is not same as ("")%}{{ equipe.adverse }}{% else %}adversaire{% endif %} : <span id="butadv">0</span> - <span id="butclub">0</span>  {{ entraineur.nomClub }} </p></div>
+            <div class="col-xs-12">
+                <p>{% if equipe.adverse is defined and equipe.adverse is not same as ("") %}{{ equipe.adverse }}{% else %}adversaire{% endif %}
+                    : <span id="butadv">0</span> - <span id="butclub">0</span> {{ entraineur.nomClub }} </p></div>
 
 
         </div>
@@ -20,12 +22,14 @@
         <div class="keyboard">
             <div class="row">
                 <div value="0123" class="col-xs-4 adverse_pad highlight_pads counter-click joueur" id="adversaire"
-                     data-color="red" >
-                    <p><span class="counter-count" style="color: red;">0</span> - {% if equipe.adverse is defined and equipe.adverse is not same as ("")%}{{ equipe.adverse }}{% else %}Adverse{% endif %}<br></p>
+                     data-color="red">
+                    <p><span class="counter-count" style="color: red;">0</span>
+                        - {% if equipe.adverse is defined and equipe.adverse is not same as ("") %}{{ equipe.adverse }}{% else %}Adverse{% endif %}
+                        <br></p>
                 </div>
                 <!-- Trigger modal MI-TEMPS -->
                 <div type="button"
-                     class="reset-counter pause-btn col-xs-3 middle_pad highlight_pads verticalcenter"
+                     class="btn-mi-temps reset-counter col-xs-3 middle_pad highlight_pads verticalcenter"
                      data-toggle="modal"
                      data-target=".bs-modal-mi-temps" data-color="#ff0011" style="color: white;">
                     <p><span class="in-btn glyphicon glyphicon-pause" aria-hidden="true"></span> MI-TEMPS </p>
@@ -50,21 +54,21 @@
             </div>
 
             <div class="row">
-                <div  value="1" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
+                <div value="1" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
                      data-color="#00c253" id="joueur1">
                     <p>{% if equipe.joueur1 is defined and equipe.joueur1 is not same as ("") %}{{ equipe.joueur1 }}{% else %}?{% endif %}</p>
                 </div>
                 <div value="2" class="reset-counter-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
                      data-color="#00c253" id="joueur2">
-                    <p>{% if equipe.joueur2 is defined and equipe.joueur2 is not same as ("")%}{{ equipe.joueur2 }}{% else %}?{% endif %}</p>
+                    <p>{% if equipe.joueur2 is defined and equipe.joueur2 is not same as ("") %}{{ equipe.joueur2 }}{% else %}?{% endif %}</p>
                 </div>
                 <div value="3" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
                      data-color="#00c353" id="joueur3">
-                    <p>{% if equipe.joueur3 is defined and equipe.joueur3 is not same as ("")%}{{ equipe.joueur3 }}{% else %}?{% endif %}</p>
+                    <p>{% if equipe.joueur3 is defined and equipe.joueur3 is not same as ("") %}{{ equipe.joueur3 }}{% else %}?{% endif %}</p>
                 </div>
                 <div value="4" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
-                     data-color="#00c253"id="joueur4">
-                    <p>{% if equipe.joueur4 is defined and equipe.joueur4 is not same as ("")%}{{ equipe.joueur4 }}{% else %}?{% endif %}</p>
+                     data-color="#00c253" id="joueur4">
+                    <p>{% if equipe.joueur4 is defined and equipe.joueur4 is not same as ("") %}{{ equipe.joueur4 }}{% else %}?{% endif %}</p>
                 </div>
                 <div value="109" class="reset-counter action verticalcenter col-xs-3 purplemiddle_pad highlight_pads"
                      data-color="purple">
@@ -83,19 +87,20 @@
 
             <div class="row">
                 <div value="5" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
-                     data-color="#00c353"id="joueur5">
+                     data-color="#00c353" id="joueur5">
                     <p>{% if equipe.joueur5 is defined and equipe.joueur5 is not same as ("") %}{{ equipe.joueur5 }}{% else %}?{% endif %}</p>
                 </div>
                 <div value="6" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
-                     data-color="#00c353"id="joueur6">
-                    <p>{% if equipe.joueur6 is defined and equipe.joueur6 is not same as ("") %}{{ equipe.joueur6 }}{% else %}?{% endif %}</p>>
+                     data-color="#00c353" id="joueur6">
+                    <p>{% if equipe.joueur6 is defined and equipe.joueur6 is not same as ("") %}{{ equipe.joueur6 }}{% else %}?{% endif %}</p>
+                    >
                 </div>
                 <div value="7" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
-                     data-color="#00c353"id="joueur7">
+                     data-color="#00c353" id="joueur7">
                     <p>{% if equipe.joueur7 is defined and equipe.joueur7 is not same as ("") %}{{ equipe.joueur7 }}{% else %}?{% endif %}</p>
                 </div>
                 <div value="8" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
-                     data-color="#00c353"id="joueur8">
+                     data-color="#00c353" id="joueur8">
                     <p>{% if equipe.joueur8 is defined and equipe.joueur8 is not same as ("") %}{{ equipe.joueur8 }}{% else %}?{% endif %}</p>
                 </div>
                 <div value="112" class="reset-counter action verticalcenter col-xs-3 purplemiddle_pad highlight_pads"
@@ -157,7 +162,7 @@
                 </div>
                 <div value="16" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
                      data-color="#00c253" id="joueur16">
-                    <p>{% if equipe.joueur16 is defined and equipe.joueur16 is not same as ("")%}{{ equipe.joueur16 }}{% else %}?{% endif %}
+                    <p>{% if equipe.joueur16 is defined and equipe.joueur16 is not same as ("") %}{{ equipe.joueur16 }}{% else %}?{% endif %}
                     </p>
                 </div>
                 <!-- Trigger modal FAUTE -->
@@ -209,11 +214,13 @@
                                 <p>REPRISE</p>
                             </div>
                             <div value="117" data-color="#ff0011"
-                                 class="actionSPE AfTC BUT actionX reset-counter purple_pad verticalcenter" data-dismiss="modal">
+                                 class="actionSPE AfTC BUT actionX reset-counter purple_pad verticalcenter"
+                                 data-dismiss="modal">
                                 <p>POTEAU</p>
                             </div>
                             <div value="666" data-color="#ff0011"
-                                 class="actionSPE AfTC BUT actionX reset-counter purple_pad verticalcenter" data-dismiss="modal">
+                                 class="actionSPE AfTC BUT actionX reset-counter purple_pad verticalcenter"
+                                 data-dismiss="modal">
                                 <p>But contre son camp</p>
                             </div>
                         </div>
@@ -269,6 +276,7 @@
                 </div>
             </div>
 
+
             <!-- Modal MI-TEMPS -->
             <div class="modal fade bs-modal-mi-temps" tabindex="-1" role="dialog"
                  aria-labelledby="mySmallModalLabel">
@@ -276,25 +284,75 @@
                     <!-- Modal content-->
                     <div class="modal-content" style="background-color: black;">
                         <p>CONFIRMER ?</p>
-                        <div class="row">
+                        <div class="pause-btn" data-toggle="modal"
+                             data-target=".bs-modal-mi-temps-1">
                             <a href="#" class="mi-temps verticalcenter">
                                 <div value="" data-color="#ff0011" class="yellow_pad actionX" data-dismiss="modal">
-                                    <p>FIN MT1</p>
+                                    <p>FIN MI-TEMPS 1</p>
                                 </div>
                             </a>
+                        </div>
+                        <div class="pause-btn" data-toggle="modal"
+                             data-target=".bs-modal-mi-temps-2">
                             <a href="#" class="mi-temps verticalcenter">
                                 <div value="" data-color="#ff0011" class="yellow_pad actionX" data-dismiss="modal">
-                                    <p>FIN MT2</p>
+                                    <p>FIN MI-TEMPS 2</p>
                                 </div>
                             </a>
+                        </div>
+                        <div class="pause-btn" data-toggle="modal"
+                             data-target=".bs-modal-prolongation">
                             <a href="#" class="mi-temps verticalcenter">
-                                <div value="" data-color="#ff0011" class="yellow_pad actionX" data-dismiss="modal">
+                                <div value="" data-color="#ff0011" class="yellow_pad actionX"
+                                     data-dismiss="modal">
                                     <p>PROLONGATION</p>
                                 </div>
                             </a>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal MI-TEMPS-1 -->
+    <div class="modal fade bs-modal-mi-temps-1" tabindex="-1" role="dialog"
+         aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <!-- Modal content-->
+            <div class="modal-content pause-btn btn-mi-temps" style="background-color: black;">
+                <a href="#" class="mi-temps verticalcenter">
+                    <div value="" data-color="#ff0011" class="yellow_pad actionX" data-dismiss="modal">
+                        <p><span class="in-btn glyphicon glyphicon-pause" aria-hidden="true"></span> REPRENDRE</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-mi-temps-2" tabindex="-1" role="dialog"
+         aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <!-- Modal content-->
+            <div class="modal-content pause-btn btn-mi-temps" style="background-color: black;">
+                <a href="#" class="mi-temps verticalcenter">
+                    <div value="" data-color="#ff0011" class="yellow_pad actionX" data-dismiss="modal">
+                        <p><span class="in-btn glyphicon glyphicon-pause" aria-hidden="true"></span> REPRENDRE</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-modal-prolongation" tabindex="-1" role="dialog"
+         aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <!-- Modal content-->
+            <div class="modal-content pause-btn btn-mi-temps" style="background-color: black;">
+                <a href="#" class="mi-temps verticalcenter">
+                    <div value="" data-color="#ff0011" class="yellow_pad actionX" data-dismiss="modal">
+                        <p><span class="in-btn glyphicon glyphicon-pause" aria-hidden="true"></span> REPRENDRE</p>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
