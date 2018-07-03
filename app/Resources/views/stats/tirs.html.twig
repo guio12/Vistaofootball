@@ -1,21 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('build/tirs.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/stats.css') }}">
 {% endblock %}
 
 {% block body %}
 
-    <div class="container-fluid">
-        <ul class="score-board">
-            <li class="team-home">RCSA</li>
-            <li class="score">20 - 0</li>
-            <li class="team-visitor">FCB</li>
-            <li class="info">06/06/06</li>
-        </ul>
-    </div>
-
-    <br><br><br><br>
+    {% include 'stats/base_stats.html.twig' %}
 
     <div class="container-fluid">
         <div class="row">

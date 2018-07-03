@@ -6,22 +6,11 @@
 
 {% block body %}
 
-    <div class="container-fluid">
-        <ul class="score-board">
-            <li class="team-home">RCSA</li>
-            <li class="score">20 - 0</li>
-            <li class="team-visitor">FCB</li>
-            <li class="info">06/06/06</li>
-        </ul>
-    </div>
-
-    <br>
-
+    {% include 'stats/base_stats.html.twig' %}
 
     <div class="stats">
         <div class="statsshow">
-            <h1><a href="#">POSSESSION
-            </h1>
+            <h1><a href="{{ path('possession') }}">POSSESSION</a></h1>
             <div class="progress">
                 <div class="progress-bar progress-bar-info" style="width: 40%">
                     <p>40%</p>
@@ -33,7 +22,7 @@
 
             <br>
 
-            <h1><a href="#">TIRS</h1>
+            <h1><a href="{{ path('tirs') }}">TIRS</a></h1>
             <div class="progress">
                 <div class="progress-bar progress-bar-info" style="width: 99%">
                     <p>99%</p>
@@ -46,7 +35,7 @@
             <br>
 
 
-            <h1>RECUPERATIONS</h1>
+            <h1><a href="{{ path('recuperation') }}">RECUPERATIONS</a></h1>
             <div class="progress">
                 <div class="progress-bar progress-bar-info" style="width: 52%">
                     <p>52%</p>
@@ -58,7 +47,7 @@
 
             <br>
 
-            <h1>CPA</h1>
+            <h1><a href="{{ path('cpa') }}">DISCIPLINE</a></h1>
             <div class="progress">
                 <div class="progress-bar progress-bar-info" style="width: 10%">
                     <p>10%</p>
@@ -71,14 +60,5 @@
 
         </div>
     </div>
-
-
-
-
-
 {% endblock %}
 
-
-{% block javascript %}
-
-{% endblock %}

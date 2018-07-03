@@ -1,0 +1,8 @@
+<div class="col-xs-12 text-center">
+    <p class="score">
+        {% if equipe.adverse is defined and equipe.adverse is not same as ("") %}{{ equipe.adverse }}{% else %}adversaire{% endif %}
+        - {{ entraineur.nomClub }}
+        </br>
+        <span id="butadv">0</span> - <span id="butclub">0</span>
+    </p>
+</div>

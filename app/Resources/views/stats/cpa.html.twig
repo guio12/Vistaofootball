@@ -1,23 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('build/cpa.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/stats.css') }}">
 {% endblock %}
 
 {% block body %}
 <body>
 
-    <div class="container-fluid">
-        <ul class="score-board">
-            <li class="team-home">RCSA</li>
-            <li class="score">20 - 0</li>
-            <li class="team-visitor">FCB</li>
-            <li class="info">06/06/06</li>
-        </ul>
-    </div
-
-
-
+{% include 'stats/base_stats.html.twig' %}
 
     <div class="stats">
         <div class="statsshow">
@@ -32,8 +22,8 @@
             </div>
 
 
-            <div class=" text-center">
-                <span class="glyphicon glyphicon-backward"></span>
+            <div class=" text-center"><a href="{{ path('statsmatch') }}">
+                <span class="glyphicon glyphicon-backward"></span></a>
             </div>
 
             <br><br>

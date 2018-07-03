@@ -1,6 +1,28 @@
 $cian: #53e2e2;
 $darkcian: #0ba2a3;
 
+/* --------------------------------
+ *
+ * Score
+ *
+ *-------------------------------- */
+
+.score {
+  background-color: black;
+  font-size: 2vw;
+  color: white;
+  span {
+    color: $cian;
+    font-size: 3vw;
+  }
+}
+
+/* --------------------------------
+ *
+ * Basic / Colors
+ *
+ *-------------------------------- */
+
 .verticalcenter {
   line-height: 14vh;
   vertical-align: middle;

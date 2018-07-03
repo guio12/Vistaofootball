@@ -112,10 +112,10 @@ class DefaultController extends Controller
      */
     public function statsAction(Request $request)
     {
+        $user = $this->getUser();
         // replace this example code with whatever you need
-        return $this->render('stats/general.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')) . DIRECTORY_SEPARATOR,
-        ]);
+        return $this->render('stats/general.html.twig',array( "equipe" => $_POST, "entraineur" => $user
+        ));
     }
 
     /**
@@ -123,10 +123,10 @@ class DefaultController extends Controller
      */
     public function tirsAction(Request $request)
     {
+        $user = $this->getUser();
         // replace this example code with whatever you need
-        return $this->render('stats/tirs.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')) . DIRECTORY_SEPARATOR,
-        ]);
+        return $this->render('stats/tirs.html.twig',array( "equipe" => $_POST, "entraineur" => $user
+        ));
     }
 
     /**
@@ -134,10 +134,10 @@ class DefaultController extends Controller
      */
     public function possessionAction(Request $request)
     {
+        $user = $this->getUser();
         // replace this example code with whatever you need
-        return $this->render('stats/possession.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')) . DIRECTORY_SEPARATOR,
-        ]);
+        return $this->render('stats/possession.html.twig',array( "equipe" => $_POST, "entraineur" => $user
+        ));
     }
 
     /**
@@ -145,10 +145,10 @@ class DefaultController extends Controller
      */
     public function recuperationAction(Request $request)
     {
+        $user = $this->getUser();
         // replace this example code with whatever you need
-        return $this->render('stats/recuperation.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')) . DIRECTORY_SEPARATOR,
-        ]);
+        return $this->render('stats/recuperation.html.twig',array( "equipe" => $_POST, "entraineur" => $user
+        ));
     }
 
     /**
@@ -156,10 +156,10 @@ class DefaultController extends Controller
      */
     public function cpaAction(Request $request)
     {
+        $user = $this->getUser();
         // replace this example code with whatever you need
-        return $this->render('stats/cpa.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')) . DIRECTORY_SEPARATOR,
-        ]);
+        return $this->render('stats/cpa.html.twig',array( "equipe" => $_POST, "entraineur" => $user
+        ));
     }
 
 
