@@ -5,6 +5,42 @@
     <link rel="stylesheet" href="{{ asset('build/admin_equipes.css') }}">
 {% endblock %}
 
+{% block header %}
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-3 text-left">
+                    <div class="navbar-brand" data-toggle="modal"
+                         data-target=".bs-modal-header">
+                        <img class="logo" alt="vistao football logo brand"
+                             src="{{ asset('build/images/logo_header.85ab0a33.png') }}">
+                    </div>
+                </div>
+
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <div class="col-xs-6 text-center">
+                        <h1 class="text-center">BIENVENUE {{ app.user.username }}</h1>
+                    </div>
+                    <div class="col-xs-3 text-right">
+                        <a href="{{ path('fos_user_security_logout') }}"
+                           class="btn btn-style">{{ 'Se déconnecter'|trans({}, 'FOSUserBundle') }}</a>
+                    </div>
+                {% else %}
+                    <div class="col-xs-6 text-center">
+                        <h1 class="text-center">BIENVENUE SUR VISTAO FOOTBALL</h1>
+
+                    </div>
+                    <div class="col-xs-3 text-right">
+                        <a href="{{ path('fos_user_security_login') }}"
+                           class="btn btn-style"
+                           style="float: right;">{{ 'Se connecter'|trans({}, 'FOSUserBundle') }}</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+{% endblock header %}
+
 {% block content %}{% endblock %}
 
 {% block body %}
@@ -38,7 +74,7 @@
                 <!-- Trigger modal FIN DU MATCH -->
                 <div type="button" class=" col-xs-3 middle_pad highlight_pads" data-toggle="modal"
                      data-target=".bs-modal-fin" data-color="#ff0011">
-                    <div class="fin-match reset-counter verticalcenter">
+                    <div class="reset-counter verticalcenter">
                         <p>FIN DE MATCH</p>
                     </div>
                 </div>
@@ -267,9 +303,9 @@
                                           aria-hidden="true" data-dismiss="modal"></span>
                             </div>
 
-                            <div class="col-xs-6">
-                                    <span class="glyphicon glyphicon-ok"
-                                          aria-hidden="true" data-dismiss="modal"></span>
+                            <div class="col-xs-6 fin-match">
+                                <a href="{{ path('statsmatch') }}"><span class="glyphicon glyphicon-ok"
+                                                                         aria-hidden="true"></span></a>
                             </div>
                         </div>
                     </div>
