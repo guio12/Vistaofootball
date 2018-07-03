@@ -1,5 +1,6 @@
 $cian: #53e2e2;
 $darkcian: #0ba2a3;
+$blue: #25aae1;
 
 /* SCOREBOARD */
 
@@ -39,9 +40,26 @@ $darkcian: #0ba2a3;
   margin-top: 4px;
 }
 
+.progress-bar-info {
+  background-color: $cian;
+}
+
+.progress-bar-adv {
+  background-color: $darkcian;
+}
+
 .glyphicon {
   font-size: 30px;
-  color: $darkcian;
+  color: $blue;
+}
+
+a {
+  color: white;
+}
+
+a:hover, a:focus {
+  color: black;
+  text-decoration: none;
 }
 
 
