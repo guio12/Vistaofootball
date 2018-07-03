@@ -41,6 +41,7 @@ class Equipes
      */
     private $entraineurNomClub;
 
+
     /**
      * @var string
      *
@@ -191,5 +192,29 @@ class Equipes
     public function getNumEquipe()
     {
         return $this->numEquipe;
+    }
+
+    /**
+     * Set joueur.
+     *
+     * @param string $joueur
+     *
+     * @return Equipes
+     */
+    public function setJoueur($joueur)
+    {
+        $this->joueur = $joueur;
+
+        return $this;
+    }
+
+    /**
+     * Get joueur.
+     *
+     * @return string
+     */
+    public function getJoueur()
+    {
+        return $this->joueur;
     }
 }

@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <h1>CRÉATION DES JOUEURS :</h1>
+    <div class="jumbotron" style="color:black;">
+        {{ form_start(form, {'method': 'post', 'action': path('joueurs_new')}) }}
+
+        <div class="form-group input-lg col-lg-12">
+            <div class="row">
+                {#{{ form_label(form.entraineurNomClub, null, {'label': 'Nom du club'}) }}#}
+                <label for="">Nom du club</label>
+            </div>
+            <div class="row">
+                <div class="form-control">
+                    {{ club }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group input-lg col-lg-12">
+            <div class="row">
+                {{ form_label(form.prenom, null, {'label': 'Prénom'}) }}
+            </div>
+            <div class="row erreurs text-center">
+                {{ form_errors(form.prenom) }}
+            </div>
+            <div class="row">
+                {{ form_widget(form.prenom) }}
+            </div>
+        </div>
+        <div class="form-group input-lg col-lg-12">
+            <div class="row">
+                {{ form_label(form.nom) }}
+            </div>
+            <div class="row erreurs text-center">
+                {{ form_errors(form.nom) }}
+            </div>
+            <div class="row">
+                {{ form_widget(form.nom) }}
+            </div>
+        </div>
+        <div class="form-group input-lg col-lg-12">
+            <div class="row">
+                {{ form_label(form.numMaillot, null, {'label': "Numéro du maillot"}) }}
+            </div>
+            <div class="row erreurs text-center">
+                {{ form_errors(form.numMaillot) }}
+            </div>
+            <div class="row">
+                {{ form_widget(form.numMaillot) }}
+            </div>
+        </div>
+        <div class="form-group input-lg col-lg-12">
+            <div class="row">
+                {{ form_label(form.poste, null, {'label': "Poste du joueur"}) }}
+            </div>
+            <div class="row erreurs text-center">
+                {{ form_errors(form.poste) }}
+            </div>
+            <div class="row">
+                {{ form_widget(form.poste) }}
+            </div>
+        </div>
+        <button class="btn-style btn" type="submit" value="Create">JOUEUR SUIVANT</button>
+        {{ form_end(form) }}
+
+        <a href="{{ path('equipes_index') }}"><button class="btn-style btn">RETOUR À LA LISTE DES EQUIPES</button></a>
+
+    </div>
+</div>
+{% endblock %}

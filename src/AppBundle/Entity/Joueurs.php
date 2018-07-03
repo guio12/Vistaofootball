@@ -24,11 +24,11 @@ class Joueurs
     /**
      * @var int
      *
-     * @ORM\Column(name="equipe_id", type="integer")
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Equipes", inversedBy="id")
+     * @ORM\Column(name="equipe", type="integer")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Equipes", inversedBy="joueur")
      * @ORM\JoinColumn(nullable=false)
      */
-    public $equipeId;
+    public $equipe;
 
     /**
      * @var string
@@ -70,27 +70,27 @@ class Joueurs
     }
 
     /**
-     * Set equipeId.
+     * Set equipe.
      *
-     * @param int $equipeId
+     * @param int $equipe
      *
      * @return Joueurs
      */
-    public function setEquipeId($equipeId)
+    public function setEquipe($equipe)
     {
-        $this->equipeId = $equipeId;
+        $this->equipe = $equipe;
 
         return $this;
     }
 
     /**
-     * Get equipeId.
+     * Get equipe.
      *
      * @return int
      */
-    public function getEquipeId()
+    public function getEquipe()
     {
-        return $this->equipeId;
+        return $this->equipe;
     }
 
     /**
@@ -187,5 +187,30 @@ class Joueurs
     public function getPoste()
     {
         return $this->poste;
+    }
+
+
+    /**
+     * Set prenomm.
+     *
+     * @param string $prenomm
+     *
+     * @return Joueurs
+     */
+    public function setPrenomm($prenomm)
+    {
+        $this->prenomm = $prenomm;
+
+        return $this;
+    }
+
+    /**
+     * Get prenomm.
+     *
+     * @return string
+     */
+    public function getPrenomm()
+    {
+        return $this->prenomm;
     }
 }

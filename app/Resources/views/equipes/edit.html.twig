@@ -2,7 +2,7 @@
 
 {% block body %}
     <div class="container">
-        <h1>ÉDITION ÉQUIPE :</h1>
+        <h1>ÉDITION ÉQUIPE / JOUEURS :</h1>
         <div class="jumbotron" style="color:black;">
 
         {{ form_start(edit_form, {'method': 'post', 'action': path('equipes_new')}) }}
@@ -41,6 +41,19 @@
                 </div>
             </div>
 
+            {% for joueur in joueurs  %}
+                <div class="form-group input-lg col-lg-12">
+                    <div class="row">
+                        {{ form_label(edit_form.joueur, null, {'label': 'Joueur'}) }}
+                    </div>
+                    <div class="row erreurs text-center">
+                        {{ form_errors(edit_form.joueur) }}
+                    </div>
+                    <div class="row">
+                        {{ form_widget(edit_form.joueur) }}
+                    </div>
+                </div>
+            {% endfor %}
 
             <button class="btn-style btn" type="submit" value="Edit">ÉDITER</button>
         {{ form_end(edit_form) }}
