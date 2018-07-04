@@ -83,6 +83,9 @@ class StatsController extends Controller
         $PLEReussies = count($PLEReussies);
 
 
+        $user = $this->getUser();
+
+
         return $this->render('stats/possession.html.twig', array(
             'passesPerdues' => $passesPerdues,
             'passesReussies' => $passesReussies,
@@ -96,6 +99,7 @@ class StatsController extends Controller
             'PLPerdues' => $PLPerdues,
             'PLEPerdues' => $PLEPerdues,
             'PLEReussies' => $PLEReussies,
+            "equipe" => $_POST, "entraineur" => $user,
         ));
 
 

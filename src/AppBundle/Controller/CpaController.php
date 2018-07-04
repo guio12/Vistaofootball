@@ -85,6 +85,7 @@ class CpaController extends Controller
         $fauteLR = count($fauteLR);
 
 
+        $user = $this->getUser();
 
 
         return $this->render('stats/cpa.html.twig', array(
@@ -102,6 +103,7 @@ class CpaController extends Controller
             'fauteJL' => $fauteJL,
             'fauteRR' => $fauteRR,
             'fauteLR' => $fauteLR,
+            "equipe" => $_POST, "entraineur" => $user
 
 
         ));
