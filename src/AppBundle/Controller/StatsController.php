@@ -22,181 +22,68 @@ class StatsController extends Controller
      */
     public function PasseAction()
     {
-        /**$em = $this->getDoctrine()->getManager();
 
-        $passes = $em->getRepository('AppBundle:ActionsMatch')->findBy(["actionId" => 0]);
-
-        $passesamere = implode($passes);
-
-        return $this->render('stats/possession.html.twig', array(
-            'passesamere' => $passesamere,
-        ));**/
-
-
-
-        /**$Joueur = $em->getRepository('AppBundle:ActionsMatch')->findBy(["equipeId" => $id]);**/
-
-
-
-        /**$em = $this->getDoctrine()->getManager();
-        $results = $em->getRepository('AppBundle:ActionsMatch')->PassesStats();
-
-        $em = $this->getDoctrine()->getManager();
-
-        $passes = $em->getRepository('AppBundle:ActionsMatch')->findBy(["actionId" => 0]);
-
-
-
-        return $this->render('stats/possession.html.twig', array(
-            'passes' => $passes,
-        ));**/
-
-        /**$em = $this->getDoctrine()
-            ->getManager()
-            ->getRepository('AppBundle:ActionsMatch');
-        $passes = $em->PassesStats();
-
-        $passes = count($passes);
+        /**             PASSES          **/
 
         $em = $this->getDoctrine()
             ->getManager()
             ->getRepository('AppBundle:ActionsMatch');
-        $passesAmis = $em->PassesAmis();
-
-        $passesAmis = count($passesAmis);
-
-        return $this->render('stats/possession.html.twig', array(
-            'passes' => $passes,
-            'passesAmis' => $passesAmis,
-        ));**/
-
-        /**$em = $this->getDoctrine()->getManager();
-
-       $test = $em->getRepository('AppBundle:ActionsMatch')->findAll();
-
-       $PassesAmisreussies = [];
-       foreach($test as $PassesAmisR => $PassesAmisRe){
-           if ($PassesAmisR == joueur_action > 0 && action_id == 0 && joueur_receveur == 0){
-               $PassesAmisreussies = $PassesAmisRe;
-           }
-       }
-
-        return $this->render('stats/possession.html.twig', array(
-            'PassesAmisreussies' => $PassesAmisreussies,
-        ));**/
 
 
-        /**PASSES**/
-
-        $em = $this->getDoctrine()
-            ->getManager()
-            ->getRepository('AppBundle:ActionsMatch');
+        /**  Passes Amies Reussies */
         $passesReussies = $em->PassesAmisReussies();
-
         $passesReussies = count($passesReussies);
 
-
-
         /**Passes Amies Perdues**/
-        $em = $this->getDoctrine()
-            ->getManager()
-            ->getRepository('AppBundle:ActionsMatch');
         $passesPerdues = $em->PassesAmisPerdues();
-
         $passesPerdues = count($passesPerdues);
 
-
         /**Passes Ennemies Perdues**/
-        $em = $this->getDoctrine()
-            ->getManager()
-            ->getRepository('AppBundle:ActionsMatch');
         $passesEPerdues = $em->PassesEnnemiesPerdues();
-
         $passesEPerdues = count($passesEPerdues);
 
-
-        $em = $this->getDoctrine()
-            ->getManager()
-            ->getRepository('AppBundle:ActionsMatch');
+       /**  Passes Ennemies Reussies */
         $passesEReussies = $em->PassesEnnemiesReussies();
-
         $passesEReussies = count($passesEReussies);
 
+        /**                   CENTRES                 **/
 
-
-        /**CENTRES**/
-
-        $em = $this->getDoctrine()
-            ->getManager()
-            ->getRepository('AppBundle:ActionsMatch');
+        /** Centres Amis Reussies */
         $centresReussies = $em->CentresAmisReussies();
-
         $centresReussies = count($centresReussies);
 
-
-
         /**Centres Amis Perdus**/
-        $em = $this->getDoctrine()
-            ->getManager()
-            ->getRepository('AppBundle:ActionsMatch');
         $centresPerdus = $em->CentresAmisPerdues();
-
         $centresPerdus = count($centresPerdus);
 
-
         /**Passes Ennemies Perdues**/
-        $em = $this->getDoctrine()
-            ->getManager()
-            ->getRepository('AppBundle:ActionsMatch');
         $centresEPerdues = $em->CentresEnnemiesPerdues();
-
         $centresEPerdues = count($centresEPerdues);
 
-
-        $em = $this->getDoctrine()
-            ->getManager()
-            ->getRepository('AppBundle:ActionsMatch');
+       /** centres Ennemis Reussis */
         $centresEReussis = $em->CentresEnnemiesReussies();
-
         $centresEReussis = count($centresEReussis);
 
         /**PASSES LONGUES**/
 
-        $em = $this->getDoctrine()
-            ->getManager()
-            ->getRepository('AppBundle:ActionsMatch');
+        /** PL Amis Reussies */
         $PLReussies = $em->PLAmisReussies();
-
         $PLReussies = count($PLReussies);
 
-
-
         /**Centres Amis Perdus**/
-        $em = $this->getDoctrine()
-            ->getManager()
-            ->getRepository('AppBundle:ActionsMatch');
         $PLPerdues = $em->PLAmisPerdues();
-
         $PLPerdues = count($PLPerdues);
 
-
         /**Passes Ennemies Perdues**/
-        $em = $this->getDoctrine()
-            ->getManager()
-            ->getRepository('AppBundle:ActionsMatch');
         $PLEPerdues = $em->PLEnnemiesPerdues();
-
         $PLEPerdues = count($PLEPerdues);
 
-
-        $em = $this->getDoctrine()
-            ->getManager()
-            ->getRepository('AppBundle:ActionsMatch');
+        /**PL Ennemies reussies**/
         $PLEReussies = $em->PLEnnemiesReussies();
-
         $PLEReussies = count($PLEReussies);
 
 
+        $user = $this->getUser();
 
 
         return $this->render('stats/possession.html.twig', array(
@@ -212,6 +99,7 @@ class StatsController extends Controller
             'PLPerdues' => $PLPerdues,
             'PLEPerdues' => $PLEPerdues,
             'PLEReussies' => $PLEReussies,
+            "equipe" => $_POST, "entraineur" => $user,
         ));
 
 
