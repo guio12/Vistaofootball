@@ -14,25 +14,25 @@ use Doctrine\ORM\Entityrepository;
 
 class ActionsMatchRepository extends EntityRepository
 {
-    /**public function PassesStats()
-     * {
-     * $dql = 'SELECT c.joueurReceveur FROM AppBundle:ActionsMatch c WHERE c.joueurReceveur = 0';
-     * $query = $this->getEntityManager()->createQuery($dql);
-     * return $query->execute();
-     * }
-     *
-     * public function PassesAmis()
-     * {
-     * $dql = 'SELECT c.joueurReceveur FROM AppBundle:ActionsMatch c WHERE c.joueurReceveur > 0';
-     * $query = $this->getEntityManager()->createQuery($dql);
-     * return $query->execute();
-     * }**/
 
-    /**PASSES**/
+    /**                    METHODES POUR LA POSSESSION             **/
 
     /**Perte passes equipe 1**/
     public function PassesAmisPerdues()
     {
+
+        /**$query = $this->createQueryBuilder('c');
+
+        $query->where('c.joueurAction > 0 AND c.actionId = 1 AND c.joueurReceveur = 0')
+        ;
+
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;**/
+
+
+
         $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction > 0 AND c.actionId = 1 AND c.joueurReceveur = 0';
         $query = $this->getEntityManager()->createQuery($dql);
         return $query->execute();
@@ -129,6 +129,170 @@ class ActionsMatchRepository extends EntityRepository
     }
 
 
+
+    /**                    METHODES POUR LA DISCPLINE            **/
+
+
+
+
+
+
+       public function cinqMetreAmis(){
+
+           $query = $this->createQueryBuilder('c');
+           $query->where('c.joueurAction > 0 AND c.actionId = 107 AND c.joueurReceveur > 0')
+           ;
+           return $query
+               ->getQuery()
+               ->getResult()
+               ;
+       /**$dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction > 0 AND c.actionId = 107 AND c.joueurReceveur = 0';
+       $query = $this->getEntityManager()->createQuery($dql);
+       return $query->execute();**/
+   }
+
+    public function cinqMetreAdversaire(){
+
+        $query = $this->createQueryBuilder('c');
+        $query->where('c.joueurAction > 0 AND c.actionId = 107 AND c.joueurReceveur = 0')
+        ;
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function TouchesAmis(){
+
+        $query = $this->createQueryBuilder('c');
+        $query->where('c.joueurAction > 0 AND c.actionId = 105 AND c.joueurReceveur > 0')
+        ;
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function TouchesAdversaires(){
+
+        $query = $this->createQueryBuilder('c');
+        $query->where('c.joueurAction > 0 AND c.actionId = 105 AND c.joueurReceveur = 0')
+        ;
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function HjAmis(){
+
+        $query = $this->createQueryBuilder('c');
+        $query->where('c.joueurAction > 0 AND c.actionId = 108')
+        ;
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function HjEnnemis(){
+
+        $query = $this->createQueryBuilder('c');
+        $query->where('c.joueurAction > 0 AND c.actionId = 106')
+        ;
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function CornerAmis(){
+
+        $query = $this->createQueryBuilder('c');
+        $query->where('c.joueurAction > 0 AND c.actionId = 106 AND c.joueurReceveur > 0')
+        ;
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function CornerAdversaire(){
+
+        $query = $this->createQueryBuilder('c');
+        $query->where('c.joueurAction > 0 AND c.actionId = 101 AND c.joueurReceveur = 0')
+        ;
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function FauteAmis(){
+
+        $query = $this->createQueryBuilder('c');
+        $query->where('c.joueurAction > 0 AND c.actionId = 101')
+        ;
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function FauteAdversaire(){
+
+        $query = $this->createQueryBuilder('c');
+        $query->where('c.joueurAction = 0 AND c.actionId = 101')
+        ;
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function FauteJauneAmis(){
+
+        $query = $this->createQueryBuilder('c');
+        $query->where('c.joueurAction > 0 AND c.actionId = 102')
+        ;
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function FauteJauneAdversaire(){
+
+        $query = $this->createQueryBuilder('c');
+        $query->where('c.joueurAction = 0 AND c.actionId = 102')
+        ;
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function FauteRougeAmis(){
+
+        $query = $this->createQueryBuilder('c');
+        $query->where('c.joueurAction > 0 AND c.actionId = 102')
+        ;
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function FauteRougeAdversaire(){
+
+        $query = $this->createQueryBuilder('c');
+        $query->where('c.joueurAction = 0 AND c.actionId = 102')
+        ;
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 
 
 }
