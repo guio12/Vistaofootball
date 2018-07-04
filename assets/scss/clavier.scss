@@ -140,6 +140,15 @@ p {
  *
  *-------------------------------- */
 
+  .iconFin{
+    font-size: 10vh;
+  }
+  .iconFinYes{
+    color:green;
+  }
+  .iconFinNo{
+    color:red;
+  }
 
   .textWrap {
     overflow-wrap: break-word;

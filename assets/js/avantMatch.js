@@ -1,28 +1,36 @@
 
-  console.log("test");
-var id = "";
-
 /*
-$("lancezmatch").click( function () {
-
-  $.ajax({
-    url: "joueurByEquipe/" + id,
-
-    success : function(code_html, statut){
-
-    };
-  });
+document.getElementById('adverse').addEventListener('keypress', function(event) {
+if (event.keyCode == 13) {
+event.preventDefault();
 }
-
+});
 */
+var id = "";
+var obj = "";
+var joueur = [];
+var selected = "";
+var equipeId = undefined;
+console.log(equipeId);
+$('#formulaire').submit(function(){
+  var i = 0;
+  $(".selectJoueur").each(function(){
+    selected = $(this).find("option:selected").attr("data-id");
+    joueur.push(selected);
+    if (equipeId == undefined) {
+      equipeId = $(this).find("option:selected").attr("data-equipe");
+    }
+  });
+  while (joueur.length < 16) {
+    joueur.push(null);
+  }
+var adverse = $('#adverse').val();
+console.log(adverse);
+  $.post("envoisClavier",{adverse: adverse, equipe : equipeId, joueur1: joueur[0],joueur2: joueur[1],joueur3: joueur[2],joueur4: joueur[3],joueur5: joueur[4],joueur6: joueur[5],joueur7: joueur[6],joueur8: joueur[7],joueur9: joueur[8],joueur10: joueur[9],joueur11: joueur[10],joueur12: joueur[11],joueur13: joueur[12],joueur14: joueur[13],joueur15: joueur[14],joueur16: joueur[15]});
+});
 
-
-
-$("select").change( function () {
-
-
+$("select").change( function (){
   id = $("select option:selected").val();
-  console.log(id);
   $("ul").html("");
   $(".lancezmatch").html("");
 
@@ -31,34 +39,25 @@ $("select").change( function () {
     url: "joueurByEquipe/" + id,
 
     success : function(code_html, statut){
-      var obj = JSON.parse(code_html);
+      obj = JSON.parse(code_html);
       var i =0;
+
+
+
       obj.forEach(function(element) {
-        i++;
-        $("ul").append("<li class='col-xs-4 col-md-3'><select class='selectJoueur' name='joueur"+i+"' ><option></option></select></li>");
+        if (i <=16) {
+          i++;
+          $("ul").append("<li class='col-xs-6'><select class='selectJoueur' name='joueur"+i+"' ><option data-equipe='"+element.equipeId+"' data-id='"+element.id+"' name='maillot' value='"+element.numMaillot+"'>"+element.nom+" "+element.prenom+"</option></option><option></select></li>");
+        }
       });
       obj.forEach(function(element) {
-          console.log("my object: %o", element);
-        $(".selectJoueur").append("<option name='maillot' value='"+element.numMaillot+"'>"+element.nom+" "+element.prenom+"</option>");
+
+        $(".selectJoueur").append("<option data-equipe='"+element.equipeId+"' data-id='"+element.id+"' name='maillot' value='"+element.numMaillot+"'>"+element.nom+" "+element.prenom+"</option>");
       });
-        $(".lancezmatch").append("<button class='btn-style' type='submit' name='lancezmatch'>Lancez le match</button>");
+      $(".lancezmatch").append("<button class='btn btn-style btn-primary'  type='submit';' name='lancezmatch'>Lancez le match</button>");
+
+
     }
   });
-});
-
-$(".selectJoueur").change( function () {
-  // find the other selects
-  var otherSelects = $('.selectJoueur').not(this);
-  console.log(otherSelects);
-  // get the old value of this select
-  var oldValue = $(this).data('old');
-  //remove disabled from the other selects option for the old value
-  if (oldValue)
-    otherSelects.find('option[value=' + oldValue + ']').removeAttr('disabled');
-  //add disabled for the other selects option for the new value
-  if (this.value)
-    otherSelects.find('option[value=' + this.value + ']').attr('disabled', 'disabled');
-  // store the new value as old
-  $(this).data('old', this.value);
 
 });

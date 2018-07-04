@@ -9,23 +9,16 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 use AppBundle\Entity\ActionsMatch;
+use AppBundle\Entity\Matchs;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 
 class DefaultController extends Controller
 {
-    /**
-     * @Route("/", name="homepage")
-     */
-    public function indexAction(Request $request)
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')) . DIRECTORY_SEPARATOR,
-        ]);
-    }
+
 
     /**
-     * @Route("/accueil", name="accueil")
+     * @Route("/", name="accueil")
      */
     public function accueilAction()
     {
@@ -65,7 +58,6 @@ class DefaultController extends Controller
      public function avantMatchAction(Request $request)
      {
 
-
        $userId = $this->getUser()->getId();
        $em = $this->getDoctrine()->getManager();
        $equipes = $em->getRepository('AppBundle:Equipes')->findBy(["entraineurId" => $userId]);
@@ -96,11 +88,49 @@ class DefaultController extends Controller
 
      }
 
+     /**
+      * @Route("/envoisClavier", name="envoisClavier")
+      *
+      */
+     public function envoisClavierAction(Request $request)
+     {
+
+     $userId = $this->getUser()->getId();
+     $em = $this->getDoctrine()->getManager();
+
+     $match = new Matchs;
+     $match->setEquipe1Id(66);
+     $match->setActionId(666);
+     $date = date('Y-m-d');
+     $match->setDate($date);
+     $match->setEquipe2($_POST['adverse']);
+     $match->setEquipe1Id($_POST['equipe']);
+     $match->setJoueur1($_POST['joueur1']);
+     $match->setJoueur2($_POST['joueur2']);
+     $match->setJoueur3($_POST['joueur3']);
+     $match->setJoueur4($_POST['joueur4']);
+     $match->setJoueur5($_POST['joueur5']);
+     $match->setJoueur6($_POST['joueur6']);
+     $match->setJoueur7($_POST['joueur7']);
+     $match->setJoueur8($_POST['joueur8']);
+     $match->setJoueur9($_POST['joueur9']);
+     $match->setJoueur10($_POST['joueur10']);
+     $match->setJoueur11($_POST['joueur11']);
+     $match->setJoueur12($_POST['joueur12']);
+     $match->setJoueur13($_POST['joueur13']);
+     $match->setJoueur14($_POST['joueur14']);
+     $match->setJoueur15($_POST['joueur15']);
+     $match->setJoueur16($_POST['joueur16']);
+     $em->persist($match);
+     $em->flush();
+      }
+
     /**
      * @Route("/clavier", name="clavier")
      */
     public function clavierAction(Request $request)
     {
+
          $user = $this->getUser();
         // replace this example code with whatever you need
         return $this->render('clavier/index.html.twig',array( "equipe" => $_POST, "entraineur" => $user
@@ -164,12 +194,12 @@ class DefaultController extends Controller
 
 
     /**
-     * @Route("/envoiAjax/{actionneur}/{action}/{receveur}", name="envoiAjax")
+     * @Route("/envoiAjax/{actionneur}/{action}/{receveur}/{temps}", name="envoiAjax")
      * @param $actionneur
      * @param $action
      * @param $receveur
      */
-    public function ajaxEnvoi($actionneur, $action, $receveur)
+    public function ajaxEnvoi($actionneur, $action, $receveur, $temps)
     {
         $userId = $this->getUser()->getId();
         $em = $this->getDoctrine()->getManager();
@@ -183,7 +213,7 @@ class DefaultController extends Controller
         $em->persist($actions_match);
         $em->flush();
 
-        return "Ajax envoyé";
+        return true;
 
     }
 

@@ -49,8 +49,8 @@
         <div class="row">
             <div class="col-xs-12"><p id="resume"></p></div>
             <div class="col-xs-12">
-                <p>{% if equipe.adverse is defined and equipe.adverse is not same as ("") %}{{ equipe.adverse }}{% else %}adversaire{% endif %}
-                    : <span id="butadv">0</span> - <span id="butclub">0</span> {{ entraineur.nomClub }} </p></div>
+                <p> {{ entraineur.nomClub }} <span id="butclub">0</span> -
+                   <span id="butadv">0</span> {% if equipe.adverse is defined and equipe.adverse is not same as ("") %}{{ equipe.adverse }}{% else %}adversaire{% endif %} </p></div>
 
 
         </div>
@@ -59,8 +59,7 @@
             <div class="row">
                 <div value="0123" class="col-xs-4 adverse_pad highlight_pads counter-click joueur" id="adversaire"
                      data-color="red">
-                    <p><span class="counter-count" style="color: red;">0</span>
-                        - {% if equipe.adverse is defined and equipe.adverse is not same as ("") %}{{ equipe.adverse }}{% else %}Adverse{% endif %}
+                    <p><span class="counter-count" style="color: red;">0</span>-<span id="adversaireCount">{% if equipe.adverse is defined and equipe.adverse is not same as ("") %}{{ equipe.adverse }}{% else %}Adverse{% endif %}</span>
                         <br></p>
                 </div>
                 <!-- Trigger modal MI-TEMPS -->
@@ -156,7 +155,7 @@
             <div class="row">
                 <div value="9" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
                      data-color="#00c253" id="joueur9">
-                    <p>{% if equipe.joueur9.id is defined and equipe.joueur9 is not same as ("") %}{{ equipe.joueur9 }}{% else %}?{% endif %}</p>
+                    <p>{% if equipe.joueur9 is defined and equipe.joueur9 is not same as ("") %}{{ equipe.joueur9 }}{% else %}?{% endif %}</p>
                 </div>
                 <div value="10" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
                      data-color="#00c253" id="joueur10">
@@ -198,8 +197,7 @@
                 </div>
                 <div value="16" class="reset-counter joueur verticalcenter col-xs-1 green_pad highlight_pads"
                      data-color="#00c253" id="joueur16">
-                    <p>{% if equipe.joueur16 is defined and equipe.joueur16 is not same as ("") %}{{ equipe.joueur16 }}{% else %}?{% endif %}
-                    </p>
+                    <p>{% if equipe.joueur16 is defined and equipe.joueur16 is not same as ("") %}{{ equipe.joueur16 }}{% else %}?{% endif %}</p>
                 </div>
                 <!-- Trigger modal FAUTE -->
                 <div type="button" class="actionF reset-counter verticalcenter col-xs-2 yellowmiddle_pad highlight_pads"
@@ -295,16 +293,16 @@
                  aria-labelledby="mySmallModalLabel">
                 <div class="modal-dialog modal-sm" role="document">
                     <!-- Modal content-->
-                    <div class="modal-content" style="background-color: black;">
+                    <div class="modal-content" style="background-color: black; height: 200px;">
                         <p>CONFIRMER ?</p>
                         <div class="row">
                             <div class="col-xs-6">
-                                    <span class="glyphicon glyphicon-remove"
+                                    <span class="iconFin iconFinNo glyphicon glyphicon-remove"
                                           aria-hidden="true" data-dismiss="modal"></span>
                             </div>
 
                             <div class="col-xs-6 fin-match">
-                                <a href="{{ path('statsmatch') }}"><span class="glyphicon glyphicon-ok"
+                                <a href="{{ path('statsmatch') }}"><span class="iconFin iconFinYes glyphicon glyphicon-ok"
                                                                          aria-hidden="true"></span></a>
                             </div>
                         </div>

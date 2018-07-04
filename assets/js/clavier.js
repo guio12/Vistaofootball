@@ -14,6 +14,8 @@ require('bootstrap-sass');
 
 $(document).ready(function () {
     grey();
+
+
 });
 
 
@@ -29,10 +31,13 @@ function envoiAjax() {
     if (receveur.length == 0) {
         receveur = 0;
     }
+
+    console.log($(".t-time").html());
+    temps = $(".t-time").html();
     $.ajax({
-            url: 'envoiAjax/' + actionneur + '/' + action + '/' + receveur,
+            url: 'envoiAjax/' + actionneur + '/' + action + '/' + receveur + '/' + temps,
             type: 'POST',
-            data: {joueur_action: actionneur, action_id: action, joueur_receveur: receveur},
+          // data: {joueur_action: actionneur, action_id: action, joueur_receveur: receveur},
             success: function success(statut) {
                 console.log("affiche messsage si tout ok");
             }
@@ -43,6 +48,14 @@ function envoiAjax() {
 etat = 0;
 
 function grey() {
+
+  $('.joueur').each(function(){
+    if ($(this).children("p").html() == "?") {
+      $(this).css("filter", "grayscale(100%)");
+
+    }
+  });
+
     if (etat == 0) {
 
         $('.action').css("filter", "grayscale(100%)");
@@ -95,57 +108,73 @@ var actionTC = "";
 
 $(".BUT").click(function () {
     action = $(this).attr('value');
-    console.log(action);
     var but = $("#butclub").html();
     var butadv = $("#butadv").html();
 
     if (actionneur != "0123" && action != "666") {
         but = $("#butclub").html();
-        console.log(but);
         but++;
         $("#butclub").html(but);
     } else if (actionneur == "0123" && action != "666") {
 
         butadv = $("#butadv").html();
-        console.log(butadv);
         butadv++;
         $("#butadv").html(butadv);
     } else if (actionneur == "0123" && action == "666") {
 
         but = $("#butclub").html();
-        console.log(but);
         but++;
         $("#butclub").html(but);
     } else if (actionneur != "0123" && action == "666") {
         butadv = $("#butadv").html();
-        console.log(butadv);
         butadv++;
         $("#butadv").html(butadv);
     }
 });
 
 $(".joueur*").click(function () {
+  if ($(this).children("p").html() !== "?") {
     if (etat === 0) {
         actionneur = $(this).attr('value');
-        $('#resume').html(actionneur);
+
+        if (actionneur == "0123") {
+          actionneurMaillot = $(this).children("p").children("#adversaireCount").html();
+        }else {
+          actionneurMaillot = $(this).children("p").html();
+        }
+
+        $('#resume').html(actionneurMaillot);
         etat = 1;
     } else if (etat === 1 && ($(this).attr('value') !== actionneur) || actionneur == "0123") {
         receveur = $(this).attr('value');
+
+        if (receveur == "0123") {
+          receveurMaillot = $(this).children("p").children("#adversaireCount").html();
+        }else {
+          receveurMaillot = $(this).children("p").html();
+        }
 
 
         if (receveur.length) {
             if (action.length == false) {
                 action = "1";
             }
-            $('#resume').html("JOUEUR " + "<span style=\"color:#F00\">" + actionneur + "</span>" + " PASSE À JOUEUR " + "<span style=\"color:#F00\">" + receveur + "</span>");
+            $('#resume').html("JOUEUR " + "<span style=\"color:#F00\">" + actionneurMaillot + "</span>" + " PASSE À JOUEUR " + "<span style=\"color:#F00\">" + receveurMaillot + "</span>");
             envoiAjax();
         }
         actionneur = receveur;
+        actionneurMaillot = receveurMaillot;
+        receveurMaillot = "";
         receveur = "";
         etat = 1;
     } else if (etat === 2 && ($(this).attr('value') !== actionneur || actionneur == "0123")) {
         receveur = $(this).attr('value');
-        $('#resume').append(" AU JOUEUR " + "<span style=\"color:#F00\">" + receveur + "</span>");
+        if (receveur == "0123") {
+          receveurMaillot = $(this).children("p").children("#adversaireCount").html();
+        }else {
+          receveurMaillot = $(this).children("p").html();
+        }
+        $('#resume').append(" AU JOUEUR " + "<span style=\"color:#F00\">" + receveurMaillot + "</span>");
 
         if (receveur.length) {
             if (action.length == false) {
@@ -154,11 +183,14 @@ $(".joueur*").click(function () {
             envoiAjax();
         }
         actionneur = receveur;
+        actionneurMaillot = receveurMaillot;
+        receveurMaillot = "";
         receveur = "";
         action = "";
         etat = 1;
     }
     grey();
+}
 });
 
 $(".action*").click(function () {
@@ -174,7 +206,6 @@ $(".action*").click(function () {
 $(".actionSPE*").click(function () {
     if (etat === 4) {
         action = $(this).attr('value');
-        console.log(actionneur + " " + actionTC + " " + actionSPE);
         $('#resume').html("JOUEUR " + "<span style=\"color:#F00\">" + actionneur + "</span>" + " " + actionTC + " " + actionSPE);
         envoiAjax();
         grey();
@@ -223,7 +254,7 @@ $(".highlight_pads*").click(function () {
 *
 *-------------------------------- */
 
-var counter = 0
+var counter = 0;
 
 $('.counter-click').on('click', function () {
         counter++;
@@ -251,8 +282,7 @@ $('.fin-match').on('click', function () {
 
 });
 $(document).ready(function () {
-
-
+grey();
     var timer = true,
         mmin = 200,
         min = 0,

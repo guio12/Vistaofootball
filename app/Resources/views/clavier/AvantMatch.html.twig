@@ -8,16 +8,15 @@
 
 
 {% block body %}
-<form class="" action="clavier" method="post">
-<div class="container-fluid">
+<form class="" action="clavier" method="POST" id='formulaire'>
+<div class="container">
   <div class="row topEquipe justify-content-center">
-    <div class="col-xs-12 col-sm-6 ">
+    <div class="col-xs-6 ">
       <div class="localEquipe">
         <label for="">Choisir son équipe :</label>
         <select class="" name="Equipe" style="color:black;">
-
-          {% for equipe in equipes %}
           <option value=""></option>
+          {% for equipe in equipes %}
           <option value="{{ equipe.id }}" value="{{ equipe.entraineurNomClub }}">{{ equipe.entraineurNomClub }}, {{ equipe.championnat }}, {{ equipe.categorie }}, {{ equipe.numEquipe }} </option>
 
           {% endfor %}
@@ -25,15 +24,15 @@
       </div>
     </div>
 
-    <div class="col-xs-12 col-sm-6 ">
+    <div class="col-xs-6 col-sm-6 ">
       <div class="advEquipe">
-        <input type="text" name="adverse" value="" placeholder="veuillez entrer le nom de l'equipe adverse">
+        <input name="adverse" type="text" id="adverse" value="" placeholder="veuillez entrer le nom de l'equipe adverse">
       </div>
     </div>
   </div>
 </div>
 
-  <div class="container-fluid">
+  <div class="container">
     <div class="justify-content-left">
       <div class="joueurs">
         <ul class="row">
@@ -42,7 +41,7 @@
       </div>
     </div>
   </div>
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
       <div class="col-6 lancezmatch">
       </div>
