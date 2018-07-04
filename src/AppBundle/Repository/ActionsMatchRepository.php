@@ -295,4 +295,104 @@ class ActionsMatchRepository extends EntityRepository
     }
 
 
+    /**                 TIRS             **/
+
+    public function TirCadreAmis(){
+
+        $query = $this->createQueryBuilder('c');
+        $query->where('c.joueurAction > 0 AND c.actionId = 110')
+        ;
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function TirNonCadreAmis(){
+
+        $query = $this->createQueryBuilder('c');
+        $query->where('c.joueurAction > 0 AND c.actionId = 111')
+        ;
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function DriblesReussiesAmis(){
+
+        $query = $this->createQueryBuilder('c');
+        $query->where('c.joueurAction > 0 AND c.actionId = 113')
+        ;
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function DriblesEchoueesAmis(){
+
+        $query = $this->createQueryBuilder('c');
+        $query->where('c.joueurAction > 0 AND c.actionId = 114')
+        ;
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+
+    
+
+    public function TirCadreEnnemis(){
+
+        $query = $this->createQueryBuilder('c');
+        $query->where('c.joueurAction = 0 AND c.actionId = 110')
+        ;
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function TirNonCadreEnnemis(){
+
+        $query = $this->createQueryBuilder('c');
+        $query->where('c.joueurAction = 0 AND c.actionId = 111')
+        ;
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function DriblesReussiesEnnemis(){
+
+        $query = $this->createQueryBuilder('c');
+        $query->where('c.joueurAction = 0 AND c.actionId = 113')
+        ;
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function DriblesEchoueesEnnemis(){
+
+        $query = $this->createQueryBuilder('c');
+        $query->where('c.joueurAction = 0 AND c.actionId = 114')
+        ;
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+
+
+
+
+
+
+
 }
