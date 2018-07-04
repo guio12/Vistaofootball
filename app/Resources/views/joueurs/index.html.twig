@@ -1,47 +1,44 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Joueurs list</h1>
+<div class="container">
+    <h1>LES JOUEURS</h1>
 
-    <table>
+<div class="panel panel-default">
+    <!-- Table -->
+    <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Equipe</th>
                 <th>Prenom</th>
                 <th>Nom</th>
-                <th>Nummaillot</th>
+                <th>Numéro du maillot</th>
                 <th>Poste</th>
-                <th>Actions</th>
+                <th>Modifications</th>
             </tr>
         </thead>
         <tbody>
         {% for joueur in joueurs %}
             <tr>
-                <td><a href="{{ path('joueurs_show', { 'id': joueur.id }) }}">{{ joueur.id }}</a></td>
-                <td>{{ joueur.equipe }}</td>
                 <td>{{ joueur.prenom }}</td>
                 <td>{{ joueur.nom }}</td>
                 <td>{{ joueur.numMaillot }}</td>
                 <td>{{ joueur.poste }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('joueurs_show', { 'id': joueur.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('joueurs_edit', { 'id': joueur.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    <a href="{{ path('joueurs_edit', { 'id': joueur.id }) }}">
+                        <button class="btn-style btn">ÉDITER</button>
+                    </a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
+</div>
 
-    <ul>
-        <li>
-            <a href="{{ path('joueurs_new') }}">Create a new joueur</a>
-        </li>
-    </ul>
+    <a href="{{ path('joueurs_new', { 'id': equipeid }) }}">
+        <button class="btn-style btn" >CRÉER UN NOUVEAU JOUEUR</button>
+    </a>
+    <a href="{{ path('equipes_index') }}">
+        <button class="btn-style btn" >RETOUR À LA LISTE DES ÉQUIPES</button>
+    </a>
+</div>
 {% endblock %}

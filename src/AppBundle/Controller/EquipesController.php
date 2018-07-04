@@ -56,8 +56,7 @@ class EquipesController extends Controller
         $equipe = new Equipes();
         $equipe->setEntraineurId($userId);
         $equipe->setEntraineurNomClub($club);
-        //$joueur = new Joueurs();
-        //$joueur = $em->getRepository('AppBundle:Equipes')->findBy(['entraineurId' => $userId]);
+
         $form = $this->createForm('AppBundle\Form\EquipesType', $equipe);
         $form->handleRequest($request);
 
@@ -65,11 +64,9 @@ class EquipesController extends Controller
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($equipe);
-           // $joueur->setEquipe($equipe->getId());
-           // $em->persist($joueur);
             $em->flush();
 
-            return $this->redirectToRoute('joueurs_new', array('id' => $equipe->getId()));
+            return $this->redirectToRoute('joueurs_index', array('id' => $equipe->getId()));
         }
 
         return $this->render('equipes/new.html.twig', array(
@@ -157,6 +154,7 @@ class EquipesController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            //$equipe =  $em->find('Equipes', $equipe);
             $em->remove($equipe);
             $em->flush();
         }

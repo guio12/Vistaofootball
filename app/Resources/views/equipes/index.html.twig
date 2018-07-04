@@ -34,13 +34,12 @@
                             </a>
 
                             <a href="{{ path('equipes_edit', { 'id': equipe.id }) }}">
-                                <button class="btn-style btn">EQUIPE / JOUEURS</button>
+                                <button class="btn-style btn">L'ÉQUIPE</button>
                             </a>
 
-
-
-
-
+                            <a href="{{ path('joueurs_index', { 'id': equipe.id }) }}">
+                                <button class="btn-style btn">LES JOUEURS</button>
+                            </a>
                         </td>
                     </tr>
                 {% endfor %}

@@ -14,6 +14,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 
 
+
 class JoueursType extends AbstractType {
 
     /**
@@ -21,7 +22,11 @@ class JoueursType extends AbstractType {
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('prenom')->add('nom')->add('numMaillot')->add('poste')->add('equipe', HiddenType::class);
+        $builder->add('prenom')
+                ->add('nom')
+                ->add('numMaillot')
+                ->add('poste')
+                ->add('equipe', HiddenType::class);
     }/**
  * {@inheritdoc}
  */

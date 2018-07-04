@@ -19,7 +19,7 @@ class Joueurs
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    public $id;
+    private $id;
 
     /**
      * @var int
@@ -28,35 +28,35 @@ class Joueurs
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Equipes", inversedBy="joueur")
      * @ORM\JoinColumn(nullable=false)
      */
-    public $equipe;
+    private $equipe;
 
     /**
      * @var string
      *
      * @ORM\Column(name="prenom", type="string", length=32)
      */
-    public $prenom;
+    private $prenom;
 
     /**
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=32)
      */
-    public $nom;
+    private $nom;
 
     /**
      * @var int
      *
      * @ORM\Column(name="num_maillot", type="integer")
      */
-    public $numMaillot;
+    private $numMaillot;
 
     /**
      * @var string
      *
      * @ORM\Column(name="poste", type="string", length=8)
      */
-    public $poste;
+    private $poste;
 
 
     /**
@@ -190,27 +190,4 @@ class Joueurs
     }
 
 
-    /**
-     * Set prenomm.
-     *
-     * @param string $prenomm
-     *
-     * @return Joueurs
-     */
-    public function setPrenomm($prenomm)
-    {
-        $this->prenomm = $prenomm;
-
-        return $this;
-    }
-
-    /**
-     * Get prenomm.
-     *
-     * @return string
-     */
-    public function getPrenomm()
-    {
-        return $this->prenomm;
-    }
 }

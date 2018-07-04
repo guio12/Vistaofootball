@@ -18,33 +18,37 @@ class JoueursController extends Controller
     /**
      * Lists all joueur entities.
      *
-     * @Route("/", name="joueurs_index")
+     * @Route("/{id}", name="joueurs_index")
      * @Method("GET")
      */
-    public function indexAction()
+    public function indexAction(Equipes $equipe)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $joueurs = $em->getRepository('AppBundle:Joueurs')->findAll();
+        $equipeid = $equipe->getId();
+        $joueurs = $em->getRepository('AppBundle:Joueurs')->findBy(["equipe" => $equipeid]);
 
         return $this->render('joueurs/index.html.twig', array(
             'joueurs' => $joueurs,
+            'equipeid' => $equipeid,
         ));
     }
 
     /**
      * Creates a new joueur entity.
      *
-     * @Route("/new", name="joueurs_new")
+     * @Route("/{id}/new", name="joueurs_new")
      * @Method({"GET", "POST"})
      */
-    public function newAction(Request $request)
+    public function newAction(Request $request, Equipes $equipes)
     {
         $joueur = new Joueurs();
 
-        $id_equipe = $request->query->get('id');
+        //$id_equipe = $request->query->get('id');
+        $id_equipe = $equipes->getId();
         $club = $this->getUser()->getNomClub();
         $joueur->setEquipe($id_equipe);
+
 
         $form = $this->createForm('AppBundle\Form\JoueursType', $joueur);
         $form->handleRequest($request);
@@ -55,12 +59,13 @@ class JoueursController extends Controller
             $em->persist($joueur);
             $em->flush();
 
-            return $this->redirectToRoute('joueurs_new', array('id' => $joueur->getEquipe()));
+            return $this->redirectToRoute('joueurs_index', array('id' => $joueur->getEquipe()));
         }
 
         return $this->render('joueurs/new.html.twig', array(
             'joueur' => $joueur,
-            'id' => $id_equipe,
+            'id_equipe' => $id_equipe,
+
             'club' => $club,
             'form' => $form->createView(),
         ));
@@ -94,14 +99,17 @@ class JoueursController extends Controller
         $editForm = $this->createForm('AppBundle\Form\JoueursType', $joueur);
         $editForm->handleRequest($request);
 
+        $equipe_id = $joueur->getEquipe();
+
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('joueurs_edit', array('id' => $joueur->getId()));
+            return $this->redirectToRoute('joueurs_index', array('id' => $joueur->getEquipe()));
         }
 
         return $this->render('joueurs/edit.html.twig', array(
             'joueur' => $joueur,
+            'equipe_id' => $equipe_id,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
@@ -124,7 +132,7 @@ class JoueursController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('joueurs_index');
+        return $this->redirectToRoute('joueurs_index', array('id' => $joueur->getEquipe()));
     }
 
     /**

@@ -2,13 +2,12 @@
 
 {% block body %}
 <div class="container">
-    <h1>CRÉATION DES JOUEURS :</h1>
+    <h1>CRÉATION D'UN JOUEUR :</h1>
     <div class="jumbotron" style="color:black;">
-        {{ form_start(form, {'method': 'post', 'action': path('joueurs_new')}) }}
+        {{ form_start(form, {'method': 'post', 'action': path('joueurs_new', { 'id': id_equipe }) }) }}
 
         <div class="form-group input-lg col-lg-12">
             <div class="row">
-                {#{{ form_label(form.entraineurNomClub, null, {'label': 'Nom du club'}) }}#}
                 <label for="">Nom du club</label>
             </div>
             <div class="row">
@@ -61,10 +60,10 @@
                 {{ form_widget(form.poste) }}
             </div>
         </div>
-        <button class="btn-style btn" type="submit" value="Create">JOUEUR SUIVANT</button>
+        <button class="btn-style btn" type="submit" value="Create">CRÉER</button>
         {{ form_end(form) }}
 
-        <a href="{{ path('equipes_index') }}"><button class="btn-style btn">RETOUR À LA LISTE DES EQUIPES</button></a>
+        <a href="{{ path('equipes_index') }}"><button class="btn-style btn">RETOUR À LA LISTE DES ÉQUIPES</button></a>
 
     </div>
 </div>

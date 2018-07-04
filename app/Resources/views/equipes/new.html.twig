@@ -5,23 +5,7 @@
         <h1>CRÉATION ÉQUIPE :</h1>
         <div class="jumbotron" style="color:black;">
             {{ form_start(form, {'method': 'post', 'action': path('equipes_new')}) }}
-            {#<div class="form-group input-lg col-lg-12">
-                #}{#<div class="row">
-                    <label for="{{ form.entraineurId.vars.id }}" class="required">Id</label>
-                </div>
-                <div class="row">
-                    <input type="number" id="{{ form.entraineurId.vars.id }}" name="{{ form.entraineurId.vars.full_name }}" required="required" value="{{ userId }}"/>
-                </div>#}{#
-                <div class="row">
-                    {{ form_label(form.entraineurId) }}
-                </div>
-                <div class="row erreurs text-center">
-                    {{ form_errors(form.entraineurId) }}
-                </div>
-                <div class="row">
-                    {{ form_widget(form.entraineurId) }}
-                </div>
-            </div>#}
+
             <div class="form-group input-lg col-lg-12">
                 <div class="row">
                     <label for="nom_entraineur">Nom de l'entraîneur</label>
@@ -77,70 +61,8 @@
                     {{ form_widget(form.numEquipe) }}
                 </div>
             </div>
-            {#<div class="text-center">
-            <p>Création des 16 joueurs</p>
-            </div>#}
-            {#<div class="form-group input-lg col-lg-12">
-                <div class="row">
-                    <label for="{{ form.joueur.vars.equipeId }}" class="required">Id</label>
-                </div>
-                <div class="row">
-                    <input type="number" id="{{ {{ form.joueur.vars.equipeId }} }}" name="{{ form.joueur.vars.full_name }}" required="required" value="{{ userId }}"/>
-                </div>
-                <div class="row">
-                    {{ form_label(form.entraineurId) }}
-                </div>
-                <div class="row erreurs text-center">
-                    {{ form_errors(form.entraineurId) }}
-                </div>
-                <div class="row">
-                    {{ form_widget(form.entraineurId) }}
-                </div>
-            </div>#}
-            {#<div class="form-group input-lg col-lg-12">
-                <div class="row">
-                    {{ form_label(form.joueur.prenom, null, {'label': "Prénom"}) }}
-                </div>
-                <div class="row erreurs text-center">
-                    {{ form_errors(form.joueur.prenom) }}
-                </div>
-                <div class="row">
-                    {{ form_widget(form.joueur.prenom) }}
-                </div>
-            </div>
-            <div class="form-group input-lg col-lg-12">
-                <div class="row">
-                    {{ form_label(form.joueur.nom, null, {'label': "Nom"}) }}
-                </div>
-                <div class="row erreurs text-center">
-                    {{ form_errors(form.joueur.nom) }}
-                </div>
-                <div class="row">
-                    {{ form_widget(form.joueur.nom) }}
-                </div>
-            </div>
-            <div class="form-group input-lg col-lg-12">
-                <div class="row">
-                    {{ form_label(form.joueur.numMaillot, null, {'label': "Numéro du maillot"}) }}
-                </div>
-                <div class="row erreurs text-center">
-                    {{ form_errors(form.joueur.numMaillot) }}
-                </div>
-                <div class="row">
-                    {{ form_widget(form.joueur.numMaillot) }}
-                </div>
-            </div>
-            <div class="form-group input-lg col-lg-12">
-                <div class="row">
-                    {{ form_label(form.joueur.poste, null, {'label': "Poste"}) }}
-                </div>
-                <div class="row erreurs text-center">
-                    {{ form_errors(form.joueur.poste) }}
-                </div>
-                <div class="row">
-                    {{ form_widget(form.joueur.poste) }}
-                </div>
-            </div>#}
+
+
             <button class="btn-style btn" type="submit" value="Create">CRÉER</button>
             {{ form_end(form) }}
 
