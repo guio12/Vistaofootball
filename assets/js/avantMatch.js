@@ -11,7 +11,9 @@ var obj = "";
 var joueur = [];
 var selected = "";
 var equipeId = undefined;
-console.log(equipeId);
+
+
+
 $('#formulaire').submit(function(){
   var i = 0;
   $(".selectJoueur").each(function(){
@@ -40,6 +42,7 @@ $("select").change( function (){
 
     success : function(code_html, statut){
       obj = JSON.parse(code_html);
+      
       var i =0;
 
 
