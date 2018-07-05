@@ -14,74 +14,88 @@ require('bootstrap-sass');
 
 $(document).ready(function () {
     grey();
+
+
 });
 
 
-
-
 /* --------------------------------
- *
- * Envoi données BDD
- *
- *-------------------------------- */
+*
+* Envoi données BDD
+*
+*-------------------------------- */
+
 
 function envoiAjax() {
 
     if (receveur.length == 0) {
-      receveur = 0;
+        receveur = 0;
     }
+
+    console.log($(".t-time").html());
+    temps = $(".t-time").html();
     $.ajax({
-        url: 'envoiAjax/'+ actionneur +'/'+ action + '/' + receveur,
-        type: 'POST',
-        data: { joueur_action: actionneur, action_id: action, joueur_receveur: receveur },
-        success: function success(statut) { console.log("affiche messsage si tout ok");
+            url: 'envoiAjax/' + actionneur + '/' + action + '/' + receveur + '/' + temps,
+            type: 'POST',
+          // data: {joueur_action: actionneur, action_id: action, joueur_receveur: receveur},
+            success: function success(statut) {
+                console.log("affiche messsage si tout ok");
+            }
         }
-      }
-    );}
+    );
+}
 
 etat = 0;
 
 function grey() {
-if (etat == 0) {
 
-    $('.action').css("filter" , "grayscale(100%)");
-    $('.actionSPE').css("filter" , "grayscale(100%)");
-    $('.actionX').css("filter" , "grayscale(100%)");
-    $('.actionDR').css("filter" , "grayscale(100%)");
-    $('.actionTC').css("filter" , "grayscale(100%)");
-    $('.actionF').css("filter" , "grayscale(100%)");
-    $('.AfTC').css("filter" , "grayscale(100%)");
-      $('.joueur').css("filter" , "grayscale(0%)");
+  $('.joueur').each(function(){
+    if ($(this).children("p").html() == "?") {
+      $(this).css("filter", "grayscale(100%)");
 
-}else if (etat == 1) {
-  $('.action').css("filter" , "grayscale(0%)");
-  $('.actionSPE').css("filter" , "grayscale(0%)");
-  $('.actionX').css("filter" , "grayscale(0%)");
-  $('.actionDR').css("filter" , "grayscale(0%)");
-  $('.actionTC').css("filter" , "grayscale(0%)");
-  $('.actionF').css("filter" , "grayscale(0%)");
-  $('.AfTC').css("filter" , "grayscale(0%)");
+    }
+  });
 
-}else if (etat == 2) {
-  $('.action').css("filter" , "grayscale(100%)");
-  $('.actionSPE').css("filter" , "grayscale(100%)");
-  $('.actionX').css("filter" , "grayscale(100%)");
-  $('.actionDR').css("filter" , "grayscale(100%)");
-  $('.actionTC').css("filter" , "grayscale(100%)");
-  $('.actionF').css("filter" , "grayscale(100%)");
-  $('.AfTC').css("filter" , "grayscale(100%)");
+    if (etat == 0) {
 
-}else if (etat == 4) {
-  $('.actionSPE').css("filter" , "grayscale(0%)");
-  $('.action').css("filter" , "grayscale(100%)");
-  $('.joueur').css("filter" , "grayscale(100%)");
-  $('.actionX').css("filter" , "grayscale(100%)");
-  $('.actionDR').css("filter" , "grayscale(100%)");
-  $('.actionTC').css("filter" , "grayscale(100%)");
-  $('.actionF').css("filter" , "grayscale(100%)");
-  $('.AfTC').css("filter" , "grayscale(0%)");
+        $('.action').css("filter", "grayscale(100%)");
+        $('.actionSPE').css("filter", "grayscale(100%)");
+        $('.actionX').css("filter", "grayscale(100%)");
+        $('.actionDR').css("filter", "grayscale(100%)");
+        $('.actionTC').css("filter", "grayscale(100%)");
+        $('.actionF').css("filter", "grayscale(100%)");
+        $('.AfTC').css("filter", "grayscale(100%)");
+        $('.joueur').css("filter", "grayscale(0%)");
 
-  }
+    } else if (etat == 1) {
+        $('.action').css("filter", "grayscale(0%)");
+        $('.actionSPE').css("filter", "grayscale(0%)");
+        $('.actionX').css("filter", "grayscale(0%)");
+        $('.actionDR').css("filter", "grayscale(0%)");
+        $('.actionTC').css("filter", "grayscale(0%)");
+        $('.actionF').css("filter", "grayscale(0%)");
+        $('.AfTC').css("filter", "grayscale(0%)");
+
+    } else if (etat == 2) {
+        $('.action').css("filter", "grayscale(100%)");
+        $('.actionSPE').css("filter", "grayscale(100%)");
+        $('.actionX').css("filter", "grayscale(100%)");
+        $('.actionDR').css("filter", "grayscale(100%)");
+        $('.actionTC').css("filter", "grayscale(100%)");
+        $('.actionF').css("filter", "grayscale(100%)");
+        $('.AfTC').css("filter", "grayscale(100%)");
+
+    } else if (etat == 4) {
+        $('.actionSPE').css("filter", "grayscale(0%)");
+        $('.action').css("filter", "grayscale(100%)");
+        $('.joueur').css("filter", "grayscale(100%)");
+        $('.actionX').css("filter", "grayscale(100%)");
+        $('.actionDR').css("filter", "grayscale(100%)");
+        $('.actionTC').css("filter", "grayscale(100%)");
+        $('.actionF').css("filter", "grayscale(100%)");
+        $('.AfTC').css("filter", "grayscale(0%)");
+
+    }
 }
 
 var receveur = "";
@@ -91,28 +105,76 @@ var actionX = "";
 var actionDR = "";
 var actionTC = "";
 
+
+$(".BUT").click(function () {
+    action = $(this).attr('value');
+    var but = $("#butclub").html();
+    var butadv = $("#butadv").html();
+
+    if (actionneur != "0123" && action != "666") {
+        but = $("#butclub").html();
+        but++;
+        $("#butclub").html(but);
+    } else if (actionneur == "0123" && action != "666") {
+
+        butadv = $("#butadv").html();
+        butadv++;
+        $("#butadv").html(butadv);
+    } else if (actionneur == "0123" && action == "666") {
+
+        but = $("#butclub").html();
+        but++;
+        $("#butclub").html(but);
+    } else if (actionneur != "0123" && action == "666") {
+        butadv = $("#butadv").html();
+        butadv++;
+        $("#butadv").html(butadv);
+    }
+});
+
 $(".joueur*").click(function () {
+  if ($(this).children("p").html() !== "?") {
     if (etat === 0) {
         actionneur = $(this).attr('value');
-        $('#resume').html(actionneur);
+
+        if (actionneur == "0123") {
+          actionneurMaillot = $(this).children("p").children("#adversaireCount").html();
+        }else {
+          actionneurMaillot = $(this).children("p").html();
+        }
+
+        $('#resume').html(actionneurMaillot);
         etat = 1;
-    } else if (etat === 1 && ($(this).attr('value') !== actionneur) || actionneur == "Adversaire") {
+    } else if (etat === 1 && ($(this).attr('value') !== actionneur) || actionneur == "0123") {
         receveur = $(this).attr('value');
+
+        if (receveur == "0123") {
+          receveurMaillot = $(this).children("p").children("#adversaireCount").html();
+        }else {
+          receveurMaillot = $(this).children("p").html();
+        }
 
 
         if (receveur.length) {
             if (action.length == false) {
                 action = "1";
             }
-             $('#resume').html("JOUEUR " + "<span style=\"color:#F00\">" + actionneur + "</span>" + " PASSE À JOUEUR " + "<span style=\"color:#F00\">" + receveur +"</span>");
+            $('#resume').html("JOUEUR " + "<span style=\"color:#F00\">" + actionneurMaillot + "</span>" + " PASSE À JOUEUR " + "<span style=\"color:#F00\">" + receveurMaillot + "</span>");
             envoiAjax();
         }
         actionneur = receveur;
+        actionneurMaillot = receveurMaillot;
+        receveurMaillot = "";
         receveur = "";
         etat = 1;
-    } else if (etat === 2 && ($(this).attr('value') !== actionneur || actionneur == "Adversaire")) {
+    } else if (etat === 2 && ($(this).attr('value') !== actionneur || actionneur == "0123")) {
         receveur = $(this).attr('value');
-        $('#resume').append(" AU JOUEUR "+ "<span style=\"color:#F00\">" + receveur + "</span>");
+        if (receveur == "0123") {
+          receveurMaillot = $(this).children("p").children("#adversaireCount").html();
+        }else {
+          receveurMaillot = $(this).children("p").html();
+        }
+        $('#resume').append(" AU JOUEUR " + "<span style=\"color:#F00\">" + receveurMaillot + "</span>");
 
         if (receveur.length) {
             if (action.length == false) {
@@ -121,11 +183,14 @@ $(".joueur*").click(function () {
             envoiAjax();
         }
         actionneur = receveur;
+        actionneurMaillot = receveurMaillot;
+        receveurMaillot = "";
         receveur = "";
         action = "";
         etat = 1;
     }
-grey();
+    grey();
+}
 });
 
 $(".action*").click(function () {
@@ -140,11 +205,9 @@ $(".action*").click(function () {
 
 $(".actionSPE*").click(function () {
     if (etat === 4) {
-        actionSPE = $(this).attr('value');
-        console.log(actionneur + " " + actionTC + " " + actionSPE);
+        action = $(this).attr('value');
         $('#resume').html("JOUEUR " + "<span style=\"color:#F00\">" + actionneur + "</span>" + " " + actionTC + " " + actionSPE);
         envoiAjax();
-        actionTC = "";
         grey();
         etat = 0;
     }
@@ -152,7 +215,7 @@ $(".actionSPE*").click(function () {
 
 $(".actionX*").click(function () {
     if (etat === 1) {
-        actionX = $(this).attr('value');
+        action = $(this).attr('value');
         $('#resume').html("JOUEUR " + "<span style=\"color:#F00\">" + actionneur + "</span>" + " : " + $(this).children().html());
         envoiAjax();
         etat = 0;
@@ -164,27 +227,20 @@ $(".actionX*").click(function () {
 });
 $(".actionDR").click(function () {
     if (etat === 1) {
-        actionDR = $(this).attr('value');
+        action = $(this).attr('value');
         $('#resume').html("JOUEUR " + "<span style=\"color:#F00\">" + actionneur + "</span>" + " " + $(this).children().html());
         envoiAjax();
-        actionDR = "grey";
-    }
-    grey();
-});
-$(".actionTC").click(function () {
-    if (etat === 1 && actionTC.length == 0) {
-        actionTC = $(this).attr('value');
-        etat = 4;
+
     }
     grey();
 });
 
 
 /* --------------------------------
- *
- * Highlight pad
- *
- *-------------------------------- */
+*
+* Highlight pad
+*
+*-------------------------------- */
 
 $(".highlight_pads*").click(function () {
     var button_color = $(this).data('color');
@@ -193,12 +249,12 @@ $(".highlight_pads*").click(function () {
 });
 
 /* --------------------------------
- *
- * Adverse pad counter
- *
- *-------------------------------- */
+*
+* Adverse pad counter
+*
+*-------------------------------- */
 
-var counter = 0
+var counter = 0;
 
 $('.counter-click').on('click', function () {
         counter++;
@@ -213,16 +269,21 @@ $('.reset-counter').on('click', function () {
 );
 
 
-
 /* --------------------------------
- *
- * Timer
- *
- *-------------------------------- */
+*
+* Timer
+*
+*-------------------------------- */
 
 
+$('.fin-match').on('click', function () {
+    clearInterval(timerInt);
+
+
+});
 $(document).ready(function () {
-    var timer = 'true',
+grey();
+    var timer = true,
         mmin = 200,
         min = 0,
         sec = 0,
@@ -234,10 +295,11 @@ $(document).ready(function () {
     $('.t-time').text(min + ':0' + sec);
     $('.oop').text('of ' + mmin);
 
-// Pause
+    // Pause
     $('.pause-btn').on('click', function () {
         startTimer(timer);
     });
+
 
     $('.o-opt-btn').on('click', function () {
         if ($(this).hasClass('b-inc')) {
@@ -253,9 +315,10 @@ $(document).ready(function () {
 
     function startTimer(func) {
         timer = !timer;
-        if (func) {
+        if (func == true) {
 
-            $('.pause-btn span').removeClass('glyphicon-play').addClass('glyphicon-pause');
+            $('.btn-mi-temps p span').removeClass('glyphicon-play').addClass('glyphicon-pause');
+            // Démarre l'exécution du timer :
             timerInt = setInterval(function () {
                 sec++;
                 perc = perc - (percm / 60);
@@ -278,16 +341,17 @@ $(document).ready(function () {
                     min = 0;
                     sec = 0;
                     perc = 612;
-                    $('.pause-btn span').removeClass('glyphicon-pause').addClass('glyphicon-play');
+                    $('.btn-mi-temps span').removeClass('glyphicon-pause').addClass('glyphicon-play');
+                    // Arrête l'exécution du timer :
                     clearInterval(timerInt);
 
                 }
             }, 1000);
         } else {
+            // Arrête l'exécution du timer :
             clearInterval(timerInt);
-            $('.pause-btn span').removeClass('glyphicon-pause').addClass('glyphicon-play');
+            $('.btn-mi-temps span').removeClass('glyphicon-pause').addClass('glyphicon-play');
 
         }
     }
-
 });

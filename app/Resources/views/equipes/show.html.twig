@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/admin_equipes.css') }}">
+{% endblock %}
+
 {% block body %}
     <div class="container">
         <h1>ÉQUIPE</h1>
@@ -58,9 +62,10 @@
             <button class="btn-style btn">GÉRER L'ÉQUIPE</button>
         </a>
 
-        {{ form_start(delete_form) }}
-        <button type="submit" value="Delete" class="btn-style btn">SUPPRIMER L'ÉQUIPE</button>
-        {{ form_end(delete_form) }}
+            {{ form_start(delete_form) }}
+            <button type="submit" value="Delete" class="btn-style btn-align btn">SUPPRIMER</button>
+            {{ form_end(delete_form) }}
+        </div>
 
     </div>
 {% endblock %}

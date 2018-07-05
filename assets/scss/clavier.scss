@@ -1,4 +1,27 @@
-$brand-primary: #0092ca;
+$cian: #53e2e2;
+$darkcian: #0ba2a3;
+
+/* --------------------------------
+ *
+ * Score
+ *
+ *-------------------------------- */
+
+.score {
+  background-color: black;
+  font-size: 2vw;
+  color: white;
+  span {
+    color: $cian;
+    font-size: 3vw;
+  }
+}
+
+/* --------------------------------
+ *
+ * Basic / Colors
+ *
+ *-------------------------------- */
 
 .verticalcenter {
   line-height: 14vh;
@@ -9,25 +32,19 @@ body {
   text-align: center;
 }
 
-a:link
-{
-  text-decoration:none;
+a:link {
+  text-decoration: none;
 }
 
 p {
   font-weight: bold;
-  font-size: 17px;
+  font-size: 1.6vw;
   color: white;
 }
 
-.logo {
-  height: 80px;
-  float: left;
-  padding-bottom: 20px;
-}
-
 #resume {
-  color : $brand-primary;
+  color: white;
+
 }
 
 .yellow_pad {
@@ -48,6 +65,9 @@ p {
 .adverse_pad {
   background: linear-gradient(to bottom right, gray, black);
   height: 14vh;
+  line-height: 14vh;
+  vertical-align: middle;
+
 }
 
 .yellowmiddle_pad {
@@ -84,7 +104,7 @@ p {
 .counter-count {
   font-weight: bold;
   color: white;
-  font-size: 17px;
+  font-size: 1.7vw;
 }
 
 /* --------------------------------
@@ -93,14 +113,12 @@ p {
  *
  *-------------------------------- */
 
-// MY MIXINS
+
 @mixin flex-center() {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-// THE CSS
 
 .t-center {
   text-align: center;
@@ -111,52 +129,34 @@ p {
   .o-watch-wrap {
     .o-timer {
       @extend .t-center;
-      font-size: 50px;
+      font-size: 4vw;
     }
   }
 }
 
 /* --------------------------------
  *
- * Modal Window
+ * Responsive
  *
  *-------------------------------- */
 
-@mixin popup {
-  display: none;
-  z-index: 1000;
-  text-align: center;
-  background: black;
-  padding: 30px;
-  width: 200px;
-  height: 180px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: -150px;
-  margin-top: -150px;
-  box-shadow: 0 0 125px 0 rgba(0, 0, 0, 1),
-  0 0 10000px 500px rgba(0, 0, 0, .75);
-  a {
-    color: white;
+  .iconFin{
+    font-size: 10vh;
   }
-  label {
-    color: white;
+  .iconFinYes{
+    color:green;
   }
-}
+  .iconFinNo{
+    color:red;
+  }
 
-#popup {
-  @include popup
-}
+  .textWrap {
+    overflow-wrap: break-word;
+    line-height: 5vh;
+  }
 
-#popup2 {
-  @include popup
-}
 
-#popup3 {
-  @include popup
-}
-
-#popup4 {
-  @include popup
+.col-xs-1 {
+  padding-left: 1px;
+  padding-right: 1px;
 }

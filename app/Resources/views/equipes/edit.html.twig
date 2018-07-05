@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/admin_equipes.css') }}">
+{% endblock %}
+
 {% block body %}
     <div class="container">
         <h1>ÉDITION DE L'ÉQUIPE :</h1>
@@ -18,6 +22,7 @@
                     {{ form_widget(edit_form.championnat) }}
                 </div>
             </div>
+
             <div class="form-group input-lg col-lg-12">
                 <div class="row">
                     {{ form_label(edit_form.categorie, null, {'label': 'Catégorie'}) }}
@@ -29,6 +34,7 @@
                     {{ form_widget(edit_form.categorie) }}
                 </div>
             </div>
+
             <div class="form-group input-lg col-lg-12">
                 <div class="row">
                     {{ form_label(edit_form.numEquipe, null, {'label': "Numéro d'équipe"}) }}
@@ -41,29 +47,21 @@
                 </div>
             </div>
 
-            {#{% for joueur in joueurs  %}
-                <div class="form-group input-lg col-lg-12">
-                    <div class="row">
-                        {{ form_label(edit_form.prenom, null, {'label': 'Joueur'}) }}
-                    </div>
-                    <div class="row erreurs text-center">
-                        {{ form_errors(edit_form.prenom) }}
-                    </div>
-                    <div class="row">
-                        {{ form_widget(edit_form.prenom) }}
-                    </div>
-                </div>
-            {% endfor %}#}
+            <div class="text-right">
+                <br>
+                <button class="btn-style btn-align btn" type="submit" value="Edit">ÉDITER</button>
+                <br>
+                {{ form_end(edit_form) }}
 
-            <button class="btn-style btn" type="submit" value="Edit">ÉDITER</button>
-        {{ form_end(edit_form) }}
-
-            <a href="{{ path('equipes_index') }}"><button class="btn-style btn">RETOUR À LA LISTE DES ÉQUIPES</button></a>
+                <a href="{{ path('equipes_index') }}">
+                    <button class="btn-style btn-align btn">RETOUR À LA LISTE</button>
+                </a>
 
                 {{ form_start(delete_form) }}
-            <button class="btn-style btn" type="submit" value="Delete">SUPPRIMER</button>
+                <button class="btn-style btn-align btn" type="submit" value="Delete">SUPPRIMER</button>
                 {{ form_end(delete_form) }}
+            </div>
 
-    </div>
+        </div>
     </div>
 {% endblock %}

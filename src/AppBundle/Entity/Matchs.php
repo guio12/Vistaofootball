@@ -30,9 +30,9 @@ class Matchs
     private $actionId;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="date", type="date")
+     * @ORM\Column(name="date", type="string")
      */
     private $date;
 
@@ -62,105 +62,105 @@ class Matchs
     /**
      * @var int
      *
-     * @ORM\Column(name="joueur2", type="integer")
+     * @ORM\Column(name="joueur2", type="integer", nullable=true)
      */
     private $joueur2;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="joueur3", type="integer")
+     * @ORM\Column(name="joueur3", type="integer", nullable=true)
      */
     private $joueur3;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="joueur4", type="integer")
+     * @ORM\Column(name="joueur4", type="integer", nullable=true)
      */
     private $joueur4;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="joueur5", type="integer")
+     * @ORM\Column(name="joueur5", type="integer", nullable=true)
      */
     private $joueur5;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="joueur6", type="integer")
+     * @ORM\Column(name="joueur6", type="integer", nullable=true)
      */
     private $joueur6;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="joueur7", type="integer")
+     * @ORM\Column(name="joueur7", type="integer", nullable=true)
      */
     private $joueur7;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="joueur8", type="integer")
+     * @ORM\Column(name="joueur8", type="integer", nullable=true)
      */
     private $joueur8;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="joueur9", type="integer")
+     * @ORM\Column(name="joueur9", type="integer", nullable=true)
      */
     private $joueur9;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="joueur10", type="integer")
+     * @ORM\Column(name="joueur10", type="integer", nullable=true)
      */
     private $joueur10;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="joueur11", type="integer")
+     * @ORM\Column(name="joueur11", type="integer", nullable=true)
      */
     private $joueur11;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="joueur12", type="integer")
+     * @ORM\Column(name="joueur12", type="integer", nullable=true)
      */
     private $joueur12;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="joueur13", type="integer")
+     * @ORM\Column(name="joueur13", type="integer", nullable=true)
      */
     private $joueur13;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="joueur14", type="integer")
+     * @ORM\Column(name="joueur14", type="integer", nullable=true)
      */
     private $joueur14;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="joueur15", type="integer")
+     * @ORM\Column(name="joueur15", type="integer", nullable=true)
      */
     private $joueur15;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="joueur16", type="integer")
+     * @ORM\Column(name="joueur16", type="integer", nullable=true)
      */
     private $joueur16;
 

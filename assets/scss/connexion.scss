@@ -1,13 +1,5 @@
-// customize some Bootstrap variables
-
-html,
-body {
-  width: 100%;
-  height: 100%;
-}
-
 .brand-logo {
-  width: 30vh;
+  width: 25vh;
   text-align: center;
 }
 
@@ -22,7 +14,7 @@ body {
 }
 
 .global{
-  font-family: 'Baumans', cursive;
+  font-family: 'Quantico', sans-serif;
   text-transform: uppercase;
   background-size: cover;
   background-position: center center;
@@ -34,7 +26,6 @@ body {
   position: absolute;
 }
 .global:after{
-  background-image: radial-gradient(circle, #2e2e2e, #343434, #3b3b3b, #414141, #484848);
   position: absolute;
   z-index: 1;
   width: 100%;
@@ -73,24 +64,6 @@ a, a:hover{
 .bg-alt {
   background-color: white;
 }
-.btn{
-  -webkit-transition: 350ms ease all;
-  transition: 350ms ease all;
-  text-transform: uppercase;
-  font-weight: 500;
-  padding: .6rem 1.5rem;
-  cursor: pointer;
-}
-.btn:hover, .btn:focus {
-  box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.15);
-}
-.btn-primary{
-  background-color: #ff5722 !important;
-  border-color: #ff5722 !important;
-}
-.btn-primary:hover, .btn-primary:focus{
-  color: #fff !important;
-}
 
 .form-group input {
   text-align: center;
@@ -113,9 +86,7 @@ a, a:hover{
   border: none !important;
   border-color: transparent !important;
 }
-.text-primary{
-  color: #ff5722 !important;
-}
+
 .custom-control-input:checked~.custom-control-indicator {
   color: #fff;
   background-color: #ff5722;
@@ -154,7 +125,6 @@ a, a:hover{
 .erreurs {
   color: white;
 }
-
 
 
 // the ~ allows you to reference things in node_modules
