@@ -33,17 +33,16 @@
                         <td width="20%" class="text-center">{{ equipe.categorie }}</td>
                         <td width="20%" class="text-center">{{ equipe.numEquipe }}</td>
                         <td width="20%" class="text-right">
-
                             <a href="{{ path('equipes_show', { 'id': equipe.id }) }}">
-                                <button class="btn-style btn">DÉTAILS</button>
+                                <button class="btn-style btn-align btn btn-block">DÉTAILS</button>
                             </a>
 
                             <a href="{{ path('equipes_edit', { 'id': equipe.id }) }}">
-                                <button class="btn-style btn-align btn">ÉDITER</button>
+                                <button class="btn-style btn-align btn btn-block">ÉQUIPE</button>
                             </a>
 
                             <a href="{{ path('joueurs_index', { 'id': equipe.id }) }}">
-                                <button class="btn-style btn">LES JOUEURS</button>
+                                <button class="btn-style btn-align btn btn-block">JOUEURS</button>
                             </a>
                         </td>
                     </tr>
