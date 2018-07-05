@@ -239,6 +239,10 @@ a:hover, a:focus {
   right: 10px;
 }
 
+#chart .bars li span {
+ font-size: 1vw;
+}
+
 #chart .barsi {
   display: flex;
   background: rgba(0, 0, 0, 0.2);

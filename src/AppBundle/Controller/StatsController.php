@@ -18,7 +18,7 @@ class StatsController extends Controller
 {
 
   /**
-  * @Route("/testpasse", name="testpasse")
+  * @Route("/possession", name="possession")
   */
   public function PasseAction()
   {
