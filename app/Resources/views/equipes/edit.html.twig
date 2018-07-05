@@ -19,7 +19,7 @@
                     {{ form_errors(edit_form.championnat) }}
                 </div>
                 <div class="row">
-                    {{ form_widget(edit_form.championnat) }}
+                    {{ form_widget(edit_form.championnat, { 'attr': {'class': 'form-control input-lg'} }) }}
                 </div>
             </div>
 
@@ -31,7 +31,7 @@
                     {{ form_errors(edit_form.categorie) }}
                 </div>
                 <div class="row">
-                    {{ form_widget(edit_form.categorie) }}
+                    {{ form_widget(edit_form.categorie, { 'attr': {'class': 'form-control input-lg'} }) }}
                 </div>
             </div>
 
@@ -43,25 +43,28 @@
                     {{ form_errors(edit_form.numEquipe) }}
                 </div>
                 <div class="row">
-                    {{ form_widget(edit_form.numEquipe) }}
+                    {{ form_widget(edit_form.numEquipe, { 'attr': {'class': 'form-control input-lg'} }) }}
                 </div>
             </div>
 
-            <div class="text-right">
-                <br>
-                <button class="btn-style btn-align btn" type="submit" value="Edit">ÉDITER</button>
-                <br>
-                {{ form_end(edit_form) }}
+            <div class="col-lg-3 col-md-4 col-sm-5 text-right boutons_bas">
+                <div class="row">
+                    <button class="btn-style btn-align btn btn-block" type="submit" value="Edit">ÉDITER</button>
+                    {{ form_end(edit_form) }}
 
-                <a href="{{ path('equipes_index') }}">
-                    <button class="btn-style btn-align btn">RETOUR À LA LISTE</button>
-                </a>
-
-                {{ form_start(delete_form) }}
-                <button class="btn-style btn-align btn" type="submit" value="Delete">SUPPRIMER</button>
-                {{ form_end(delete_form) }}
+                    {{ form_start(delete_form) }}
+                    <button class="btn-style btn-align btn btn-block" type="submit" value="Delete">SUPPRIMER</button>
+                    {{ form_end(delete_form) }}
+                </div>
             </div>
 
-        </div>
-    </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-5 text-right boutons_bas">
+                    <a href="{{ path('equipes_index') }}">
+                        <button class="btn-style btn-align btn btn-block">RETOUR À LA LISTE</button>
+                    </a>
+                </div>
+            </div>
+         </div>
+     </div>
 {% endblock %}

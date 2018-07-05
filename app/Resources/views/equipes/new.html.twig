@@ -15,7 +15,7 @@
                     <label for="nom_entraineur">Nom de l'entraîneur</label>
                 </div>
                 <div class="row">
-                    <div class="form-control">
+                    <div class="form-control input-lg non_modif">
                         {{ nom }} {{ prenom }}
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                 </div>
                 <div class="row">
                     {#<input type="text" id="{{ form.entraineurNomClub.vars.id }}" name="{{ form.entraineurNomClub.vars.full_name }}" required="required"  value="{{ club }}"/>#}
-                    <div class="form-control">
+                    <div class="form-control input-lg non_modif">
                         {{ club }}
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                     {{ form_errors(form.championnat) }}
                 </div>
                 <div class="row">
-                    {{ form_widget(form.championnat) }}
+                    {{ form_widget(form.championnat, { 'attr': {'class': 'form-control input-lg'} }) }}
                 </div>
             </div>
             <div class="form-group input-lg col-lg-12">
@@ -51,7 +51,7 @@
                     {{ form_errors(form.categorie) }}
                 </div>
                 <div class="row">
-                    {{ form_widget(form.categorie) }}
+                    {{ form_widget(form.categorie, { 'attr': {'class': 'form-control input-lg'} }) }}
                 </div>
             </div>
             <div class="form-group input-lg col-lg-12">
@@ -62,18 +62,25 @@
                     {{ form_errors(form.numEquipe) }}
                 </div>
                 <div class="row">
-                    {{ form_widget(form.numEquipe) }}
+                    {{ form_widget(form.numEquipe, { 'attr': {'class': 'form-control input-lg'} }) }}
                 </div>
             </div>
             <br>
-            <div class="text-right">
-                <button class="btn-style btn-align btn" type="submit" value="Create">CRÉER</button>
-                {{ form_end(form) }}
-                <br>
+            <div class="col-lg-3 col-md-4 col-sm-5 text-right boutons_bas">
+                <div class="row">
+                    <button class="btn-style btn-align btn btn-block" type="submit" value="Create">CRÉER</button>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-5 text-right boutons_bas">
                 <a href="{{ path('equipes_index') }}">
-                    <button class="btn-style btn-align btn">RETOUR À LA LISTE</button>
+                    <button class="btn-style btn-align btn btn-block">RETOUR À LA LISTE</button>
                 </a>
+            </div>
             </div>
         </div>
     </div>
+
+
 {% endblock %}
