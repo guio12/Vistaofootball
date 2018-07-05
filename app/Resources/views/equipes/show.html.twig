@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/admin_equipes.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>ÉQUIPE :</h1>
+        <div class="panel panel-default">
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th>Nom de l'entraîneur</th>
+                    <td>{{ nom }} {{ prenom }}</td>
+                </tr>
+                <tr>
+                    <th>Nom du club</th>
+                    <td>{{ equipe.entraineurNomClub }}</td>
+                </tr>
+                <tr>
+                    <th>Championnat</th>
+                    <td>{{ equipe.championnat }}</td>
+                </tr>
+                <tr>
+                    <th>Catégorie</th>
+                    <td>{{ equipe.categorie }}</td>
+                </tr>
+                <tr>
+                    <th>Numéro d'équipe</th>
+                    <td>{{ equipe.numEquipe }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        {% for joueur in joueurs  %}
+        <div class="panel panel-default">
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th>Nom du joueur</th>
+                    <td>{{ joueur.nom }} {{ joueur.prenom }}</td>
+                </tr>
+                <tr>
+                    <th>Numéro du Maillot</th>
+                    <td>{{ joueur.numMaillot }}</td>
+                </tr>
+                <tr>
+                    <th>Poste</th>
+                    <td>{{ joueur.poste }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        {% endfor %}
+
+        <a href="{{ path('equipes_index') }}">
+            <button class="btn-style btn ">RETOUR À LA LISTE</button>
+        </a>
+        <a href="{{ path('equipes_edit', { 'id': equipe.id }) }}">
+            <button class="btn-style btn ">GÉRER L'ÉQUIPE</button>
+        </a>
+
+            {{ form_start(delete_form) }}
+            <button type="submit" value="Delete" class="btn-style btn-align btn btn-block">SUPPRIMER</button>
+            {{ form_end(delete_form) }}
+    </div>
+
+
+{% endblock %}

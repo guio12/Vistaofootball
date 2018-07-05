@@ -3,6 +3,8 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use FOS\UserBundle\Model\User as BaseUser;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Entraineurs
@@ -10,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="entraineurs")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\EntraineursRepository")
  */
-class Entraineurs
+class Entraineurs extends BaseUser
 {
     /**
      * @var int
@@ -20,7 +22,7 @@ class Entraineurs
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Equipes", mappedBy="entraineurId")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
@@ -44,6 +46,12 @@ class Entraineurs
      */
     private $nomClub;
 
+
+
+    public function __construct()
+    {
+        parent::__construct();
+    }
 
     /**
      * Get id.

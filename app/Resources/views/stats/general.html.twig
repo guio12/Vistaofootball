@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/stats.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    {% include 'stats/base_stats.html.twig' %}
+
+    </br>
+
+    <div class="stats">
+        <div class="statsshow">
+
+
+            <h1><a href="{{ path('possession') }}">POSSESSION</a></h1>
+            <div class="progress">
+                <div class="progress-bar progress-bar-info" style="width: 40%">
+                    <p>40%</p>
+                </div>
+                <div class="progress-bar progress-bar-adv" style="width: 60%">
+                    <p>60%</p>
+                </div>
+            </div>
+
+            <h1><a href="{{ path('tirs') }}">TIRS</a></h1>
+            <div class="progress">
+                <div class="progress-bar progress-bar-info" style="width: 99%">
+                    <p>99%</p>
+                </div>
+                <div class="progress-bar progress-bar-adv" style="width: 1%">
+                    <p>1%</p>
+                </div>
+            </div>
+
+            <h1><a href="{{ path('recuperation') }}">RECUPERATIONS</a></h1>
+            <div class="progress">
+                <div class="progress-bar progress-bar-info" style="width: 52%">
+                    <p>52%</p>
+                </div>
+                <div class="progress-bar progress-bar-adv" style="width: 48%">
+                    <p>48%</p>
+                </div>
+            </div>
+
+            <h1><a href="{{ path('CPA') }}">DISCIPLINE</a></h1>
+            <div class="progress">
+                <div class="progress-bar progress-bar-info" style="width: 10%">
+                    <p>10%</p>
+                </div>
+                <div class="progress-bar progress-bar-adv" style="width: 90%">
+                    <p>90%</p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+{% endblock %}
+

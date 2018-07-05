@@ -1,0 +1,130 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/stats.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    {% include 'stats/base_stats.html.twig' %}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <h1>POSSESSION</h1>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-info" style="width: 40%">
+                        <p>40%</p>
+                    </div>
+                    <div class="progress-bar progress-bar" style="width: 60%">
+                        <p>60%</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <br><br><br><br>
+
+
+
+
+
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-5">
+                <div class="stats">
+                    <div class="statsshow">
+                        <h3>PASSES</h3>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info" style="width: 40%">
+                                <p>{{ passesReussies }}</p>
+                            </div>
+                            <div class="progress-bar progress-bar" style="width: 60%">
+                                <p>{{ passesPerdues }}</p>
+                            </div>
+                        </div>
+
+
+                        <h4>CENTRES</h4>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info" style="width: 70%">
+                                <p>{{ centresReussies }}</p>
+                            </div>
+                            <div class="progress-bar progress-bar" style="width: 30%">
+                                <p>{{ centresPerdus }}</p>
+                            </div>
+                        </div>
+
+
+                        <h4>PASSES LONGUES</h4>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info" style="width: 52%">
+                                <p>{{ PLReussies }}</p>
+                            </div>
+                            <div class="progress-bar progress-bar" style="width: 48%">
+                                <p>{{ PLPerdues }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-2 text-center"><a href="{{ path('statsmatch') }}">
+                    <span class="glyphicon glyphicon-backward"></span></a>
+            </div>
+
+
+            <div class="col-md-5">
+                <div class="stats">
+                    <div class="statsshow">
+                        <h3>PASSES</h3>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info" style="width: 40%">
+                                <p>{{ passesEReussies }}</p>
+                            </div>
+                            <div class="progress-bar progress-bar" style="width: 60%">
+                                <p>{{ passesEPerdues }}</p>
+                            </div>
+                        </div>
+
+
+                        <h4>CENTRES</h4>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info" style="width: 80%">
+                                <p>{{ centresEReussis }}</p>
+                            </div>
+                            <div class="progress-bar progress-bar" style="width: 20%">
+                                <p>{{ centresEPerdues }}</p>
+                            </div>
+                        </div>
+
+
+                        <h4>PASSES LONGUES</h4>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info" style="width: 52%">
+                                <p>{{ PLEReussies }}</p>
+                            </div>
+                            <div class="progress-bar progress-bar" style="width: 48%">
+                                <p>{{ PLEPerdues }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascript %}
+
+{% endblock %}

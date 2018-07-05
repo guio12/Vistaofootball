@@ -9,11 +9,5 @@ global.$ = global.jQuery = $;
 import 'webpack-jquery-ui';
 
 $(document).ready(function () {
-    console.log("ok, JQuery fonctionne !");
-});
-
-console.log('Bienvenue sur WebPack!');
-
-$(document).ready(function () {
-    $('[data-toggle="popover"]').popover();
+  console.log('Bienvenue sur Vistao Football!');
 });

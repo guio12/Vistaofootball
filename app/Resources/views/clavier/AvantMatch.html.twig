@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/style_clavier.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/avantMatch.css') }}">
+{% endblock %}
+
+
+
+{% block body %}
+<form class="" action="clavier" method="POST" id='formulaire'>
+<div class="container">
+  <div class="row topEquipe justify-content-center">
+    <div class="col-xs-6 ">
+      <div class="localEquipe">
+        <label for="">Choisir son équipe :</label>
+        <select class="" name="Equipe" style="color:black;">
+          <option value=""></option>
+          {% for equipe in equipes %}
+          <option value="{{ equipe.id }}" value="{{ equipe.entraineurNomClub }}">{{ equipe.entraineurNomClub }}, {{ equipe.championnat }}, {{ equipe.categorie }}, {{ equipe.numEquipe }} </option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+
+    <div class="col-xs-6 col-sm-6 ">
+      <div class="advEquipe">
+        <input name="adverse" type="text" id="adverse" value="" placeholder="veuillez entrer le nom de l'equipe adverse">
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="container">
+    <div class="justify-content-left">
+      <div class="joueurs">
+        <ul class="row">
+
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 lancezmatch">
+      </div>
+      <div class="col-6">
+      </div>
+    </div>
+  </div>
+</form>
+{% endblock %}
+
+
+{% block javascripts %}
+<script type="text/javascript" src="{{ asset('build/selectjoueur.js') }}"></script>
+{% endblock %}

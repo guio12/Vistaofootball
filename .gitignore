@@ -1,6 +1,7 @@
-/.web-server-pid
+/.web-server-pid/
 /app/config/parameters.yml
-/build/
+/web/build/*
+/web/build/manifest.json
 /phpunit.xml
 /var/*
 !/var/cache
@@ -13,9 +14,6 @@
 /var/sessions/*
 !var/sessions/.gitkeep
 !var/SymfonyRequirements.php
+/.idea
 /vendor/
-/web/bundles/
-/.idea/
-db.php
-package-lock.js
 /node_modules/

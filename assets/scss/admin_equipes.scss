@@ -1,0 +1,56 @@
+tr > td {
+  color : black;
+  font-size: 2.5vh;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+li > a {
+  text-align: right;
+}
+
+#appbundle_equipes_entraineurId,
+#appbundle_equipes_entraineurNomClub,
+#appbundle_equipes_championnat,
+#appbundle_equipes_categorie,
+#appbundle_equipes_numEquipe {
+  width:100%;
+}
+
+.form-group {
+  margin-top: 3.5vh;
+}
+
+.form-control {
+  color:black;
+}
+
+.non_modif {
+  color: lightslategrey;
+}
+
+.btn-align {
+  margin-top: 2.5vh;
+}
+
+.boutons_bas {
+  margin-top: 4vh;
+}
+
+
+@media screen and (min-width: 1025px) and (max-width: 2560px) {
+  .boutons_bas {
+    margin-top: 5vh;
+  }
+  .form-group {
+  margin-top: 5vh;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .form-group{
+    margin-top: 5vh;
+  }
+}

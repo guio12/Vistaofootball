@@ -41,6 +41,17 @@ class Equipes
      */
     private $entraineurNomClub;
 
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="joueur", type="integer")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Joueurs", mappedBy="equipe")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $joueur;
+
+
     /**
      * @var string
      *
@@ -191,5 +202,33 @@ class Equipes
     public function getNumEquipe()
     {
         return $this->numEquipe;
+    }
+
+
+
+
+
+    /**
+     * Set joueur.
+     *
+     * @param int $joueur
+     *
+     * @return Equipes
+     */
+    public function setJoueur($joueur)
+    {
+        $this->joueur = $joueur;
+
+        return $this;
+    }
+
+    /**
+     * Get joueur.
+     *
+     * @return int
+     */
+    public function getJoueur()
+    {
+        return $this->joueur;
     }
 }

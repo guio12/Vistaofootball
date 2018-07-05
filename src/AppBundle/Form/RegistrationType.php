@@ -2,7 +2,8 @@
 
 namespace AppBundle\Form;
 
-use Doctrine\DBAL\Types\DateType;
+use Symfony\Component\Form\FormTypeInterface;
+use Doctrine\DBAL\Types\TextType;
 use Doctrine\DBAL\Types\IntegerType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -16,8 +17,9 @@ class RegistrationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstName')
-            ->add('lastName');
+            ->add('nom')
+            ->add('prenom')
+            ->add('nom_club', \Symfony\Component\Form\Extension\Core\Type\TextType::class, array('attr' => array('maxlength' => 50, 'empty_data' => '', 'required' => true)));
     }/**
  * {@inheritdoc}
  */
@@ -34,6 +36,5 @@ class RegistrationType extends AbstractType
     {
         return 'appbundle_user_registration';
     }
-
 
 }

@@ -1,0 +1,128 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/stats.css') }}">
+{% endblock %}
+
+{% block body %}
+    <body>
+
+    {% include 'stats/base_stats.html.twig' %}
+
+    <div class="container-fluid">
+
+        <div class="row text-center">
+            <div class="col-md-offset-3 col-md-6">
+                <h1>DISCIPLINE</h1>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-info" style="width: 40%">
+                        <p>40%</p>
+                    </div>
+                    <div class="progress-bar progress-bar-adv" style="width: 60%">
+                        <p>60%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="stats">
+                <div class="statsshow">
+
+                    <div class=" text-center"><a href="{{ path('statsmatch') }}">
+                            <span class="glyphicon glyphicon-backward"></span></a>
+                    </div>
+
+                    <br>
+
+                    <h3>5m50</h3>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-info" style="width: 50%">
+                            <p>{{ cinqR }}</p>
+                        </div>
+                        <div class="progress-bar progress-bar-adv" style="width: 50%">
+                            <p>{{ cinqL }}</p>
+                        </div>
+                    </div>
+
+
+                    <h3>Touches</h3>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-info" style="width: 52%">
+                            <p>{{ touchesR }}</p>
+                        </div>
+                        <div class="progress-bar progress-bar-adv" style="width: 48%">
+                            <p>{{ touchesL }}</p>
+                        </div>
+                    </div>
+
+
+                    <h3>Hors-jeux</h3>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-info" style="width: 10%">
+                            <p>{{ hjAmis }}</p>
+                        </div>
+                        <div class="progress-bar progress-bar-adv" style="width: 90%">
+                            <p>{{ hjEnnemis }}</p>
+                        </div>
+                    </div>
+
+                    <h3>Corner</h3>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-info" style="width: 80%">
+                            <p>{{ cornersR }}</p>
+                        </div>
+                        <div class="progress-bar progress-bar-adv" style="width: 20%">
+                            <p>{{ cornersL }}</p>
+                        </div>
+                    </div>
+
+
+                    <h3>Fautes</h3>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-info" style="width: 60%">
+                            <p>{{ fauteR }}</p>
+                        </div>
+                        <div class="progress-bar progress-bar-adv" style="width: 40%">
+                            <p>{{ fauteL }}</p>
+                        </div>
+                    </div>
+
+
+                    <h3>Cartons Jaunes</h3>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-info" style="width: 52%">
+                            <p>{{ fauteJR }}</p>
+                        </div>
+                        <div class="progress-bar progress-bar-adv" style="width: 48%">
+                            <p>{{ fauteJL }}</p>
+                        </div>
+                    </div>
+
+
+                    <h3>Cartons Rouges</h3>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-info" style="width: 10%">
+                            <p>{{ fauteRR }}</p>
+                        </div>
+                        <div class="progress-bar progress-bar-adv" style="width: 90%">
+                            <p>{{ fauteLR }}</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+
+
+
+
+{% endblock %}
+
+
+{% block javascript %}
+
+{% endblock %}

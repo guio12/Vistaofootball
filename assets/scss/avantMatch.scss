@@ -1,0 +1,77 @@
+
+body{
+  height: 150vh;
+}
+.topEquipe {
+  margin: 10vh 0;
+
+  .localEquipe {
+    width: 100%;
+    height: 10vh;
+    label {
+      font-size: 2vw;
+      color: white;
+    }
+    select {
+      width: 100%;
+      height: 100%;
+      font-size: 1.2vw;
+      option {
+        font-size: 1vw;
+      }
+    }
+  }
+
+  .advEquipe {
+    margin-top: 4vh;
+    width: 100%;
+    height: 10vh;
+    label {
+      font-size: 2vw;
+    }
+    input {
+      height: 100%;
+      width: 100%;
+      font-size: 1.5vw;
+    }
+  }
+}
+
+.joueurs {
+  font-size: 1.5vw;
+  ul {
+    height: 25vh;
+    padding: 0px 2vw !important;
+
+    li {
+      padding: 1vh;
+      list-style-type: none;
+      height: 50%;
+      select {
+        font-size: 1.5vw;
+        height: 100%;
+        width: 90%;
+        color: black;
+        option {
+          font-size: 1.5vw;
+        }
+      }
+    }
+  }
+
+}
+
+.selectJoueur {
+
+  option {
+
+  }
+}
+
+.lancezmatch{
+  padding-top: 10vh;
+
+  button{
+
+  }
+}
