@@ -19,44 +19,44 @@ class Joueurs
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    public $id;
+    private $id;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="equipe_id", type="integer")
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Equipes", inversedBy="id")
+     * @ORM\Column(name="equipe", type="integer")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Equipes", inversedBy="joueur")
      * @ORM\JoinColumn(nullable=false)
      */
-    public $equipeId;
+    private $equipe;
 
     /**
      * @var string
      *
      * @ORM\Column(name="prenom", type="string", length=32)
      */
-    public $prenom;
+    private $prenom;
 
     /**
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=32)
      */
-    public $nom;
+    private $nom;
 
     /**
      * @var int
      *
      * @ORM\Column(name="num_maillot", type="integer")
      */
-    public $numMaillot;
+    private $numMaillot;
 
     /**
      * @var string
      *
      * @ORM\Column(name="poste", type="string", length=8)
      */
-    public $poste;
+    private $poste;
 
 
     /**
@@ -70,27 +70,27 @@ class Joueurs
     }
 
     /**
-     * Set equipeId.
+     * Set equipe.
      *
-     * @param int $equipeId
+     * @param int $equipe
      *
      * @return Joueurs
      */
-    public function setEquipeId($equipeId)
+    public function setEquipe($equipe)
     {
-        $this->equipeId = $equipeId;
+        $this->equipe = $equipe;
 
         return $this;
     }
 
     /**
-     * Get equipeId.
+     * Get equipe.
      *
      * @return int
      */
-    public function getEquipeId()
+    public function getEquipe()
     {
-        return $this->equipeId;
+        return $this->equipe;
     }
 
     /**
@@ -188,4 +188,6 @@ class Joueurs
     {
         return $this->poste;
     }
+
+
 }
