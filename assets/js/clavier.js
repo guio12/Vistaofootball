@@ -11,6 +11,7 @@ global.$ = global.jQuery = $;
 // no need to set this to a variable, just require it
 require('bootstrap-sass');
 
+var idMatch = $("#IdMatch").val();
 
 $(document).ready(function () {
     grey();
@@ -37,7 +38,7 @@ function envoiAjax() {
     $.ajax({
             url: 'envoiAjax/' + actionneur + '/' + action + '/' + receveur + '/' + temps,
             type: 'POST',
-          // data: {joueur_action: actionneur, action_id: action, joueur_receveur: receveur},
+            data: {actionneur:actionneur, action: action, receveur: receveur, idmatch: idMatch},
             success: function success(statut) {
                 console.log("affiche messsage si tout ok");
             }

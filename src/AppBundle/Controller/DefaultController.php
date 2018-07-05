@@ -132,10 +132,53 @@ class DefaultController extends Controller
     {
 
          $user = $this->getUser();
+
+
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository('AppBundle:Matchs');
+
+        $query = $repository->createQueryBuilder('c')
+        ->select('c.equipe1Id', 'c.id')
+
+        ->where('c.equipe1Id = :id')
+        ->setParameter(':id', "1")
+        ->orderBy('c.id', 'DESC')
+        ->setMaxResults( "1" )
+        ->getQuery();
+
+        $idMatch = $query->getResult();
+
+        $idMatch = $idMatch[0]['id'];
+
+
         // replace this example code with whatever you need
-        return $this->render('clavier/index.html.twig',array( "equipe" => $_POST, "entraineur" => $user
+        return $this->render('clavier/index.html.twig',array("idMatch" => $idMatch, "equipe" => $_POST, "entraineur" => $user
         ));
     }
+    /**
+    * @Route("/envoiAjax/{actionneur}/{action}/{receveur}/{temps}", name="envoiAjax")
+    * @param $actionneur
+    * @param $action
+    * @param $receveur
+    */
+    public function ajaxEnvoi()
+    {
+      $userId = $this->getUser()->getId();
+      $em = $this->getDoctrine()->getManager();
+      $actions_match = new ActionsMatch();
+
+      $actions_match->setMatchId($_POST['idmatch']);
+      $actions_match->setJoueurAction($_POST['actionneur']);
+      $actions_match->setActionId($_POST['action']);
+      $actions_match->setJoueurReceveur($_POST['receveur']);
+
+      $em->persist($actions_match);
+      $em->flush();
+
+      return true;
+
+    }
+
 
     /**
      * @Route("/statsmatch", name="statsmatch")
@@ -193,29 +236,6 @@ class DefaultController extends Controller
     }
 
 
-    /**
-     * @Route("/envoiAjax/{actionneur}/{action}/{receveur}/{temps}", name="envoiAjax")
-     * @param $actionneur
-     * @param $action
-     * @param $receveur
-     */
-    public function ajaxEnvoi($actionneur, $action, $receveur, $temps)
-    {
-        $userId = $this->getUser()->getId();
-        $em = $this->getDoctrine()->getManager();
-        $actions_match = new ActionsMatch();
-
-        $actions_match->setMatchId(2);
-        $actions_match->setJoueurAction($actionneur);
-        $actions_match->setActionId($action);
-        $actions_match->setJoueurReceveur($receveur);
-
-        $em->persist($actions_match);
-        $em->flush();
-
-        return true;
-
-    }
 
 
 }
