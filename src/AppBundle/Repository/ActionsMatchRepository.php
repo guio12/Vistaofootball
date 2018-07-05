@@ -342,7 +342,7 @@ class ActionsMatchRepository extends EntityRepository
     }
 
 
-    
+
 
     public function TirCadreEnnemis(){
 
@@ -386,6 +386,19 @@ class ActionsMatchRepository extends EntityRepository
             ->getQuery()
             ->getResult()
             ;
+    }
+    public function recuperation($id){
+
+        $query = $this->createQueryBuilder('c');
+        $query->where('c.matchId=:id');
+        $query->setParameter(':id',$id);
+        ;
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;
+
+
     }
 
 
