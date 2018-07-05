@@ -77,8 +77,7 @@ class DefaultController extends Controller
 
            $em = $this->getDoctrine()->getManager();
            $id = $x;
-           $Joueur = $em->getRepository('AppBundle:Joueurs')->findBy(["equipeId" => $id]);
-
+           $Joueur = $em->getRepository('AppBundle:Joueurs')->findBy(["equipe" => $id]);
            $Joueur = json_encode($Joueur);
 
           return  new Response($Joueur);
@@ -132,8 +131,6 @@ class DefaultController extends Controller
     {
 
          $user = $this->getUser();
-
-
         $em = $this->getDoctrine()->getManager();
         $repository = $em->getRepository('AppBundle:Matchs');
 
@@ -141,13 +138,12 @@ class DefaultController extends Controller
         ->select('c.equipe1Id', 'c.id')
 
         ->where('c.equipe1Id = :id')
-        ->setParameter(':id', "1")
+        ->setParameter(':id', $_POST['Equipe'])
         ->orderBy('c.id', 'DESC')
         ->setMaxResults( "1" )
         ->getQuery();
 
         $idMatch = $query->getResult();
-
         $idMatch = $idMatch[0]['id'];
 
 
