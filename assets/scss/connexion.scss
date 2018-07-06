@@ -1,7 +1,12 @@
+body {
+  background-image: radial-gradient(circle, #747474, #646464, #545454, #454545, #363636);
+}
+
 .brand-logo {
   width: 25vh;
   text-align: center;
 }
+
 
 @media only screen and (max-width: 1024px) {
   .img {
