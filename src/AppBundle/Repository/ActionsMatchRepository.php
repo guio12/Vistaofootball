@@ -33,7 +33,7 @@ class ActionsMatchRepository extends EntityRepository
 
 
 
-        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction > 0 AND c.actionId = 1 AND c.joueurReceveur = 0';
+        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction <= 16 AND c.actionId = 1 AND c.joueurReceveur = 123';
         $query = $this->getEntityManager()->createQuery($dql);
         return $query->execute();
     }
@@ -41,7 +41,7 @@ class ActionsMatchRepository extends EntityRepository
     /** passes reussies equipe 1**/
     public function PassesAmisReussies()
     {
-        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction > 0 AND c.actionId = 1 AND c.joueurReceveur > 0';
+        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction <= 16 AND c.actionId = 1 AND c.joueurReceveur <= 16';
         $query = $this->getEntityManager()->createQuery($dql);
         return $query->execute();
     }
@@ -49,14 +49,14 @@ class ActionsMatchRepository extends EntityRepository
     /**Perte passes equipe 2**/
     public function PassesEnnemiesPerdues()
     {
-        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction = 0 AND c.actionId = 1 AND c.joueurReceveur > 0';
+        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction = 123 AND c.actionId = 1 AND c.joueurReceveur <= 16';
         $query = $this->getEntityManager()->createQuery($dql);
         return $query->execute();
     }
 
     public function PassesEnnemiesReussies()
     {
-        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction = 0 AND c.actionId = 1 AND c.joueurReceveur = 0';
+        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction = 123 AND c.actionId = 1 AND c.joueurReceveur = 123';
         $query = $this->getEntityManager()->createQuery($dql);
         return $query->execute();
     }
@@ -66,7 +66,7 @@ class ActionsMatchRepository extends EntityRepository
     /**Perte centre equipe 1**/
     public function CentresAmisPerdues()
     {
-        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction > 0 AND c.actionId = 109 AND c.joueurReceveur = 0';
+        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction <= 16 AND c.actionId = 109 AND c.joueurReceveur = 123';
         $query = $this->getEntityManager()->createQuery($dql);
         return $query->execute();
     }
@@ -74,7 +74,7 @@ class ActionsMatchRepository extends EntityRepository
     /** centres reussies equipe 1**/
     public function CentresAmisReussies()
     {
-        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction > 0 AND c.actionId = 109 AND c.joueurReceveur > 0';
+        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction <= 16 AND c.actionId = 109 AND c.joueurReceveur <= 16';
         $query = $this->getEntityManager()->createQuery($dql);
         return $query->execute();
     }
@@ -82,14 +82,14 @@ class ActionsMatchRepository extends EntityRepository
     /**centres passes equipe 2**/
     public function CentresEnnemiesPerdues()
     {
-        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction = 0 AND c.actionId = 109 AND c.joueurReceveur > 0';
+        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction = 123 AND c.actionId = 109 AND c.joueurReceveur <= 16';
         $query = $this->getEntityManager()->createQuery($dql);
         return $query->execute();
     }
 
     public function CentresEnnemiesReussies()
     {
-        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction = 0 AND c.actionId = 109 AND c.joueurReceveur = 0';
+        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction = 123 AND c.actionId = 109 AND c.joueurReceveur = 123';
         $query = $this->getEntityManager()->createQuery($dql);
         return $query->execute();
     }
@@ -99,7 +99,7 @@ class ActionsMatchRepository extends EntityRepository
     /**PL equipe 1**/
     public function PLAmisPerdues()
     {
-        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction > 0 AND c.actionId = 112 AND c.joueurReceveur = 0';
+        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction <= 16 AND c.actionId = 112 AND c.joueurReceveur = 123';
         $query = $this->getEntityManager()->createQuery($dql);
         return $query->execute();
     }
@@ -107,7 +107,7 @@ class ActionsMatchRepository extends EntityRepository
     /** PL reussies equipe 1**/
     public function PLAmisReussies()
     {
-        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction > 0 AND c.actionId = 112 AND c.joueurReceveur > 0';
+        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction <= 16 AND c.actionId = 112 AND c.joueurReceveur <= 16';
         $query = $this->getEntityManager()->createQuery($dql);
         return $query->execute();
     }
@@ -115,7 +115,7 @@ class ActionsMatchRepository extends EntityRepository
     /**PL passes equipe 2**/
     public function PLEnnemiesPerdues()
     {
-        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction = 0 AND c.actionId = 112 AND c.joueurReceveur > 0';
+        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction = 123 AND c.actionId = 112 AND c.joueurReceveur <= 16';
         $query = $this->getEntityManager()->createQuery($dql);
         return $query->execute();
     }
@@ -123,7 +123,7 @@ class ActionsMatchRepository extends EntityRepository
     /**PL ennemies perdues**/
     public function PLEnnemiesReussies()
     {
-        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction = 0 AND c.actionId = 112 AND c.joueurReceveur = 0';
+        $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction = 123 AND c.actionId = 112 AND c.joueurReceveur = 123';
         $query = $this->getEntityManager()->createQuery($dql);
         return $query->execute();
     }
@@ -140,7 +140,7 @@ class ActionsMatchRepository extends EntityRepository
        public function cinqMetreAmis(){
 
            $query = $this->createQueryBuilder('c');
-           $query->where('c.joueurAction > 0 AND c.actionId = 107 AND c.joueurReceveur > 0')
+           $query->where('c.joueurAction <= 16 AND c.actionId = 107')
            ;
            return $query
                ->getQuery()
@@ -154,7 +154,7 @@ class ActionsMatchRepository extends EntityRepository
     public function cinqMetreAdversaire(){
 
         $query = $this->createQueryBuilder('c');
-        $query->where('c.joueurAction > 0 AND c.actionId = 107 AND c.joueurReceveur = 0')
+        $query->where('c.joueurAction =123 AND c.actionId = 107')
         ;
         return $query
             ->getQuery()
@@ -165,7 +165,7 @@ class ActionsMatchRepository extends EntityRepository
     public function TouchesAmis(){
 
         $query = $this->createQueryBuilder('c');
-        $query->where('c.joueurAction > 0 AND c.actionId = 105 AND c.joueurReceveur > 0')
+        $query->where('c.joueurAction <= 16 AND c.actionId = 105')
         ;
         return $query
             ->getQuery()
@@ -176,7 +176,7 @@ class ActionsMatchRepository extends EntityRepository
     public function TouchesAdversaires(){
 
         $query = $this->createQueryBuilder('c');
-        $query->where('c.joueurAction > 0 AND c.actionId = 105 AND c.joueurReceveur = 0')
+        $query->where('c.joueurAction = 123 AND c.actionId = 105')
         ;
         return $query
             ->getQuery()
@@ -187,7 +187,7 @@ class ActionsMatchRepository extends EntityRepository
     public function HjAmis(){
 
         $query = $this->createQueryBuilder('c');
-        $query->where('c.joueurAction > 0 AND c.actionId = 108')
+        $query->where('c.joueurAction <= 16 AND c.actionId = 108')
         ;
         return $query
             ->getQuery()
@@ -198,7 +198,7 @@ class ActionsMatchRepository extends EntityRepository
     public function HjEnnemis(){
 
         $query = $this->createQueryBuilder('c');
-        $query->where('c.joueurAction > 0 AND c.actionId = 106')
+        $query->where('c.joueurAction = 123 AND c.actionId = 108')
         ;
         return $query
             ->getQuery()
@@ -209,7 +209,7 @@ class ActionsMatchRepository extends EntityRepository
     public function CornerAmis(){
 
         $query = $this->createQueryBuilder('c');
-        $query->where('c.joueurAction > 0 AND c.actionId = 106 AND c.joueurReceveur > 0')
+        $query->where('c.joueurAction <= 16 AND c.actionId = 106')
         ;
         return $query
             ->getQuery()
@@ -220,7 +220,7 @@ class ActionsMatchRepository extends EntityRepository
     public function CornerAdversaire(){
 
         $query = $this->createQueryBuilder('c');
-        $query->where('c.joueurAction > 0 AND c.actionId = 101 AND c.joueurReceveur = 0')
+        $query->where('c.joueurAction = 123 AND c.actionId = 106')
         ;
         return $query
             ->getQuery()
@@ -231,7 +231,7 @@ class ActionsMatchRepository extends EntityRepository
     public function FauteAmis(){
 
         $query = $this->createQueryBuilder('c');
-        $query->where('c.joueurAction > 0 AND c.actionId = 101')
+        $query->where('c.joueurAction <= 16 AND c.actionId = 101')
         ;
         return $query
             ->getQuery()
@@ -242,7 +242,7 @@ class ActionsMatchRepository extends EntityRepository
     public function FauteAdversaire(){
 
         $query = $this->createQueryBuilder('c');
-        $query->where('c.joueurAction = 0 AND c.actionId = 101')
+        $query->where('c.joueurAction = 123 AND c.actionId = 101')
         ;
         return $query
             ->getQuery()
@@ -253,7 +253,7 @@ class ActionsMatchRepository extends EntityRepository
     public function FauteJauneAmis(){
 
         $query = $this->createQueryBuilder('c');
-        $query->where('c.joueurAction > 0 AND c.actionId = 102')
+        $query->where('c.joueurAction <= 16 AND c.actionId = 102')
         ;
         return $query
             ->getQuery()
@@ -264,7 +264,7 @@ class ActionsMatchRepository extends EntityRepository
     public function FauteJauneAdversaire(){
 
         $query = $this->createQueryBuilder('c');
-        $query->where('c.joueurAction = 0 AND c.actionId = 102')
+        $query->where('c.joueurAction = 123 AND c.actionId = 102')
         ;
         return $query
             ->getQuery()
@@ -275,7 +275,7 @@ class ActionsMatchRepository extends EntityRepository
     public function FauteRougeAmis(){
 
         $query = $this->createQueryBuilder('c');
-        $query->where('c.joueurAction > 0 AND c.actionId = 102')
+        $query->where('c.joueurAction <= 16 AND c.actionId = 102')
         ;
         return $query
             ->getQuery()
@@ -286,7 +286,7 @@ class ActionsMatchRepository extends EntityRepository
     public function FauteRougeAdversaire(){
 
         $query = $this->createQueryBuilder('c');
-        $query->where('c.joueurAction = 0 AND c.actionId = 102')
+        $query->where('c.joueurAction = 123 AND c.actionId = 102')
         ;
         return $query
             ->getQuery()
@@ -300,7 +300,7 @@ class ActionsMatchRepository extends EntityRepository
     public function TirCadreAmis(){
 
         $query = $this->createQueryBuilder('c');
-        $query->where('c.joueurAction > 0 AND c.actionId = 110')
+        $query->where('c.joueurAction <= 16 AND c.actionId = 110')
         ;
         return $query
             ->getQuery()
@@ -311,7 +311,7 @@ class ActionsMatchRepository extends EntityRepository
     public function TirNonCadreAmis(){
 
         $query = $this->createQueryBuilder('c');
-        $query->where('c.joueurAction > 0 AND c.actionId = 111')
+        $query->where('c.joueurAction <= 16 AND c.actionId = 111')
         ;
         return $query
             ->getQuery()
@@ -322,7 +322,7 @@ class ActionsMatchRepository extends EntityRepository
     public function DriblesReussiesAmis(){
 
         $query = $this->createQueryBuilder('c');
-        $query->where('c.joueurAction > 0 AND c.actionId = 113')
+        $query->where('c.joueurAction <= 16 AND c.actionId = 113')
         ;
         return $query
             ->getQuery()
@@ -333,7 +333,7 @@ class ActionsMatchRepository extends EntityRepository
     public function DriblesEchoueesAmis(){
 
         $query = $this->createQueryBuilder('c');
-        $query->where('c.joueurAction > 0 AND c.actionId = 114')
+        $query->where('c.joueurAction <= 16 AND c.actionId = 114')
         ;
         return $query
             ->getQuery()
@@ -347,7 +347,7 @@ class ActionsMatchRepository extends EntityRepository
     public function TirCadreEnnemis(){
 
         $query = $this->createQueryBuilder('c');
-        $query->where('c.joueurAction = 0 AND c.actionId = 110')
+        $query->where('c.joueurAction = 123 AND c.actionId = 110')
         ;
         return $query
             ->getQuery()
@@ -358,7 +358,7 @@ class ActionsMatchRepository extends EntityRepository
     public function TirNonCadreEnnemis(){
 
         $query = $this->createQueryBuilder('c');
-        $query->where('c.joueurAction = 0 AND c.actionId = 111')
+        $query->where('c.joueurAction = 123 AND c.actionId = 111')
         ;
         return $query
             ->getQuery()
@@ -369,7 +369,7 @@ class ActionsMatchRepository extends EntityRepository
     public function DriblesReussiesEnnemis(){
 
         $query = $this->createQueryBuilder('c');
-        $query->where('c.joueurAction = 0 AND c.actionId = 113')
+        $query->where('c.joueurAction = 123 AND c.actionId = 113')
         ;
         return $query
             ->getQuery()
@@ -380,7 +380,7 @@ class ActionsMatchRepository extends EntityRepository
     public function DriblesEchoueesEnnemis(){
 
         $query = $this->createQueryBuilder('c');
-        $query->where('c.joueurAction = 0 AND c.actionId = 114')
+        $query->where('c.joueurAction = 123 AND c.actionId = 114')
         ;
         return $query
             ->getQuery()
