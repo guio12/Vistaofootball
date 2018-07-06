@@ -20,14 +20,19 @@ body {
 }
 
 h1 {
-  font-size: 5vh;
+  font-size: 3vw;
   color: white;
+}
+
+.titre-accueil {
+  font-size : 2.5vw;
 }
 
 h2 {
   font-size:4vh;
   color: #0ba2a3;
 }
+
 
 .logo {
   height:10vh;
@@ -50,4 +55,9 @@ header {
 }
 .btn-style:hover {
   color:white;
+}
+
+.message_flash {
+  color: white;
+  font-size: 2em;
 }
