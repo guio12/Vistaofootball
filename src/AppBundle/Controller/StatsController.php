@@ -111,34 +111,13 @@ class StatsController extends Controller
   public function recupAction()
   {
 
-    $em = $this->getDoctrine()
-    ->getManager()
-    ->getRepository('AppBundle:ActionsMatch');
+    
 
 
     /**  Passes Amies Reussies */
     $recup = $em->recuperation(16);
 
-    function recup($idJoueur, $recup){
-        $idrecup = [];
-      foreach ($recup as $key => $value) {
-        if ($value->getJoueurAction() == '0123' && $value->getJoueurReceveur() == $idJoueur) {
-        $idrecup[] = $key+1;
-        }
-      }
- $i = 0;
-      foreach($idrecup as $keyrecup => $idrecup){
-        foreach($recup as $key=>$value){
-          if ($key == $idrecup) {
-            if ($value->getJoueurReceveur() != "123") {
-              $i++;
-            }
-          }
-        }
-      }
 
-    echo 'nombre de récuperation : '.$i;
-  }
 
   recup(3, $recup);
   }

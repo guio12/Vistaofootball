@@ -175,15 +175,89 @@ class DefaultController extends Controller
 
     }
 
+    /**
+     * @Route("/listeEquipe", name="listeEquipe")
+     */
+    public function listeEquipeAction(Request $request)
+    {
+        $user = $this->getUser();
+        $userId = $this->getUser()->getId();
+
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository('AppBundle:Equipes');
+
+        $query = $repository->createQueryBuilder('c')
+        ->select('c')
+        ->where('c.entraineurId = :id')
+        ->setParameter(':id', $userId)
+        ->getQuery();
+        $equipes = $query->getResult();
+        // replace this example code with whatever you need
+        return $this->render('stats/listeEquipe.html.twig',array( "equipes"=>$equipes
+        ));
+    }
+    /**
+     * @Route("/listeMatch", name="listeMatch")
+     */
+    public function listeMatchAction(Request $request)
+    {
+
+        $userId = $_POST['id'];
+        $nomClub = $_POST['nomEquipe'];
+
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository('AppBundle:Matchs');
+
+        $query = $repository->createQueryBuilder('c')
+        ->select('c')
+        ->where('c.equipe1Id = :id')
+        ->setParameter(':id', $userId)
+        ->getQuery();
+        $matchs = $query->getResult();
+        $_SESSION['matchs'] = $matchs;
+        $_SESSION['nomClub'] = $nomClub;
+        // replace this example code with whatever you need
+        return $this->render('stats/listeMatchs.html.twig',array( "matchs"=>$matchs, "nomclub"=>$nomClub
+        ));
+    }
 
     /**
      * @Route("/statsmatch", name="statsmatch")
      */
     public function statsAction(Request $request)
     {
-        $user = $this->getUser();
+
+
+      $user = $this->getUser();
+
+      isset($_POST['matchId'])? $_SESSION['matchId'] = $_POST['matchId'] : $_SESSION['matchId'] = 1;
+      isset($_SESSION['nomClub'])?  : $_SESSION['nomClub'] = "Votre club";
+
+      $em = $this->getDoctrine()->getManager();
+      $repository = $em->getRepository('AppBundle:Matchs');
+      $query = $repository->createQueryBuilder('c')
+      ->select('c')
+      ->where('c.id = :id')
+      ->setParameter(':id', $_SESSION['matchId'])
+      ->getQuery();
+      $matchs = $query->getResult();
+
+      $_SESSION['matchs'] = $matchs;
+
+
+      $em = $this->getDoctrine()
+      ->getManager()
+      ->getRepository('AppBundle:ActionsMatch');
+
+      $possession = $em->Possession($_SESSION['matchId']);
+      $tirs = $em->TirsToto($_SESSION['matchId']);
+      $recuperation =  $em->Recuperation($_SESSION['matchId']);
+      $cpa =  $em->CPA($_SESSION['matchId']);
+
+      $stats = ['cpa'=> $cpa, 'possession' => $possession, 'tirs'=> $tirs, 'recuperation' => $recuperation];
+
         // replace this example code with whatever you need
-        return $this->render('stats/general.html.twig',array( "equipe" => $_POST, "entraineur" => $user
+        return $this->render('stats/general.html.twig',array("stats" => $stats, "nomClub"=>$_SESSION['nomClub'], "matchs"=>$_SESSION['matchs'], "entraineur" => $user
         ));
     }
 
@@ -198,16 +272,7 @@ class DefaultController extends Controller
         ));
     }
 
-    /**
-     * @Route("/possession", name="possession")
-     */
-    public function possessionAction(Request $request)
-    {
-        $user = $this->getUser();
-        // replace this example code with whatever you need
-        return $this->render('stats/possession.html.twig',array( "equipe" => $_POST, "entraineur" => $user
-        ));
-    }
+
 
     /**
      * @Route("/recuperation", name="recuperation")

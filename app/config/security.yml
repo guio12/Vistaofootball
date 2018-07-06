@@ -2,7 +2,7 @@
 # https://symfony.com/doc/current/security.html
 security:
 
-    access_denied_url: /accueil
+    access_denied_url: /
 
     encoders:
         FOS\UserBundle\Model\UserInterface: bcrypt
