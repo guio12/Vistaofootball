@@ -145,8 +145,8 @@ class DefaultController extends Controller
 
         $idMatch = $query->getResult();
         $idMatch = $idMatch[0]['id'];
-
-
+        var_dump($idMatch);
+        $_SESSION['matchId'] = $idMatch;
         // replace this example code with whatever you need
         return $this->render('clavier/index.html.twig',array("idMatch" => $idMatch, "equipe" => $_POST, "entraineur" => $user
         ));
@@ -230,7 +230,9 @@ class DefaultController extends Controller
 
       $user = $this->getUser();
 
-      isset($_POST['matchId'])? $_SESSION['matchId'] = $_POST['matchId'] : $_SESSION['matchId'] = 1;
+      if(isset($_POST['matchId'])){
+        $_SESSION['matchId'] = $_POST['matchId'];
+      }
       isset($_SESSION['nomClub'])?  : $_SESSION['nomClub'] = "Votre club";
 
       $em = $this->getDoctrine()->getManager();
