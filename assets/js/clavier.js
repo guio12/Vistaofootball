@@ -198,7 +198,7 @@ $(".action*").click(function () {
 
     if (etat === 1) {
         action = $(this).attr('value');
-        $('#resume').html("JOUEUR " + "<span style=\"color:#F00\">" + actionneur + "</span>" + " " + $(this).children().html());
+        $('#resume').html("JOUEUR " + "<span style=\"color:#F00\">" + actionneurMaillot + "</span>" + " " + $(this).children().html());
         etat = 2;
     }
     grey();
@@ -207,7 +207,7 @@ $(".action*").click(function () {
 $(".actionSPE*").click(function () {
     if (etat === 4) {
         action = $(this).attr('value');
-        $('#resume').html("JOUEUR " + "<span style=\"color:#F00\">" + actionneur + "</span>" + " " + actionTC + " " + actionSPE);
+        $('#resume').html("JOUEUR " + "<span style=\"color:#F00\">" + actionneurMaillot + "</span>" + " " + actionTC + " " + actionSPE);
         envoiAjax();
         grey();
         etat = 0;
@@ -217,7 +217,7 @@ $(".actionSPE*").click(function () {
 $(".actionX*").click(function () {
     if (etat === 1) {
         action = $(this).attr('value');
-        $('#resume').html("JOUEUR " + "<span style=\"color:#F00\">" + actionneur + "</span>" + " : " + $(this).children().html());
+        $('#resume').html("JOUEUR " + "<span style=\"color:#F00\">" + actionneurMaillot + "</span>" + " : " + $(this).children().html());
         envoiAjax();
         etat = 0;
         action = "";
@@ -229,7 +229,7 @@ $(".actionX*").click(function () {
 $(".actionDR").click(function () {
     if (etat === 1) {
         action = $(this).attr('value');
-        $('#resume').html("JOUEUR " + "<span style=\"color:#F00\">" + actionneur + "</span>" + " " + $(this).children().html());
+        $('#resume').html("JOUEUR " + "<span style=\"color:#F00\">" + actionneurMaillot + "</span>" + " " + $(this).children().html());
         envoiAjax();
 
     }
