@@ -32,9 +32,9 @@
                         <td width="20%" class="text-center">{{ equipe.championnat }}</td>
                         <td width="20%" class="text-center">{{ equipe.categorie }}</td>
                         <td width="20%" class="text-center">{{ equipe.numEquipe }}</td>
-                        <td width="20%" class="text-right">
+                        <td width="20%" class="text-center" style="vertical-align:middle">
                             <a href="{{ path('equipes_show', { 'id': equipe.id }) }}">
-                                <button class="btn-style btn-align btn btn-block">DÉTAILS</button>
+                                <button class="btn-style btn btn-block" style="">DÉTAILS</button>
                             </a>
 
                             <a href="{{ path('equipes_edit', { 'id': equipe.id }) }}">
@@ -55,7 +55,7 @@
 
         <div class="text-right">
             <a href="{{ path('equipes_new') }}">
-                <button class="btn-style btn-align btn">CRÉER UNE NOUVELLE ÉQUIPE</button>
+                <button class="btn-style btn-align btn" style="width: 100%">CRÉER UNE NOUVELLE ÉQUIPE</button>
             </a>
         </div>
 
