@@ -5,44 +5,51 @@
 {% endblock %}
 
 {% block body %}
-<div class="container">
-    <h1>LES JOUEURS</h1>
+    <div class="container">
+        <h1>LES JOUEURS</h1>
 
-<div class="panel panel-default">
-    <!-- Table -->
-    <table class="table">
-        <thead>
-            <tr>
-                <th width="20%" class="text-center">Prénom</th>
-                <th width="20%" class="text-center">Nom</th>
-                <th width="20%" class="text-center">Numéro du maillot</th>
-                <th width="20%" class="text-center">Poste</th>
-                <th width="20%" class="text-center">Modifications</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for joueur in joueurs %}
-            <tr style="vertical-align:middle">
-                <td width="20%" class="text-center">{{ joueur.prenom }}</td>
-                <td width="20%" class="text-center">{{ joueur.nom }}</td>
-                <td width="20%" class="text-center">{{ joueur.numMaillot }}</td>
-                <td width="20%" class="text-center">{{ joueur.poste }}</td>
-                <td width="20%" class="text-center">
-                    <a href="{{ path('joueurs_edit', { 'id': joueur.id }) }}">
-                        <button class="btn-style btn">ÉDITER</button>
-                    </a>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-</div>
-
-    <a href="{{ path('joueurs_new', { 'id': equipeid }) }}">
-        <button class="btn-style btn" >CRÉER UN NOUVEAU JOUEUR</button>
-    </a>
-    <a href="{{ path('equipes_index') }}">
-        <button class="btn-style btn" >RETOUR À LA LISTE DES ÉQUIPES</button>
-    </a>
-</div>
+        <div class="panel panel-default">
+            <!-- Table -->
+            <table class="table">
+                <thead>
+                <tr>
+                    <th width="20%" class="text-center">Prénom</th>
+                    <th width="20%" class="text-center">Nom</th>
+                    <th width="20%" class="text-center">Numéro du maillot</th>
+                    <th width="20%" class="text-center">Poste</th>
+                    <th width="20%" class="text-center">Modifications</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for joueur in joueurs %}
+                    <tr style="vertical-align:middle">
+                        <td width="20%" class="text-center">{{ joueur.prenom }}</td>
+                        <td width="20%" class="text-center">{{ joueur.nom }}</td>
+                        <td width="20%" class="text-center">{{ joueur.numMaillot }}</td>
+                        <td width="20%" class="text-center">{{ joueur.poste }}</td>
+                        <td width="20%" class="text-center">
+                            <a href="{{ path('joueurs_edit', { 'id': joueur.id }) }}">
+                                <button class="btn-style btn">ÉDITER</button>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <a href="{{ path('joueurs_new', { 'id': equipeid }) }}">
+                    <button class="btn-style btn btn-align" style="width:100%">CRÉER UN NOUVEAU JOUEUR</button>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <a href="{{ path('equipes_index') }}">
+                    <button class="btn-style btn btn-align" style="width:100%">RETOUR À LA LISTE DES ÉQUIPES</button>
+                </a>
+            </div>
+        </div>
+    </div>
 {% endblock %}
