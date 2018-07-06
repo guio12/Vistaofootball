@@ -145,7 +145,6 @@ class DefaultController extends Controller
 
         $idMatch = $query->getResult();
         $idMatch = $idMatch[0]['id'];
-        var_dump($idMatch);
         $_SESSION['matchId'] = $idMatch;
         // replace this example code with whatever you need
         return $this->render('clavier/index.html.twig',array("idMatch" => $idMatch, "equipe" => $_POST, "entraineur" => $user
