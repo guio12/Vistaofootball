@@ -23,7 +23,7 @@
 
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                     <div class="col-xs-6 text-center">
-                        <h1 class="text-center">BIENVENUE {{ app.user.username }}</h1>
+                        <h1 class="text-center titre-accueil">BIENVENUE {{ app.user.username }}</h1>
                     </div>
                     <div class="col-xs-3 text-right">
                         <a href="{{ path('fos_user_security_logout') }}"
