@@ -65,18 +65,14 @@
             </div>
         </div>
 
-    <div class="col-lg-5 col-md-6 col-sm-8 text-right boutons_bas">
-        <div class="row">
+    <div class="boutons_bas">
             <button class="btn-style btn btn-block" type="submit" value="Create">CRÉER</button>
             {{ form_end(form) }}
-        </div>
-    </div>
-        <div class="row">
-            <div class="col-lg-3 col-md-4 col-sm-5 text-right boutons_bas">
-                <a href="{{ path('equipes_index') }}">
-                    <button class="btn-style btn btn-block">RETOUR À LA LISTE</button>
-                </a>
+
             </div>
+        <a href="{{ path('equipes_index') }}">
+            <button class="btn-style btn btn-align btn-block">RETOUR À LA LISTE</button>
+        </a>
         </div>
     </div>
 

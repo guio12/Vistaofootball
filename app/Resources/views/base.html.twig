@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-xs-3 text-left">
                     <a class="navbar-brand" data-toggle="modal"
-                       data-target=".bs-modal-header" href="{{ path('accueil') }}">
+                       data-target=".bs-modal-header" href="{{ path('coachMenu') }}">
                         <img class="logo" alt="vistao football logo brand"
                              src="{{ asset('build/images/logo_header.bfca6b65.png') }}">
                     </a>
@@ -50,7 +50,7 @@
         {% if app.request.hasPreviousSession %}
             {% for type, messages in app.session.flashbag.all() %}
                 {% for message in messages %}
-                    <div class="flash-{{ type }}">
+                    <div class="flash-{{ type }} text-center message_flash">
                         {{ message }}
                     </div>
                 {% endfor %}
