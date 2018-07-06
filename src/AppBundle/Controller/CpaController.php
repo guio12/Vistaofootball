@@ -41,7 +41,7 @@ class CpaController extends Controller
         $touchesR = count($touchesR);
 
         /**  TOUCHES LOUPEES  **/
-        $touchesL = $em->TouchesAmis();
+        $touchesL = $em->TouchesAdversaires();
         $touchesL = count($touchesL);
 
         /**  HJ AMIS  **/
