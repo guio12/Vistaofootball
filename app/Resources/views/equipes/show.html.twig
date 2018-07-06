@@ -39,31 +39,36 @@
             <table class="table">
                 <tbody>
                 <tr>
-                    <th>Nom du joueur</th>
-                    <td>{{ joueur.nom }} {{ joueur.prenom }}</td>
+                    <th class="text-center">Nom du joueur</th>
+                    <td class="text-center">{{ joueur.nom }} {{ joueur.prenom }}</td>
                 </tr>
                 <tr>
-                    <th>Numéro du Maillot</th>
-                    <td>{{ joueur.numMaillot }}</td>
+                    <th class="text-center">Numéro du Maillot</th>
+                    <td class="text-center">{{ joueur.numMaillot }}</td>
                 </tr>
                 <tr>
-                    <th>Poste</th>
-                    <td>{{ joueur.poste }}</td>
+                    <th class="text-center">Poste</th>
+                    <td class="text-center">{{ joueur.poste }}</td>
                 </tr>
                 </tbody>
             </table>
         </div>
         {% endfor %}
 
+        <div class="boutons_bas">
         <a href="{{ path('equipes_index') }}">
-            <button class="btn-style btn ">RETOUR À LA LISTE</button>
-        </a>
-        <a href="{{ path('equipes_edit', { 'id': equipe.id }) }}">
-            <button class="btn-style btn ">GÉRER L'ÉQUIPE</button>
+            <button class="btn-style btn btn-block">RETOUR À LA LISTE</button>
         </a>
 
+        <br>
+
+        <a href="{{ path('equipes_edit', { 'id': equipe.id }) }}">
+            <button class="btn-style btn btn-block">GÉRER L'ÉQUIPE</button>
+        </a>
+        </div>
+
             {{ form_start(delete_form) }}
-            <button type="submit" value="Delete" class="btn-style btn-align btn btn-block">SUPPRIMER</button>
+            <button type="submit" value="Delete" class="btn-style btn-align btn btn-block">SUPPRIMER L'ÉQUIPE</button>
             {{ form_end(delete_form) }}
     </div>
 

@@ -16,41 +16,41 @@
 
             <h1><a href="{{ path('possession') }}">POSSESSION</a></h1>
             <div class="progress">
-                <div class="progress-bar progress-bar-info" style="width: 40%">
-                    <p>40%</p>
+                <div class="progress-bar progress-bar-info" style="width: {{ (stats['possession'] *100)|round(0,'floor') }}%">
+                    <p>{{ stats['possession'] *100 }}%</p>
                 </div>
-                <div class="progress-bar progress-bar-adv" style="width: 60%">
-                    <p>60%</p>
+                <div class="progress-bar progress-bar-adv" style="width: {{ ((1 - stats['possession']) *100)|round(0,'ceil') }}%">
+                    <p>{{ (1 - stats['possession']) *100}}%</p>
                 </div>
             </div>
 
             <h1><a href="{{ path('tirs') }}">TIRS</a></h1>
             <div class="progress">
-                <div class="progress-bar progress-bar-info" style="width: 99%">
-                    <p>99%</p>
+                <div class="progress-bar progress-bar-info" style="width: {{  ((stats['tirs']['tirsClub']/ stats['tirs']['tirsClubToto']) *100)|round(0,'floor')}}%">
+                    <p>{{  stats['tirs']['tirsClub']}}</p>
                 </div>
-                <div class="progress-bar progress-bar-adv" style="width: 1%">
-                    <p>1%</p>
+                <div class="progress-bar progress-bar-adv" style="width: {{  ((1 - stats['tirs']['tirsClub']/ stats['tirs']['tirsClubToto']) *100)|round(0,'ceil')}}%">
+                    <p>{{ stats['tirs']['tirsClubToto'] - stats['tirs']['tirsClub'] }}</p>
                 </div>
             </div>
 
             <h1><a href="{{ path('recuperation') }}">RECUPERATIONS</a></h1>
             <div class="progress">
-                <div class="progress-bar progress-bar-info" style="width: 52%">
-                    <p>52%</p>
+                <div class="progress-bar progress-bar-info" style="width: {{ (stats['recuperation']['nous'] / ( stats['recuperation']['nous'] + stats['recuperation']['vous']) *100)|round(0,'floor') }}%">
+                    <p>{{ stats['recuperation']['nous'] }}</p>
                 </div>
-                <div class="progress-bar progress-bar-adv" style="width: 48%">
-                    <p>48%</p>
+                <div class="progress-bar progress-bar-adv" style="width: {{ (stats['recuperation']['vous'] / ( stats['recuperation']['nous'] + stats['recuperation']['vous']) *100)|round(0,'ceil') }}%">
+                    <p>{{ stats['recuperation']['vous'] }}</p>
                 </div>
             </div>
 
             <h1><a href="{{ path('CPA') }}">DISCIPLINE</a></h1>
             <div class="progress">
-                <div class="progress-bar progress-bar-info" style="width: 10%">
-                    <p>10%</p>
+                <div class="progress-bar progress-bar-info" style="width: {{ (stats['cpa']['nous'] / ( stats['cpa']['Toto']) *100)|round(0,'floor') }}%">
+                    <p>{{ stats['cpa']['nous']}}</p>
                 </div>
-                <div class="progress-bar progress-bar-adv" style="width: 90%">
-                    <p>90%</p>
+                <div class="progress-bar progress-bar-adv" style="width: {{ (stats['cpa']['Toto'] / ( stats['cpa']['nous'] + stats['cpa']['Toto'])*100)|round(0,'ceil') -2 }}%">
+                    <p>{{ stats['cpa']['Toto'] - stats['cpa']['nous'] }}</p>
                 </div>
             </div>
 
@@ -58,4 +58,3 @@
         </div>
     </div>
 {% endblock %}
-

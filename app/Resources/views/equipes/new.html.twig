@@ -65,19 +65,19 @@
                     {{ form_widget(form.numEquipe, { 'attr': {'class': 'form-control input-lg'} }) }}
                 </div>
             </div>
-            <br>
-            <div class="col-lg-3 col-md-4 col-sm-5 text-right boutons_bas">
-                <div class="row">
+
+            <div class="row">
+                <div class="col-xs-12 boutons_bas">
                     <button class="btn-style btn-align btn btn-block" type="submit" value="Create">CRÉER</button>
                     {{ form_end(form) }}
                 </div>
             </div>
             <div class="row">
-            <div class="col-lg-3 col-md-4 col-sm-5 text-right boutons_bas">
-                <a href="{{ path('equipes_index') }}">
-                    <button class="btn-style btn-align btn btn-block">RETOUR À LA LISTE</button>
-                </a>
-            </div>
+                <div class="col-xs-12">
+                    <a href="{{ path('equipes_index') }}">
+                        <button class="btn-style btn-align btn btn-block">RETOUR À LA LISTE</button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
