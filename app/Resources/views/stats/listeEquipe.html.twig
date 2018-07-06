@@ -1,63 +1,54 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('build/admin_equipes.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/stats.css') }}">
 {% endblock %}
 
-
 {% block body %}
+
+  <section>
     <div class="container">
 
         <h1>LISTE DES ÉQUIPES</h1>
 
         <div class="panel panel-default">
+
             <!-- Table -->
             <table class="table">
                 <thead>
                 <tr>
                     <th width="20%" class="text-center">Nom de l'entraîneur</th>
-                    <th width="20%" class="text-center">Nom du club</th>
                     <th width="20%" class="text-center">Championnat</th>
                     <th width="20%" class="text-center">Catégorie</th>
-                    <th width="20%" class="text-center">Numéro d'équipe</th>
+                    <th width="20%" class="text-center">Numéro de l'équipe</th>
+                    <th width="20%" class="text-center"></th>
                     <th width="20%" class="text-center"></th>
                 </tr>
                 </thead>
                 <tbody class="liste-equipes">
 
                 {% for equipe in equipes %}
+                <form class="" action="{{ path('listeMatch') }}" method="post">
                     <tr style="vertical-align:middle">
-                        <td width="20%" class="text-center">{{ nom }} {{ prenom }}</td>
                         <td width="20%" class="text-center">{{ equipe.entraineurNomClub }}</td>
                         <td width="20%" class="text-center">{{ equipe.championnat }}</td>
                         <td width="20%" class="text-center">{{ equipe.categorie }}</td>
                         <td width="20%" class="text-center">{{ equipe.numEquipe }}</td>
-                        <td width="20%" class="text-center" style="vertical-align:middle">
-                            <a href="{{ path('equipes_show', { 'id': equipe.id }) }}">
-                                <button class="btn-style btn btn-block" style="">DÉTAILS</button>
-                            </a>
-
-                            <a href="{{ path('equipes_edit', { 'id': equipe.id }) }}">
-                                <button class="btn-style btn-align btn btn-block">ÉQUIPE</button>
-                            </a>
-
-                            <a href="{{ path('joueurs_index', { 'id': equipe.id }) }}">
-                                <button class="btn-style btn-align btn btn-block">JOUEURS</button>
+                        <input type="hidden" name="id" value="{{ equipe.id }}">
+                        <input type="hidden" name="nomEquipe" value="{{ equipe.entraineurNomClub}}">
+                        <td width="20%" class="text-right">
+                            <a href="">
+                                <button class="btn-style btn-align btn btn-block">Statistique</button>
                             </a>
                         </td>
                     </tr>
+                  </form>
                 {% endfor %}
                 </tbody>
 
 
             </table>
         </div>
-
-        <div class="text-right">
-            <a href="{{ path('equipes_new') }}">
-                <button class="btn-style btn-align btn" style="width: 100%">CRÉER UNE NOUVELLE ÉQUIPE</button>
-            </a>
-        </div>
-
-    </div>
+      </div>
+  </section>
 {% endblock %}

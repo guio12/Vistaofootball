@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/stats.css') }}">
+{% endblock %}
+
+{% block body %}
+
+  <section>
+    <div class="container">
+
+        <h1>LISTE DES MATCHS</h1>
+
+        <div class="panel panel-default">
+
+            <!-- Table -->
+            <table class="table">
+                <thead>
+                <tr>
+                  <th width="20%" class="text-center">Date</th>
+                    <th width="20%" class="text-center">votre equipe</th>
+                    <th width="20%" class="text-center">équipe adverse</th>
+                    <th width="20%" class="text-center"></th>
+                </tr>
+                </thead>
+                <tbody class="liste-equipes">
+
+                {% for match in matchs %}
+                <form class="" action="{{ path('statsmatch') }}" method="post">
+                    <tr style="vertical-align:middle">
+                      <td width="20%" class="text-center">{{ match.date }}</td>
+                        <td width="20%" class="text-center">{{ nomclub }}</td>
+                        <td width="20%" class="text-center">{{ match.equipe2 }}</td>
+                        <input type="hidden" name="matchId" value="{{ match.id}}">
+                        <input type="hidden" name="nomClub" value="{{ nomclub }}">
+
+                        <td width="20%" class="text-right">
+                            <a href="">
+                                <button class="btn-style btn-align btn btn-block">Statistiques</button>
+                            </a>
+                        </td>
+                    </tr>
+                  </form>
+                {% endfor %}
+                </tbody>
+
+
+            </table>
+        </div>
+      </div>
+  </section>
+{% endblock %}

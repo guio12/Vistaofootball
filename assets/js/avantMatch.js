@@ -56,7 +56,7 @@ $("select").change( function (){
 
         $(".selectJoueur").append("<option data-equipe='"+element.equipe+"' data-id='"+element.id+"' name='maillot' value='"+element.numMaillot+"'>"+element.nom+" "+element.prenom+"</option>");
       });
-      $(".lancezmatch").append("<button class='btn btn-style btn-primary'  type='submit';' name='lancezmatch'>Lancez le match</button>");
+      $(".lancezmatch").append("<button class='btn btn-style btn-align'  type='submit';' name='lancezmatch'>Lancez le match</button>");
 
 
     }

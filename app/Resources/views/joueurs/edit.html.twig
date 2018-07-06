@@ -56,24 +56,28 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-5 text-right boutons_bas">
-                <div class="row">
 
-                <button class="btn-style btn-align btn btn-block" type="submit" value="Edit">ÉDITER</button>
-                {{ form_end(edit_form) }}
-
-                {{ form_start(delete_form) }}
-                <button class="btn-style btn-align btn btn-block" type="submit" value="Delete">SUPPRIMER</button>
-                {{ form_end(delete_form) }}
-            </div>
-        </div>
             <div class="row">
-                <div class="col-lg-3 col-md-4 col-sm-5 text-right boutons_bas">
+                <div class="col-xs-12 boutons_bas">
+                    <button class="btn-style btn-align btn btn-block" type="submit" value="Edit" style="width:100%">
+                        ÉDITER
+                    </button>
+                    {{ form_end(edit_form) }}
 
-
-            <a href="{{ path('joueurs_index', { 'id': equipe_id }) }}"><button class="btn-style btn-align btn btn-block">RETOUR À LA LISTE</button></a>
-        </div>
-    </div>
+                    {{ form_start(delete_form) }}
+                    <button class="btn-style btn-align btn btn-block" type="submit" value="Delete" style="width:100%">
+                        SUPPRIMER
+                    </button>
+                    {{ form_end(delete_form) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <a href="{{ path('joueurs_index', { 'id': equipe_id }) }}">
+                        <button class="btn-style btn-align btn btn-block" style="width:100%">RETOUR À LA LISTE</button>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 
