@@ -57,5 +57,13 @@ security:
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/coach, role: IS_AUTHENTICATED_REMEMBERED }
         - { path: ^/equipes, role: IS_AUTHENTICATED_REMEMBERED }
+        - { path: ^/joueurs, role: IS_AUTHENTICATED_REMEMBERED }
         - { path: ^/clavier, role: IS_AUTHENTICATED_REMEMBERED }
         - { path: ^/statsmatch, role: IS_AUTHENTICATED_REMEMBERED }
+        - { path: ^/cpa, role: IS_AUTHENTICATED_REMEMBERED }
+        - { path: ^/possession, role: IS_AUTHENTICATED_REMEMBERED }
+        - { path: ^/tirs, role: IS_AUTHENTICATED_REMEMBERED }
+        - { path: ^/avantMatch, role: IS_AUTHENTICATED_REMEMBERED }
+        - { path: ^/recuperation, role: IS_AUTHENTICATED_REMEMBERED }
+        - { path: ^/listeMatch, role: IS_AUTHENTICATED_REMEMBERED }
+        - { path: ^/listeEquipe, role: IS_AUTHENTICATED_REMEMBERED }
