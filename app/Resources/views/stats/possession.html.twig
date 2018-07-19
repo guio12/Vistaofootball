@@ -12,16 +12,6 @@
         <div class="row">
             <div class="col-md-offset-3 col-md-6">
                 <h1 class="text-center">POSSESSION</h1>
-                <div class="progress">
-                    <div class="progress-bar progress-bar-info" style="width: 40%">
-                        <p>40%</p>
-                    </div>
-                    <div class="progress-bar progress-bar-adv" style="width: 60%">
-                        <p>60%</p>
-                    </div>
-                </div>
-
-
             </div>
         </div>
     </div>
@@ -42,10 +32,10 @@
                     <div class="statsshow">
                         <h3>PASSES</h3>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-info" style="width: 40%">
+                            <div class="progress-bar progress-bar-info" style="width: {{  ((passesReussies / (passesReussies + passesPerdues))*100)|round(0,'floor')  }}%">
                                 <p>{{ passesReussies }}</p>
                             </div>
-                            <div class="progress-bar progress-bar-adv" style="width: 60%">
+                            <div class="progress-bar progress-bar-adv" style="width: {{  ((passesPerdues / (passesReussies + passesPerdues))*100)|round(0,'ceil')  }}%">
                                 <p>{{ passesPerdues }}</p>
                             </div>
                         </div>
@@ -53,10 +43,10 @@
 
                         <h4>CENTRES</h4>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-info" style="width: 70%">
+                            <div class="progress-bar progress-bar-info" style="width: {{  ((centresReussies / (centresReussies + centresPerdus))*100)|round(0,'floor')  }}%">
                                 <p>{{ centresReussies }}</p>
                             </div>
-                            <div class="progress-bar progress-bar-adv" style="width: 30%">
+                            <div class="progress-bar progress-bar-adv" style="width: {{  ((centresPerdus / (centresReussies + centresPerdus))*100)|round(0,'ceil')  }}%">
                                 <p>{{ centresPerdus }}</p>
                             </div>
                         </div>
@@ -64,10 +54,10 @@
 
                         <h4>PASSES LONGUES</h4>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-info" style="width: 52%">
+                            <div class="progress-bar progress-bar-info" style="width: {{  ((PLReussies / (PLReussies + PLPerdues))*100)|round(0,'floor')  }}%">
                                 <p>{{ PLReussies }}</p>
                             </div>
-                            <div class="progress-bar progress-bar-adv" style="width: 48%">
+                            <div class="progress-bar progress-bar-adv" style="width: {{  ((PLPerdues / (PLReussies + PLPerdues))*100)|round(0,'ceil')  }}%">
                                 <p>{{ PLPerdues }}</p>
                             </div>
                         </div>
@@ -86,10 +76,10 @@
                     <div class="statsshow">
                         <h3>PASSES</h3>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-info" style="width: 40%">
+                            <div class="progress-bar progress-bar-info" style="width: {{  ((passesEReussies / (passesEReussies + passesEPerdues))*100)|round(0,'floor')  }}%">
                                 <p>{{ passesEReussies }}</p>
                             </div>
-                            <div class="progress-bar progress-bar-adv" style="width: 60%">
+                            <div class="progress-bar progress-bar-adv" style="width: {{  ((passesEPerdues / (passesEReussies + passesEPerdues))*100)|round(0,'ceil')  }}%">
                                 <p>{{ passesEPerdues }}</p>
                             </div>
                         </div>
@@ -97,10 +87,10 @@
 
                         <h4>CENTRES</h4>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-info" style="width: 80%">
+                            <div class="progress-bar progress-bar-info" style="width: {{  ((centresEReussis / (centresEReussis + centresEPerdues))*100)|round(0,'floor')  }}%">
                                 <p>{{ centresEReussis }}</p>
                             </div>
-                            <div class="progress-bar progress-bar-adv" style="width: 20%">
+                            <div class="progress-bar progress-bar-adv" style="width: {{  ((centresEPerdues / (centresEReussis + centresEPerdues))*100)|round(0,'ceil')  }}%">
                                 <p>{{ centresEPerdues }}</p>
                             </div>
                         </div>
@@ -108,10 +98,10 @@
 
                         <h4>PASSES LONGUES</h4>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-info" style="width: 52%">
+                            <div class="progress-bar progress-bar-info" style="width: {{  ((PLEReussies / (PLEReussies + PLEPerdues))*100)|round(0,'floor')  }}%">
                                 <p>{{ PLEReussies }}</p>
                             </div>
-                            <div class="progress-bar progress-bar-adv" style="width: 48%">
+                            <div class="progress-bar progress-bar-adv" style="width: {{  ((PLEPerdues / (PLEReussies + PLEPerdues))*100)|round(0,'ceil')  }}%">
                                 <p>{{ PLEPerdues }}</p>
                             </div>
                         </div>

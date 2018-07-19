@@ -12,7 +12,7 @@ var joueur = [];
 var selected = "";
 var equipeId = undefined;
 
-
+ 
 
 $('#formulaire').submit(function(){
   var i = 0;

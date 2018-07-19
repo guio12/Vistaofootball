@@ -293,6 +293,24 @@ class DefaultController extends Controller
         ));
     }
 
+    /**
+     * @Route("/recupAjax", name="recupAjax")
+     */
+    public function recupAjaxAction(Request $request)
+    {
+        $user = $this->getUser();
+        $userId = $this->getUser()->getId();
+
+        $em = $this->getDoctrine()
+        ->getManager()
+        ->getRepository('AppBundle:ActionsMatch');
+
+        $recuperation =  $em->Recuperation($_SESSION['matchId']);
+        $recuperation = json_encode($recuperation);
+        var_dump($recuperation);
+        // replace this example code with whatever you need
+        return new Response($recuperation);
+    }
 
 
 

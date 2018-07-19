@@ -11,7 +11,11 @@ global.$ = global.jQuery = $;
 // no need to set this to a variable, just require it
 require('bootstrap-sass');
 
-
+console.log('test');
+$.post( "/recupAjax", function(data) {
+  console.log( data );
+  obj = JSON.parse(data);
+});
 
 var data = {
     1: 56,

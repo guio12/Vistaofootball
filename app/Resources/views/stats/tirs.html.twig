@@ -31,10 +31,10 @@
                     <div class="statsshow">
                         <h3>TIRS cadrés</h3>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-info-green" style="width: 40%">
+                            <div class="progress-bar progress-bar-info-green" style="width: {{  ((tirsCadresR / (tirsCadresR + tirsNonCadresR))*100)|round(0,'floor')  }}%">
                                 <p>{{ tirsCadresR }}</p>
                             </div>
-                            <div class="progress-bar progress-bar-adv-red" style="width: 60%">
+                            <div class="progress-bar progress-bar-adv-red" style="width: {{  ((tirsNonCadresR / (tirsCadresR + tirsNonCadresR))*100)|round(0,'floor')  }}%">
                                 <p>{{ tirsNonCadresR }}</p>
                             </div>
                         </div>
@@ -42,23 +42,11 @@
 
                         <h4>DUELS offensifs</h4>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-info-green" style="width: 80%">
+                            <div class="progress-bar progress-bar-info-green" style="width: {{  ((driblesReussiesR / (driblesReussiesR + driblesEchouesR))*100)|round(0,'floor')  }}%">
                                 <p>{{ driblesReussiesR }}</p>
                             </div>
-                            <div class="progress-bar progress-bar-adv-red" style="width: 20%">
+                            <div class="progress-bar progress-bar-adv-red" style="width: {{  ((driblesEchouesR / (driblesReussiesR + driblesEchouesR))*100)|round(0,'floor')  }}%">
                                 <p>{{ driblesEchouesR }}</p>
-                            </div>
-                        </div>
-
-
-                        <h4>PASSEURS dangereux</h4>
-                        <div class="progress">
-                            <div class="progress-bar"
-                                 style="width: 52%; background-color: transparent;">
-                                <p></p>
-                            </div>
-                            <div class="progress-bar progress-bar-adv-red" style="width: 48%">
-                                <p>48%</p>
                             </div>
                         </div>
                     </div>
@@ -77,10 +65,10 @@
                     <div class="statsshow">
                         <h3>TIRS cadrés</h3>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-info-green" style="width: 40%">
+                            <div class="progress-bar progress-bar-info-green" style="width: {{  ((tirsCadresL / (tirsCadresL + tirsNonCadresL))*100)|round(0,'floor')  }}%">
                                 <p>{{ tirsCadresL }}</p>
                             </div>
-                            <div class="progress-bar progress-bar-adv-red" style="width: 60%">
+                            <div class="progress-bar progress-bar-adv-red" style="width: {{  ((tirsNonCadresL / (tirsCadresL + tirsNonCadresL))*100)|round(0,'floor')  }}%">
                                 <p>{{ tirsNonCadresL }}</p>
                             </div>
                         </div>
@@ -88,22 +76,11 @@
 
                         <h4>DUELS offensifs</h4>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-info-green" style="width: 80%">
+                            <div class="progress-bar progress-bar-info-green" style="width: {{  ((driblesReussiesL / (driblesReussiesL + driblesEchouesL))*100)|round(0,'floor')  }}%">
                                 <p>{{ driblesReussiesL }}</p>
                             </div>
-                            <div class="progress-bar progress-bar-adv-red" style="width: 20%">
+                            <div class="progress-bar progress-bar-adv-red" style="width: {{  ((driblesEchouesL / (driblesReussiesL + driblesEchouesL))*100)|round(0,'floor')  }}%">
                                 <p>{{ driblesEchouesL }}</p>
-                            </div>
-                        </div>
-
-
-                        <h4>PASSEURS dangereux</h4>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-info-green" style="width: 52%">
-                                <p>52%</p>
-                            </div>
-                            <div class="progress-bar progress-bar-adv-red" style="width: 48%; background-color: transparent;">
-                                <p></p>
                             </div>
                         </div>
                     </div>
