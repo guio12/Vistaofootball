@@ -18,17 +18,20 @@ class ActionsMatchRepository extends EntityRepository
   /**                    METHODES POUR LA POSSESSION             **/
   public function Possession($id)
   {
-    $query = $this->createQueryBuilder('c');
-    $query->where('c.joueurAction <= 16 AND c.actionId = 1 OR c.actionId = 112 AND c.joueurReceveur = 123 AND c.matchId = :id')
-    ->setParameter(':id', $id);
-    $possessionClub =  $query->getQuery()->getResult();
+    $query = $this->createQueryBuilder('c')
+    ->where('c.joueurAction <= 16 AND c.joueurReceveur = 123')
+    ->andWhere('c.actionId = 1 OR c.actionId = 112')
+    ->andWhere('c.matchId = :id')
+    ->setParameter(':id', $id)
+    ->getQuery();
+    $possessionClub = $query->getResult();
     $possessionClub = count($possessionClub);
 
     $query = $this->createQueryBuilder('d');
-    $query->where('d.actionId = 1 OR d.actionId = 112');
+    $query->where('d.actionId = 1 OR d.actionId = 112 AND d.matchId = :id')
+    ->setParameter(':id', $id);
     $possessionClubToto = $query->getQuery()->getResult();
     $possessionClubToto = count($possessionClubToto);
-
     $possessionClub /= $possessionClubToto;
     $possessionClub = round($possessionClub,2);
     return $possessionClub;
@@ -39,14 +42,15 @@ class ActionsMatchRepository extends EntityRepository
     $tirs = [];
     $query = $this->createQueryBuilder('c')
     ->select('c')
-    ->where('c.joueurAction <= 16 AND c.actionId = 110 OR c.actionId = 111 AND c.joueurReceveur = 123 AND c.matchId = :id')
+    ->where('c.joueurAction <= 16 AND c.actionId = 110 OR c.actionId = 111 AND c.matchId = :id')
     ->setParameter(':id', $idMatch)
     ->getQuery();
     $tirsClub = $query->getResult();
     $tirsClub = count($tirsClub);
 
     $query = $this->createQueryBuilder('d');
-    $query->where('d.actionId = 110 OR d.actionId = 111');
+    $query->where('d.actionId = 110 OR d.actionId = 111 AND d.matchId = :id')
+    ->setParameter(':id', $idMatch);
     $tirsClubToto = $query->getQuery()->getResult();
     $tirsClubToto = count($tirsClubToto);
     $tirs = ['tirsClubToto' => $tirsClubToto, 'tirsClub' => $tirsClub];
@@ -65,7 +69,7 @@ class ActionsMatchRepository extends EntityRepository
     $nbCpa = count($nbCpa);
 
     $query = $this->createQueryBuilder('d');
-    $query->where('d.actionId = 110 OR d.actionId = 111');
+    $query->where('d.actionId = 106 OR d.actionId = 101');
     $cpaToto = $query->getQuery()->getResult();
     $cpaToto = count($cpaToto);
     $cpa = ['nous' => $nbCpa, 'Toto' => $cpaToto];

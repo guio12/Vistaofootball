@@ -213,6 +213,7 @@ class DefaultController extends Controller
         ->setParameter(':id', $userId)
         ->getQuery();
         $matchs = $query->getResult();
+
         $_SESSION['matchs'] = $matchs;
         $_SESSION['nomClub'] = $nomClub;
         // replace this example code with whatever you need
@@ -229,10 +230,9 @@ class DefaultController extends Controller
 
       $user = $this->getUser();
 
-      if(isset($_POST['matchId'])){
-        $_SESSION['matchId'] = $_POST['matchId'];
-      }
-      isset($_SESSION['nomClub'])?  : $_SESSION['nomClub'] = "Votre club";
+      isset($_POST['matchId'])?  $_SESSION['matchId'] = $_POST['matchId'] : $_SESSION['matchId'] = "votre club";
+
+      isset($_SESSION['nomClub'])?$_SESSION['nomCLub'] = $_POST['nomClub'] : $_SESSION['nomClub'] = "Votre club";
 
       $em = $this->getDoctrine()->getManager();
       $repository = $em->getRepository('AppBundle:Matchs');
@@ -242,6 +242,7 @@ class DefaultController extends Controller
       ->setParameter(':id', $_SESSION['matchId'])
       ->getQuery();
       $matchs = $query->getResult();
+    
 
       $_SESSION['matchs'] = $matchs;
 
@@ -250,7 +251,8 @@ class DefaultController extends Controller
       ->getManager()
       ->getRepository('AppBundle:ActionsMatch');
 
-      $possession = $em->Possession($_SESSION['matchId']);
+      $possession = $em->Possession(38);
+      var_dump($possession);
       $tirs = $em->TirsToto($_SESSION['matchId']);
       $recuperation =  $em->Recuperation($_SESSION['matchId']);
       $cpa =  $em->CPA($_SESSION['matchId']);
