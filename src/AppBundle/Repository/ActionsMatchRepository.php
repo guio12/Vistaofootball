@@ -19,7 +19,7 @@ class ActionsMatchRepository extends EntityRepository
   public function Possession($id)
   {
     $query = $this->createQueryBuilder('c')
-    ->where('c.joueurAction <= 16 AND c.joueurReceveur = 123')
+    ->where('c.joueurAction <= 16 AND c.joueurReceveur <= 16')
     ->andWhere('c.actionId = 1 OR c.actionId = 112')
     ->andWhere('c.matchId = :id')
     ->setParameter(':id', $id)
@@ -28,10 +28,13 @@ class ActionsMatchRepository extends EntityRepository
     $possessionClub = count($possessionClub);
 
     $query = $this->createQueryBuilder('d');
-    $query->where('d.actionId = 1 OR d.actionId = 112 AND d.matchId = :id')
+    $query->where('d.actionId = 1 OR d.actionId = 112')
+    ->andWhere('d.matchId = :id')
     ->setParameter(':id', $id);
     $possessionClubToto = $query->getQuery()->getResult();
     $possessionClubToto = count($possessionClubToto);
+    $possessionClubToto == 0? $possessionClubToto = 1 : "";
+    $possessionClub == 0? $possessionClub = 1: "";
     $possessionClub /= $possessionClubToto;
     $possessionClub = round($possessionClub,2);
     return $possessionClub;
@@ -42,17 +45,22 @@ class ActionsMatchRepository extends EntityRepository
     $tirs = [];
     $query = $this->createQueryBuilder('c')
     ->select('c')
-    ->where('c.joueurAction <= 16 AND c.actionId = 110 OR c.actionId = 111 AND c.matchId = :id')
+    ->where('c.joueurAction <= 16')
+    ->andWhere('c.actionId = 110 OR c.actionId = 111')
+    ->andWhere('c.matchId = :id')
     ->setParameter(':id', $idMatch)
     ->getQuery();
     $tirsClub = $query->getResult();
     $tirsClub = count($tirsClub);
+    $tirsClub++;
 
     $query = $this->createQueryBuilder('d');
-    $query->where('d.actionId = 110 OR d.actionId = 111 AND d.matchId = :id')
+    $query->where('d.actionId = 110 OR d.actionId = 111')
+    ->andWhere('d.matchId = :id')
     ->setParameter(':id', $idMatch);
     $tirsClubToto = $query->getQuery()->getResult();
     $tirsClubToto = count($tirsClubToto);
+    $tirsClubToto++;
     $tirs = ['tirsClubToto' => $tirsClubToto, 'tirsClub' => $tirsClub];
 
     return $tirs;
@@ -62,16 +70,22 @@ class ActionsMatchRepository extends EntityRepository
     $cpa = [];
     $query = $this->createQueryBuilder('c')
     ->select('c')
-    ->where('c.joueurAction <= 16 AND c.actionId = 106 OR c.actionId = 101 AND c.matchId = :id')
+    ->where('c.joueurAction <= 16')
+    ->andWhere('c.actionId = 106 OR c.actionId = 101')
+    ->andWhere('c.matchId = :id')
     ->setParameter(':id', $idMatch)
     ->getQuery();
     $nbCpa = $query->getResult();
     $nbCpa = count($nbCpa);
+    $nbCpa++;
 
     $query = $this->createQueryBuilder('d');
-    $query->where('d.actionId = 106 OR d.actionId = 101');
+    $query->where('d.actionId = 106 OR d.actionId = 101')
+    ->andWhere('d.matchId = :id')
+    ->setParameter(':id', $idMatch);
     $cpaToto = $query->getQuery()->getResult();
     $cpaToto = count($cpaToto);
+    $cpaToto++;
     $cpa = ['nous' => $nbCpa, 'Toto' => $cpaToto];
 
     return $cpa;
@@ -446,16 +460,15 @@ class ActionsMatchRepository extends EntityRepository
     $query = $this->createQueryBuilder('c');
     $query->where('c.matchId=:id');
     $query->setParameter(':id',$id);
-    ;
     $recup = $query->getQuery()->getResult();
 
     $idrecup = [];
   foreach ($recup as $key => $value) {
-    if ($value->getJoueurAction() == '0123' && $value->getJoueurReceveur() <=16) {
+    if ($value->getJoueurAction() == '123' && $value->getJoueurReceveur() <=16) {
     $idrecup[] = $key+1;
   }
   }
-$i = 0;
+$i = 1;
   foreach($idrecup as $keyrecup => $idrecup){
     foreach($recup as $key=>$value){
       if ($key == $idrecup) {
@@ -467,15 +480,16 @@ $i = 0;
   }
     $idrecupv = [];
   foreach ($recup as $key => $value) {
-    if ($value->getJoueurAction() <=16 && $value->getJoueurReceveur() == "0123") {
+    if ($value->getJoueurAction() <=16 && $value->getJoueurReceveur() == "123") {
     $idrecupv[] = $key+1;
     }
   }
-$z = 0;
+$z = 1;
   foreach($idrecupv as $keyrecupv => $idrecupv){
     foreach($recup as $key=>$value){
+      $value = $value;
       if ($key == $idrecupv) {
-        if ($value->getJoueurReceveur() <=! 16) {
+        if ($value->getJoueurReceveur() > 16) {
           $z++;
         }
       }

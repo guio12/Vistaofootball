@@ -49,7 +49,7 @@
                 <div class="progress-bar progress-bar-info" style="width: {{ (stats['cpa']['nous'] / ( stats['cpa']['Toto']) *100)|round(0,'floor') }}%">
                     <p>{{ stats['cpa']['nous']}}</p>
                 </div>
-                <div class="progress-bar progress-bar-adv" style="width: {{ (stats['cpa']['Toto'] / ( stats['cpa']['nous'] + stats['cpa']['Toto'])*100)|round(0,'ceil') -2 }}%">
+                <div class="progress-bar progress-bar-adv" style="width: {{ (((stats['cpa']['Toto'] - stats['cpa']['nous']) /  stats['cpa']['Toto'])*100)|round(0,'ceil') }}%">
                     <p>{{ stats['cpa']['Toto'] - stats['cpa']['nous'] }}</p>
                 </div>
             </div>
@@ -58,5 +58,4 @@
         </div>
     </div>
 
-    {{ dump(matchs) }}
 {% endblock %}
