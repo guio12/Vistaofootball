@@ -193,7 +193,7 @@ class ActionsMatchRepository extends EntityRepository
 
     $query = $this->createQueryBuilder('c');
     $query->where('c.joueurAction > 0 AND c.actionId = 107 AND c.joueurReceveur > 0')
-    ;
+        ;
     return $query
     ->getQuery()
     ->getResult()
@@ -374,7 +374,7 @@ class ActionsMatchRepository extends EntityRepository
   public function DriblesReussiesAmis(){
 
     $query = $this->createQueryBuilder('c');
-    $query->where('c.joueurAction > 0 AND c.actionId = 113')
+    $query->where('c.matchId = :id AND c.joueurAction > 0 AND c.actionId = 113')
     ;
     return $query
     ->getQuery()
@@ -486,6 +486,9 @@ $z = 0;
 
 
   }
+
+
+
 
 
 

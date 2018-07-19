@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Equipes
@@ -46,10 +47,10 @@ class Equipes
      * @var int
      *
      * @ORM\Column(name="joueur", type="integer")
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Joueurs", mappedBy="equipe")
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Joueurs", mappedBy="equipe", cascade={"remove"})
      */
     private $joueur;
+
 
 
     /**
@@ -72,6 +73,7 @@ class Equipes
      * @ORM\Column(name="num_equipe", type="integer")
      */
     private $numEquipe;
+
 
 
     /**

@@ -34,10 +34,15 @@
   "build/selectjoueur.js": "./selectjoueur.js",
   "build/accueil.js": "./accueil.js",
   "build/manifest.js": "./manifest.js",
+  "build/fonts/glyphicons-halflings-regular.eot": "./fonts/glyphicons-halflings-regular.f4769f9b.eot",
+  "build/fonts/glyphicons-halflings-regular.ttf": "./fonts/glyphicons-halflings-regular.e18bbf61.ttf",
+  "build/fonts/glyphicons-halflings-regular.woff": "./fonts/glyphicons-halflings-regular.fa277232.woff",
+  "build/fonts/glyphicons-halflings-regular.woff2": "./fonts/glyphicons-halflings-regular.448c34a5.woff2",
   "build/images/didacticiel.jpeg": "./images/didacticiel.5b7d4076.jpeg",
+  "build/images/gestion_equipe.jpeg": "./images/gestion_equipe.e3279801.jpeg",
   "build/images/lancer_match.jpeg": "./images/lancer_match.ec3ab104.jpeg",
   "build/images/logo_connexion.png": "./images/logo_connexion.e64dc830.png",
   "build/images/logo_header.png": "./images/logo_header.bfca6b65.png",
   "build/images/stats_globales.jpeg": "./images/stats_globales.d90bb96a.jpeg",
-  "build/images/gestion_equipe.jpeg": "./images/gestion_equipe.e3279801.jpeg"
+  "build/images/glyphicons-halflings-regular.svg": "./images/glyphicons-halflings-regular.89889688.svg"
 }
