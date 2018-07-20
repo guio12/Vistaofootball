@@ -40,6 +40,10 @@ li > a {
   margin-top: 4vh;
 }
 
+.panel .text-center {
+  max-width: 5vw;
+}
+
 @media screen and (min-width: 1025px) and (max-width: 2560px) {
   .boutons_bas {
     margin-top: 5vh;
