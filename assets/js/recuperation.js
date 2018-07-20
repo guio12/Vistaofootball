@@ -11,29 +11,88 @@ global.$ = global.jQuery = $;
 // no need to set this to a variable, just require it
 require('bootstrap-sass');
 
+$( document ).ready(function() {
 console.log('test');
-$.post( "/recupAjax", function(data) {
-  console.log( data );
-  obj = JSON.parse(data);
-});
+let un = 0;
+let deux = 0;
+let trois = 0;
+let quatre = 0;
+let cinq = 0;
+let six = 0;
+let sept = 0;
+let huit = 0;
+let neuf = 0;
+let dix = 0;
+let onze = 0;
+let douze = 0;
+let treize = 0;
+let quatorze = 0;
+let quinze = 0;
+let seize = 0;
 
+$.post( "recupAjax", function(data) {
+  obj = JSON.parse(data);
+  let recup = obj[0];
+  let joueur = obj[1][0];
+  console.log(joueur);
+
+  recup['nous'].forEach(function(element) {
+    switch (element) {
+      case 1: un++
+      console.log(un);
+        break;
+      case 2: deux++
+        break;
+      case 3: trois++
+        break;
+      case 4: quatre++
+        break;
+      case 5: cinq++
+        break;
+      case 6: six++
+        break;
+      case 7: sept++
+        break;
+      case 8: huit++
+        break;
+      case 9: neuf++
+        break;
+      case 10: dix++
+        break;
+      case 11: onze++
+        break;
+      case 12: douze++
+        break;
+      case 13: treize++
+        break;
+      case 14: quatorze++
+        break;
+      case 15: quinze++
+        break;
+      case 16: seize++
+        break;
+
+      default:
+
+    }
+  });
 var data = {
-    1: 56,
-    2: 33,
-    3: 100,
-    4: 98,
-    5: 100,
-    6: 54,
-    7: 80,
-    8: 90,
-    9: 90,
-    10: 90,
-    11: 90,
-    12: 90,
-    13: 90,
-    14: 90,
-    15: 50,
-    16: 60,
+    1: un,
+    2: deux,
+    3: trois,
+    4: quatre,
+    5: cinq,
+    6: six,
+    7: sept,
+    8: huit,
+    9: neuf,
+    10: dix,
+    11: onze,
+    12: douze,
+    13: treize,
+    14: quatorze,
+    15: quinze,
+    16: seize,
 }
 
 var maxValue = 0
@@ -57,7 +116,7 @@ for (var i in data) {
         <div data-height="' + percent + '" class="bar">\
             <div class="per">' + num + '</div>\
         </div>\
-        <span>' + i.toUpperCase() + '</span>\
+        <span>' + joueur['joueur'+i]; + '</span>\
     </li>'
 }
 $('.bars').html(barsHtml)
@@ -109,3 +168,6 @@ setTimeout(function () {
         $this.css('height', $this.attr('data-height') + '%')
     })
 }, 0)
+
+});
+});
