@@ -485,17 +485,18 @@ class ActionsMatchRepository extends EntityRepository
     $recup = $query->getQuery()->getResult();
 
     $idrecup = [];
+    $nous = [];
+    $vous = [];
   foreach ($recup as $key => $value) {
     if ($value->getJoueurAction() == '123' && $value->getJoueurReceveur() <=16) {
     $idrecup[] = $key+1;
   }
   }
-$i = 1;
   foreach($idrecup as $keyrecup => $idrecup){
     foreach($recup as $key=>$value){
       if ($key == $idrecup) {
         if ($value->getJoueurReceveur() != "123") {
-          $i++;
+          $nous[] = $value->getJoueurReceveur();
         }
       }
     }
@@ -518,7 +519,7 @@ $z = 1;
     }
   }
 
-  return $recuperationMatch = ['nous' => $i, 'vous' => $z];
+  return $recuperationMatch = ['nous' => $nous, 'vous' => $z];
 
 
   }

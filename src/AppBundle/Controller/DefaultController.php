@@ -45,6 +45,23 @@ class DefaultController extends Controller
 
 
     /**
+     * @Route("/didacticiel", name="didacticiel")
+     */
+
+
+    public function didacticielAction(Request $request)
+    {
+        // replace this example code with whatever you need
+
+
+        $user = $this->getUser();
+        return $this->render('didacticiel/didacticiel.html.twig',  [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'user' => $user
+        ]);
+    }
+
+
+    /**
      * @Route("/avantMatch", name="AvantMatch")
      */
 
@@ -248,6 +265,7 @@ class DefaultController extends Controller
       $tirs = $em->TirsToto($_SESSION['matchId']);
       $recuperation =  $em->Recuperation($_SESSION['matchId']);
       $cpa =  $em->CPA($_SESSION['matchId']);
+      $recuperation['nous'] = count($recuperation['nous']);
 
       $stats = ['cpa'=> $cpa, 'possession' => $possession, 'tirs'=> $tirs, 'recuperation' => $recuperation];
       var_dump($stats);
@@ -300,16 +318,24 @@ class DefaultController extends Controller
     {
         $user = $this->getUser();
         $userId = $this->getUser()->getId();
-
         $em = $this->getDoctrine()
         ->getManager()
         ->getRepository('AppBundle:ActionsMatch');
-
         $recuperation =  $em->Recuperation($_SESSION['matchId']);
-        $recuperation = json_encode($recuperation);
-        var_dump($recuperation);
-        // replace this example code with whatever you need
-        return new Response($recuperation);
+    //    $recuperation = json_encode($recuperation);
+
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository('AppBundle:Matchs');
+        $query = $repository->createQueryBuilder('c')
+        ->select('c')
+        ->where('c.id = :id')
+        ->setParameter(':id', $_SESSION['matchId'])
+        ->getQuery();
+        $matchs = $query->getResult();
+    //    $matchs = json_encode($matchs);
+        $test = [$recuperation, $matchs];
+        $test = json_encode($test);
+        return new Response($test);
     }
 
 
