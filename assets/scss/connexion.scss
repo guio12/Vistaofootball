@@ -19,16 +19,13 @@ body {
 }
 
 .global{
-  font-family: 'Quantico', sans-serif;
+
   text-transform: uppercase;
   background-size: cover;
   background-position: center center;
   min-height: 100%;
   min-width: 100%;
-  width: auto;
-  height: auto;
-  margin: 0;
-  position: absolute;
+
 }
 .global:after{
   position: absolute;
