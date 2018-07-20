@@ -75,7 +75,7 @@ class TirsController extends Controller
             'tirsNonCadresR' => $tirsNonCadresR,
             'driblesReussiesR' => $driblesReussiesR,
             'driblesEchouesR' => $driblesEchouesR,
-
+            'but' => $_SESSION['but'],
             'tirsCadresL' => $tirsCadresL,
             'tirsNonCadresL' => $tirsNonCadresL,
             'driblesReussiesL' => $driblesReussiesL,

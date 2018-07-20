@@ -12,7 +12,6 @@ global.$ = global.jQuery = $;
 require('bootstrap-sass');
 
 $( document ).ready(function() {
-console.log('test');
 let un = 0;
 let deux = 0;
 let trois = 0;
@@ -34,7 +33,7 @@ $.post( "recupAjax", function(data) {
   obj = JSON.parse(data);
   let recup = obj[0];
   let joueur = obj[1][0];
-  console.log(joueur);
+
 
   recup['nous'].forEach(function(element) {
     switch (element) {
@@ -132,7 +131,7 @@ setTimeout(function () {
 /**ntm**/
 
 var data = {
-    a: 56,
+    a: recup['vous'],
 
 }
 

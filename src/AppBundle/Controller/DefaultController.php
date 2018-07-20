@@ -265,14 +265,16 @@ class DefaultController extends Controller
       $tirs = $em->TirsToto($_SESSION['matchId']);
       $recuperation =  $em->Recuperation($_SESSION['matchId']);
       $cpa =  $em->CPA($_SESSION['matchId']);
+      $but =  $em->but($_SESSION['matchId']);
+      $_SESSION['but'] = $but;
       $recuperation['nous'] = count($recuperation['nous']);
 
       $stats = ['cpa'=> $cpa, 'possession' => $possession, 'tirs'=> $tirs, 'recuperation' => $recuperation];
-      var_dump($stats);
+
 
 
         // replace this example code with whatever you need
-        return $this->render('stats/general.html.twig',array("stats" => $stats, "nomClub"=>$_SESSION['nomClub'], "matchs"=>$_SESSION['matchs'], "entraineur" => $user
+        return $this->render('stats/general.html.twig',array("stats" => $stats, "nomClub"=>$_SESSION['nomClub'], "matchs"=>$_SESSION['matchs'], "entraineur" => $user, 'but' => $_SESSION['but']
         ));
     }
 

@@ -29,15 +29,15 @@ class ActionsMatchRepository extends EntityRepository
 
     $query = $this->createQueryBuilder('d');
     $query->where('d.actionId = 1 OR d.actionId = 112')
+    ->andWhere('d.joueurAction = 123 AND d.joueurReceveur = 123 ')
     ->andWhere('d.matchId = :id')
     ->setParameter(':id', $id);
     $possessionClubToto = $query->getQuery()->getResult();
     $possessionClubToto = count($possessionClubToto);
     $possessionClubToto == 0? $possessionClubToto = 1 : "";
     $possessionClub == 0? $possessionClub = 1: "";
-    $possessionClub /= $possessionClubToto;
-    $possessionClub = round($possessionClub,2);
-    return $possessionClub;
+    $possession = ['club' => $possessionClub, 'toto'=> $possessionClubToto];
+    return $possession;
   }
 
   public function TirsToto($idMatch)
@@ -52,7 +52,6 @@ class ActionsMatchRepository extends EntityRepository
     ->getQuery();
     $tirsClub = $query->getResult();
     $tirsClub = count($tirsClub);
-    $tirsClub++;
 
     $query = $this->createQueryBuilder('d');
     $query->where('d.actionId = 110 OR d.actionId = 111')
@@ -91,6 +90,51 @@ class ActionsMatchRepository extends EntityRepository
     return $cpa;
   }
 
+  public function but($idMatch){
+    $query = $this->createQueryBuilder('c')
+    ->select('c')
+    ->where('c.actionId = 115 OR c.actionId = 116 OR c.actionId = 117')
+    ->andWhere('c.joueurAction <= 16')
+    ->andWhere('c.matchId = :id')
+    ->setParameter(':id', $idMatch)
+    ->getQuery();
+    $but = $query->getResult();
+
+    $query = $this->createQueryBuilder('c')
+    ->select('c')
+    ->where('c.actionId = 666')
+    ->andWhere('c.joueurAction <= 16')
+    ->andWhere('c.matchId = :id')
+    ->setParameter(':id', $idMatch)
+    ->getQuery();
+    $butcamp = $query->getResult();
+
+    $query = $this->createQueryBuilder('d')
+    ->select('d')
+    ->where('d.actionId = 115 OR d.actionId = 116 OR d.actionId = 117 OR d.actionId = 666')
+    ->andWhere('d.joueurAction = 123')
+    ->andWhere('d.matchId = :id')
+    ->setParameter(':id', $idMatch)
+    ->getQuery();
+    $butadv = $query->getResult();
+    $query = $this->createQueryBuilder('d')
+    ->select('d')
+    ->where('d.actionId = 666')
+    ->andWhere('d.joueurAction = 123')
+    ->andWhere('d.matchId = :id')
+    ->setParameter(':id', $idMatch)
+    ->getQuery();
+    $butadvcamp = $query->getResult();
+    $but = count($but);
+    $butcamp = count($butcamp);
+    $butadv = count($butadv);
+    $butadvcamp = count($butadvcamp);
+
+    $but += $butadvcamp;
+    $butadv += $butcamp;
+    return $but = ['but' => $but, 'adv' => $butadv];
+  }
+
   /**Perte passes equipe 1**/
   public function PassesAmisPerdues()
   {
@@ -99,31 +143,35 @@ class ActionsMatchRepository extends EntityRepository
 
 
 
-    $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction >= 16 AND c.actionId = 1 AND c.joueurReceveur = 123';
+    $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.matchId = :id AND c.joueurAction <= 16 AND c.actionId = 1 AND c.joueurReceveur = 123';
     $query = $this->getEntityManager()->createQuery($dql);
+    $query->setParameter('id', $_SESSION['matchId']);
     return $query->execute();
   }
 
   /** passes reussies equipe 1**/
   public function PassesAmisReussies()
   {
-    $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction <= 16 AND c.actionId = 1 AND c.joueurReceveur <= 16';
+    $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.matchId = :id AND c.joueurAction <= 16 AND c.actionId = 1 AND c.joueurReceveur <= 16';
     $query = $this->getEntityManager()->createQuery($dql);
+    $query->setParameter('id', $_SESSION['matchId']);
     return $query->execute();
   }
 
   /**Perte passes equipe 2**/
   public function PassesEnnemiesPerdues()
   {
-    $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction = 123 AND c.actionId = 1 AND c.joueurReceveur <= 16';
+    $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.matchId = :id AND c.joueurAction = 123 AND c.actionId = 1 AND c.joueurReceveur <= 16';
     $query = $this->getEntityManager()->createQuery($dql);
+    $query->setParameter('id', $_SESSION['matchId']);
     return $query->execute();
   }
 
   public function PassesEnnemiesReussies()
   {
-    $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction = 123 AND c.actionId = 1 AND c.joueurReceveur = 123';
+    $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.matchId = :id AND c.joueurAction = 123 AND c.actionId = 1 AND c.joueurReceveur = 123';
     $query = $this->getEntityManager()->createQuery($dql);
+    $query->setParameter('id', $_SESSION['matchId']);
     return $query->execute();
   }
 
@@ -132,31 +180,35 @@ class ActionsMatchRepository extends EntityRepository
   /**Perte centre equipe 1**/
   public function CentresAmisPerdues()
   {
-    $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction <= 16 AND c.actionId = 109 AND c.joueurReceveur = 123';
+    $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.matchId = :id AND c.joueurAction <= 16 AND c.actionId = 109 AND c.joueurReceveur = 123';
     $query = $this->getEntityManager()->createQuery($dql);
+    $query->setParameter('id', $_SESSION['matchId']);
     return $query->execute();
   }
 
   /** centres reussies equipe 1**/
   public function CentresAmisReussies()
   {
-    $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction <= 16 AND c.actionId = 109 AND c.joueurReceveur <= 16';
+    $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.matchId = :id AND c.joueurAction <= 16 AND c.actionId = 109 AND c.joueurReceveur <= 16';
     $query = $this->getEntityManager()->createQuery($dql);
+    $query->setParameter('id', $_SESSION['matchId']);
     return $query->execute();
   }
 
   /**centres passes equipe 2**/
   public function CentresEnnemiesPerdues()
   {
-    $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction =123 AND c.actionId = 109 AND c.joueurReceveur <=16 ';
+    $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.matchId = :id AND c.joueurAction =123 AND c.actionId = 109 AND c.joueurReceveur <=16 ';
     $query = $this->getEntityManager()->createQuery($dql);
+    $query->setParameter('id', $_SESSION['matchId']);
     return $query->execute();
   }
 
   public function CentresEnnemiesReussies()
   {
-    $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction = 123 AND c.actionId = 109 AND c.joueurReceveur = 123';
+    $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.matchId = :id AND c.joueurAction = 123 AND c.actionId = 109 AND c.joueurReceveur = 123';
     $query = $this->getEntityManager()->createQuery($dql);
+    $query->setParameter('id', $_SESSION['matchId']);
     return $query->execute();
   }
 
@@ -165,32 +217,36 @@ class ActionsMatchRepository extends EntityRepository
   /**PL equipe 1**/
   public function PLAmisPerdues()
   {
-    $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction <=16 AND c.actionId = 112 AND c.joueurReceveur = 123';
+    $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.matchId = :id AND c.joueurAction <=16 AND c.actionId = 112 AND c.joueurReceveur = 123';
     $query = $this->getEntityManager()->createQuery($dql);
+    $query->setParameter('id', $_SESSION['matchId']);
     return $query->execute();
   }
 
   /** PL reussies equipe 1**/
   public function PLAmisReussies()
   {
-    $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction <=16 AND c.actionId = 112 AND c.joueurReceveur <= 16';
+    $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.matchId = :id AND c.joueurAction <=16 AND c.actionId = 112 AND c.joueurReceveur <= 16';
     $query = $this->getEntityManager()->createQuery($dql);
+    $query->setParameter('id', $_SESSION['matchId']);
     return $query->execute();
   }
 
   /**PL passes equipe 2**/
   public function PLEnnemiesPerdues()
   {
-    $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction =123 AND c.actionId = 112 AND c.joueurReceveur <= 16';
+    $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.matchId = :id AND c.joueurAction =123 AND c.actionId = 112 AND c.joueurReceveur <= 16';
     $query = $this->getEntityManager()->createQuery($dql);
+    $query->setParameter('id', $_SESSION['matchId']);
     return $query->execute();
   }
 
   /**PL ennemies perdues**/
   public function PLEnnemiesReussies()
   {
-    $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.joueurAction =123 AND c.actionId = 112 AND c.joueurReceveur = 123';
+    $dql = 'SELECT c FROM AppBundle:ActionsMatch c WHERE c.matchId = :id AND c.joueurAction =123 AND c.actionId = 112 AND c.joueurReceveur = 123';
     $query = $this->getEntityManager()->createQuery($dql);
+    $query->setParameter('id', $_SESSION['matchId']);
     return $query->execute();
   }
 

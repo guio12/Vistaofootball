@@ -103,7 +103,8 @@ class CpaController extends Controller
             'fauteJL' => $fauteJL,
             'fauteRR' => $fauteRR,
             'fauteLR' => $fauteLR,
-            "equipe" => $_POST, "entraineur" => $user
+            "equipe" => $_POST, "entraineur" => $user,
+            'but' => $_SESSION['but'],
 
 
         ));
