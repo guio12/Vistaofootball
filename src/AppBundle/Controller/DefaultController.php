@@ -298,7 +298,7 @@ class DefaultController extends Controller
     {
         $user = $this->getUser();
         // replace this example code with whatever you need
-        return $this->render('stats/recuperation.html.twig',array( "equipe" => $_POST, "entraineur" => $user
+        return $this->render('stats/recuperation.html.twig',array('but' => $_SESSION['but'], "equipe" => $_POST, "entraineur" => $user
         ));
     }
 
