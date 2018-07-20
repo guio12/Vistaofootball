@@ -45,6 +45,23 @@ class DefaultController extends Controller
 
 
     /**
+     * @Route("/didacticiel", name="didacticiel")
+     */
+
+
+    public function didacticielAction(Request $request)
+    {
+        // replace this example code with whatever you need
+
+
+        $user = $this->getUser();
+        return $this->render('didacticiel/didacticiel.html.twig',  [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'user' => $user
+        ]);
+    }
+
+
+    /**
      * @Route("/avantMatch", name="AvantMatch")
      */
 
