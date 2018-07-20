@@ -3,14 +3,15 @@ $cian: #53e2e2  ;
 $darkcian: #0ba2a3;
 $blue: #25aae1;
 
-.col-xs-6 {
+.presentation .col-xs-6 {
     padding: 0 !important;
+    height: 42vh;
 }
 
 section a img {
     padding: 20px;
-    width: 100%;
-    max-height: 42vh;
+    height: 100% !important;
+    width: 100% !important;
     object-fit: cover;
 }
 
