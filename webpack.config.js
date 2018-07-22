@@ -38,6 +38,9 @@ Encore
     // will output as web/build/images/...png
     .addEntry('logo_header', './assets/images/logo_header.png')
 
+    // will output as web/build/images/...png
+    .addEntry('favicon', './assets/images/vistao logo wp.png')
+
     // will output as web/build/images/...jpg
     .addEntry('gestion_equipe', './assets/images/gestion_equipe.jpeg')
 
