@@ -1,0 +1,127 @@
+$cian: #53e2e2;
+$darkcian: #0ba2a3;
+$blue: #25aae1;
+
+html, body {
+  height: 100%;
+}
+
+.error-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+.error-page h1 {
+  font-size: 30vh;
+  font-weight: bold;
+  position: relative;
+  margin: -8vh 0 0;
+  padding: 0;
+}
+.error-page h1:after {
+  content: attr(data-h1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: transparent;
+  /* webkit only for graceful degradation to IE */
+  background: -webkit-repeating-linear-gradient(-45deg, $cian, $darkcian, $blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400%;
+  animation: animateTextBackground 10s ease-in-out infinite;
+}
+.error-page p {
+  color: #d6d6d6;
+  font-size: 8vh;
+  font-weight: bold;
+  line-height: 10vh;
+  max-width: 600px;
+  position: relative;
+}
+
+@keyframes animateTextBackground {
+  0% {
+    background-position: 0 0;
+  }
+  25% {
+    background-position: 100% 0;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0 100%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+@media (max-width: 767px) {
+  .error-page h1 {
+    font-size: 32vw;
+  }
+  .error-page h1 + p {
+    font-size: 8vw;
+    line-height: 10vw;
+    max-width: 70vw;
+  }
+}
+
+
+
+.canvas{
+  position:relative;
+  margin:40px auto;
+  width:400px;
+  height:84px;
+}
+#body,#head {
+  transform-origin:bottom left;
+  animation:playing_football_body 2s linear 0s infinite normal forwards running;
+}
+#athlete #leg_up {
+  transform-origin:34px 48px;
+  transform:rotatez(-92deg);
+  animation:playing_football 4s linear 2s infinite normal forwards running;
+}
+#athlete #leg_down {
+  transform-origin:34px 48px;
+  transform:rotatez(-92deg);
+  animation:playing_football 4s linear 0s infinite normal forwards running;
+}
+#athlete #ball {
+  transform:translatey(-5px);
+  animation:football 2s cubic-bezier(0.11, 0.57, 0.4, 0.97) 0s infinite normal forwards running;
+}
+@keyframes playing_football {
+  0%,10%,50%,100% {
+    transform:rotatez(-92deg);
+  }
+  93%{
+    transform:rotatez(-87deg);
+  }
+  43% {
+    transform: rotatez(0deg);
+  }
+  45% {
+    transform:rotatez(-148deg);
+  }
+}
+@keyframes football {
+  0%,20%{
+    transform:translate(300px, -50px) scale(.8);
+  }
+  50%{
+    transform:translate(-272px,-50px) scale(1);
+  }
+  100%{
+    transform:translate(300px, -20px) scale(.8);
+  }
+  90%{
+    transform:translate(-272px,20px) scale(1);
+  }
+}
