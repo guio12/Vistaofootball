@@ -52,6 +52,7 @@ class ActionsMatchRepository extends EntityRepository
     ->getQuery();
     $tirsClub = $query->getResult();
     $tirsClub = count($tirsClub);
+  
 
     $query = $this->createQueryBuilder('d');
     $query->where('d.actionId = 110 OR d.actionId = 111')

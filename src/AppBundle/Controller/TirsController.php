@@ -33,36 +33,43 @@ class TirsController extends Controller
         /**  TIRS CADRES AMIS  **/
         $tirsCadresR = $em->TirCadreAmis();
         $tirsCadresR = count($tirsCadresR);
+        $tirsCadresR++;
 
         /**  TIRS NON CADRES AMIS  **/
         $tirsNonCadresR = $em->TirNonCadreAmis();
         $tirsNonCadresR = count($tirsNonCadresR);
+        $tirsNonCadresR++;
 
         /**  DRIBLES REUSSIES AMIS  **/
         $driblesReussiesR = $em->DriblesReussiesAmis();
         $driblesReussiesR = count($driblesReussiesR);
+        $driblesReussiesR++;
 
         /**  DRIBLES NON REUSSIES AMIS  **/
         $driblesEchouesR = $em->DriblesEchoueesAmis();
         $driblesEchouesR = count($driblesEchouesR);
-
+        $driblesEchouesR++;
 
 
         /**  TIRS CADRES ENNEMIS **/
         $tirsCadresL = $em->TirCadreEnnemis();
         $tirsCadresL = count($tirsCadresL);
+        $tirsCadresL++;
 
         /**  TIRS NON CADRES ENNEMIS  **/
         $tirsNonCadresL = $em->TirNonCadreEnnemis();
         $tirsNonCadresL = count($tirsNonCadresL);
+        $tirsNonCadresL++;
 
         /**  DRIBLES REUSSIES ENNEMIS  **/
         $driblesReussiesL = $em->DriblesReussiesEnnemis();
         $driblesReussiesL = count($driblesReussiesL);
+        $driblesReussiesL++;
 
         /**  DRIBLES NON REUSSIES ENNEMIS  **/
         $driblesEchouesL = $em->DriblesEchoueesEnnemis();
         $driblesEchouesL = count($driblesEchouesL);
+        $driblesEchouesL++;
 
 
 
