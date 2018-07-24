@@ -73,6 +73,9 @@ Encore
     // will output as web/build/admin_equipes.css
     .addEntry('admin_equipes', './assets/scss/admin_equipes.scss')
 
+    // will output as web/build/exception.css
+    .addEntry('exception', './assets/scss/exception.scss')
+
     // empty the outputPath dir before each build
     .cleanupOutputBeforeBuild()
 
