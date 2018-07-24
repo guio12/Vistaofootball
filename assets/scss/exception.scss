@@ -4,6 +4,7 @@ $blue: #25aae1;
 
 html, body {
   height: 100%;
+  overflow: hidden;
 }
 
 .error-page {
@@ -19,14 +20,6 @@ html, body {
   position: relative;
   margin: -8vh 0 0;
   padding: 0;
-}
-.error-page h1:after {
-  content: attr(data-h1);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  color: transparent;
   /* webkit only for graceful degradation to IE */
   background: -webkit-repeating-linear-gradient(-45deg, $cian, $darkcian, $blue);
   -webkit-background-clip: text;
@@ -34,6 +27,7 @@ html, body {
   background-size: 400%;
   animation: animateTextBackground 10s ease-in-out infinite;
 }
+
 .error-page p {
   color: #d6d6d6;
   font-size: 8vh;
@@ -74,7 +68,7 @@ html, body {
 
 
 .canvas{
-  position:relative;
+  position:absolute;
   margin:40px auto;
   width:400px;
   height:84px;
