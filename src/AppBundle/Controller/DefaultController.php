@@ -242,7 +242,8 @@ class DefaultController extends Controller
       $user = $this->getUser();
 
       isset($_POST['matchId'])?  $_SESSION['matchId'] = $_POST['matchId'] : "";
-      isset($_POST['nomClub'])?$_SESSION['nomCLub'] = $_POST['nomClub'] : "";
+      isset($_POST['nomClub'])?$_SESSION['nomCLub'] = $_POST['nomClub'] : $_SESSION['nomClub'] = "votre club";
+    //  var_dump($_POST['nomClub']);
 
       $em = $this->getDoctrine()->getManager();
       $repository = $em->getRepository('AppBundle:Matchs');
