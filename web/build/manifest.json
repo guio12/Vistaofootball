@@ -22,6 +22,8 @@
   "build/style.css": "./style.css",
   "build/inscription.js": "./inscription.js",
   "build/inscription.css": "./inscription.css",
+  "build/exception.js": "./exception.js",
+  "build/exception.css": "./exception.css",
   "build/connexion.js": "./connexion.js",
   "build/connexion.css": "./connexion.css",
   "build/style_clavier.js": "./style_clavier.js",
