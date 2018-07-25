@@ -28,6 +28,7 @@ $darkcian: #0ba2a3;
   vertical-align: middle;
 }
 
+
 body {
   text-align: center;
 }
@@ -134,7 +135,7 @@ p {
   .o-watch-wrap {
     .o-timer {
       @extend .t-center;
-      font-size: 3.5vw;
+      font-size: 2vw;
     }
   }
 }
@@ -158,6 +159,10 @@ p {
   .textWrap {
     overflow-wrap: break-word;
     line-height: 5vh;
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+
   }
 
 
