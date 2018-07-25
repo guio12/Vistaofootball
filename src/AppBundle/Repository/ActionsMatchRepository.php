@@ -46,16 +46,16 @@ class ActionsMatchRepository extends EntityRepository
     $query = $this->createQueryBuilder('c')
     ->select('c')
     ->where('c.joueurAction <= 16')
-    ->andWhere('c.actionId = 110 OR c.actionId = 111')
+    ->andWhere('c.actionId = 110 OR c.actionId = 111 OR c.actionId = 113 OR c.actionId = 114')
     ->andWhere('c.matchId = :id')
     ->setParameter(':id', $idMatch)
     ->getQuery();
     $tirsClub = $query->getResult();
     $tirsClub = count($tirsClub);
-  
+
 
     $query = $this->createQueryBuilder('d');
-    $query->where('d.actionId = 110 OR d.actionId = 111')
+    $query->where('d.actionId = 110 OR d.actionId = 111 OR d.actionId = 113 OR d.actionId = 114')
     ->andWhere('d.matchId = :id')
     ->setParameter(':id', $idMatch);
     $tirsClubToto = $query->getQuery()->getResult();

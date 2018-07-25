@@ -154,6 +154,7 @@ class DefaultController extends Controller
         ->getQuery();
 
         $idMatch = $query->getResult();
+        var_dump($_POST);
         $idMatch = $idMatch[0]['id'];
         $_SESSION['matchId'] = $idMatch;
         // replace this example code with whatever you need

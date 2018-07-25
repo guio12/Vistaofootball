@@ -38,7 +38,6 @@ $.post( "recupAjax", function(data) {
   recup['nous'].forEach(function(element) {
     switch (element) {
       case 1: un++
-      console.log(un);
         break;
       case 2: deux++
         break;
@@ -159,6 +158,7 @@ for (var i in data) {
         <span>' + i.toUpperCase() + '</span>\
     </li>'
 }
+console.log(joueur)
 $('.barsi').html(barsHtml)
 
 setTimeout(function () {
