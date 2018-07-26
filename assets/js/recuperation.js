@@ -34,7 +34,7 @@ $.post( "recupAjax", function(data) {
   let recup = obj[0];
   let joueur = obj[1];
   let maillot = obj[2];
-  console.log(maillot);
+
 
   recup['nous'].forEach(function(element) {
     switch (element) {
