@@ -81,7 +81,7 @@ class ActionsMatchRepository extends EntityRepository
     $query = $this->createQueryBuilder('c')
     ->select('c')
     ->where('c.joueurAction <= 16')
-    ->andWhere('c.actionId = 106 OR c.actionId = 101')
+    ->andWhere('c.actionId = 101 OR c.actionId = 102 OR c.actionId = 103 OR c.actionId = 105 OR c.actionId = 106 OR c.actionId = 107 OR c.actionId = 108')
     ->andWhere('c.matchId = :id')
     ->setParameter(':id', $idMatch)
     ->getQuery();
@@ -91,7 +91,7 @@ class ActionsMatchRepository extends EntityRepository
     $query = $this->createQueryBuilder('c')
     ->select('c')
     ->where('c.joueurAction = 123')
-    ->andWhere('c.actionId = 106 OR c.actionId = 101')
+    ->andWhere('c.actionId = 101 OR c.actionId = 102 OR c.actionId = 103 OR c.actionId = 105 OR c.actionId = 106 OR c.actionId = 107 OR c.actionId = 108')
     ->andWhere('c.matchId = :id')
     ->setParameter(':id', $idMatch)
     ->getQuery();
@@ -99,7 +99,7 @@ class ActionsMatchRepository extends EntityRepository
     $toto = count($toto);
 
     $query = $this->createQueryBuilder('d');
-    $query->where('d.actionId = 106 OR d.actionId = 101')
+    $query->where('d.actionId = 101 OR d.actionId = 102 OR d.actionId = 103 OR d.actionId = 105 OR d.actionId = 106 OR d.actionId = 107 OR d.actionId = 108')
     ->andWhere('d.matchId = :id')
     ->setParameter(':id', $idMatch);
     $total = $query->getQuery()->getResult();
@@ -281,7 +281,7 @@ class ActionsMatchRepository extends EntityRepository
   public function cinqMetreAmis(){
 
     $query = $this->createQueryBuilder('c');
-    $query->where('c.matchId = :id AND c.joueurAction <=16 AND c.actionId = 107 AND c.joueurReceveur <= 16')
+    $query->where('c.matchId = :id AND c.joueurAction <=16 AND c.actionId = 107')
     ->setParameter('id', $_SESSION['matchId'])
         ;
     return $query
@@ -296,7 +296,7 @@ class ActionsMatchRepository extends EntityRepository
   public function cinqMetreAdversaire(){
 
     $query = $this->createQueryBuilder('c');
-    $query->where('c.matchId = :id AND c.joueurAction <=16 AND c.actionId = 107 AND c.joueurReceveur = 123')
+    $query->where('c.matchId = :id AND c.joueurAction = 123 AND c.actionId = 107')
     ->setParameter('id', $_SESSION['matchId'])
     ;
     return $query
@@ -308,7 +308,7 @@ class ActionsMatchRepository extends EntityRepository
   public function TouchesAmis(){
 
     $query = $this->createQueryBuilder('c');
-    $query->where('c.matchId = :id AND c.joueurAction <=16 AND c.actionId = 105 AND c.joueurReceveur <= 16')
+    $query->where('c.matchId = :id AND c.joueurAction <=16 AND c.actionId = 105')
     ->setParameter('id', $_SESSION['matchId'])
     ;
     return $query
@@ -320,7 +320,7 @@ class ActionsMatchRepository extends EntityRepository
   public function TouchesAdversaires(){
 
     $query = $this->createQueryBuilder('c');
-    $query->where('c.matchId = :id AND c.joueurAction <=16 AND c.actionId = 105 AND c.joueurReceveur = 123')
+    $query->where('c.matchId = :id AND c.joueurAction = 123 AND c.actionId = 105')
     ->setParameter('id', $_SESSION['matchId'])
     ;
     return $query
@@ -344,7 +344,7 @@ class ActionsMatchRepository extends EntityRepository
   public function HjEnnemis(){
 
     $query = $this->createQueryBuilder('c');
-    $query->where('c.matchId = :id AND c.joueurAction <=16 AND c.actionId = 106')
+    $query->where('c.matchId = :id AND c.joueurAction = 123 AND c.actionId = 108')
     ->setParameter('id', $_SESSION['matchId'])
     ;
     return $query
@@ -356,7 +356,7 @@ class ActionsMatchRepository extends EntityRepository
   public function CornerAmis(){
 
     $query = $this->createQueryBuilder('c');
-    $query->where('c.matchId = :id AND c.joueurAction <=16 AND c.actionId = 106 AND c.joueurReceveur <= 16')
+    $query->where('c.matchId = :id AND c.joueurAction <=16 AND c.actionId = 106')
     ->setParameter('id', $_SESSION['matchId'])
     ;
     return $query
@@ -368,7 +368,7 @@ class ActionsMatchRepository extends EntityRepository
   public function CornerAdversaire(){
 
     $query = $this->createQueryBuilder('c');
-    $query->where('c.matchId = :id AND c.joueurAction <=16 AND c.actionId = 101 AND c.joueurReceveur = 123')
+    $query->where('c.matchId = :id AND c.joueurAction = 123 AND c.actionId = 101')
     ->setParameter('id', $_SESSION['matchId'])
     ;
     return $query
@@ -428,7 +428,7 @@ class ActionsMatchRepository extends EntityRepository
   public function FauteRougeAmis(){
 
     $query = $this->createQueryBuilder('c');
-    $query->where('c.matchId = :id AND c.joueurAction <=16 AND c.actionId = 102')
+    $query->where('c.matchId = :id AND c.joueurAction <=16 AND c.actionId = 103')
     ->setParameter('id', $_SESSION['matchId'])
     ;
     return $query
@@ -440,7 +440,7 @@ class ActionsMatchRepository extends EntityRepository
   public function FauteRougeAdversaire(){
 
     $query = $this->createQueryBuilder('c');
-    $query->where('c.matchId = :id AND c.joueurAction =123 AND c.actionId = 102')
+    $query->where('c.matchId = :id AND c.joueurAction =123 AND c.actionId = 103')
     ->setParameter('id', $_SESSION['matchId'])
     ;
     return $query
