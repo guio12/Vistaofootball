@@ -338,8 +338,25 @@ class DefaultController extends Controller
         ->setParameter(':id', $_SESSION['matchId'])
         ->getQuery();
         $matchs = $query->getResult();
+
+        $subject = "abcdef";
+        $pattern = '/^jou/';
+        $matchs = (array)$matchs[0];
+        foreach ($matchs as $key => $value) {
+          if (  preg_match($pattern, $key) ) {
+            $em = $this->getDoctrine()->getManager();
+            $repository = $em->getRepository('AppBundle:Joueurs');
+            $query = $repository->createQueryBuilder('c')
+            ->select('c.numMaillot')
+            ->where('c.id = :id')
+            ->setParameter(':id', $value)
+            ->getQuery();
+            $joueur[] = $query->getResult();
+          }
+        }
+
     //    $matchs = json_encode($matchs);
-        $test = [$recuperation, $matchs];
+        $test = [$recuperation, $matchs, $joueur];
         $test = json_encode($test);
         return new Response($test);
     }

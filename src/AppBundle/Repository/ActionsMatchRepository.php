@@ -20,7 +20,7 @@ class ActionsMatchRepository extends EntityRepository
   {
     $query = $this->createQueryBuilder('c')
     ->where('c.joueurAction <= 16 AND c.joueurReceveur <= 16')
-    ->andWhere('c.actionId = 1 OR c.actionId = 112')
+    ->andWhere('c.actionId = 1 OR c.actionId = 112 OR c.actionId = 109')
     ->andWhere('c.matchId = :id')
     ->setParameter(':id', $id)
     ->getQuery();
@@ -28,7 +28,7 @@ class ActionsMatchRepository extends EntityRepository
     $possessionClub = count($possessionClub);
 
     $query = $this->createQueryBuilder('d');
-    $query->where('d.actionId = 1 OR d.actionId = 112')
+    $query->where('d.actionId = 1 OR d.actionId = 112 OR d.actionId = 109')
     ->andWhere('d.joueurAction = 123 AND d.joueurReceveur = 123 ')
     ->andWhere('d.matchId = :id')
     ->setParameter(':id', $id);
@@ -48,7 +48,7 @@ class ActionsMatchRepository extends EntityRepository
     $tirs = [];
     $query = $this->createQueryBuilder('c');
     $query->where('c.joueurAction <= 16')
-    ->andWhere('c.actionId = 110 OR c.actionId = 111 OR c.actionId = 113 OR c.actionId = 114')
+    ->andWhere('c.actionId = 110 OR c.actionId = 111')
     ->andWhere('c.matchId = :id')
     ->setParameter(':id', $idMatch);
     $tirsClub = $query->getQuery()->getResult();
@@ -57,14 +57,14 @@ class ActionsMatchRepository extends EntityRepository
 
     $query = $this->createQueryBuilder('d');
     $query->where('d.joueurAction = 123')
-    ->andWhere('d.actionId = 110 OR d.actionId = 111 OR d.actionId = 113 OR d.actionId = 114')
+    ->andWhere('d.actionId = 110 OR d.actionId = 111')
     ->andWhere('d.matchId = :id')
     ->setParameter(':id', $idMatch);
     $tirsClubToto = $query->getQuery()->getResult();
     $tirsClubToto = count($tirsClubToto);
 
     $query = $this->createQueryBuilder('e');
-    $query->where('e.actionId = 110 OR e.actionId = 111 OR e.actionId = 113 OR e.actionId = 114')
+    $query->where('e.actionId = 110 OR e.actionId = 111')
     ->andWhere('e.matchId = :id')
     ->setParameter(':id', $idMatch);
     $tirsClubTotal = $query->getQuery()->getResult();

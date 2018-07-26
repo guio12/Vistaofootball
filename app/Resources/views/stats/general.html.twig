@@ -15,10 +15,10 @@
             <h1><a href="{{ path('possession') }}">POSSESSION</a></h1>
             <div class="progress">
                 <div class="progress-bar progress-bar-info" style="width: {{ ((stats['possession']['club']/ stats['possession']['total']) *100)|round(0,'floor') }}%">
-                    <p>{{ stats['possession']['club'] }}</p>
+                    <p>{{ ((stats['possession']['club']/ stats['possession']['total']) *100)|round(0,'floor') }}</p>
                 </div>
                 <div class="progress-bar progress-bar-adv" style="width: {{ ((stats['possession']['toto']/ stats['possession']['total']) *100)|round(0,'ceil') }}%">
-                    <p>{{ stats['possession']['toto'] }}</p>
+                    <p>{{ ((stats['possession']['toto']/ stats['possession']['total']) *100)|round(0,'ceil') }}</p>
                 </div>
             </div>
 

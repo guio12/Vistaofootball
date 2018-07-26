@@ -32,42 +32,43 @@ let seize = 0;
 $.post( "recupAjax", function(data) {
   obj = JSON.parse(data);
   let recup = obj[0];
-  let joueur = obj[1][0];
-
+  let joueur = obj[1];
+  let maillot = obj[2];
+  console.log(maillot);
 
   recup['nous'].forEach(function(element) {
     switch (element) {
-      case 1: un++
+      case 1: un++;
         break;
-      case 2: deux++
+      case 2: deux++;
         break;
-      case 3: trois++
+      case 3: trois++;
         break;
-      case 4: quatre++
+      case 4: quatre++;
         break;
-      case 5: cinq++
+      case 5: cinq++;
         break;
-      case 6: six++
+      case 6: six++;
         break;
-      case 7: sept++
+      case 7: sept++;
         break;
-      case 8: huit++
+      case 8: huit++;
         break;
-      case 9: neuf++
+      case 9: neuf++;
         break;
-      case 10: dix++
+      case 10: dix++;
         break;
-      case 11: onze++
+      case 11: onze++;
         break;
-      case 12: douze++
+      case 12: douze++;
         break;
-      case 13: treize++
+      case 13: treize++;
         break;
-      case 14: quatorze++
+      case 14: quatorze++;
         break;
-      case 15: quinze++
+      case 15: quinze++;
         break;
-      case 16: seize++
+      case 16: seize++;
         break;
 
       default:
@@ -114,7 +115,7 @@ for (var i in data) {
         <div data-height="' + percent + '" class="bar">\
             <div class="per">' + num + '</div>\
         </div>\
-        <span>' + joueur['joueur'+i]; + '</span>\
+        <span>' + maillot[+(i-1)][0]['numMaillot']; + '</span>\
     </li>'
 }
 $('.bars').html(barsHtml)
@@ -158,7 +159,6 @@ for (var i in data) {
         <span>' + i.toUpperCase() + '</span>\
     </li>'
 }
-console.log(joueur)
 $('.barsi').html(barsHtml)
 
 setTimeout(function () {
