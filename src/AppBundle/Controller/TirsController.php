@@ -33,43 +33,44 @@ class TirsController extends Controller
         /**  TIRS CADRES AMIS  **/
         $tirsCadresR = $em->TirCadreAmis();
         $tirsCadresR = count($tirsCadresR);
-        $tirsCadresR++;
 
         /**  TIRS NON CADRES AMIS  **/
         $tirsNonCadresR = $em->TirNonCadreAmis();
         $tirsNonCadresR = count($tirsNonCadresR);
-        $tirsNonCadresR++;
+
+        $tirsAmisR = $tirsCadresR + $tirsNonCadresR == 0?  1 : $tirsCadresR + $tirsNonCadresR ;
+
 
         /**  DRIBLES REUSSIES AMIS  **/
         $driblesReussiesR = $em->DriblesReussiesAmis();
         $driblesReussiesR = count($driblesReussiesR);
-        $driblesReussiesR++;
 
         /**  DRIBLES NON REUSSIES AMIS  **/
         $driblesEchouesR = $em->DriblesEchoueesAmis();
         $driblesEchouesR = count($driblesEchouesR);
-        $driblesEchouesR++;
+
+        $driblesR = $driblesEchouesR + $driblesReussiesR == 0?  1 : $driblesReussiesR + $driblesEchouesR ;
 
 
         /**  TIRS CADRES ENNEMIS **/
         $tirsCadresL = $em->TirCadreEnnemis();
         $tirsCadresL = count($tirsCadresL);
-        $tirsCadresL++;
 
         /**  TIRS NON CADRES ENNEMIS  **/
         $tirsNonCadresL = $em->TirNonCadreEnnemis();
         $tirsNonCadresL = count($tirsNonCadresL);
-        $tirsNonCadresL++;
+
+        $tirsEnnemisL = $tirsNonCadresL + $tirsCadresL == 0?  1 : $tirsNonCadresL + $tirsCadresL ;
 
         /**  DRIBLES REUSSIES ENNEMIS  **/
         $driblesReussiesL = $em->DriblesReussiesEnnemis();
         $driblesReussiesL = count($driblesReussiesL);
-        $driblesReussiesL++;
 
         /**  DRIBLES NON REUSSIES ENNEMIS  **/
         $driblesEchouesL = $em->DriblesEchoueesEnnemis();
         $driblesEchouesL = count($driblesEchouesL);
-        $driblesEchouesL++;
+
+        $driblesL = $driblesReussiesL + $driblesEchouesL == 0?  1 : $driblesReussiesL + $driblesEchouesL ;
 
 
 
@@ -80,13 +81,17 @@ class TirsController extends Controller
             "equipe" => $_POST, "entraineur" => $user,
             'tirsCadresR' => $tirsCadresR,
             'tirsNonCadresR' => $tirsNonCadresR,
+            'tirsAmisR' => $tirsAmisR,
             'driblesReussiesR' => $driblesReussiesR,
             'driblesEchouesR' => $driblesEchouesR,
+            'driblesR' => $driblesR,
             'but' => $_SESSION['but'],
             'tirsCadresL' => $tirsCadresL,
             'tirsNonCadresL' => $tirsNonCadresL,
+            'tirsEnnemisL' => $tirsEnnemisL,
             'driblesReussiesL' => $driblesReussiesL,
             'driblesEchouesL' => $driblesEchouesL,
+            'driblesL' => $driblesL,
 
 
 

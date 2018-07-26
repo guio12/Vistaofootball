@@ -23,10 +23,10 @@
                     <div class="statsshow">
                         <h3>TIRS cadrés</h3>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-info-green" style="width: {{  ((tirsCadresR / (tirsCadresR + tirsNonCadresR))*100)|round(0,'floor')  }}%">
+                            <div class="progress-bar progress-bar-info-green" style="width: {{  ((tirsCadresR / (  tirsAmisR ))*100)|round(0,'floor')  }}%">
                                 <p>{{ tirsCadresR }}</p>
                             </div>
-                            <div class="progress-bar progress-bar-adv-red" style="width: {{  ((tirsNonCadresR / (tirsCadresR + tirsNonCadresR))*100)|round(0,'floor')  }}%">
+                            <div class="progress-bar progress-bar-adv-red" style="width: {{  ((tirsNonCadresR / ( tirsAmisR ))*100)|round(0,'ceil')  }}%">
                                 <p>{{ tirsNonCadresR }}</p>
                             </div>
                         </div>
@@ -34,10 +34,10 @@
 
                         <h3>DUELS offensifs</h3>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-info-green" style="width: {{  ((driblesReussiesR / (driblesReussiesR + driblesEchouesR))*100)|round(0,'floor')  }}%">
+                            <div class="progress-bar progress-bar-info-green" style="width: {{  ((driblesReussiesR / driblesR ) *100)|round(0,'floor')  }}%">
                                 <p>{{ driblesReussiesR }}</p>
                             </div>
-                            <div class="progress-bar progress-bar-adv-red" style="width: {{  ((driblesEchouesR / (driblesReussiesR + driblesEchouesR))*100)|round(0,'floor')  }}%">
+                            <div class="progress-bar progress-bar-adv-red" style="width: {{  ((driblesEchouesR / driblesR )*100)|round(0,'ceil')  }}%">
                                 <p>{{ driblesEchouesR }}</p>
                             </div>
                         </div>
@@ -57,10 +57,10 @@
                     <div class="statsshow">
                         <h3>TIRS cadrés</h3>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-info-green" style="width: {{  ((tirsCadresL / (tirsCadresL + tirsNonCadresL))*100)|round(0,'floor')  }}%">
+                            <div class="progress-bar progress-bar-info-green" style="width: {{  ((tirsCadresL / tirsEnnemisL )*100)|round(0,'floor')  }}%">
                                 <p>{{ tirsCadresL }}</p>
                             </div>
-                            <div class="progress-bar progress-bar-adv-red" style="width: {{  ((tirsNonCadresL / (tirsCadresL + tirsNonCadresL))*100)|round(0,'floor')  }}%">
+                            <div class="progress-bar progress-bar-adv-red" style="width: {{  ((tirsNonCadresL /  tirsEnnemisL )*100)|round(0,'ceil')  }}%">
                                 <p>{{ tirsNonCadresL }}</p>
                             </div>
                         </div>
@@ -68,10 +68,10 @@
 
                         <h3>DUELS offensifs</h3>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-info-green" style="width: {{  ((driblesReussiesL / (driblesReussiesL + driblesEchouesL))*100)|round(0,'floor')  }}%">
+                            <div class="progress-bar progress-bar-info-green" style="width: {{  ((driblesReussiesL / driblesL )*100)|round(0,'floor')  }}%">
                                 <p>{{ driblesReussiesL }}</p>
                             </div>
-                            <div class="progress-bar progress-bar-adv-red" style="width: {{  ((driblesEchouesL / (driblesReussiesL + driblesEchouesL))*100)|round(0,'floor')  }}%">
+                            <div class="progress-bar progress-bar-adv-red" style="width: {{  ((driblesEchouesL / driblesL ) *100)|round(0,'ceil')  }}%">
                                 <p>{{ driblesEchouesL }}</p>
                             </div>
                         </div>
