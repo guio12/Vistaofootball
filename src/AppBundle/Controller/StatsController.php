@@ -34,86 +34,70 @@ class StatsController extends Controller
     /**  Passes Amies Reussies */
     $passesReussies = $em->PassesAmisReussies();
     $passesReussies = count($passesReussies);
-    if ($passesReussies == 0) {
-      $passesReussies = 1;
-    }
+
 
     /**Passes Amies Perdues**/
     $passesPerdues = $em->PassesAmisPerdues();
     $passesPerdues = count($passesPerdues);
-    if ($passesPerdues == 0) {
-      $passesPerdues = 1;
-    }
+
+      $passesAmis = $passesReussies + $passesPerdues == 0?  1 : $passesReussies + $passesPerdues ;
 
     /**Passes Ennemies Perdues**/
     $passesEPerdues = $em->PassesEnnemiesPerdues();
     $passesEPerdues = count($passesEPerdues);
-    if ($passesEPerdues == 0) {
-      $passesEPerdues = 1;
-    }
 
     /**  Passes Ennemies Reussies */
     $passesEReussies = $em->PassesEnnemiesReussies();
     $passesEReussies = count($passesEReussies);
-    if ($passesEReussies == 0) {
-      $passesEReussies = 1;
-    }
+
+    $passesEnnemies = $passesEPerdues + $passesEReussies == 0?  1 : $passesEPerdues + $passesEReussies ;
 
     /**                   CENTRES                 **/
 
     /** Centres Amis Reussies */
     $centresReussies = $em->CentresAmisReussies();
     $centresReussies = count($centresReussies);
-    if ($centresReussies == 0) {
-      $centresReussies = 1;
-    }
+
 
     /**Centres Amis Perdus**/
     $centresPerdus = $em->CentresAmisPerdues();
     $centresPerdus = count($centresPerdus);
-    if ($centresPerdus == 0) {
-      $centresPerdus = 1;
-    }
+
+      $centresAmis = $centresReussies + $centresPerdus == 0?  1 : $centresReussies + $centresPerdus ;
 
     /**Passes Ennemies Perdues**/
     $centresEPerdues = $em->CentresEnnemiesPerdues();
     $centresEPerdues = count($centresEPerdues);
-    if ($centresEPerdues == 0) {
-      $centresEPerdues = 1;
-    }
 
     /** centres Ennemis Reussis */
     $centresEReussis = $em->CentresEnnemiesReussies();
     $centresEReussis = count($centresEReussis);
-    if ($centresEReussis == 0) {
-      $centresEReussis = 1;
-    }
+
+
+      $centresEnnemies = $centresEReussis + $centresEPerdues == 0?  1 : $centresEReussis + $centresEPerdues ;
+
     /**PASSES LONGUES**/
 
     /** PL Amis Reussies */
     $PLReussies = $em->PLAmisReussies();
     $PLReussies = count($PLReussies);
-    if ($PLReussies == 0) {
-      $PLReussies = 1;
-    }
+
     /**Centres Amis Perdus**/
     $PLPerdues = $em->PLAmisPerdues();
     $PLPerdues = count($PLPerdues);
-    if ($PLPerdues == 0) {
-      $PLPerdues = 1;
-    }
+
+
+      $PLAmis = $PLReussies + $PLPerdues == 0?  1 : $PLReussies + $PLPerdues ;
+
     /**Passes Ennemies Perdues**/
     $PLEPerdues = $em->PLEnnemiesPerdues();
     $PLEPerdues = count($PLEPerdues);
-    if ($PLEPerdues == 0) {
-      $PLEPerdues = 1;
-    }
+
     /**PL Ennemies reussies**/
     $PLEReussies = $em->PLEnnemiesReussies();
     $PLEReussies = count($PLEReussies);
-    if ($PLEReussies == 0) {
-      $PLEReussies = 1;
-    }
+
+    $PLEnnemis = $PLEReussies + $PLEPerdues == 0?  1 : $PLEReussies + $PLEPerdues ;
 
     $user = $this->getUser();
 
@@ -121,16 +105,23 @@ class StatsController extends Controller
     return $this->render('stats/possession.html.twig', array(
       'passesPerdues' => $passesPerdues,
       'passesReussies' => $passesReussies,
+      'passesAmis' => $passesAmis,
       'passesEPerdues' => $passesEPerdues,
       'passesEReussies' => $passesEReussies,
+      'passesEnnemies' => $passesEnnemies,
       'centresReussies' => $centresReussies,
       'centresPerdus' => $centresPerdus,
+      'centresAmis' => $centresAmis,
       'centresEPerdues' => $centresEPerdues,
       'centresEReussis' => $centresEReussis,
+      'centresEnnemies' => $centresEnnemies,
       'PLReussies' => $PLReussies,
       'PLPerdues' => $PLPerdues,
+      'PLAmis' => $PLAmis,
       'PLEPerdues' => $PLEPerdues,
       'PLEReussies' => $PLEReussies,
+      'PLEnnemis' => $PLEnnemis,
+
       "equipe" => $_POST, "entraineur" => $user,
       'but' => $_SESSION['but']
     ));

@@ -31,100 +31,78 @@ class CpaController extends Controller
         /**  5M50 REUSSI  **/
         $cinqR = $em->cinqMetreAmis();
         $cinqR = count($cinqR);
-        if ($cinqR == 0) {
-        $cinqR = 1;
-        }
 
         /**  5M50 LOUPE  **/
         $cinqL = $em->cinqMetreAdversaire();
         $cinqL = count($cinqL);
-        if ($cinqL == 0) {
-        $cinqL = 1;
-        }
+
+        $cinq = $cinqR + $cinqL == 0?  1 : $cinqR + $cinqL ;
 
         /**  TOUCHES REUSSIES  **/
         $touchesR = $em->TouchesAmis();
         $touchesR = count($touchesR);
-        if ($touchesR == 0) {
-        $touchesR = 1;
-        }
 
         /**  TOUCHES LOUPEES  **/
         $touchesL = $em->TouchesAdversaires();
         $touchesL = count($touchesL);
-        if ($touchesL == 0) {
-        $touchesL = 1;
-        }
+
+        $touches = $touchesR + $touchesL == 0?  1 : $touchesR + $touchesL ;
+
 
         /**  HJ AMIS  **/
         $hjAmis = $em->HjAmis();
         $hjAmis = count($hjAmis);
-        if ($hjAmis == 0) {
-        $hjAmis = 1;
-        }
 
         /**  HJ ENNEMIS  **/
         $hjEnnemis = $em->HjEnnemis();
         $hjEnnemis = count($hjEnnemis);
-        if ($hjEnnemis == 0) {
-        $hjEnnemis = 1;
-        }
+
+        $hj = $hjEnnemis + $hjAmis == 0?  1 : $hjEnnemis + $hjAmis ;
+
 
         /**  CORNER REUSSIS  **/
         $cornersR = $em->CornerAmis();
         $cornersR = count($cornersR);
-        if ($cornersR == 0) {
-        $cornersR = 1;
-        }
 
         /**  CORNERS LOUPES  **/
         $cornersL = $em->CornerAdversaire();
         $cornersL = count($cornersL);
-        if ($cornersL == 0) {
-        $cornersL = 1;
-        }
+
+        $corners = $cornersR + $cornersL == 0?  1 : $cornersR + $cornersL ;
+
 
         /**  FAUTES AMIS  **/
         $fauteR = $em->FauteAmis();
         $fauteR = count($fauteR);
-        if ($fauteR == 0) {
-        $fauteR = 1;
-        }
 
         /**  FAUTEs ADVERSAIRE  **/
         $fauteL = $em->FauteAdversaire();
         $fauteL = count($fauteL);
-        if ($fauteL == 0) {
-        $fauteL = 1;
-        }
+
+        $faute = $fauteR + $fauteL == 0?  1 : $fauteR + $fauteL ;
+
 
         /**  FAUTES JAUNES  AMIS  **/
         $fauteJR = $em->FauteJauneAmis();
         $fauteJR = count($fauteJR);
-        if ($fauteJR == 0) {
-        $fauteJR = 1;
-        }
 
         /**  FAUTES JAUNES  ADVERSAIRE  **/
         $fauteJL = $em->FauteJauneAdversaire();
         $fauteJL = count($fauteJL);
-        if ($fauteJL == 0) {
-        $fauteJL = 1;
-        }
+
+        $fauteJ = $fauteJR + $fauteJL == 0?  1 : $fauteJR + $fauteJL ;
+
 
         /**  FAUTES ROUGES AMIS  **/
         $fauteRR = $em->FauteRougeAmis();
         $fauteRR = count($fauteRR);
-        if ($fauteRR == 0) {
-        $fauteRR = 1;
-        }
 
         /**  FAUTES ROUGES  ADVERSAIRE  **/
         $fauteLR = $em->FauteRougeAdversaire();
         $fauteLR = count($fauteLR);
-        if ($fauteLR == 0) {
-        $fauteLR = 1;
-        }
+
+        $fauteRouge = $fauteRR + $fauteLR == 0?  1 : $fauteRR + $fauteLR ;
+
 
 
         $user = $this->getUser();
@@ -133,18 +111,25 @@ class CpaController extends Controller
         return $this->render('stats/cpa.html.twig', array(
             'cinqR' => $cinqR,
             'cinqL' => $cinqL,
+            'cinq' => $cinq,
             'touchesR' => $touchesR,
             'touchesL' => $touchesL,
+            'touches' => $touches,
             'hjAmis' => $hjAmis,
             'hjEnnemis' => $hjEnnemis,
+            'hj' => $hj,
             'cornersR' => $cornersR,
             'cornersL' => $cornersL,
+            'corners' => $corners,
             'fauteR' => $fauteR,
             'fauteL' => $fauteL,
+            'faute' => $faute,
             'fauteJR' => $fauteJR,
             'fauteJL' => $fauteJL,
+            'fauteJ' => $fauteJ,
             'fauteRR' => $fauteRR,
             'fauteLR' => $fauteLR,
+            'fauteRouge' => $fauteRouge,
             "equipe" => $_POST, "entraineur" => $user,
             'but' => $_SESSION['but'],
 

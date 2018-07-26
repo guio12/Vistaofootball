@@ -14,41 +14,41 @@
 
             <h1><a href="{{ path('possession') }}">POSSESSION</a></h1>
             <div class="progress">
-                <div class="progress-bar progress-bar-info" style="width: {{ (stats['possession']['club']/ (stats['possession']['club'] + stats['possession']['toto']) *100)|round(0,'floor') }}%">
+                <div class="progress-bar progress-bar-info" style="width: {{ ((stats['possession']['club']/ stats['possession']['total']) *100)|round(0,'floor') }}%">
                     <p>{{ stats['possession']['club'] }}</p>
                 </div>
-                <div class="progress-bar progress-bar-adv" style="width: {{ (stats['possession']['toto']/ (stats['possession']['club'] + stats['possession']['toto']) *100)|round(0,'floor') }}%">
+                <div class="progress-bar progress-bar-adv" style="width: {{ ((stats['possession']['toto']/ stats['possession']['total']) *100)|round(0,'ceil') }}%">
                     <p>{{ stats['possession']['toto'] }}</p>
                 </div>
             </div>
 
             <h1><a href="{{ path('tirs') }}">TIRS</a></h1>
             <div class="progress">
-                <div class="progress-bar progress-bar-info" style="width: {{  ((stats['tirs']['tirsClub']/ stats['tirs']['tirsClubToto']) *100)|round(0,'floor')}}%">
+                <div class="progress-bar progress-bar-info" style="width: {{  ((stats['tirs']['tirsClub']/ stats['tirs']['total']) *100)|round(0,'floor')}}%">
                     <p>{{  stats['tirs']['tirsClub']}}</p>
                 </div>
-                <div class="progress-bar progress-bar-adv" style="width: {{  ((1 - stats['tirs']['tirsClub']/ stats['tirs']['tirsClubToto']) *100)|round(0,'ceil')}}%">
-                    <p>{{ stats['tirs']['tirsClubToto'] - stats['tirs']['tirsClub'] }}</p>
+                <div class="progress-bar progress-bar-adv" style="width: {{  ((stats['tirs']['tirsClubToto']/ stats['tirs']['total']) *100)|round(0,'ceil')}}%">
+                    <p>{{ stats['tirs']['tirsClubToto'] }}</p>
                 </div>
             </div>
 
             <h1><a href="{{ path('recuperation') }}">RECUPERATIONS</a></h1>
             <div class="progress">
-                <div class="progress-bar progress-bar-info" style="width: {{ (stats['recuperation']['nous'] / ( stats['recuperation']['nous'] + stats['recuperation']['vous']) *100)|round(0,'floor') }}%">
+                <div class="progress-bar progress-bar-info" style="width: {{ (stats['recuperation']['nous'] / ( stats['recuperation']['total']) *100)|round(0,'floor') }}%">
                     <p>{{ stats['recuperation']['nous'] }}</p>
                 </div>
-                <div class="progress-bar progress-bar-adv" style="width: {{ (stats['recuperation']['vous'] / ( stats['recuperation']['nous'] + stats['recuperation']['vous']) *100)|round(0,'ceil') }}%">
+                <div class="progress-bar progress-bar-adv" style="width: {{ (stats['recuperation']['vous'] / ( stats['recuperation']['total']) *100)|round(0,'ceil') }}%">
                     <p>{{ stats['recuperation']['vous'] }}</p>
                 </div>
             </div>
 
             <h1><a href="{{ path('CPA') }}">DISCIPLINE</a></h1>
             <div class="progress">
-                <div class="progress-bar progress-bar-info" style="width: {{ (stats['cpa']['nous'] / ( stats['cpa']['Toto']) *100)|round(0,'floor') }}%">
+                <div class="progress-bar progress-bar-info" style="width: {{ (stats['cpa']['nous'] / ( stats['cpa']['total']) *100)|round(0,'floor') }}%">
                     <p>{{ stats['cpa']['nous']}}</p>
                 </div>
-                <div class="progress-bar progress-bar-adv" style="width: {{ (((stats['cpa']['Toto'] - stats['cpa']['nous']) /  stats['cpa']['Toto'])*100)|round(0,'ceil') }}%">
-                    <p>{{ stats['cpa']['Toto'] - stats['cpa']['nous'] }}</p>
+                <div class="progress-bar progress-bar-adv" style="width: {{ ((stats['cpa']['Toto'] /  stats['cpa']['total'])*100)|round(0,'ceil') }}%">
+                    <p>{{ stats['cpa']['Toto'] }}</p>
                 </div>
             </div>
 

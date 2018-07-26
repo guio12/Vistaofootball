@@ -29,10 +29,10 @@
 
                     <h3>5m50</h3>
                     <div class="progress">
-                        <div class="progress-bar progress-bar-info" style="width: {{  ((cinqR / (cinqR + cinqL))*100)|round(0,'floor')  }}%">
+                        <div class="progress-bar progress-bar-info" style="width: {{  ((cinqR / cinq )*100)|round(0,'floor')  }}%">
                             <p>{{ cinqR }}</p>
                         </div>
-                        <div class="progress-bar progress-bar-adv" style="width: {{  ((cinqL / (cinqR + cinqL))*100)|round(0,'floor')  }}%">
+                        <div class="progress-bar progress-bar-adv" style="width: {{  ((cinqL / cinq )*100)|round(0,'floor')  }}%">
                             <p>{{ cinqL }}</p>
                         </div>
                     </div>
@@ -40,10 +40,10 @@
 
                     <h3>Touches</h3>
                     <div class="progress">
-                        <div class="progress-bar progress-bar-info" style="width: {{  ((touchesR / (touchesR + touchesL))*100)|round(0,'floor')  }}%">
+                        <div class="progress-bar progress-bar-info" style="width: {{  ((touchesR / touches )*100)|round(0,'floor')  }}%">
                             <p>{{ touchesR }}</p>
                         </div>
-                        <div class="progress-bar progress-bar-adv" style="width: {{  ((touchesL / (touchesR + touchesL))*100)|round(0,'floor')  }}%">
+                        <div class="progress-bar progress-bar-adv" style="width: {{  ((touchesL / touches )*100)|round(0,'floor')  }}%">
                             <p>{{ touchesL }}</p>
                         </div>
                     </div>
@@ -51,20 +51,20 @@
 
                     <h3>Hors-jeux</h3>
                     <div class="progress">
-                        <div class="progress-bar progress-bar-info" style="width: {{  ((hjAmis / (hjAmis + hjEnnemis))*100)|round(0,'floor')  }}%">
+                        <div class="progress-bar progress-bar-info" style="width: {{  ((hjAmis / hj )*100)|round(0,'floor')  }}%">
                             <p>{{ hjAmis }}</p>
                         </div>
-                        <div class="progress-bar progress-bar-adv" style="width: {{  ((hjEnnemis / (hjAmis + hjEnnemis))*100)|round(0,'floor')  }}%">
+                        <div class="progress-bar progress-bar-adv" style="width: {{  ((hjEnnemis / hj )*100)|round(0,'floor')  }}%">
                             <p>{{ hjEnnemis }}</p>
                         </div>
                     </div>
 
                     <h3>Corner</h3>
                     <div class="progress">
-                        <div class="progress-bar progress-bar-info" style="width: {{  ((cornersR / (cornersR + cornersL))*100)|round(0,'floor')  }}%">
+                        <div class="progress-bar progress-bar-info" style="width: {{  ((cornersR / corners )*100)|round(0,'floor')  }}%">
                             <p>{{ cornersR }}</p>
                         </div>
-                        <div class="progress-bar progress-bar-adv" style="width: {{  ((cornersL / (cornersR + cornersL))*100)|round(0,'floor')  }}%">
+                        <div class="progress-bar progress-bar-adv" style="width: {{  ((cornersL / corners )*100)|round(0,'floor')  }}%">
                             <p>{{ cornersL }}</p>
                         </div>
                     </div>
@@ -72,10 +72,10 @@
 
                     <h3>Fautes</h3>
                     <div class="progress">
-                        <div class="progress-bar progress-bar-info" style="width: {{  ((fauteR / (fauteR + fauteL))*100)|round(0,'floor')  }}%">
+                        <div class="progress-bar progress-bar-info" style="width: {{  ((fauteR / faute )*100)|round(0,'floor')  }}%">
                             <p>{{ fauteR }}</p>
                         </div>
-                        <div class="progress-bar progress-bar-adv" style="width: {{  ((fauteL / (fauteR + fauteL))*100)|round(0,'floor')  }}%">
+                        <div class="progress-bar progress-bar-adv" style="width: {{  ((fauteL / faute)*100)|round(0,'floor')  }}%">
                             <p>{{ fauteL }}</p>
                         </div>
                     </div>
@@ -83,10 +83,10 @@
 
                     <h3>Cartons Jaunes</h3>
                     <div class="progress">
-                        <div class="progress-bar progress-bar-info" style="width: {{  ((fauteJR / (fauteJR + fauteJL))*100)|round(0,'floor')  }}%">
+                        <div class="progress-bar progress-bar-info" style="width: {{  ((fauteJR / fauteJ )*100)|round(0,'floor')  }}%">
                             <p>{{ fauteJR }}</p>
                         </div>
-                        <div class="progress-bar progress-bar-adv" style="width: {{  ((fauteJL / (fauteJR + fauteJL))*100)|round(0,'floor')  }}%">
+                        <div class="progress-bar progress-bar-adv" style="width: {{  ((fauteJL / fauteJ )*100)|round(0,'floor')  }}%">
                             <p>{{ fauteJL }}</p>
                         </div>
                     </div>
@@ -94,10 +94,10 @@
 
                     <h3>Cartons Rouges</h3>
                     <div class="progress">
-                        <div class="progress-bar progress-bar-info" style="width: {{  ((fauteRR / (fauteRR + fauteLR))*100)|round(0,'floor')  }}%">
+                        <div class="progress-bar progress-bar-info" style="width: {{  ((fauteRR / fauteRouge )*100)|round(0,'floor')  }}%">
                             <p>{{ fauteRR }}</p>
                         </div>
-                        <div class="progress-bar progress-bar-adv" style="width: {{  ((fauteLR / (fauteRR + fauteLR))*100)|round(0,'floor')  }}%">
+                        <div class="progress-bar progress-bar-adv" style="width: {{  ((fauteLR / fauteRouge )*100)|round(0,'floor')  }}%">
                             <p>{{ fauteLR }}</p>
                         </div>
                     </div>

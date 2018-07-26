@@ -34,34 +34,44 @@ class ActionsMatchRepository extends EntityRepository
     ->setParameter(':id', $id);
     $possessionClubToto = $query->getQuery()->getResult();
     $possessionClubToto = count($possessionClubToto);
-    $possessionClubToto == 0? $possessionClubToto = 1 : "";
-    $possessionClub == 0? $possessionClub = 1: "";
-    $possession = ['club' => $possessionClub, 'toto'=> $possessionClubToto];
+
+
+    $possessionClubTotal = $possessionClubToto+$possessionClub;
+    $possessionClubTotal == 0 ? $possessionClubTotal = 1 : "";
+
+    $possession = ['club' => $possessionClub, 'toto'=> $possessionClubToto, 'total' => $possessionClubTotal ];
     return $possession;
   }
 
   public function TirsToto($idMatch)
   {
     $tirs = [];
-    $query = $this->createQueryBuilder('c')
-    ->select('c')
-    ->where('c.joueurAction <= 16')
+    $query = $this->createQueryBuilder('c');
+    $query->where('c.joueurAction <= 16')
     ->andWhere('c.actionId = 110 OR c.actionId = 111 OR c.actionId = 113 OR c.actionId = 114')
     ->andWhere('c.matchId = :id')
-    ->setParameter(':id', $idMatch)
-    ->getQuery();
-    $tirsClub = $query->getResult();
+    ->setParameter(':id', $idMatch);
+    $tirsClub = $query->getQuery()->getResult();
     $tirsClub = count($tirsClub);
 
 
     $query = $this->createQueryBuilder('d');
-    $query->where('d.actionId = 110 OR d.actionId = 111 OR d.actionId = 113 OR d.actionId = 114')
+    $query->where('d.joueurAction = 123')
+    ->andWhere('d.actionId = 110 OR d.actionId = 111 OR d.actionId = 113 OR d.actionId = 114')
     ->andWhere('d.matchId = :id')
     ->setParameter(':id', $idMatch);
     $tirsClubToto = $query->getQuery()->getResult();
     $tirsClubToto = count($tirsClubToto);
-    $tirsClubToto++;
-    $tirs = ['tirsClubToto' => $tirsClubToto, 'tirsClub' => $tirsClub];
+
+    $query = $this->createQueryBuilder('e');
+    $query->where('e.actionId = 110 OR e.actionId = 111 OR e.actionId = 113 OR e.actionId = 114')
+    ->andWhere('e.matchId = :id')
+    ->setParameter(':id', $idMatch);
+    $tirsClubTotal = $query->getQuery()->getResult();
+    $tirsClubTotal = count($tirsClubTotal);
+    $tirsClubTotal == 0 ? $tirsClubTotal = 1 : "";
+
+    $tirs = ['tirsClubToto' => $tirsClubToto, 'tirsClub' => $tirsClub, 'total' => $tirsClubTotal];
 
     return $tirs;
   }
@@ -77,16 +87,24 @@ class ActionsMatchRepository extends EntityRepository
     ->getQuery();
     $nbCpa = $query->getResult();
     $nbCpa = count($nbCpa);
-    $nbCpa++;
+
+    $query = $this->createQueryBuilder('c')
+    ->select('c')
+    ->where('c.joueurAction = 123')
+    ->andWhere('c.actionId = 106 OR c.actionId = 101')
+    ->andWhere('c.matchId = :id')
+    ->setParameter(':id', $idMatch)
+    ->getQuery();
+    $toto = $query->getResult();
+    $toto = count($toto);
 
     $query = $this->createQueryBuilder('d');
     $query->where('d.actionId = 106 OR d.actionId = 101')
     ->andWhere('d.matchId = :id')
     ->setParameter(':id', $idMatch);
-    $cpaToto = $query->getQuery()->getResult();
-    $cpaToto = count($cpaToto);
-    $cpaToto++;
-    $cpa = ['nous' => $nbCpa, 'Toto' => $cpaToto];
+    $total = $query->getQuery()->getResult();
+    $total = count($total);
+    $cpa = ['nous' => $nbCpa, 'Toto' => $toto, 'total' => $total];
 
     return $cpa;
   }
@@ -564,7 +582,7 @@ class ActionsMatchRepository extends EntityRepository
     $idrecupv[] = $key+1;
     }
   }
-$z = 1;
+$z = 0;
   foreach($idrecupv as $keyrecupv => $idrecupv){
     foreach($recup as $key=>$value){
       $value = $value;

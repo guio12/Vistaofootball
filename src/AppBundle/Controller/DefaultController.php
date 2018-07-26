@@ -267,9 +267,14 @@ class DefaultController extends Controller
       $tirs = $em->TirsToto($_SESSION['matchId']);
       $recuperation =  $em->Recuperation($_SESSION['matchId']);
       $cpa =  $em->CPA($_SESSION['matchId']);
+      $cpa['total'] == 0? $cpa['total'] = 1 : $cpa['total'] ;
       $but =  $em->but($_SESSION['matchId']);
       $_SESSION['but'] = $but;
       $recuperation['nous'] = count($recuperation['nous']);
+      $recuperation['total'] = $recuperation['vous'] + $recuperation['nous'];
+      $recuperation['total'] == 0? $recuperation['total'] = 1 : $recuperation['total'] ;
+
+      var_dump($possession);
 
       $stats = ['cpa'=> $cpa, 'possession' => $possession, 'tirs'=> $tirs, 'recuperation' => $recuperation];
 
@@ -300,6 +305,7 @@ class DefaultController extends Controller
     {
         $user = $this->getUser();
         // replace this example code with whatever you need
+
         return $this->render('stats/recuperation.html.twig',array('but' => $_SESSION['but'], "equipe" => $_POST, "entraineur" => $user
         ));
     }
