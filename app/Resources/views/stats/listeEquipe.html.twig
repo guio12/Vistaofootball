@@ -38,7 +38,7 @@
                         <input type="hidden" name="nomEquipe" value="{{ equipe.entraineurNomClub}}">
                         <td width="20%" class="text-right">
                             <a href="">
-                                <button class="btn-style btn-align btn btn-block">Statistique</button>
+                                <button class="btn-style btn-align btn btn-block">Statistiques</button>
                             </a>
                         </td>
                     </tr>
@@ -49,6 +49,10 @@
 
             </table>
         </div>
+
+        <a href="{{ path('coachMenu') }}">
+            <button class="btn-style btn btn-block">RETOUR AU MENU</button>
+        </a>
       </div>
   </section>
 {% endblock %}

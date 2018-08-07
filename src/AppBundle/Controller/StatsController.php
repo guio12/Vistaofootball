@@ -30,13 +30,17 @@ class StatsController extends Controller
     ->getRepository('AppBundle:ActionsMatch');
 
 
+
     /**  Passes Amies Reussies */
     $passesReussies = $em->PassesAmisReussies();
     $passesReussies = count($passesReussies);
 
+
     /**Passes Amies Perdues**/
     $passesPerdues = $em->PassesAmisPerdues();
     $passesPerdues = count($passesPerdues);
+
+      $passesAmis = $passesReussies + $passesPerdues == 0?  1 : $passesReussies + $passesPerdues ;
 
     /**Passes Ennemies Perdues**/
     $passesEPerdues = $em->PassesEnnemiesPerdues();
@@ -46,15 +50,20 @@ class StatsController extends Controller
     $passesEReussies = $em->PassesEnnemiesReussies();
     $passesEReussies = count($passesEReussies);
 
+    $passesEnnemies = $passesEPerdues + $passesEReussies == 0?  1 : $passesEPerdues + $passesEReussies ;
+
     /**                   CENTRES                 **/
 
     /** Centres Amis Reussies */
     $centresReussies = $em->CentresAmisReussies();
     $centresReussies = count($centresReussies);
 
+
     /**Centres Amis Perdus**/
     $centresPerdus = $em->CentresAmisPerdues();
     $centresPerdus = count($centresPerdus);
+
+      $centresAmis = $centresReussies + $centresPerdus == 0?  1 : $centresReussies + $centresPerdus ;
 
     /**Passes Ennemies Perdues**/
     $centresEPerdues = $em->CentresEnnemiesPerdues();
@@ -63,6 +72,9 @@ class StatsController extends Controller
     /** centres Ennemis Reussis */
     $centresEReussis = $em->CentresEnnemiesReussies();
     $centresEReussis = count($centresEReussis);
+
+
+      $centresEnnemies = $centresEReussis + $centresEPerdues == 0?  1 : $centresEReussis + $centresEPerdues ;
 
     /**PASSES LONGUES**/
 
@@ -74,6 +86,9 @@ class StatsController extends Controller
     $PLPerdues = $em->PLAmisPerdues();
     $PLPerdues = count($PLPerdues);
 
+
+      $PLAmis = $PLReussies + $PLPerdues == 0?  1 : $PLReussies + $PLPerdues ;
+
     /**Passes Ennemies Perdues**/
     $PLEPerdues = $em->PLEnnemiesPerdues();
     $PLEPerdues = count($PLEPerdues);
@@ -82,6 +97,7 @@ class StatsController extends Controller
     $PLEReussies = $em->PLEnnemiesReussies();
     $PLEReussies = count($PLEReussies);
 
+    $PLEnnemis = $PLEReussies + $PLEPerdues == 0?  1 : $PLEReussies + $PLEPerdues ;
 
     $user = $this->getUser();
 
@@ -89,17 +105,25 @@ class StatsController extends Controller
     return $this->render('stats/possession.html.twig', array(
       'passesPerdues' => $passesPerdues,
       'passesReussies' => $passesReussies,
+      'passesAmis' => $passesAmis,
       'passesEPerdues' => $passesEPerdues,
       'passesEReussies' => $passesEReussies,
+      'passesEnnemies' => $passesEnnemies,
       'centresReussies' => $centresReussies,
       'centresPerdus' => $centresPerdus,
+      'centresAmis' => $centresAmis,
       'centresEPerdues' => $centresEPerdues,
       'centresEReussis' => $centresEReussis,
+      'centresEnnemies' => $centresEnnemies,
       'PLReussies' => $PLReussies,
       'PLPerdues' => $PLPerdues,
+      'PLAmis' => $PLAmis,
       'PLEPerdues' => $PLEPerdues,
       'PLEReussies' => $PLEReussies,
+      'PLEnnemis' => $PLEnnemis,
+
       "equipe" => $_POST, "entraineur" => $user,
+      'but' => $_SESSION['but']
     ));
 
 
@@ -111,7 +135,7 @@ class StatsController extends Controller
   public function recupAction()
   {
 
-    
+
 
 
     /**  Passes Amies Reussies */

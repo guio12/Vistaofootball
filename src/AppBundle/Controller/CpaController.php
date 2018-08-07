@@ -36,6 +36,8 @@ class CpaController extends Controller
         $cinqL = $em->cinqMetreAdversaire();
         $cinqL = count($cinqL);
 
+        $cinq = $cinqR + $cinqL == 0?  1 : $cinqR + $cinqL ;
+
         /**  TOUCHES REUSSIES  **/
         $touchesR = $em->TouchesAmis();
         $touchesR = count($touchesR);
@@ -43,6 +45,9 @@ class CpaController extends Controller
         /**  TOUCHES LOUPEES  **/
         $touchesL = $em->TouchesAdversaires();
         $touchesL = count($touchesL);
+
+        $touches = $touchesR + $touchesL == 0?  1 : $touchesR + $touchesL ;
+
 
         /**  HJ AMIS  **/
         $hjAmis = $em->HjAmis();
@@ -52,6 +57,9 @@ class CpaController extends Controller
         $hjEnnemis = $em->HjEnnemis();
         $hjEnnemis = count($hjEnnemis);
 
+        $hj = $hjEnnemis + $hjAmis == 0?  1 : $hjEnnemis + $hjAmis ;
+
+
         /**  CORNER REUSSIS  **/
         $cornersR = $em->CornerAmis();
         $cornersR = count($cornersR);
@@ -59,6 +67,9 @@ class CpaController extends Controller
         /**  CORNERS LOUPES  **/
         $cornersL = $em->CornerAdversaire();
         $cornersL = count($cornersL);
+
+        $corners = $cornersR + $cornersL == 0?  1 : $cornersR + $cornersL ;
+
 
         /**  FAUTES AMIS  **/
         $fauteR = $em->FauteAmis();
@@ -68,6 +79,9 @@ class CpaController extends Controller
         $fauteL = $em->FauteAdversaire();
         $fauteL = count($fauteL);
 
+        $faute = $fauteR + $fauteL == 0?  1 : $fauteR + $fauteL ;
+
+
         /**  FAUTES JAUNES  AMIS  **/
         $fauteJR = $em->FauteJauneAmis();
         $fauteJR = count($fauteJR);
@@ -75,6 +89,9 @@ class CpaController extends Controller
         /**  FAUTES JAUNES  ADVERSAIRE  **/
         $fauteJL = $em->FauteJauneAdversaire();
         $fauteJL = count($fauteJL);
+
+        $fauteJ = $fauteJR + $fauteJL == 0?  1 : $fauteJR + $fauteJL ;
+
 
         /**  FAUTES ROUGES AMIS  **/
         $fauteRR = $em->FauteRougeAmis();
@@ -84,6 +101,9 @@ class CpaController extends Controller
         $fauteLR = $em->FauteRougeAdversaire();
         $fauteLR = count($fauteLR);
 
+        $fauteRouge = $fauteRR + $fauteLR == 0?  1 : $fauteRR + $fauteLR ;
+
+
 
         $user = $this->getUser();
 
@@ -91,19 +111,27 @@ class CpaController extends Controller
         return $this->render('stats/cpa.html.twig', array(
             'cinqR' => $cinqR,
             'cinqL' => $cinqL,
+            'cinq' => $cinq,
             'touchesR' => $touchesR,
             'touchesL' => $touchesL,
+            'touches' => $touches,
             'hjAmis' => $hjAmis,
             'hjEnnemis' => $hjEnnemis,
+            'hj' => $hj,
             'cornersR' => $cornersR,
             'cornersL' => $cornersL,
+            'corners' => $corners,
             'fauteR' => $fauteR,
             'fauteL' => $fauteL,
+            'faute' => $faute,
             'fauteJR' => $fauteJR,
             'fauteJL' => $fauteJL,
+            'fauteJ' => $fauteJ,
             'fauteRR' => $fauteRR,
             'fauteLR' => $fauteLR,
-            "equipe" => $_POST, "entraineur" => $user
+            'fauteRouge' => $fauteRouge,
+            "equipe" => $_POST, "entraineur" => $user,
+            'but' => $_SESSION['but'],
 
 
         ));

@@ -47,7 +47,7 @@ $("select").change( function (){
 
 
       obj.forEach(function(element) {
-        if (i <=16) {
+        if (i <16) {
           i++;
           $("ul").append("<li class='col-xs-6'><select class='selectJoueur' name='joueur"+i+"' ><option data-equipe='"+element.equipe+"' data-id='"+element.id+"' name='maillot' value='"+element.numMaillot+"'>"+element.nom+" "+element.prenom+"</option></option><option></select></li>");
         }

@@ -26,7 +26,7 @@ class Joueurs
      *
      * @ORM\Column(name="equipe", type="integer")
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Equipes", inversedBy="joueur")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(name="equipe_id", referencedColumnName="id", nullable=false)
      */
     public $equipe;
 

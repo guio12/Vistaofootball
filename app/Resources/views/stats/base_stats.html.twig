@@ -3,6 +3,6 @@
        {% if nomClub is defined and nomClub is not same as ("") %}{{ nomClub }}{% else %}Votre club{% endif %} -
         {% if matchs[0].equipe2 is defined and matchs[0].equipe2 is not same as ("") %}{{ matchs[0].equipe2 }}{% else %}adversaire{% endif %}
         </br>
-        <span id="butclub">0</span> - <span id="butadv">0</span>
+        <span id="butclub">{{ but['but'] }}</span> - <span id="butadv">{{ but['adv'] }}</span>
     </p>
 </div>

@@ -25,13 +25,6 @@ class DefaultController extends Controller
         return $this->render('/accueil/index.html.twig');
     }
 
-    /**
-     * @Route("/contact", name="contact")
-     */
-    public function contactAction()
-    {
-        return $this->render('/contact/index.html.twig');
-    }
 
 
     /**
@@ -49,6 +42,23 @@ class DefaultController extends Controller
              'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'user' => $user
          ]);
      }
+
+
+    /**
+     * @Route("/didacticiel", name="didacticiel")
+     */
+
+
+    public function didacticielAction(Request $request)
+    {
+        // replace this example code with whatever you need
+
+
+        $user = $this->getUser();
+        return $this->render('didacticiel/didacticiel.html.twig',  [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR, 'user' => $user
+        ]);
+    }
 
 
     /**
@@ -211,8 +221,10 @@ class DefaultController extends Controller
         ->select('c')
         ->where('c.equipe1Id = :id')
         ->setParameter(':id', $userId)
+        ->orderBy('c.date', 'DESC')
         ->getQuery();
         $matchs = $query->getResult();
+
         $_SESSION['matchs'] = $matchs;
         $_SESSION['nomClub'] = $nomClub;
         // replace this example code with whatever you need
@@ -229,10 +241,8 @@ class DefaultController extends Controller
 
       $user = $this->getUser();
 
-      if(isset($_POST['matchId'])){
-        $_SESSION['matchId'] = $_POST['matchId'];
-      }
-      isset($_SESSION['nomClub'])?  : $_SESSION['nomClub'] = "Votre club";
+      isset($_POST['matchId'])?  $_SESSION['matchId'] = $_POST['matchId'] : "";
+      isset($_POST['nomClub'])?$_SESSION['nomCLub'] = $_POST['nomClub'] : $_SESSION['nomClub'] = "votre club";
 
       $em = $this->getDoctrine()->getManager();
       $repository = $em->getRepository('AppBundle:Matchs');
@@ -242,6 +252,7 @@ class DefaultController extends Controller
       ->setParameter(':id', $_SESSION['matchId'])
       ->getQuery();
       $matchs = $query->getResult();
+
 
       $_SESSION['matchs'] = $matchs;
 
@@ -254,11 +265,19 @@ class DefaultController extends Controller
       $tirs = $em->TirsToto($_SESSION['matchId']);
       $recuperation =  $em->Recuperation($_SESSION['matchId']);
       $cpa =  $em->CPA($_SESSION['matchId']);
+      $cpa['total'] == 0? $cpa['total'] = 1 : $cpa['total'] ;
+      $but =  $em->but($_SESSION['matchId']);
+      $_SESSION['but'] = $but;
+      $recuperation['nous'] = count($recuperation['nous']);
+      $recuperation['total'] = $recuperation['vous'] + $recuperation['nous'];
+      $recuperation['total'] == 0? $recuperation['total'] = 1 : $recuperation['total'] ;
 
       $stats = ['cpa'=> $cpa, 'possession' => $possession, 'tirs'=> $tirs, 'recuperation' => $recuperation];
 
+
+
         // replace this example code with whatever you need
-        return $this->render('stats/general.html.twig',array("stats" => $stats, "nomClub"=>$_SESSION['nomClub'], "matchs"=>$_SESSION['matchs'], "entraineur" => $user
+        return $this->render('stats/general.html.twig',array("stats" => $stats, "nomClub"=>$_SESSION['nomClub'], "matchs"=>$_SESSION['matchs'], "entraineur" => $user, 'but' => $_SESSION['but']
         ));
     }
 
@@ -282,7 +301,8 @@ class DefaultController extends Controller
     {
         $user = $this->getUser();
         // replace this example code with whatever you need
-        return $this->render('stats/recuperation.html.twig',array( "equipe" => $_POST, "entraineur" => $user
+
+        return $this->render('stats/recuperation.html.twig',array('but' => $_SESSION['but'], "equipe" => $_POST, "entraineur" => $user
         ));
     }
 
@@ -297,6 +317,49 @@ class DefaultController extends Controller
         ));
     }
 
+    /**
+     * @Route("/recupAjax", name="recupAjax")
+     */
+    public function recupAjaxAction(Request $request)
+    {
+        $user = $this->getUser();
+        $userId = $this->getUser()->getId();
+        $em = $this->getDoctrine()
+        ->getManager()
+        ->getRepository('AppBundle:ActionsMatch');
+        $recuperation =  $em->Recuperation($_SESSION['matchId']);
+    //    $recuperation = json_encode($recuperation);
+
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository('AppBundle:Matchs');
+        $query = $repository->createQueryBuilder('c')
+        ->select('c')
+        ->where('c.id = :id')
+        ->setParameter(':id', $_SESSION['matchId'])
+        ->getQuery();
+        $matchs = $query->getResult();
+
+        $subject = "abcdef";
+        $pattern = '/^jou/';
+        $matchs = (array)$matchs[0];
+        foreach ($matchs as $key => $value) {
+          if (  preg_match($pattern, $key) ) {
+            $em = $this->getDoctrine()->getManager();
+            $repository = $em->getRepository('AppBundle:Joueurs');
+            $query = $repository->createQueryBuilder('c')
+            ->select('c.numMaillot')
+            ->where('c.id = :id')
+            ->setParameter(':id', $value)
+            ->getQuery();
+            $joueur[] = $query->getResult();
+          }
+        }
+
+    //    $matchs = json_encode($matchs);
+        $test = [$recuperation, $matchs, $joueur];
+        $test = json_encode($test);
+        return new Response($test);
+    }
 
 
 

@@ -1,7 +1,12 @@
+body {
+  background-image: radial-gradient(circle, #747474, #646464, #545454, #454545, #363636);
+}
+
 .brand-logo {
   width: 25vh;
   text-align: center;
 }
+
 
 @media only screen and (max-width: 1024px) {
   .img {
@@ -14,16 +19,13 @@
 }
 
 .global{
-  font-family: 'Quantico', sans-serif;
+
   text-transform: uppercase;
   background-size: cover;
   background-position: center center;
   min-height: 100%;
   min-width: 100%;
-  width: auto;
-  height: auto;
-  margin: 0;
-  position: absolute;
+
 }
 .global:after{
   position: absolute;

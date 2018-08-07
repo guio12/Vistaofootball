@@ -28,6 +28,7 @@ $darkcian: #0ba2a3;
   vertical-align: middle;
 }
 
+
 body {
   text-align: center;
 }
@@ -59,6 +60,11 @@ p {
 
 .purple_pad {
   background: linear-gradient(to bottom right, purple, black);
+  height: 14vh;
+}
+
+.red_pad {
+  background: linear-gradient(to bottom right, red, black);
   height: 14vh;
 }
 
@@ -129,7 +135,7 @@ p {
   .o-watch-wrap {
     .o-timer {
       @extend .t-center;
-      font-size: 4vw;
+      font-size: 2vw;
     }
   }
 }
@@ -153,6 +159,10 @@ p {
   .textWrap {
     overflow-wrap: break-word;
     line-height: 5vh;
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+
   }
 
 
